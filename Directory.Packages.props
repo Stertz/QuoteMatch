@@ -9,7 +9,7 @@
     <PackageVersion Include="Microsoft.Data.SqlClient" Version="7.1.1" />
     <PackageVersion Include="PdfPig" Version="0.1.16" />
     <PackageVersion Include="ExcelDataReader" Version="3.9.0" />
-    <PackageVersion Include="ExcelNumberFormat" Version="1.1.0" />
+    <PackageVersion Include="ExcelNumberFormat" Version="1.2.0" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.14" />
     <PackageVersion Include="Avalonia" Version="12.1.4" />
     <PackageVersion Include="Avalonia.Desktop" Version="12.1.4" />
