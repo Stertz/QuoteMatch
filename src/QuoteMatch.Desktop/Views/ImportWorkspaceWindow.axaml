@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="using:QuoteMatch.Desktop.ViewModels" xmlns:d="using:QuoteMatch.Domain.Importing" xmlns:c="using:QuoteMatch.Desktop.Controls" xmlns:views="using:QuoteMatch.Desktop.Views" x:Class="QuoteMatch.Desktop.Views.ImportWorkspaceWindow" x:DataType="vm:ImportWorkspaceViewModel" Title="{Binding ScreenTitle}" Width="1300" Height="880" MinWidth="1050" MinHeight="720">
+  <Grid RowDefinitions="Auto,Auto,*,Auto,Auto" Margin="24" RowSpacing="14">
+    <StackPanel Spacing="6">
+      <TextBlock Text="{Binding ScreenTitle}" FontSize="25" FontWeight="SemiBold" />
+      <TextBlock Text="{Binding QuotationName}" FontSize="16" />
+    </StackPanel>
+    <Border Name="ImportDropZone" Grid.Row="1" Classes="card" Padding="16" IsVisible="{Binding ShowFileSelection}" IsEnabled="{Binding !IsBusy}" DragDrop.AllowDrop="True">
+      <Border.Styles><Style Selector="Border.drag-over"><Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" /></Style></Border.Styles>
+      <StackPanel Spacing="10">
+        <TextBlock Text="{Binding Strings[ImportStepFile]}" FontSize="17" FontWeight="SemiBold" />
+        <TextBlock Text="{Binding Strings[ImportDropHint]}" Classes="muted" FontSize="12" />
+        <Grid ColumnDefinitions="Auto,*,300,Auto" ColumnSpacing="10">
+          <Button Content="{Binding Strings[ChooseDocument]}" Click="ChoosePdf" />
+          <TextBox Grid.Column="1" Text="{Binding FilePath}" IsReadOnly="True" PlaceholderText="{Binding Strings[NoPdfSelected]}" />
+          <ComboBox Name="ImportTemplateSelector" Grid.Column="2" ItemsSource="{Binding Templates}" SelectedItem="{Binding SelectedTemplate}" HorizontalAlignment="Stretch" PlaceholderText="{Binding Strings[SelectTemplate]}">
+            <ComboBox.ItemTemplate>
+              <DataTemplate x:DataType="d:PdfTemplate">
+                <TextBlock Text="{Binding Name}" />
+              </DataTemplate>
+            </ComboBox.ItemTemplate>
+          </ComboBox>
+          <Button Grid.Column="3" Classes="primary" Content="{Binding Strings[PreviewPdf]}" Command="{Binding PreviewCommand}" />
+        </Grid>
+        <TextBlock Text="{Binding TemplateSuggestionStatus}" IsVisible="{Binding !!TemplateSuggestionStatus.Length}" TextWrapping="Wrap" FontSize="12" />
+      </StackPanel>
+    </Border>
+    <Grid Grid.Row="2" ColumnDefinitions="*,400" ColumnSpacing="20">
+      <Grid RowDefinitions="Auto,Auto,*" RowSpacing="8">
+        <c:HelpLabel Label="{Binding Strings[ImportStepReview]}" Help="{Binding Strings[ImportTotalHelp]}" />
+        <StackPanel Grid.Row="1" Spacing="6">
+          <TextBlock Name="ImportSummary" Text="{Binding Summary}" TextWrapping="Wrap" FontSize="12" />
+          <TextBlock Text="{Binding ReviewedSummary}" FontWeight="SemiBold" />
+          <TextBlock Text="{Binding Diagnostics}" Foreground="{DynamicResource WarningBrush}" TextWrapping="Wrap" />
+        </StackPanel>
+        <Border Grid.Row="2" Classes="card" Padding="0">
+          <Grid RowDefinitions="Auto,*">
+            <Grid ColumnDefinitions="85,*,100,110" ColumnSpacing="8" Margin="12,10">
+              <TextBlock Text="{Binding Strings[ProductCodeShort]}" Classes="muted" FontSize="11" />
+              <TextBlock Grid.Column="1" Text="{Binding Strings[ImportDescription]}" Classes="muted" FontSize="11" />
+              <TextBlock Grid.Column="2" Text="{Binding Strings[ImportQuantity]}" Classes="muted" FontSize="11" />
+              <TextBlock Grid.Column="3" Text="{Binding Strings[ImportTotal]}" Classes="muted" FontSize="11" />
+            </Grid>
+            <ListBox Grid.Row="1" Name="ImportedItemList" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}">
+              <ListBox.ItemTemplate>
+                <DataTemplate x:DataType="vm:ImportItemViewModel">
+                  <StackPanel Margin="12,8" Spacing="4">
+                    <Grid ColumnDefinitions="85,*,100,110" ColumnSpacing="8">
+                      <TextBlock Text="{Binding ProductCode}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                      <TextBlock Grid.Column="1" Text="{Binding Description}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Description}" />
+                      <TextBlock Grid.Column="2" Text="{Binding QuantityDisplay}" TextTrimming="CharacterEllipsis" />
+                      <TextBlock Grid.Column="3" Text="{Binding TotalDisplay}" FontWeight="SemiBold" />
+                    </Grid>
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                      <TextBlock Text="{Binding Position}" Classes="muted" FontSize="11" />
+                      <TextBlock IsVisible="{Binding IsExcluded}" Text="{Binding ExcludedLabel}" Foreground="{DynamicResource WarningBrush}" FontSize="11" />
+                    </StackPanel>
+                    <TextBlock IsVisible="{Binding !!Issues.Length}" Text="{Binding Issues}" Foreground="{DynamicResource WarningBrush}" TextWrapping="Wrap" FontSize="11" />
+                  </StackPanel>
+                </DataTemplate>
+              </ListBox.ItemTemplate>
+            </ListBox>
+          </Grid>
+        </Border>
+      </Grid>
+      <ScrollViewer Grid.Column="1">
+        <StackPanel Spacing="10" Margin="0,0,12,0">
+          <TextBlock Text="{Binding Strings[ReviewFields]}" FontSize="18" FontWeight="SemiBold" />
+          <StackPanel IsEnabled="{Binding IsReviewEnabled}" Spacing="7">
+            <TextBlock Text="{Binding ReviewedCodeLabel}" />
+            <TextBox Name="ReviewedCode" Text="{Binding SelectedItem.ProductCode}" />
+            <TextBlock Text="{Binding Strings[ImportDescription]}" />
+            <TextBox Text="{Binding SelectedItem.Description}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="58" />
+            <TextBlock Text="{Binding Strings[ProductColor]}" />
+            <TextBox Name="ReviewedColor" Text="{Binding SelectedItem.Color}" PlaceholderText="{Binding Strings[ProductColorHelp]}" />
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+              <StackPanel Spacing="6">
+                <TextBlock Text="{Binding Strings[ImportQuantity]}" />
+                <TextBox Text="{Binding SelectedItem.Quantity}" />
+              </StackPanel>
+              <StackPanel Grid.Column="1" Spacing="6">
+                <TextBlock Text="{Binding Strings[ImportUnit]}" />
+                <TextBox Text="{Binding SelectedItem.Unit}" />
+              </StackPanel>
+            </Grid>
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+              <StackPanel Spacing="6">
+                <TextBlock Text="{Binding Strings[ImportUnitPrice]}" />
+                <TextBox Text="{Binding SelectedItem.UnitPrice}" />
+              </StackPanel>
+              <StackPanel Grid.Column="1" Spacing="6">
+                <TextBlock Text="{Binding Strings[ImportTotal]}" />
+                <TextBox Text="{Binding SelectedItem.ReportedTotal}" />
+              </StackPanel>
+            </Grid>
+            <Expander Header="{Binding Strings[FinancialItemFields]}" HorizontalAlignment="Stretch"><views:FinancialFieldsView DataContext="{Binding SelectedItem.Financials}" Margin="0,8" /></Expander>
+            <CheckBox Content="{Binding Strings[ExcludeRecord]}" IsChecked="{Binding SelectedItem.IsExcluded}" />
+            <TextBox IsVisible="{Binding SelectedItem.IsExcluded}" Text="{Binding SelectedItem.ExclusionReason}" PlaceholderText="{Binding Strings[ExclusionReason]}" />
+          </StackPanel>
+          <TextBlock Text="{Binding SelectedReviewWarning}" Foreground="{DynamicResource WarningBrush}" TextWrapping="Wrap" />
+          <Expander Header="{Binding Strings[FinancialDocumentFields]}" HorizontalAlignment="Stretch"><StackPanel Spacing="8"><views:FinancialFieldsView DataContext="{Binding DocumentFinancials}" /><TextBlock Text="{Binding FinancialEvidence}" TextWrapping="Wrap" /></StackPanel></Expander>
+          <Expander Header="{Binding Strings[Evidence]}" HorizontalAlignment="Stretch">
+            <StackPanel Spacing="8">
+              <TextBox Text="{Binding SelectedItem.Evidence}" IsReadOnly="True" AcceptsReturn="True" TextWrapping="Wrap" MaxHeight="180" />
+              <TextBox Text="{Binding SelectedItem.OriginalFields}" IsReadOnly="True" AcceptsReturn="True" TextWrapping="Wrap" MaxHeight="180" />
+            </StackPanel>
+          </Expander>
+          <Expander Header="{Binding Strings[ExtractedText]}" HorizontalAlignment="Stretch">
+            <TextBox Text="{Binding RawText}" IsReadOnly="True" AcceptsReturn="True" TextWrapping="Wrap" Height="260" />
+          </Expander>
+        </StackPanel>
+      </ScrollViewer>
+    </Grid>
+    <Border Grid.Row="3" Classes="card" Padding="14" IsVisible="{Binding ShowConfirmation}" IsEnabled="{Binding !IsBusy}">
+      <Grid ColumnDefinitions="*,Auto" ColumnSpacing="14">
+        <StackPanel Spacing="6">
+          <TextBlock Text="{Binding Strings[ImportStepSave]}" FontWeight="SemiBold" />
+        </StackPanel>
+        <Button Name="ConfirmImportButton" Grid.Column="1" Classes="primary" Content="{Binding Strings[AttachProposal]}" Command="{Binding ConfirmCommand}" IsEnabled="{Binding CanSave}" VerticalAlignment="Center" />
+      </Grid>
+    </Border>
+    <Grid Grid.Row="4" ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="10">
+      <StackPanel Spacing="5">
+        <ProgressBar IsVisible="{Binding IsBusy}" IsIndeterminate="True" Height="3" />
+        <TextBlock Name="ImportStatus" Text="{Binding Status}" TextWrapping="Wrap" />
+      </StackPanel>
+      <Button Grid.Column="1" Content="{Binding Strings[ExportOriginal]}" Click="ExportOriginal" IsVisible="{Binding IsConsulting}" />
+      <Button Grid.Column="2" Content="{Binding Strings[CancelImport]}" Command="{Binding CancelCommand}" IsVisible="{Binding IsBusy}" />
+      <Button Grid.Column="3" Content="{Binding Strings[CloseWindow]}" Click="CloseWindow" />
+    </Grid>
+  </Grid>
+</Window>

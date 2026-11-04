@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="Microsoft.Testing.Extensions.CodeCoverage" PrivateAssets="all" />
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="xunit.runner.visualstudio" PrivateAssets="all" />
+    <ProjectReference Include="../../src/QuoteMatch.Domain/QuoteMatch.Domain.csproj" />
+    <ProjectReference Include="../../src/QuoteMatch.Infrastructure/QuoteMatch.Infrastructure.csproj" />
+    <Compile Include="../../src/QuoteMatch.Desktop/Preferences/*.cs" Link="Preferences/%(Filename)%(Extension)" />
+    <Compile Include="../../src/QuoteMatch.Desktop/Demo/*.cs" Link="Demo/%(Filename)%(Extension)" />
+    <Compile Include="../../src/QuoteMatch.Desktop/Localization/Localizer.cs" Link="Localization/Localizer.cs" />
+    <EmbeddedResource Include="../../src/QuoteMatch.Desktop/Resources/Strings.resx" LogicalName="QuoteMatch.Desktop.Resources.Strings.resources" />
+    <EmbeddedResource Include="../../src/QuoteMatch.Desktop/Resources/Strings.pt-BR.resx" LogicalName="QuoteMatch.Desktop.Resources.Strings.pt-BR.resources" />
+    <None Include="../../src/QuoteMatch.Desktop/Resources/Strings*.resx" Link="Resources/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../src/QuoteMatch.Desktop/Views/*.axaml" Link="Views/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+</Project>
+

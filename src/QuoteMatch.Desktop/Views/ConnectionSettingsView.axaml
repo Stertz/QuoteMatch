@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="using:QuoteMatch.Desktop.ViewModels" xmlns:c="using:QuoteMatch.Desktop.Controls" x:Class="QuoteMatch.Desktop.Views.ConnectionSettingsView" x:DataType="vm:IntegrationSettingsViewModel">
+  <Grid RowDefinitions="*,Auto" RowSpacing="12" Margin="0,16,0,0">
+    <ScrollViewer>
+      <StackPanel MaxWidth="900" HorizontalAlignment="Stretch" Spacing="12" Margin="0,0,12,0" IsEnabled="{Binding !IsBusy}">
+        <Border Classes="card">
+          <StackPanel Spacing="12">
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+              <StackPanel Spacing="6"><c:HelpLabel Label="{Binding Strings[ServerName]}" Help="{Binding Strings[ServerNameHelp]}" /><TextBox Name="ConnectionServerInput" Text="{Binding Server}" /></StackPanel>
+              <StackPanel Grid.Column="1" Spacing="6"><c:HelpLabel Label="{Binding Strings[DatabaseName]}" Help="{Binding Strings[DatabaseNameHelp]}" /><TextBox Text="{Binding Database}" /></StackPanel>
+            </Grid>
+            <TextBlock Text="{Binding Strings[Authentication]}" />
+            <ComboBox SelectedIndex="{Binding AuthenticationIndex}" HorizontalAlignment="Stretch"><ComboBoxItem Content="{Binding Strings[WindowsAuthentication]}" /><ComboBoxItem Content="{Binding Strings[SqlAuthentication]}" /></ComboBox>
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="16" IsVisible="{Binding IsSqlLogin}">
+              <StackPanel Spacing="6"><TextBlock Text="{Binding Strings[LoginUser]}" /><TextBox Text="{Binding UserName}" /></StackPanel>
+              <StackPanel Grid.Column="1" Spacing="6"><c:HelpLabel Label="{Binding Strings[SessionPassword]}" Help="{Binding Strings[SessionPasswordHelp]}" /><TextBox Text="{Binding SessionPassword}" PasswordChar="●" /></StackPanel>
+            </Grid>
+          </StackPanel>
+        </Border>
+        <Expander Name="ConnectionAdvancedOptions" Header="{Binding Strings[ConnectionAdvanced]}" HorizontalAlignment="Stretch">
+          <StackPanel Spacing="10" Margin="12">
+            <StackPanel Orientation="Horizontal" Spacing="6"><CheckBox Name="EncryptConnectionInput" Content="{Binding Strings[EncryptConnection]}" IsChecked="{Binding Encrypt}" /><c:HelpLabel Help="{Binding Strings[EncryptConnectionHelp]}" /></StackPanel>
+            <StackPanel Orientation="Horizontal" Spacing="6"><CheckBox Content="{Binding Strings[TrustServerCertificate]}" IsChecked="{Binding TrustServerCertificate}" /><c:HelpLabel Help="{Binding Strings[TrustServerCertificateHelp]}" /></StackPanel>
+            <c:HelpLabel Label="{Binding Strings[ConnectionTimeout]}" Help="{Binding Strings[ConnectionTimeoutHelp]}" />
+            <NumericUpDown Name="ConnectionTimeoutInput" Value="{Binding ConnectionTimeoutSeconds}" Minimum="1" Maximum="2147483647" Increment="1" FormatString="0" NumberFormat="{Binding Strings.Culture.NumberFormat}" />
+            <Button Content="{Binding Strings[TestSavedConnection]}" Command="{Binding TestSavedConnectionCommand}" HorizontalAlignment="Left" />
+          </StackPanel>
+        </Expander>
+        <Expander Name="OrderWriteConnectionOptions" Header="{Binding Strings[OrderWriteConnectionOptions]}" HorizontalAlignment="Stretch">
+          <StackPanel Spacing="10" Margin="12">
+            <StackPanel Orientation="Horizontal" Spacing="6"><CheckBox Name="UseReadConnectionForWritesInput" Content="{Binding Strings[OrderUseCurrentConnection]}" IsChecked="{Binding UseReadConnectionForWrites}" /><c:HelpLabel Help="{Binding Strings[OrderUseCurrentConnectionHelp]}" /></StackPanel>
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="16" IsVisible="{Binding !UseReadConnectionForWrites}">
+              <StackPanel Spacing="6"><c:HelpLabel Label="{Binding Strings[OrderWriteUser]}" Help="{Binding Strings[OrderWriteUserHelp]}" /><TextBox Text="{Binding WriteUserName}" /></StackPanel>
+              <StackPanel Grid.Column="1" Spacing="6"><TextBlock Text="{Binding Strings[OrderWritePassword]}" /><TextBox Text="{Binding WritePassword}" PasswordChar="●" /></StackPanel>
+            </Grid>
+            <c:HelpLabel Label="{Binding Strings[OrderWriteOperator]}" Help="{Binding Strings[OrderWriteOperatorHelp]}" />
+            <NumericUpDown Name="WriteOperatorCodeInput" Value="{Binding WriteOperatorCode}" Minimum="1" Maximum="2147483647" Increment="1" FormatString="0" NumberFormat="{Binding Strings.Culture.NumberFormat}" />
+          </StackPanel>
+        </Expander>
+      </StackPanel>
+    </ScrollViewer>
+    <StackPanel Grid.Row="1" Spacing="8">
+      <StackPanel Orientation="Horizontal" Spacing="10">
+        <Button Classes="primary" Content="{Binding Strings[SaveSettings]}" Command="{Binding SaveCommand}" IsEnabled="{Binding !IsBusy}" />
+        <Button Content="{Binding Strings[TestConnection]}" Command="{Binding TestConnectionCommand}" IsEnabled="{Binding !IsBusy}" ToolTip.Tip="{Binding Strings[TestConnectionDraftHelp]}" />
+        <Button Content="{Binding Strings[CancelImport]}" Command="{Binding CancelConnectionTestCommand}" IsVisible="{Binding IsBusy}" />
+      </StackPanel>
+      <ProgressBar IsIndeterminate="True" IsVisible="{Binding IsBusy}" Height="3" />
+      <TextBlock Text="{Binding Status}" TextWrapping="Wrap" />
+      <Expander Header="{Binding Strings[ConnectionDiagnosticDetails]}" IsVisible="{Binding HasDiagnosticDetail}" HorizontalAlignment="Stretch"><TextBlock Text="{Binding DiagnosticDetail}" TextWrapping="Wrap" FontSize="12" Margin="12" /></Expander>
+    </StackPanel>
+  </Grid>
+</UserControl>

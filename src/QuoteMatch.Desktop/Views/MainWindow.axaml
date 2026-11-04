@@ -1,0 +1,259 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:QuoteMatch.Desktop.ViewModels"
+        x:Class="QuoteMatch.Desktop.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="QuoteMatch" Width="1440" Height="940" MinWidth="1120" MinHeight="740">
+  <Grid RowDefinitions="Auto,Auto,*,Auto">
+    <Border Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,0,0,1" Padding="26,16">
+      <Grid ColumnDefinitions="Auto,*,Auto,Auto">
+        <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+          <Border Background="{DynamicResource PrimaryBrush}" CornerRadius="9" Width="34" Height="34">
+            <TextBlock Text="Q" FontSize="23" FontWeight="Bold" Foreground="{DynamicResource OnPrimaryBrush}"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+          </Border>
+          <TextBlock Text="QuoteMatch" FontSize="21" FontWeight="SemiBold" VerticalAlignment="Center" />
+        </StackPanel>
+        <TextBlock Grid.Column="1" Text="{Binding Strings[ToolTagline]}" Classes="muted" VerticalAlignment="Center" Margin="24,0" />
+        <ComboBox Grid.Column="2" Width="165" Margin="0,0,10,0" SelectedIndex="{Binding SelectedLanguageIndex}"
+                  AutomationProperties.Name="{Binding Strings[Language]}" ToolTip.Tip="{Binding Strings[Language]}">
+          <ComboBoxItem Content="{Binding Strings[PortugueseLanguage]}" />
+          <ComboBoxItem Content="{Binding Strings[EnglishLanguage]}" />
+        </ComboBox>
+        <ComboBox Grid.Column="3" Width="115" SelectedIndex="{Binding SelectedAppearanceIndex}"
+                  AutomationProperties.Name="{Binding Strings[Appearance]}" ToolTip.Tip="{Binding Strings[Appearance]}">
+          <ComboBoxItem Content="{Binding Strings[SystemTheme]}" />
+          <ComboBoxItem Content="{Binding Strings[LightTheme]}" />
+          <ComboBoxItem Content="{Binding Strings[DarkTheme]}" />
+        </ComboBox>
+      </Grid>
+    </Border>
+
+    <StackPanel Grid.Row="1" Margin="26,22,26,18" Spacing="14">
+      <Border IsVisible="{Binding HasPreferenceError}" Background="{DynamicResource WarningSurfaceBrush}" CornerRadius="6" Padding="12">
+        <TextBlock Text="{Binding Strings[PreferenceError]}" Foreground="{DynamicResource WarningBrush}" TextWrapping="Wrap" />
+      </Border>
+      <Grid ColumnDefinitions="*,Auto">
+        <StackPanel Spacing="6">
+          <StackPanel Orientation="Horizontal" Spacing="10">
+            <TextBlock Classes="eyebrow" Text="QM-DEMO-001" VerticalAlignment="Center" />
+            <Border Background="{DynamicResource SelectionBrush}" CornerRadius="4" Padding="7,3">
+              <TextBlock Text="{Binding Strings[DemoBadge]}" Foreground="{DynamicResource AccentBrush}" FontSize="9" FontWeight="SemiBold" />
+            </Border>
+          </StackPanel>
+          <TextBlock Name="ComparisonHeading" Text="{Binding Strings[QuotationTitle]}" FontSize="28" FontWeight="SemiBold" LetterSpacing="-0.6" />
+          <TextBlock Classes="muted" Text="{Binding QuotationOverview}" FontSize="12" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Right" Spacing="4">
+          <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+            <TextBlock Classes="muted" Text="{Binding TotalLabel}" FontSize="12" VerticalAlignment="Center" />
+            <Button Classes="help" Content="?" AutomationProperties.Name="{Binding Strings[OrderTotalHelp]}" ToolTip.Tip="{Binding Strings[OrderTotalHelp]}">
+              <Button.Flyout>
+                <Flyout>
+                  <StackPanel MaxWidth="360" Spacing="10">
+                    <TextBlock Text="{Binding Strings[OrderTotal]}" FontSize="17" FontWeight="SemiBold" />
+                    <TextBlock Text="{Binding Strings[OrderTotalHelp]}" TextWrapping="Wrap" />
+                    <TextBlock Text="{Binding Strings[OrderTotalConditions]}" Classes="muted" TextWrapping="Wrap" />
+                  </StackPanel>
+                </Flyout>
+              </Button.Flyout>
+            </Button>
+          </StackPanel>
+          <TextBlock Name="OrderTotalValue" Text="{Binding GrandTotal}" FontSize="30" FontWeight="SemiBold" Foreground="{DynamicResource PrimaryBrush}" HorizontalAlignment="Right" />
+          <TextBlock IsVisible="{Binding HasPendingItems}" Text="{Binding PendingCountText}" Foreground="{DynamicResource WarningBrush}" FontSize="11" HorizontalAlignment="Right" />
+        </StackPanel>
+      </Grid>
+      <Border Background="{DynamicResource SelectionBrush}" CornerRadius="6" Padding="12,9">
+        <TextBlock Text="{Binding Strings[QuotationDemoNotice]}" FontSize="11" Foreground="{DynamicResource AccentBrush}" TextWrapping="Wrap" />
+      </Border>
+    </StackPanel>
+
+    <Grid Grid.Row="2" ColumnDefinitions="*,Auto" Margin="26,0,26,0">
+      <Border Classes="card" Padding="0" ClipToBounds="True">
+        <Grid RowDefinitions="Auto,Auto,*,Auto">
+          <Grid ColumnDefinitions="*,155,155" Margin="16" ColumnSpacing="10">
+            <TextBox Name="ItemSearch" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                     PlaceholderText="{Binding Strings[SearchItems]}" AutomationProperties.Name="{Binding Strings[SearchItems]}" />
+            <ComboBox Grid.Column="1" SelectedIndex="{Binding SelectedFilterIndex}" HorizontalAlignment="Stretch"
+                      AutomationProperties.Name="{Binding Strings[FilterItems]}">
+              <ComboBoxItem Content="{Binding Strings[AllItems]}" />
+              <ComboBoxItem Content="{Binding Strings[PendingOnly]}" />
+              <ComboBoxItem Content="{Binding Strings[SupplierAFilter]}" />
+              <ComboBoxItem Content="{Binding Strings[SupplierBFilter]}" />
+              <ComboBoxItem Content="{Binding Strings[SupplierCFilter]}" />
+            </ComboBox>
+            <ComboBox Grid.Column="2" SelectedIndex="{Binding SelectedSortIndex}" HorizontalAlignment="Stretch"
+                      AutomationProperties.Name="{Binding Strings[SortItems]}">
+              <ComboBoxItem Content="{Binding Strings[OriginalOrder]}" />
+              <ComboBoxItem Content="{Binding Strings[HighestTotal]}" />
+              <ComboBoxItem Content="{Binding Strings[ByWinningSupplier]}" />
+            </ComboBox>
+          </Grid>
+
+          <Border Grid.Row="1" Background="{DynamicResource RaisedBrush}" BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,1" Padding="18,12">
+            <Grid ColumnDefinitions="*,100,135,125,30">
+              <TextBlock Text="{Binding Strings[ItemColumn]}" Classes="muted" FontSize="11" />
+              <TextBlock Grid.Column="1" Text="{Binding Strings[RequestedColumn]}" Classes="muted" FontSize="11" />
+              <TextBlock Grid.Column="2" Text="{Binding Strings[WinningSupplier]}" Classes="muted" FontSize="11" />
+              <TextBlock Grid.Column="3" Text="{Binding Strings[ItemTotal]}" Classes="muted" FontSize="11" TextAlignment="Right" />
+            </Grid>
+          </Border>
+
+          <Grid Grid.Row="2">
+            <ListBox Name="QuotationItemList" ItemsSource="{Binding VisibleItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                     Background="Transparent" BorderThickness="0" Padding="0" SelectionMode="Single"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     AutomationProperties.Name="{Binding Strings[QuotationItems]}">
+              <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                  <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+              </ListBox.ItemsPanel>
+              <ListBox.ItemTemplate>
+                <DataTemplate x:DataType="vm:QuotationItemRowViewModel">
+                  <Border BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,0,0,1" Padding="18,10">
+                    <Grid ColumnDefinitions="*,100,135,125,30">
+                      <StackPanel Spacing="3" Margin="0,0,12,0">
+                        <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Name}" />
+                        <TextBlock Text="{Binding Description}" Classes="muted" FontSize="10" TextTrimming="CharacterEllipsis" />
+                      </StackPanel>
+                      <TextBlock Grid.Column="1" Text="{Binding Quantity}" FontSize="12" VerticalAlignment="Center" />
+                      <TextBlock Grid.Column="2" Text="{Binding WinnerName}" FontSize="12" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                      <TextBlock Grid.Column="3" Text="{Binding Total}" FontWeight="SemiBold" FontSize="12" TextAlignment="Right" VerticalAlignment="Center" />
+                      <TextBlock Grid.Column="4" Text="›" Classes="muted" FontSize="22" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Grid>
+                  </Border>
+                </DataTemplate>
+              </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel IsVisible="{Binding HasNoResults}" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="12" Margin="20">
+              <TextBlock Text="{Binding Strings[NoMatchingItems]}" FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center" />
+              <TextBlock Text="{Binding Strings[TryOtherSearch]}" Classes="muted" HorizontalAlignment="Center" />
+              <Button Content="{Binding Strings[ClearFilters]}" Command="{Binding ClearFiltersCommand}" HorizontalAlignment="Center" />
+            </StackPanel>
+          </Grid>
+
+          <Border Grid.Row="3" BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,1,0,0" Padding="16,11">
+            <Grid ColumnDefinitions="Auto,*">
+              <TextBlock Text="{Binding ItemCountText}" Classes="muted" FontSize="11" />
+              <TextBlock Grid.Column="1" Text="{Binding Strings[OpenItemHint]}" Classes="muted" FontSize="11" HorizontalAlignment="Right" />
+            </Grid>
+          </Border>
+        </Grid>
+      </Border>
+
+      <Border Name="ItemDetailsPanel" Grid.Column="1" IsVisible="{Binding IsItemDetailsOpen}" Width="430" Margin="18,0,0,0"
+              Classes="card" Padding="0" ClipToBounds="True">
+        <Grid RowDefinitions="Auto,*">
+          <Border Padding="20,14" BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,0,0,1">
+            <Grid ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="7">
+              <TextBlock Text="{Binding ItemPosition}" Classes="muted" FontSize="11" VerticalAlignment="Center" />
+              <Button Grid.Column="1" Content="‹" Command="{Binding PreviousItemCommand}" Padding="10,4" FontSize="19"
+                      AutomationProperties.Name="{Binding Strings[PreviousItem]}" ToolTip.Tip="{Binding Strings[PreviousItem]}" />
+              <Button Grid.Column="2" Content="›" Command="{Binding NextItemCommand}" Padding="10,4" FontSize="19"
+                      AutomationProperties.Name="{Binding Strings[NextItem]}" ToolTip.Tip="{Binding Strings[NextItem]}" />
+              <Button Grid.Column="3" Content="×" Command="{Binding CloseItemDetailsCommand}" Padding="10,4" FontSize="19"
+                      AutomationProperties.Name="{Binding Strings[CloseItem]}" ToolTip.Tip="{Binding Strings[CloseItem]}" />
+            </Grid>
+          </Border>
+          <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20,16" Spacing="12">
+              <StackPanel Spacing="8">
+                <TextBlock Text="{Binding SelectedItem.ItemCode}" Classes="eyebrow" />
+                <TextBlock Text="{Binding SelectedItem.Name}" FontSize="23" FontWeight="SemiBold" TextWrapping="Wrap" />
+                <TextBlock Text="{Binding SelectedItem.Specification}" Classes="muted" FontSize="12" />
+                <Grid ColumnDefinitions="*,110,Auto" ColumnSpacing="8" Margin="0,4,0,0">
+                  <StackPanel Orientation="Horizontal" Spacing="5" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Strings[RequestedQuantityLabel]}" Classes="muted" FontSize="11" />
+                    <TextBlock Text="{Binding SelectedItem.Unit}" Classes="muted" FontSize="11" />
+                  </StackPanel>
+                  <NumericUpDown Name="RequestedQuantityInput" Grid.Column="1" Value="{Binding RequestedQuantity}" Minimum="1" Maximum="1000000"
+                                 Increment="10" FormatString="0.############################" AutomationProperties.Name="{Binding Strings[RequestedQuantityLabel]}" />
+                  <Button Grid.Column="2" Content="{Binding Strings[ApplyQuantity]}" Command="{Binding ApplyRequestedQuantityCommand}" Padding="9,6" FontSize="11" />
+                </Grid>
+                <TextBlock IsVisible="{Binding HasQuantityError}" Text="{Binding Strings[QuantityError]}" Foreground="{DynamicResource WarningBrush}" FontSize="11" />
+              </StackPanel>
+
+              <Border Background="{DynamicResource SelectionBrush}" CornerRadius="8" Padding="12" ToolTip.Tip="{Binding Strings[WinnerCriterion]}">
+                <Grid ColumnDefinitions="*,Auto">
+                  <TextBlock Text="{Binding SelectedItemWinner}" FontWeight="SemiBold" FontSize="14" VerticalAlignment="Center" />
+                  <TextBlock Grid.Column="1" Text="{Binding SelectedItemCost}" Foreground="{DynamicResource PrimaryBrush}" FontWeight="SemiBold" FontSize="18" />
+                </Grid>
+              </Border>
+
+              <Grid ColumnDefinitions="*,Auto">
+                <TextBlock Text="{Binding Strings[SupplierOffers]}" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center" />
+                <Button Grid.Column="1" Content="?" Classes="help" Command="{Binding ShowCalculationDetailsCommand}"
+                        AutomationProperties.Name="{Binding Strings[DetailsHelp]}" ToolTip.Tip="{Binding Strings[DetailsHelp]}" />
+              </Grid>
+              <ItemsControl Name="OfferList" ItemsSource="{Binding Offers}">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate x:DataType="vm:OfferRowViewModel">
+                    <Border Classes="offerCard" Classes.recommended="{Binding IsRecommended}" Padding="10" Margin="0,0,0,7" CornerRadius="8">
+                      <StackPanel Spacing="5">
+                        <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+                          <TextBlock Text="{Binding SupplierName}" FontWeight="SemiBold" FontSize="12" VerticalAlignment="Center" />
+                          <TextBlock Grid.Column="1" Text="{Binding Status}" FontSize="9" VerticalAlignment="Center" />
+                          <Button Grid.Column="2" Content="?" Classes="help" Command="{Binding ShowDetailsCommand}"
+                                  AutomationProperties.Name="{Binding DetailsLabel}" ToolTip.Tip="{Binding DetailsLabel}" />
+                        </Grid>
+                        <Grid ColumnDefinitions="*,Auto">
+                          <TextBlock Text="{Binding CostCalculation}" Classes="muted" FontSize="10" VerticalAlignment="Center" />
+                          <TextBlock Grid.Column="1" Text="{Binding Total}" FontWeight="SemiBold" FontSize="13" />
+                        </Grid>
+                        <TextBlock IsVisible="{Binding HasQuantityDifference}" Text="{Binding QuantityNote}" Foreground="{DynamicResource WarningBrush}" FontSize="10" />
+                      </StackPanel>
+                    </Border>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+
+              <Border Name="CalculationDetailsPanel" IsVisible="{Binding IsDetailsOpen}" Background="{DynamicResource RaisedBrush}" Padding="14" CornerRadius="8">
+                <StackPanel Spacing="12">
+                  <Grid ColumnDefinitions="*,Auto">
+                    <TextBlock Text="{Binding DetailsTitle}" FontWeight="SemiBold" TextWrapping="Wrap" VerticalAlignment="Center" />
+                    <Button Grid.Column="1" Content="×" Command="{Binding CloseDetailsCommand}" Padding="8,2"
+                            AutomationProperties.Name="{Binding Strings[CloseDetails]}" />
+                  </Grid>
+                  <TextBlock Text="{Binding DetailsText}" FontSize="12" TextWrapping="Wrap" LineHeight="21" />
+                </StackPanel>
+              </Border>
+              <TextBlock Text="{Binding Strings[FixedLotNotice]}" Classes="muted" FontSize="11" TextWrapping="Wrap" />
+            </StackPanel>
+          </ScrollViewer>
+        </Grid>
+      </Border>
+    </Grid>
+
+    <Border Grid.Row="3" Margin="26,18,26,18">
+      <StackPanel Spacing="10">
+        <Grid ColumnDefinitions="Auto,*">
+          <TextBlock Text="{Binding Strings[OrderSplit]}" FontWeight="SemiBold" FontSize="12" />
+          <TextBlock Grid.Column="1" Text="{Binding Strings[TotalsIgnoreFilters]}" Classes="muted" FontSize="11" HorizontalAlignment="Right" />
+        </Grid>
+        <ItemsControl ItemsSource="{Binding SupplierTotals}">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate><UniformGrid Rows="1" /></ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="vm:SupplierTotalViewModel">
+              <Border BorderBrush="{DynamicResource LineBrush}" BorderThickness="1" Background="{DynamicResource SurfaceBrush}" CornerRadius="8" Padding="16,12" Margin="0,0,10,0">
+                <Grid ColumnDefinitions="*,Auto">
+                  <StackPanel Spacing="4">
+                    <TextBlock Text="{Binding Name}" FontSize="12" FontWeight="SemiBold" />
+                    <TextBlock Text="{Binding ItemCount}" Classes="muted" FontSize="10" />
+                  </StackPanel>
+                  <TextBlock Grid.Column="1" Text="{Binding Total}" FontSize="17" FontWeight="SemiBold" VerticalAlignment="Center" />
+                </Grid>
+              </Border>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <TextBlock Text="{Binding Strings[OrderTotalConditions]}" Classes="muted" FontSize="10" TextWrapping="Wrap" />
+      </StackPanel>
+    </Border>
+  </Grid>
+</Window>
+
+
+

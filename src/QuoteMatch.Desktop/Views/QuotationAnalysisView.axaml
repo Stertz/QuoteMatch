@@ -1,0 +1,130 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:QuoteMatch.Desktop.ViewModels" xmlns:c="using:QuoteMatch.Desktop.Controls"
+             x:Class="QuoteMatch.Desktop.Views.QuotationAnalysisView" x:DataType="vm:QuotationAnalysisViewModel">
+  <Grid RowDefinitions="Auto,Auto,*,Auto,Auto" RowSpacing="4">
+    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+      <StackPanel Spacing="3">
+        <c:HelpLabel Label="{Binding Summary}" Help="{Binding Strings[AnalysisSimulationHelp]}" />
+      </StackPanel>
+      <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal" Spacing="8">
+        <TextBlock Text="{Binding Strings[AnalysisSubtotal]}" Classes="muted" FontSize="11" VerticalAlignment="Center" />
+        <TextBlock Text="{Binding EstimatedTotal}" FontSize="20" FontWeight="SemiBold" Foreground="{DynamicResource PrimaryBrush}" VerticalAlignment="Center" />
+      </StackPanel>
+    </Grid>
+    <Grid Grid.Row="1" ColumnDefinitions="*,160,Auto" IsEnabled="{Binding !IsBusy}" ColumnSpacing="8">
+      <TextBox Text="{Binding SearchText}" PlaceholderText="{Binding Strings[AnalysisSearch]}" />
+      <ComboBox Grid.Column="1" SelectedIndex="{Binding FilterIndex}" HorizontalAlignment="Stretch">
+        <ComboBoxItem Content="{Binding Strings[AnalysisAll]}" />
+        <ComboBoxItem Content="{Binding Strings[AnalysisUnlinked]}" />
+        <ComboBoxItem Content="{Binding Strings[AnalysisWithWinner]}" />
+      </ComboBox>
+      <Button Name="ReviewQuotationProducts" Grid.Column="2" Classes="compact" Content="{Binding Strings[ReviewQuotationProducts]}" Click="IdentifyPending" IsEnabled="{Binding CanReviewProducts}" />
+    </Grid>
+    <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+      <Grid MinWidth="900" RowDefinitions="Auto,*">
+        <Border Background="{DynamicResource RaisedBrush}" Padding="8,3,24,3">
+          <Grid ColumnDefinitions="28,*,170,140,145" ColumnSpacing="0">
+            <c:HelpLabel Grid.Column="1" Label="{Binding Strings[ComparisonProduct]}" Help="{Binding Strings[ComparisonInteractionHelp]}" FontSize="10" />
+            <TextBlock Grid.Column="2" Text="{Binding Strings[LowestQuoteSupplier]}" Classes="columnHeader" />
+            <TextBlock Grid.Column="3" Text="{Binding Strings[LowestUnitPriceMetric]}" Classes="columnHeader" TextAlignment="Right" Margin="0,0,12,0" />
+            <TextBlock Grid.Column="4" Text="{Binding ReferenceLabel}" Classes="columnHeader" TextAlignment="Right" Margin="0,0,12,0" />
+          </Grid>
+        </Border>
+        <ListBox Grid.Row="1" Name="AnalysisGroupList" Classes="comparisonList" ItemsSource="{Binding Groups}" SelectedItem="{Binding SelectedGroup}" IsEnabled="{Binding !IsBusy}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+          <ListBox.ItemTemplate>
+            <DataTemplate x:DataType="vm:AnalysisGroupRow">
+              <Border Classes="comparisonGroup">
+                <StackPanel>
+                  <Button Classes="comparisonToggle" Margin="8,0,8,0" Click="ToggleGroup" DoubleTapped="EditGroupDoubleTap" KeyDown="EditItemKeyDown" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" AutomationProperties.Name="{Binding Name}" AutomationProperties.HelpText="{Binding Strings[ProductConfigurationHint]}">
+                    <ToolTip.Tip><StackPanel Spacing="4"><TextBlock Text="{Binding Name}" TextWrapping="Wrap" MaxWidth="420" /><TextBlock Text="{Binding Strings[ProductConfigurationHint]}" /></StackPanel></ToolTip.Tip>
+                    <Grid ColumnDefinitions="28,*,170,140,145">
+                      <TextBlock Text="›" FontSize="18" VerticalAlignment="Center" IsVisible="{Binding !IsExpanded}" />
+                      <TextBlock Text="⌄" FontSize="18" VerticalAlignment="Center" IsVisible="{Binding IsExpanded}" />
+                      <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center" Margin="0,0,12,0">
+                        <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                        <TextBlock Text="{Binding Detail}" Classes="muted" FontSize="10" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Detail}" />
+                      </StackPanel>
+                      <TextBlock Grid.Column="2" Text="{Binding LowestSupplier}" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" Margin="0,0,10,0" ToolTip.Tip="{Binding LowestSupplier}" />
+                      <TextBlock Grid.Column="3" Text="{Binding BestPrice}" TextAlignment="Right" VerticalAlignment="Center" FontWeight="SemiBold" Margin="0,0,12,0" />
+                      <c:HelpLabel Grid.Column="4" Label="{Binding LastPurchase}" Help="{Binding LastPurchaseHelp}" Summary="{Binding Strings[LastPurchaseShortHelp]}" HorizontalAlignment="Right" Margin="0,0,12,0" />
+                    </Grid>
+                  </Button>
+                  <Border IsVisible="{Binding IsExpanded}" Background="{DynamicResource RaisedBrush}" Padding="28,4,8,8">
+                    <StackPanel Spacing="4">
+                      <Grid ColumnDefinitions="*,125,90,145,100,110" Margin="8,0,8,0">
+                        <c:HelpLabel Label="{Binding Strings[SupplierColumn]}" Help="{Binding SpreadHelp}" Summary="{Binding Strings[PriceSpreadShortHelp]}" FontSize="10" />
+                        <TextBlock Grid.Column="1" Text="{Binding Strings[UnitPriceColumn]}" Classes="columnHeader" TextAlignment="Right" />
+                        <TextBlock Grid.Column="2" Text="{Binding Strings[LowestDifferenceColumn]}" Classes="columnHeader" TextAlignment="Right" IsVisible="{Binding HasCompetitors}" />
+                        <TextBlock Grid.Column="3" Text="{Binding ReferenceLabel}" Classes="columnHeader" TextAlignment="Right" />
+                        <TextBlock Grid.Column="4" Text="{Binding Strings[PurchaseDifferenceColumn]}" Classes="columnHeader" TextAlignment="Right" />
+                        <TextBlock Grid.Column="5" Text="{Binding Strings[WholeLotTotalLabel]}" Classes="columnHeader" TextAlignment="Right" />
+                      </Grid>
+                      <ItemsControl Name="GroupOffers" ItemsSource="{Binding Offers}">
+                        <ItemsControl.ItemTemplate>
+                          <DataTemplate x:DataType="vm:AnalysisOfferRow">
+                            <Border Classes="comparisonOffer" Classes.recommended="{Binding IsWinner}" DoubleTapped="EditOfferDoubleTap" KeyDown="EditItemKeyDown" Focusable="True" ToolTip.Tip="{Binding Strings[ProductConfigurationHint]}" AutomationProperties.Name="{Binding Reference}" AutomationProperties.HelpText="{Binding Strings[ProductConfigurationHint]}">
+                              <Grid ColumnDefinitions="*,125,90,145,100,110" Margin="8,3">
+                                <StackPanel Spacing="2" VerticalAlignment="Center" Margin="0,0,8,0">
+                                  <Grid ColumnDefinitions="*,Auto" ColumnSpacing="6">
+                                    <TextBlock Text="{Binding Supplier}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                                    <TextBlock Grid.Column="1" Text="{Binding Strings[BestLotShort]}" Foreground="{DynamicResource PositiveBrush}" FontSize="10" IsVisible="{Binding IsWinner}" ToolTip.Tip="{Binding SelectionLabel}" />
+                                  </Grid>
+                                  <WrapPanel>
+                                    <TextBlock Text="★ " Foreground="{DynamicResource PositiveBrush}" IsVisible="{Binding IsBestUnitPrice}" ToolTip.Tip="{Binding PriceBadge}" AutomationProperties.Name="{Binding PriceBadge}" />
+                                    <TextBlock Text="{Binding BaseQuantity}" Classes="muted" FontSize="10" />
+                                    <TextBlock Text="{Binding Coverage}" FontSize="10" IsVisible="{Binding HasCoverage}" Margin="8,0,0,0" />
+                                  </WrapPanel>
+                                </StackPanel>
+                                <TextBlock Grid.Column="1" Text="{Binding BasePrice}" TextAlignment="Right" VerticalAlignment="Center" FontWeight="SemiBold" Classes.bestPrice="{Binding IsBestUnitPrice}" />
+                                <c:HelpLabel Grid.Column="2" Classes.higherPrice="{Binding IsPriceHigher}" Label="{Binding CompactDifference}" Help="{Binding PriceDifferenceHelp}" Summary="{Binding Strings[UnitPricePremiumShortHelp]}" HorizontalAlignment="Right" IsVisible="{Binding HasCompetitors}" />
+                                <TextBlock Grid.Column="3" Text="{Binding LastPurchase}" TextAlignment="Right" VerticalAlignment="Center" FontSize="12" />
+                                <c:HelpLabel Grid.Column="4" Classes.increase="{Binding IsPurchaseIncrease}" Classes.decrease="{Binding IsPurchaseDecrease}" Label="{Binding PurchaseVariation}" Help="{Binding PurchaseVariationHelp}" Summary="{Binding Strings[PurchaseVariationShortHelp]}" HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="5" Text="{Binding Total}" TextAlignment="Right" VerticalAlignment="Center" FontSize="12" />
+                              </Grid>
+                            </Border>
+                          </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                      </ItemsControl>
+                    </StackPanel>
+                  </Border>
+                </StackPanel>
+              </Border>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+      </Grid>
+    </ScrollViewer>
+    <Border Grid.Row="3" BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,1,0,0" Padding="8,5,8,0" IsVisible="{Binding HasCompetitors}">
+      <Grid ColumnDefinitions="170,*" RowDefinitions="Auto,Auto" ColumnSpacing="8">
+        <c:HelpLabel Label="{Binding Strings[SupplierTotalsTitle]}" Help="{Binding SupplierTotalsHelp}" Summary="{Binding Strings[SupplierTotalsShortHelp]}" VerticalAlignment="Top" />
+        <ScrollViewer Grid.Column="1" MaxHeight="112" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+          <ItemsControl Name="SupplierTotalsList" ItemsSource="{Binding SupplierTotals}">
+            <ItemsControl.ItemsPanel><ItemsPanelTemplate><UniformGrid Rows="1" /></ItemsPanelTemplate></ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+              <DataTemplate x:DataType="vm:SupplierTotalRow">
+                <StackPanel Spacing="2" Margin="12,0,0,0">
+                  <TextBlock Text="{Binding Supplier}" FontWeight="SemiBold" FontSize="12" TextTrimming="CharacterEllipsis" />
+                  <TextBlock Text="{Binding Total}" FontSize="12" />
+                  <TextBlock Text="{Binding Detail}" FontSize="10" TextWrapping="Wrap" Classes="muted" />
+                  <StackPanel Orientation="Horizontal" Spacing="8">
+                    <TextBlock Text="{Binding CommonTotal}" FontSize="12" FontWeight="SemiBold" Classes.bestPrice="{Binding IsLowest}" />
+                    <TextBlock Text="{Binding Difference}" FontSize="12" Classes.higherPrice="{Binding IsHigher}" />
+                  </StackPanel>
+                  <c:HelpLabel Label="{Binding PurchaseVariation}" Help="{Binding PurchaseVariationHelp}" Summary="{Binding Strings[SupplierPurchaseShortHelp]}" FontSize="11" Classes.increase="{Binding IsPurchaseIncrease}" Classes.decrease="{Binding IsPurchaseDecrease}" />
+                </StackPanel>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </ScrollViewer>
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding SupplierTotalsCaption}" TextWrapping="Wrap" FontSize="10" Classes="muted" Margin="0,4,0,0" />
+      </Grid>
+    </Border>
+    <Grid Grid.Row="4" ColumnDefinitions="*,Auto">
+      <StackPanel Spacing="4">
+        <ProgressBar IsVisible="{Binding IsBusy}" IsIndeterminate="True" Height="3" />
+        <TextBlock Text="{Binding Status}" TextWrapping="Wrap" FontSize="12" IsVisible="{Binding HasStatus}" />
+      </StackPanel>
+      <Button Grid.Column="1" Content="{Binding Strings[CancelImport]}" Command="{Binding CancelCommand}" IsVisible="{Binding IsBusy}" />
+    </Grid>
+  </Grid>
+</UserControl>

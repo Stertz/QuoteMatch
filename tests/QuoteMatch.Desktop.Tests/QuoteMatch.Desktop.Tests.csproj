@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Headless" />
+    <PackageReference Include="Microsoft.Testing.Extensions.CodeCoverage" PrivateAssets="all" />
+    <PackageReference Include="xunit.v3" />
+    <ProjectReference Include="../../src/QuoteMatch.Desktop/QuoteMatch.Desktop.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Xunit" />
+    <Compile Include="../QuoteMatch.Tests/SyntheticWorkbook.cs" Link="Testing/SyntheticWorkbook.cs" />
+    <Compile Include="../QuoteMatch.Tests/DocumentCombinationFixture.cs" Link="Testing/DocumentCombinationFixture.cs" />
+  </ItemGroup>
+</Project>

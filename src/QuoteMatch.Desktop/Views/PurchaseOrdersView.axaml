@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="using:QuoteMatch.Desktop.ViewModels" xmlns:p="using:QuoteMatch.Domain.Purchasing" xmlns:c="using:QuoteMatch.Desktop.Controls" x:Class="QuoteMatch.Desktop.Views.PurchaseOrdersView" x:DataType="vm:PurchaseOrdersViewModel">
+  <Grid RowDefinitions="Auto,*,Auto" RowSpacing="10">
+    <StackPanel Spacing="8">
+      <WrapPanel IsEnabled="{Binding CanWork}">
+        <Button Name="FindPurchaseReference" Content="{Binding Strings[OrdersFindReference]}" Click="FindReference" Margin="0,0,8,0" />
+      </WrapPanel>
+      <TextBlock Text="{Binding ReferenceLabel}" FontWeight="SemiBold" />
+      <TextBlock Text="{Binding Strings[OrdersStartHelp]}" IsVisible="{Binding !HasReference}" FontSize="12" TextWrapping="Wrap" />
+    </StackPanel>
+    <ScrollViewer Grid.Row="1">
+      <StackPanel Spacing="12" Margin="0,0,12,0">
+          <Border Classes="card" Padding="12" IsEnabled="{Binding CanWork}">
+            <StackPanel Spacing="8">
+              <c:HelpLabel Label="{Binding Strings[OrdersSearch]}" Help="{Binding Strings[OrdersSearchHelp]}" />
+              <WrapPanel>
+                <TextBox Text="{Binding Number}" PlaceholderText="{Binding Strings[OrdersNumber]}" Width="120" Margin="0,0,8,6">
+                  <TextBox.KeyBindings><KeyBinding Gesture="Enter" Command="{Binding SearchCommand}" /></TextBox.KeyBindings>
+                </TextBox>
+                <TextBox Text="{Binding Supplier}" PlaceholderText="{Binding Strings[OrdersSupplier]}" Width="180" Margin="0,0,8,6" />
+                <TextBox Text="{Binding Branch}" PlaceholderText="{Binding Strings[OrdersBranch]}" Width="100" Margin="0,0,8,6" />
+                <TextBox Text="{Binding OrderStatus}" PlaceholderText="{Binding Strings[OrdersStatus]}" Width="110" Margin="0,0,8,6" />
+                <StackPanel Margin="0,0,8,6"><TextBlock Text="{Binding Strings[OrdersFromDate]}" /><DatePicker SelectedDate="{Binding FromDate}" /></StackPanel>
+                <StackPanel Margin="0,0,8,6"><TextBlock Text="{Binding Strings[OrdersToDate]}" /><DatePicker SelectedDate="{Binding ToDate}" /></StackPanel>
+                <Button Content="{Binding Strings[OrdersSearch]}" Command="{Binding SearchCommand}" />
+              </WrapPanel>
+              <ListBox Name="OrderSearchResults" ItemsSource="{Binding SearchResults}" SelectedItem="{Binding SelectedSearchResult}" MaxHeight="150">
+                <ListBox.ItemTemplate><DataTemplate x:DataType="vm:OrderHeaderRow"><TextBlock Text="{Binding Label}" /></DataTemplate></ListBox.ItemTemplate>
+              </ListBox>
+              <Button Content="{Binding Strings[OrdersLink]}" Command="{Binding LinkCommand}" IsEnabled="{Binding CanLink}" ToolTip.Tip="{Binding LinkUnavailableReason}" ToolTip.ShowOnDisabled="True" HorizontalAlignment="Left" />
+            </StackPanel>
+          </Border>
+        <StackPanel Spacing="12" IsEnabled="{Binding CanWork}" IsVisible="{Binding HasReference}">
+          <WrapPanel>
+            <Button Content="{Binding Strings[OrdersUseLatestReference]}" Command="{Binding UseLatestReferenceCommand}" Margin="0,0,8,0" />
+            <Button Content="{Binding Strings[OrdersSave]}" Command="{Binding SaveCommand}" Margin="0,0,8,0" />
+            <CheckBox Content="{Binding Strings[OrdersAcceptShortages]}" IsChecked="{Binding ShortagesAccepted}" />
+          </WrapPanel>
+          <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+            <ListBox Name="LinkedPurchaseOrders" ItemsSource="{Binding Orders}" SelectedItem="{Binding SelectedOrder}" MaxHeight="140">
+              <ListBox.ItemTemplate><DataTemplate x:DataType="vm:LinkedOrderRow"><TextBlock Text="{Binding Label}" /></DataTemplate></ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Grid.Column="1" Spacing="6">
+              <Button Content="{Binding Strings[OrdersMoveUp]}" Command="{Binding MoveUpCommand}" />
+              <Button Content="{Binding Strings[OrdersUnlink]}" Command="{Binding UnlinkCommand}" />
+              <Button Content="{Binding Strings[OrdersRefresh]}" Command="{Binding RefreshOrdersCommand}" />
+            </StackPanel>
+          </Grid>
+          <c:HelpLabel Label="{Binding Strings[OrdersComparison]}" Help="{Binding ComparisonHelp}" />
+          <Grid ColumnDefinitions="3*,*,*,*" ColumnSpacing="12" Margin="8,0">
+            <TextBlock Text="{Binding Strings[OrdersProduct]}" FontWeight="SemiBold" />
+            <TextBlock Grid.Column="1" Text="{Binding Strings[OrdersQuoted]}" />
+            <TextBlock Grid.Column="2" Text="{Binding Strings[OrdersCovered]}" />
+            <TextBlock Grid.Column="3" Text="{Binding Strings[OrdersRemaining]}" />
+          </Grid>
+          <ListBox Name="OrderComparisonList" ItemsSource="{Binding Comparison}" SelectedItem="{Binding SelectedComparison}" MaxHeight="350">
+            <ListBox.ItemTemplate>
+              <DataTemplate x:DataType="vm:OrderComparisonRow">
+                <Grid ColumnDefinitions="3*,*,*,*" RowDefinitions="Auto,Auto" ColumnSpacing="12" RowSpacing="4" Margin="8">
+                  <TextBlock Text="{Binding Product}" TextWrapping="Wrap" />
+                  <TextBlock Grid.Column="1" Text="{Binding Quoted}" />
+                  <TextBlock Grid.Column="2" Text="{Binding Covered}" />
+                  <TextBlock Grid.Column="3" Text="{Binding Remaining}" />
+              <StackPanel Grid.Row="1" Grid.ColumnSpan="4" Spacing="3">
+                <TextBlock Text="{Binding QuotedPrice}" FontSize="11" />
+                <TextBlock Text="{Binding Contributions}" FontSize="11" Classes="muted" TextWrapping="Wrap" />
+              </StackPanel>
+                </Grid>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+          <TextBlock Text="{Binding Excess}" TextWrapping="Wrap" />
+          <ItemsControl ItemsSource="{Binding ExcessLines}">
+            <ItemsControl.ItemTemplate><DataTemplate x:DataType="vm:OrderExcessRow"><TextBlock Text="{Binding Label}" FontSize="11" TextWrapping="Wrap" /></DataTemplate></ItemsControl.ItemTemplate>
+          </ItemsControl>
+          <Border Classes="card" Padding="12">
+            <StackPanel Spacing="8">
+              <c:HelpLabel Label="{Binding Strings[OrdersManualPair]}" Help="{Binding Strings[OrdersManualPairHelp]}" />
+              <ComboBox ItemsSource="{Binding Lines}" SelectedItem="{Binding SelectedLine}" HorizontalAlignment="Stretch">
+                <ComboBox.ItemTemplate><DataTemplate x:DataType="p:PurchaseOrderLine"><TextBlock><Run Text="{Binding Id}" /><Run Text=" · " /><Run Text="{Binding ProductCode}" /><Run Text=" · " /><Run Text="{Binding Description}" /></TextBlock></DataTemplate></ComboBox.ItemTemplate>
+              </ComboBox>
+              <TextBlock Text="{Binding SelectedLineDetail}" TextWrapping="Wrap" />
+              <WrapPanel>
+                <Button Content="{Binding Strings[OrdersManualPair]}" Command="{Binding PairSelectedLineCommand}" Margin="0,0,8,0" />
+                <Button Content="{Binding Strings[OrdersClearPairs]}" Command="{Binding ClearManualPairsCommand}" />
+              </WrapPanel>
+            </StackPanel>
+          </Border>
+        </StackPanel>
+        <c:HelpLabel Label="{Binding Strings[OrdersOperations]}" Help="{Binding Strings[OrdersOperationsHelp]}" IsVisible="{Binding HasReference}" />
+        <ListBox ItemsSource="{Binding Operations}" SelectedItem="{Binding SelectedOperation}" MaxHeight="150" IsVisible="{Binding HasReference}">
+          <ListBox.ItemTemplate><DataTemplate x:DataType="vm:OrderOperationRow"><TextBlock Text="{Binding Label}" TextWrapping="Wrap" /></DataTemplate></ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="{Binding Strings[OrdersReconcile]}" Command="{Binding ReconcileCommand}" IsEnabled="{Binding CanWork}" IsVisible="{Binding HasReference}" HorizontalAlignment="Left" />
+      </StackPanel>
+    </ScrollViewer>
+    <StackPanel Grid.Row="2" Spacing="6">
+      <ProgressBar IsIndeterminate="True" IsVisible="{Binding IsBusy}" Height="3" />
+      <TextBlock Text="{Binding Status}" TextWrapping="Wrap" />
+      <Button Content="{Binding Strings[CancelImport]}" Command="{Binding CancelCommand}" IsVisible="{Binding IsBusy}" HorizontalAlignment="Left" />
+    </StackPanel>
+  </Grid>
+</UserControl>

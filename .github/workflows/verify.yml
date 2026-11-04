@@ -1,0 +1,266 @@
+name: Verify
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+  DOTNET_NOLOGO: '1'
+  TESTINGPLATFORM_TELEMETRY_OPTOUT: '1'
+
+jobs:
+  verify:
+    name: Verify (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2025, macos-15]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v6.1.0
+        with:
+          global-json-file: global.json
+      - name: Reject private development material
+        run: |
+          $privateFiles = @(git ls-files | Where-Object { $_ -match '(^\.local/|\.pdf$|(^|/)(planejamento[^/]*|development-plan\.md)$)' })
+          if ($privateFiles.Count -gt 0) { throw 'Private fixtures or planning documents must not be tracked.' }
+      - name: Verify automation scripts
+        run: ./scripts/Test-ReleaseAutomation.ps1
+      - name: Build and verify line coverage
+        run: ./scripts/Test-Coverage.ps1 -ArtifactsDirectory artifacts/coverage-build -OutputDirectory artifacts/coverage
+      - name: Verify formatting
+        run: |
+          dotnet restore QuoteMatch.slnx
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          dotnet format QuoteMatch.slnx --no-restore --verify-no-changes
+          exit $LASTEXITCODE
+      - name: Save measured coverage
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: coverage-${{ matrix.os }}
+          path: |
+            artifacts/coverage/*.cobertura.xml
+            artifacts/coverage/summary.json
+          if-no-files-found: error
+          retention-days: 7
+
+  metadata:
+    needs: verify
+    if: >-
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      tag: ${{ steps.version.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v6.1.0
+        with:
+          global-json-file: global.json
+      - name: Assign the release version
+        id: version
+        shell: pwsh
+        env:
+          CHECK_RUN_NUMBER: ${{ github.run_number }}
+        run: ./scripts/Get-ReleaseVersion.ps1 -RunNumber ([int]$env:CHECK_RUN_NUMBER)
+
+  package:
+    name: Package (${{ matrix.runtime }})
+    needs: [verify, metadata]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-2025
+            runtime: win-x64
+          - os: ubuntu-24.04
+            runtime: linux-x64
+          - os: macos-15-intel
+            runtime: osx-x64
+          - os: macos-15
+            runtime: osx-arm64
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      RELEASE_VERSION: ${{ needs.metadata.outputs.version }}
+      SOURCE_COMMIT: ${{ github.sha }}
+      TARGET_RUNTIME: ${{ matrix.runtime }}
+      UPDATE_REPOSITORY_URL: https://github.com/${{ github.repository }}
+      APPIMAGE_EXTRACT_AND_RUN: '1'
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v6.1.0
+        with:
+          global-json-file: global.json
+      - name: Install the matching Velopack CLI
+        run: |
+          [xml]$packages = Get-Content Directory.Packages.props -Raw
+          $version = $packages.SelectSingleNode('/Project/ItemGroup/PackageVersion[@Include="Velopack"]/@Version').Value
+          dotnet tool install vpk --tool-path artifacts/tools --version $version
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Publish the self-contained application
+        run: |
+          dotnet publish src/QuoteMatch.Desktop/QuoteMatch.Desktop.csproj --configuration Release --runtime $env:TARGET_RUNTIME --self-contained true --artifacts-path artifacts/publish-build --output artifacts/publish -p:Version=$env:RELEASE_VERSION -p:SourceRevisionId=$env:SOURCE_COMMIT -p:RepositoryUrl=$env:UPDATE_REPOSITORY_URL -p:ContinuousIntegrationBuild=true --verbosity quiet
+          exit $LASTEXITCODE
+      - name: Build and validate the installer and update feed
+        run: |
+          $tool = if ($IsWindows) { 'artifacts/tools/vpk.exe' } else { 'artifacts/tools/vpk' }
+          ./scripts/New-ReleasePackage.ps1 -PublishDirectory artifacts/publish -Runtime $env:TARGET_RUNTIME -Version $env:RELEASE_VERSION -Commit $env:SOURCE_COMMIT -ToolPath (Join-Path $PWD $tool)
+      - uses: actions/upload-artifact@v7.0.2
+        with:
+          name: package-${{ matrix.runtime }}
+          path: |
+            artifacts/releases/*.nupkg
+            artifacts/releases/*.exe
+            artifacts/releases/*.pkg
+            artifacts/releases/*.AppImage
+            artifacts/releases/*.zip
+            artifacts/releases/releases.*.json
+            artifacts/releases/SHA256SUMS-*.txt
+          if-no-files-found: error
+          retention-days: 7
+
+  readme-badges:
+    name: Update measured README badges
+    needs: verify
+    if: >-
+      github.event_name == 'push' &&
+      github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - uses: actions/download-artifact@v8.0.2
+        with:
+          name: coverage-ubuntu-24.04
+          path: artifacts/coverage
+      - name: Refresh stack and measured coverage
+        shell: pwsh
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          CHECKED_COMMIT: ${{ github.sha }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $remote = git ls-remote origin "refs/heads/$env:DEFAULT_BRANCH"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          if (($remote -split '\s+')[0] -ne $env:CHECKED_COMMIT) {
+            Write-Output 'A newer source commit exists; its run will refresh the badges.'
+            exit 0
+          }
+          ./scripts/Update-ReadmeBadges.ps1 -CoverageSummaryPath artifacts/coverage/summary.json -Repository $env:GITHUB_REPOSITORY
+          git diff --quiet -- README.md
+          if ($LASTEXITCODE -eq 0) { exit 0 }
+          if ($LASTEXITCODE -ne 1) { exit $LASTEXITCODE }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git commit -m 'docs: refresh measured README badges [skip ci]'
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          git push origin "HEAD:refs/heads/$env:DEFAULT_BRANCH"
+          if ($LASTEXITCODE -ne 0) {
+            $remote = git ls-remote origin "refs/heads/$env:DEFAULT_BRANCH"
+            if ($LASTEXITCODE -eq 0 -and ($remote -split '\s+')[0] -ne $env:CHECKED_COMMIT) { exit 0 }
+            throw 'Could not publish the README badge update. Check branch protection and Actions permissions.'
+          }
+
+  publish:
+    name: Publish the complete release
+    needs: [metadata, package]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RELEASE_VERSION: ${{ needs.metadata.outputs.version }}
+      RELEASE_TAG: ${{ needs.metadata.outputs.tag }}
+      SOURCE_COMMIT: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v8.0.2
+        with:
+          pattern: package-*
+          path: downloads
+      - name: Validate and publish all four targets together
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          New-Item -ItemType Directory -Path release-assets | Out-Null
+          foreach ($runtime in @('win-x64', 'linux-x64', 'osx-x64', 'osx-arm64')) {
+            $directory = Join-Path downloads "package-$runtime"
+            ./scripts/Test-ReleasePackage.ps1 -PackageDirectory $directory -Runtime $runtime -Version $env:RELEASE_VERSION -Commit $env:SOURCE_COMMIT
+            $manifest = Join-Path $directory "SHA256SUMS-$runtime.txt"
+            foreach ($line in Get-Content -LiteralPath $manifest) {
+              if ($line -notmatch '^[a-f0-9]{64}  ([^/\\]+)$') { throw 'Invalid checksum manifest entry.' }
+              $name = $Matches[1]
+              $target = Join-Path release-assets $name
+              if (Test-Path -LiteralPath $target) { throw 'Platform release filenames collide.' }
+              Copy-Item -LiteralPath (Join-Path $directory $name) -Destination $target
+            }
+            Copy-Item -LiteralPath $manifest -Destination release-assets
+          }
+          $tagCommit = gh api "repos/$env:GH_REPO/commits/$env:RELEASE_TAG" --jq .sha 2>$null
+          if ($LASTEXITCODE -eq 0 -and $tagCommit -ne $env:SOURCE_COMMIT) { throw 'The release tag points to a different commit.' }
+          $existing = gh release view $env:RELEASE_TAG --json isDraft,targetCommitish 2>$null
+          $releaseExists = $LASTEXITCODE -eq 0
+          if ($releaseExists -and ($existing | ConvertFrom-Json).targetCommitish -ne $env:SOURCE_COMMIT) { throw 'The existing release identifies a different source commit.' }
+          if ($releaseExists -and -not ($existing | ConvertFrom-Json).isDraft) {
+            Write-Output 'This release is already published.'
+            exit 0
+          }
+          $notes = @"
+          QuoteMatch $env:RELEASE_VERSION from commit $env:SOURCE_COMMIT.
+
+          Windows x64: Setup.exe or the complete portable ZIP.
+          Linux x64: AppImage (make it executable before running).
+          macOS: choose the Intel or Apple Silicon installer/portable bundle.
+
+          Installed releases download updates in the background and ask before installing/restarting.
+          The packages are unsigned and macOS packages are not notarized. Native installation/update acceptance still needs validation on each target.
+          Source, architecture, update channels and verification limits: docs/releases-and-updates.md.
+          "@
+          $notes | Set-Content release-notes.md -Encoding utf8
+          if (-not $releaseExists) {
+            gh release create $env:RELEASE_TAG --target $env:SOURCE_COMMIT --title "QuoteMatch $env:RELEASE_VERSION" --draft --prerelease=false --notes-file release-notes.md
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+          $files = @(Get-ChildItem release-assets -File | ForEach-Object FullName)
+          gh release upload $env:RELEASE_TAG @files --clobber
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          gh release edit $env:RELEASE_TAG --draft=false --prerelease=false --latest
+          exit $LASTEXITCODE

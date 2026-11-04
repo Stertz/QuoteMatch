@@ -1,0 +1,43 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:imaging="clr-namespace:Avalonia.Media.Imaging;assembly=Avalonia.Base">
+  <ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Light">
+      <imaging:Bitmap x:Key="DeveloperLogo">avares://QuoteMatch.Desktop/Assets/Brand/odemu-light.png</imaging:Bitmap>
+      <SolidColorBrush x:Key="CanvasBrush" Color="#F8FAFC" />
+      <SolidColorBrush x:Key="SurfaceBrush" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="RaisedBrush" Color="#F1F5F9" />
+      <SolidColorBrush x:Key="InkBrush" Color="#0F172A" />
+      <SolidColorBrush x:Key="MutedBrush" Color="#64748B" />
+      <SolidColorBrush x:Key="LineBrush" Color="#E2E8F0" />
+      <SolidColorBrush x:Key="PrimaryBrush" Color="#0C215A" />
+      <SolidColorBrush x:Key="AccentBrush" Color="#007BAE" />
+      <SolidColorBrush x:Key="PositiveBrush" Color="#087B59" />
+      <SolidColorBrush x:Key="PositiveSurfaceBrush" Color="#ECFDF5" />
+      <SolidColorBrush x:Key="WarningBrush" Color="#925D08" />
+      <SolidColorBrush x:Key="WarningSurfaceBrush" Color="#FFFBEB" />
+      <SolidColorBrush x:Key="SelectionBrush" Color="#EFF6FF" />
+      <SolidColorBrush x:Key="OnPrimaryBrush" Color="#FFFFFF" />
+    </ResourceDictionary>
+    <ResourceDictionary x:Key="Dark">
+      <imaging:Bitmap x:Key="DeveloperLogo">avares://QuoteMatch.Desktop/Assets/Brand/odemu-dark.png</imaging:Bitmap>
+      <SolidColorBrush x:Key="CanvasBrush" Color="#0B0F1A" />
+      <SolidColorBrush x:Key="SurfaceBrush" Color="#111827" />
+      <SolidColorBrush x:Key="RaisedBrush" Color="#192337" />
+      <SolidColorBrush x:Key="InkBrush" Color="#F8FAFC" />
+      <SolidColorBrush x:Key="MutedBrush" Color="#94A3B8" />
+      <SolidColorBrush x:Key="LineBrush" Color="#283449" />
+      <SolidColorBrush x:Key="PrimaryBrush" Color="#00B3FA" />
+      <SolidColorBrush x:Key="AccentBrush" Color="#38BDF8" />
+      <SolidColorBrush x:Key="PositiveBrush" Color="#6EE7B7" />
+      <SolidColorBrush x:Key="PositiveSurfaceBrush" Color="#102D29" />
+      <SolidColorBrush x:Key="WarningBrush" Color="#FCD34D" />
+      <SolidColorBrush x:Key="WarningSurfaceBrush" Color="#302719" />
+      <SolidColorBrush x:Key="SelectionBrush" Color="#172C45" />
+      <SolidColorBrush x:Key="OnPrimaryBrush" Color="#0B0F1A" />
+    </ResourceDictionary>
+  </ResourceDictionary.ThemeDictionaries>
+  <SolidColorBrush x:Key="NavigationBrush" Color="#0C215A" />
+  <SolidColorBrush x:Key="NavigationMutedBrush" Color="#AAB9D8" />
+  <SolidColorBrush x:Key="BrandAccentBrush" Color="#00B3FA" />
+</ResourceDictionary>

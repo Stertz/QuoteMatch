@@ -1,0 +1,56 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="using:QuoteMatch.Desktop.ViewModels" xmlns:c="using:QuoteMatch.Desktop.Controls" x:Class="QuoteMatch.Desktop.Views.QuotationItemEditorWindow" x:DataType="vm:QuotationAnalysisViewModel" Width="740" Height="780" MinWidth="600" MinHeight="440" WindowStartupLocation="CenterOwner" Title="{Binding Strings[EditQuotationItem]}">
+  <Grid Margin="20" RowDefinitions="Auto,*,Auto" RowSpacing="12">
+    <ComboBox Name="EditorOfferSelector" ItemsSource="{Binding Offers}" SelectedItem="{Binding SelectedOffer}" HorizontalAlignment="Stretch" IsEnabled="{Binding !IsBusy}">
+      <ComboBox.ItemTemplate><DataTemplate x:DataType="vm:AnalysisOfferRow"><TextBlock><Run Text="{Binding Supplier}" /><Run Text=" · " /><Run Text="{Binding Description}" /></TextBlock></DataTemplate></ComboBox.ItemTemplate>
+    </ComboBox>
+    <ScrollViewer Grid.Row="1" Name="ItemEditorScroll">
+      <StackPanel Spacing="12" Margin="0,0,8,0" IsEnabled="{Binding !IsBusy}">
+        <Border Classes="card" Padding="14" IsEnabled="{Binding CanEdit}">
+          <StackPanel Spacing="8">
+            <TextBlock Text="{Binding Strings[ProductSection]}" FontWeight="SemiBold" FontSize="16" />
+            <TextBlock Text="{Binding SourceSupplier}" Classes="muted" FontSize="12" />
+            <TextBlock Name="SourceProductReference" Text="{Binding SourceReference}" TextWrapping="Wrap" />
+            <TextBlock Text="{Binding ConfirmedProductLabel}" TextWrapping="Wrap" FontWeight="SemiBold" IsVisible="{Binding HasConfirmedProduct}" />
+            <TextBlock Text="{Binding IdentificationStatus}" TextWrapping="Wrap" Foreground="{DynamicResource AccentBrush}" />
+            <WrapPanel>
+              <Button Content="{Binding Strings[IdentifyThisItem]}" Command="{Binding SearchErpCommand}" IsVisible="{Binding !HasConfirmedProduct}" Margin="0,0,8,6" />
+              <Button Name="OpenProductSearchButton" Content="{Binding ProductActionLabel}" Click="OpenProductSearch" Margin="0,0,8,6" />
+              <Button Name="RefreshProductData" Content="{Binding Strings[RefreshErpData]}" Command="{Binding RefreshErpDataCommand}" IsVisible="{Binding HasConfirmedProduct}" ToolTip.Tip="{Binding Strings[RefreshErpDataHelp]}" Margin="0,0,0,6" />
+            </WrapPanel>
+            <ListBox Name="ErpCandidateList" ItemsSource="{Binding Candidates}" SelectedItem="{Binding SelectedCandidate}" MaxHeight="150" IsVisible="{Binding IsIdentificationOpen}">
+              <ListBox.ItemTemplate><DataTemplate x:DataType="vm:ErpCandidateRow"><StackPanel Margin="6" Spacing="3"><TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextWrapping="Wrap" /><TextBlock Text="{Binding Code}" /><TextBlock Text="{Binding Detail}" FontSize="11" TextWrapping="Wrap" Classes="muted" /></StackPanel></DataTemplate></ListBox.ItemTemplate>
+            </ListBox>
+          </StackPanel>
+        </Border>
+        <Border Classes="card" Padding="14" IsEnabled="{Binding CanEdit}">
+          <StackPanel Spacing="8">
+            <TextBlock Text="{Binding Strings[PackagingSection]}" FontWeight="SemiBold" FontSize="16" />
+            <TextBlock Text="{Binding Strings[PdfQuantity]}" Classes="muted" />
+            <TextBlock Text="{Binding SelectedOffer.Quantity}" FontWeight="SemiBold" />
+            <Grid ColumnDefinitions="*,160" ColumnSpacing="12">
+              <StackPanel Spacing="4"><c:HelpLabel Label="{Binding PackagingLabel}" Help="{Binding Strings[AnalysisConversionHelp]}" /><NumericUpDown Name="MappingConversionInput" Value="{Binding ConversionFactor}" NumberFormat="{Binding Strings.Culture.NumberFormat}" Minimum="0" FormatString="0.#########" /></StackPanel>
+              <StackPanel Grid.Column="1" Spacing="4"><TextBlock Text="{Binding Strings[ComparisonUnit]}" /><TextBox Text="{Binding BaseUnit}" IsReadOnly="{Binding HasCandidate}" /></StackPanel>
+            </Grid>
+            <TextBlock Text="{Binding CandidateConversion}" TextWrapping="Wrap" IsVisible="{Binding HasAlternativeConversion}" Classes="muted" FontSize="12" />
+            <Button Content="{Binding Strings[UseErpFactor]}" Command="{Binding UseErpFactorCommand}" IsVisible="{Binding HasAlternativeConversion}" />
+            <TextBlock Name="ConversionEquation" Text="{Binding ConversionEquation}" TextWrapping="Wrap" FontWeight="SemiBold" />
+            <CheckBox Name="RememberProductMapping" Content="{Binding Strings[RememberProductMapping]}" IsChecked="{Binding RememberMapping}" IsVisible="{Binding CanRememberMapping}" ToolTip.Tip="{Binding Strings[MappingReferenceHelp]}" />
+            <Button Name="ConfirmProductConversion" Classes="primary" Content="{Binding ConfirmProductLabel}" Click="ConfirmConversion" IsVisible="{Binding HasCandidate}" />
+          </StackPanel>
+        </Border>
+        <Border Classes="card" Padding="14" IsEnabled="{Binding CanEdit}" IsVisible="{Binding SelectedGroup.Group.IsLinked}">
+          <StackPanel Spacing="6">
+            <TextBlock Text="{Binding DesiredQuantityLabel}" FontWeight="SemiBold" FontSize="16" />
+            <c:HelpLabel Label="{Binding DemandOriginLabel}" Help="{Binding DemandOriginHelp}" Summary="{Binding Strings[OrderDemandShortHelp]}" FontSize="12" />
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10"><NumericUpDown Name="AnalysisDemandInput" Value="{Binding RequestedQuantity}" NumberFormat="{Binding Strings.Culture.NumberFormat}" Minimum="0" FormatString="0.####" /><Button Grid.Column="1" Content="{Binding Strings[ApplyAnalysisDemand]}" Command="{Binding ApplyDemandCommand}" /></Grid>
+          </StackPanel>
+        </Border>
+        <Expander Header="{Binding Strings[AdvancedIdentification]}" HorizontalAlignment="Stretch" IsEnabled="{Binding CanEdit}">
+          <StackPanel Spacing="8" Margin="0,8"><TextBox IsVisible="{Binding CanSearchSimilarity}" Text="{Binding SimilaritySearch}" PlaceholderText="{Binding Strings[SimilarityPlaceholder]}" /><Button IsVisible="{Binding CanSearchSimilarity}" Content="{Binding Strings[SearchErp]}" Command="{Binding SearchSimilarCommand}" ToolTip.Tip="{Binding Strings[AdvancedSimilarityHelp]}" /><TextBox Text="{Binding GroupName}" PlaceholderText="{Binding Strings[ManualGroupName]}" /><Button Content="{Binding Strings[LinkManualGroup]}" Command="{Binding LinkManualCommand}" ToolTip.Tip="{Binding Strings[ManualGroupingHelp]}" /><Button Content="{Binding Strings[UnlinkItem]}" Command="{Binding UnlinkCommand}" /></StackPanel>
+        </Expander>
+        <Expander Header="{Binding Strings[OfferSourceDetails]}" HorizontalAlignment="Stretch"><StackPanel Spacing="6"><TextBlock Text="{Binding SelectedOffer.Reference}" TextWrapping="Wrap" /><TextBlock Text="{Binding SelectedOffer.Price}" /><TextBlock Text="{Binding SelectedOffer.Total}" /><TextBlock Text="{Binding SelectedOffer.History}" TextWrapping="Wrap" /><TextBlock Text="{Binding SelectedOffer.ErpDetail}" TextWrapping="Wrap" FontSize="12" /></StackPanel></Expander>
+      </StackPanel>
+    </ScrollViewer>
+    <Grid Grid.Row="2" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="10"><StackPanel Spacing="4"><ProgressBar IsVisible="{Binding IsBusy}" IsIndeterminate="True" Height="3" /><TextBlock Text="{Binding Status}" TextWrapping="Wrap" FontSize="12" /></StackPanel><Button Grid.Column="1" Content="{Binding Strings[CancelImport]}" Command="{Binding CancelCommand}" IsVisible="{Binding IsBusy}" /><Button Grid.Column="2" Content="{Binding Strings[CloseWindow]}" Click="CloseEditor" IsEnabled="{Binding !IsBusy}" /></Grid>
+  </Grid>
+</Window>

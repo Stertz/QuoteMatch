@@ -1,0 +1,15 @@
+# Automatic PDF template selection
+
+Choose a PDF or drop it onto the import file area to identify a template and extract its items automatically. This local workflow needs no ERP connection. The normal file button remains available for keyboard use. One local PDF or supported spreadsheet is accepted at a time; folders, remote items and unsupported files are rejected without replacing the current review. [Spreadsheet template selection](excel-import.md) remains manual.
+
+Only saved PDF templates with a nonempty identification regex participate. The currently selected template is tested first, followed by the remaining catalog order. A candidate must match its identification regex and capture at least one complete item with nonempty code/description and parsable positive quantity/unit price and nonnegative total using the template culture. The probe uses the same page-scoped record boundaries, footer exclusion and regex options as full extraction. It stops at the first qualifying item and chooses the first qualifying template; it does not rank all templates or require a unique match.
+
+The chosen template then performs full extraction. Unmatched records, count/total discrepancies, invalid values and financial warnings remain available for review. A successful probe does not bypass validation or save a proposal. Adding the proposal still requires the existing explicit confirmation.
+
+Change the template and use Extract to override the suggestion. Models without identifiers remain available manually. If no model qualifies, identification is canceled or its budget expires, manual selection remains available. Invalid or timed-out candidate expressions are skipped and counted visibly. Scanned PDFs still need a text layer; OCR is not implemented.
+
+PDF text is cached for the selected file separately for each configured text strategy. Templates using the same strategy share that text, including the selected model's full extraction and subsequent manual overrides. A different strategy requires its own text reconstruction. File bytes are reread and hashed before manual extraction; changed bytes invalidate the previous source cache. Only the current source is retained in memory, and cancellation, source replacement or a newer manual template selection prevents late results from replacing the current screen state.
+
+Identification runs off the UI thread with cancellation, a ten-second overall budget and the existing 200 ms regex timeout. Full extraction retains its own processing budget and the existing 32 MB, 200-page, two-million-character and 5,000-item limits. Original source bytes/hash, template version, text strategy, source pages and field evidence remain preserved when the reviewed proposal is saved.
+
+Public verification uses synthetic PDFs, actual PdfPig and SQLite, extraction-call counts, pathological expressions and headless file-drop events. It covers first-match priority, company-only false candidates, manual overrides, source changes, cancellation, partial extraction and zero saves before confirmation. Native operating-system drag-and-drop interoperability requires separate platform verification.

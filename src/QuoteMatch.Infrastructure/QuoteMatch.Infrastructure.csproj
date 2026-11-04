@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" />
+    <PackageReference Include="Microsoft.Data.SqlClient" />
+    <PackageReference Include="PdfPig" />
+    <PackageReference Include="ExcelDataReader" />
+    <PackageReference Include="ExcelNumberFormat" />
+    <PackageReference Include="Velopack" />
+    <AssemblyMetadata Include="UpdateRepositoryUrl" Value="$(RepositoryUrl)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+    <ProjectReference Include="../QuoteMatch.Application/QuoteMatch.Application.csproj" />
+  </ItemGroup>
+</Project>
+
+

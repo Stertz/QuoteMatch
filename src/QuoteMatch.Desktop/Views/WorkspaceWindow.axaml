@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="using:QuoteMatch.Desktop.ViewModels" xmlns:views="using:QuoteMatch.Desktop.Views" x:Class="QuoteMatch.Desktop.Views.WorkspaceWindow" x:DataType="vm:WorkspaceViewModel" Title="QuoteMatch" Width="1360" Height="900" MinWidth="1100" MinHeight="740">
+  <Grid RowDefinitions="Auto,*,Auto">
+    <Border Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,0,0,1" Padding="24,10">
+      <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="26">
+        <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+          <Border Background="{DynamicResource PrimaryBrush}" CornerRadius="7" Width="28" Height="28">
+            <TextBlock Text="Q" FontSize="19" FontWeight="Bold" Foreground="{DynamicResource OnPrimaryBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+          </Border>
+          <TextBlock Text="QuoteMatch" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" />
+        </StackPanel>
+        <ListBox Name="WorkspaceNavigation" Grid.Column="1" SelectedIndex="{Binding PageIndex}" Background="Transparent" IsEnabled="{Binding CanNavigate}">
+          <ListBox.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Horizontal" Spacing="6" />
+            </ItemsPanelTemplate>
+          </ListBox.ItemsPanel>
+          <ListBoxItem Padding="12,9" MinHeight="36" Content="{Binding Strings[NavHome]}" />
+          <ListBoxItem Padding="12,9" MinHeight="36" Content="{Binding Strings[NavQuotations]}" />
+          <ListBoxItem Padding="12,9" MinHeight="36" Content="{Binding Strings[TemplatesTab]}" />
+          <ListBoxItem Padding="12,9" MinHeight="36" Content="{Binding Strings[NavSettings]}" />
+        </ListBox>
+        <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+          <TextBlock Text="{Binding Strings[DevelopedBy]}" Classes="muted" FontSize="10" VerticalAlignment="Center" />
+          <Image Name="DeveloperLogo" Source="{DynamicResource DeveloperLogo}" Width="160" Height="50" Stretch="Uniform" AutomationProperties.Name="Odemu" />
+        </StackPanel>
+      </Grid>
+    </Border>
+    <Grid Grid.Row="1" Margin="32,26" IsEnabled="{Binding IsInteractionEnabled}">
+      <ScrollViewer IsVisible="{Binding IsHome}">
+        <StackPanel MaxWidth="1050" HorizontalAlignment="Stretch" Spacing="24">
+            <Border Name="HomeQuotationActions">
+              <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                <TextBlock Text="{Binding Strings[RecentQuotations]}" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8">
+                  <Button Name="HomeNewQuotation" Classes="primary" Content="{Binding Strings[NewQuotation]}" Command="{Binding NewQuotationCommand}" Margin="0,0,8,0" />
+                  <Button Content="{Binding Strings[OpenQuotation]}" IsEnabled="{Binding CanOpenQuotation}" Command="{Binding OpenQuotationCommand}" />
+                </StackPanel>
+              </Grid>
+            </Border>
+          <TextBlock Name="HomeEmptyNotice" IsVisible="{Binding HasNoRecentQuotations}" Text="{Binding Strings[NoQuotationsHelp]}" Classes="muted" TextWrapping="Wrap" />
+          <ListBox Name="RecentQuotationList" Classes="roundedList" ItemsSource="{Binding RecentQuotations}" SelectedItem="{Binding SelectedQuotation}" DoubleTapped="OpenSelectedQuotation">
+            <ListBox.ItemTemplate>
+              <DataTemplate x:DataType="vm:QuotationListRow">
+                <Grid ColumnDefinitions="*,Auto" Margin="16,12">
+                  <StackPanel Spacing="5">
+                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
+                    <TextBlock Text="{Binding Detail}" Classes="muted" FontSize="12" />
+                  </StackPanel>
+                  <TextBlock Grid.Column="1" Text="{Binding StateLabel}" VerticalAlignment="Center" />
+                </Grid>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+        </StackPanel>
+      </ScrollViewer>
+      <Grid IsVisible="{Binding IsQuotationList}" RowDefinitions="Auto,Auto,*" RowSpacing="18">
+        <Grid ColumnDefinitions="*,Auto">
+          <StackPanel Spacing="7">
+            <TextBlock Text="{Binding WorkspaceHeading}" FontSize="28" FontWeight="SemiBold" />
+          </StackPanel>
+          <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8">
+            <Button Classes="primary" Content="{Binding Strings[NewQuotation]}" Command="{Binding NewQuotationCommand}" VerticalAlignment="Center" />
+          </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="12">
+          <TextBox Name="QuotationSearch" Text="{Binding SearchText}" PlaceholderText="{Binding Strings[SearchQuotations]}" />
+          <Button Grid.Column="1" Content="{Binding Strings[OpenQuotation]}" IsEnabled="{Binding CanOpenQuotation}" Command="{Binding OpenQuotationCommand}" />
+        </Grid>
+        <Border Grid.Row="2" Classes="card" Padding="0">
+          <Grid>
+            <TextBlock IsVisible="{Binding HasNoQuotations}" Text="{Binding QuotationEmptyText}" TextWrapping="Wrap" Margin="24" Classes="muted" />
+            <ListBox Name="QuotationList" Classes="roundedList" ItemsSource="{Binding Quotations}" SelectedItem="{Binding SelectedQuotation}" DoubleTapped="OpenSelectedQuotation">
+              <ListBox.ItemTemplate>
+                <DataTemplate x:DataType="vm:QuotationListRow">
+                  <Grid ColumnDefinitions="*,180,180" Margin="16,14">
+                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                    <TextBlock Grid.Column="1" Text="{Binding StateLabel}" />
+                    <TextBlock Grid.Column="2" Text="{Binding Detail}" Classes="muted" TextWrapping="Wrap" FontSize="12" />
+                  </Grid>
+                </DataTemplate>
+              </ListBox.ItemTemplate>
+            </ListBox>
+          </Grid>
+        </Border>
+      </Grid>
+      <Grid IsVisible="{Binding IsQuotationOpen}" RowDefinitions="Auto,Auto,*" RowSpacing="10">
+        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="16" IsEnabled="{Binding CanNavigate}">
+          <Button Content="←" Command="{Binding BackToQuotationsCommand}" ToolTip.Tip="{Binding Strings[BackToQuotations]}" AutomationProperties.Name="{Binding Strings[BackToQuotations]}" Width="44" Padding="8" VerticalAlignment="Center" />
+          <StackPanel Grid.Column="1" Spacing="6">
+            <TextBlock Text="{Binding QuotationHeading}" ToolTip.Tip="{Binding QuotationHeading}" TextTrimming="CharacterEllipsis" FontSize="24" FontWeight="SemiBold" />
+            <TextBlock Text="{Binding CurrentState}" Foreground="{DynamicResource AccentBrush}" />
+          </StackPanel>
+          <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" IsVisible="{Binding !IsEditingDetails}" IsEnabled="{Binding !HasConfirmation}" VerticalAlignment="Center">
+            <Button Content="{Binding Strings[EditQuotation]}" Command="{Binding EditQuotationCommand}" IsVisible="{Binding CanEditQuotation}" />
+            <Button Content="{Binding Strings[FinalizeQuotation]}" Command="{Binding RequestFinalizeCommand}" IsVisible="{Binding CanEditQuotation}" />
+            <Button Content="{Binding Strings[ReopenQuotation]}" Command="{Binding ReopenQuotationCommand}" IsVisible="{Binding IsFinalized}" />
+            <Button Content="{Binding Strings[DeleteQuotation]}" Command="{Binding RequestDeleteCommand}" />
+          </StackPanel>
+        </Grid>
+        <Border Grid.Row="1" Classes="card" IsVisible="{Binding IsEditingDetails}" MaxHeight="480">
+          <ScrollViewer>
+          <StackPanel Spacing="10" MaxWidth="800" HorizontalAlignment="Left">
+            <TextBlock Text="{Binding Strings[QuotationName]}" />
+            <TextBox Name="QuotationNameEditor" Text="{Binding QuotationName}" MaxLength="160" MinWidth="500" PlaceholderText="{Binding Strings[QuotationNameExample]}" />
+            <TextBlock Text="{Binding Strings[QuotationNotes]}" />
+            <TextBox Text="{Binding QuotationNotes}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="60" MaxLength="4000" />
+            <StackPanel Orientation="Horizontal" Spacing="10">
+              <Button Classes="primary" Content="{Binding Strings[SaveQuotation]}" Command="{Binding SaveQuotationCommand}" IsEnabled="{Binding CanSaveQuotation}" />
+              <Button Content="{Binding Strings[CancelEdit]}" Command="{Binding CancelEditCommand}" />
+            </StackPanel>
+          </StackPanel>
+          </ScrollViewer>
+        </Border>
+        <Border Grid.Row="1" Classes="card" IsVisible="{Binding HasConfirmation}" Background="{DynamicResource WarningSurfaceBrush}">
+          <StackPanel Spacing="10">
+            <TextBlock Text="{Binding ConfirmationTitle}" FontWeight="SemiBold" FontSize="18" />
+            <TextBlock Text="{Binding ConfirmationText}" TextWrapping="Wrap" />
+            <StackPanel Orientation="Horizontal" Spacing="10">
+              <Button Name="ConfirmQuotationAction" Classes="primary" Content="{Binding Strings[ConfirmAction]}" Command="{Binding ConfirmActionCommand}" />
+              <Button Content="{Binding Strings[CancelEdit]}" Command="{Binding CancelConfirmationCommand}" />
+            </StackPanel>
+          </StackPanel>
+        </Border>
+        <TabControl Name="QuotationTabs" Grid.Row="2" IsVisible="{Binding !IsEditingDetails}" IsEnabled="{Binding !HasConfirmation}" SelectedIndex="{Binding QuotationTabIndex}" SelectionChanged="QuotationTabChanged">
+          <TabItem Header="{Binding Strings[SupplierProposals]}">
+            <Grid RowDefinitions="Auto,*" RowSpacing="10" Margin="0,12,0,0">
+              <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                <TextBlock Text="{Binding QuotationNotes}" Classes="muted" TextWrapping="Wrap" VerticalAlignment="Center" />
+                <Button Grid.Column="1" Name="ImportIntoQuotation" Classes="primary" Content="{Binding Strings[ImportProposal]}" Click="ImportProposal" IsVisible="{Binding CanImport}" VerticalAlignment="Center" />
+              </Grid>
+            <Border Grid.Row="1" Classes="card" Padding="0">
+              <Grid RowDefinitions="Auto,*,Auto">
+                <TextBlock IsVisible="{Binding IsFinalized}" Text="{Binding Strings[FinalizedReadOnlyHelp]}" TextWrapping="Wrap" Margin="16" Foreground="{DynamicResource AccentBrush}" />
+                <Grid Grid.Row="1">
+                  <TextBlock IsVisible="{Binding HasNoProposals}" Text="{Binding Strings[NoProposalsHelp]}" Margin="24" Classes="muted" TextWrapping="Wrap" />
+                  <ListBox Name="QuotationProposalList" Classes="roundedList" ItemsSource="{Binding Proposals}" SelectedItem="{Binding SelectedProposal}" DoubleTapped="OpenSelectedProposal">
+                    <ListBox.ItemTemplate>
+                      <DataTemplate x:DataType="vm:ProposalListRow">
+                        <Border BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,0,0,1" Padding="18,16">
+ <Grid ColumnDefinitions="48,*,130,210" ColumnSpacing="16">
+  <Border CornerRadius="10" Width="42" Height="42" Background="{DynamicResource SelectionBrush}" VerticalAlignment="Center"><TextBlock Text="{Binding Marker}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="23" FontWeight="SemiBold" Foreground="{DynamicResource AccentBrush}" /></Border>
+  <StackPanel Grid.Column="1" Spacing="5"><TextBlock Text="{Binding Supplier}" FontSize="17" FontWeight="SemiBold" /><TextBlock Text="{Binding Summary.FileName}" Classes="muted" FontSize="12" /><TextBlock Text="{Binding Quantities}" Classes="muted" FontSize="12" TextTrimming="CharacterEllipsis" /></StackPanel>
+  <StackPanel Grid.Column="2" Spacing="4" VerticalAlignment="Center"><TextBlock Text="{Binding ItemCount}" FontSize="23" FontWeight="SemiBold" /><TextBlock Text="{Binding Detail}" FontSize="11" Classes="muted" /></StackPanel>
+  <StackPanel Grid.Column="3" Spacing="5" VerticalAlignment="Center" HorizontalAlignment="Right"><TextBlock Text="{Binding Total}" FontSize="25" FontWeight="SemiBold" Foreground="{DynamicResource PrimaryBrush}" /><TextBlock Text="{Binding Summary.TemplateName}" FontSize="11" Classes="muted" TextTrimming="CharacterEllipsis" /></StackPanel>
+ </Grid>
+</Border>
+                      </DataTemplate>
+                    </ListBox.ItemTemplate>
+                  </ListBox>
+                </Grid>
+                <Button Grid.Row="2" Content="{Binding Strings[OpenProposal]}" IsEnabled="{Binding CanOpenProposal}" Click="OpenProposal" Margin="16" HorizontalAlignment="Right" />
+              </Grid>
+            </Border>
+            </Grid>
+          </TabItem>
+          <TabItem Header="{Binding Strings[AnalysisTab]}">
+            <views:QuotationAnalysisView DataContext="{Binding Analysis}" Margin="0,12,0,0" />
+          </TabItem>
+          <TabItem Header="{Binding Strings[PurchaseTab]}">
+            <views:PurchasePreparationView DataContext="{Binding Purchase}" Margin="0,12,0,0" />
+          </TabItem>
+        </TabControl>
+      </Grid>
+      <Grid IsVisible="{Binding IsOrderTools}" RowDefinitions="Auto,*" RowSpacing="8">
+        <Button Content="{Binding Strings[SharedCheckingWorkspace]}" Command="{Binding CloseOrderToolsCommand}" />
+        <views:PurchaseOrdersView Grid.Row="1" DataContext="{Binding Orders}" />
+      </Grid>
+      <Grid IsVisible="{Binding IsTemplates}">
+        <views:TemplatesView DataContext="{Binding Templates}" />
+      </Grid>
+      <Grid IsVisible="{Binding IsSettings}" RowDefinitions="Auto,*" RowSpacing="16">
+        <TextBlock Text="{Binding Strings[NavSettings]}" FontSize="28" FontWeight="SemiBold" />
+        <TabControl Grid.Row="1">
+          <TabItem Header="{Binding Strings[Appearance]}">
+            <StackPanel MaxWidth="650" HorizontalAlignment="Left" Spacing="16" Margin="0,20">
+              <TextBlock Text="{Binding Strings[Language]}" />
+              <ComboBox Width="250" SelectedIndex="{Binding Appearance.SelectedLanguageIndex}">
+                <ComboBoxItem Content="{Binding Strings[PortugueseLanguage]}" />
+                <ComboBoxItem Content="{Binding Strings[EnglishLanguage]}" />
+              </ComboBox>
+              <TextBlock Text="{Binding Strings[Theme]}" />
+              <ComboBox Width="250" SelectedIndex="{Binding Appearance.SelectedAppearanceIndex}">
+                <ComboBoxItem Content="{Binding Strings[SystemTheme]}" />
+                <ComboBoxItem Content="{Binding Strings[LightTheme]}" />
+                <ComboBoxItem Content="{Binding Strings[DarkTheme]}" />
+              </ComboBox>
+              <TextBlock IsVisible="{Binding Appearance.HasPreferenceError}" Text="{Binding Strings[PreferenceError]}" Foreground="{DynamicResource WarningBrush}" TextWrapping="Wrap" />
+            </StackPanel>
+          </TabItem>
+          <TabItem Header="{Binding Strings[DatabaseConnection]}">
+            <views:ConnectionSettingsView DataContext="{Binding Settings}" />
+          </TabItem>
+          <TabItem Header="{Binding Strings[QuerySettings]}">
+            <views:QuerySettingsView DataContext="{Binding Settings}" />
+          </TabItem>
+        </TabControl>
+      </Grid>
+    </Grid>
+    <Border Grid.Row="2" BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,1,0,0" Padding="24,4">
+      <Grid ColumnDefinitions="*,Auto" ColumnSpacing="20">
+        <StackPanel Spacing="4" VerticalAlignment="Center">
+          <ProgressBar IsVisible="{Binding IsBusy}" IsIndeterminate="True" Height="3" />
+          <TextBlock Text="{Binding Status}" TextWrapping="Wrap" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+          <TextBlock Name="ApplicationUpdateNotice" Text="{Binding Updates.StateLabel}" IsVisible="{Binding Updates.ShowNotice}" FontSize="11" VerticalAlignment="Center" />
+          <Button Name="ApplicationVersionButton" Content="{Binding Updates.VersionLabel}" Click="OpenApplicationUpdates" MinHeight="24" Height="24" Padding="8,0" FontSize="11" ToolTip.Tip="{Binding Strings[ApplicationUpdates]}" AutomationProperties.Name="{Binding Strings[ApplicationUpdates]}" />
+        </StackPanel>
+      </Grid>
+    </Border>
+  </Grid>
+</Window>

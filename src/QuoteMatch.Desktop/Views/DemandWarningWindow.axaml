@@ -1,0 +1,13 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="using:QuoteMatch.Desktop.ViewModels"
+        x:Class="QuoteMatch.Desktop.Views.DemandWarningWindow" x:DataType="vm:DemandWarningViewModel" Title="{Binding Strings[DesiredQuantity]}"
+        Width="640" SizeToContent="Height" CanResize="False" WindowStartupLocation="CenterOwner">
+  <StackPanel Margin="24" Spacing="18">
+    <TextBlock Text="{Binding Message}" TextWrapping="Wrap" />
+    <WrapPanel>
+      <Button Name="ReviewMissingDemand" Content="{Binding Strings[ReviewQuantities]}" Click="ReviewQuantities" IsEnabled="{Binding CanReview}" Margin="0,0,8,8" />
+      <Button Content="{Binding Strings[ReviewReference]}" Click="ReviewReference" IsEnabled="{Binding CanReview}" Margin="0,0,8,8" />
+      <Button Name="ContinueWithoutDemand" Content="{Binding Strings[ContinueWithoutDemand]}" Click="ContinueReview" Margin="0,0,8,8" />
+      <Button Name="CancelMissingDemand" Content="{Binding Strings[CancelEdit]}" Click="CancelReview" Margin="0,0,0,8" />
+    </WrapPanel>
+  </StackPanel>
+</Window>

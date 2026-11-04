@@ -1,0 +1,76 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:QuoteMatch.Desktop.ViewModels" xmlns:c="using:QuoteMatch.Desktop.Controls" xmlns:views="using:QuoteMatch.Desktop.Views"
+        x:Class="QuoteMatch.Desktop.Views.ProductReviewWindow" x:DataType="vm:ProductReviewViewModel"
+        Title="{Binding Strings[ProductReviewTitle]}" Width="1280" Height="780" MinWidth="1000" MinHeight="520" WindowStartupLocation="CenterOwner">
+  <Window.Styles><Style Selector="TabItem"><Setter Property="FontSize" Value="15" /></Style></Window.Styles>
+  <Grid Margin="20" RowDefinitions="Auto,Auto,*,Auto" RowSpacing="12">
+    <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8" IsEnabled="{Binding !IsBusy}">
+      <TextBlock Text="{Binding Summary}" FontWeight="SemiBold" FontSize="18" VerticalAlignment="Center" />
+      <Button Grid.Column="1" Content="{Binding Strings[BatchSelectAll]}" Command="{Binding SelectAllCommand}" />
+      <Button Grid.Column="2" Content="{Binding Strings[BatchClearSelection]}" Command="{Binding ClearSelectionCommand}" />
+    </Grid>
+    <StackPanel Grid.Row="1" Spacing="8" IsEnabled="{Binding !IsBusy}" IsVisible="{Binding IsItemsTab}">
+      <StackPanel Orientation="Horizontal" Spacing="18"><CheckBox Name="OnlyPendingProducts" Content="{Binding Strings[OnlyPendingProducts]}" IsChecked="{Binding OnlyPending}" /><CheckBox Name="ShowDesiredQuantity" Content="{Binding Strings[ShowDesiredQuantity]}" IsChecked="{Binding ShowDesiredQuantity}" /></StackPanel>
+      <WrapPanel IsVisible="{Binding ShowDesiredQuantity}" IsEnabled="{Binding CanEdit}">
+        <ComboBox Name="DemandDocumentSelector" ItemsSource="{Binding Documents}" SelectedItem="{Binding SelectedDocument}" Width="320" Margin="0,0,8,8"><ComboBox.ItemTemplate><DataTemplate x:DataType="vm:DemandDocumentChoice"><TextBlock Text="{Binding Label}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Label}" /></DataTemplate></ComboBox.ItemTemplate></ComboBox>
+        <Button Content="{Binding Strings[UseDocumentQuantities]}" Command="{Binding UseDocumentQuantitiesCommand}" Margin="0,0,18,8" />
+        <ComboBox Name="DemandOrderSelector" ItemsSource="{Binding OrderInputs.Orders}" SelectedItem="{Binding SelectedDemandOrder}" Width="280" IsVisible="{Binding HasReferenceOrders}" Margin="0,0,8,8"><ComboBox.ItemTemplate><DataTemplate x:DataType="vm:LinkedOrderRow"><TextBlock Text="{Binding Label}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Label}" /></DataTemplate></ComboBox.ItemTemplate></ComboBox>
+        <Button Content="{Binding Strings[UseOrderQuantities]}" Command="{Binding UseOrderQuantitiesCommand}" IsVisible="{Binding HasReferenceOrders}" Margin="0,0,0,8" />
+      </WrapPanel>
+    </StackPanel>
+    <TabControl Name="ProductReviewTabs" Grid.Row="2" SelectedIndex="{Binding SelectedTabIndex}">
+      <TabItem Header="{Binding Strings[ReviewItems]}">
+    <ScrollViewer Name="ReviewHorizontalScroll" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Margin="0,10,0,0">
+      <Grid Width="{Binding #ReviewHorizontalScroll.Viewport.Width}" MinWidth="{Binding GridMinimumWidth}" RowDefinitions="Auto,*" IsEnabled="{Binding CanEditRows}">
+        <Border Background="{DynamicResource RaisedBrush}" Padding="8">
+          <Grid ColumnDefinitions="30,205,215,115,115,130,*,Auto" ColumnSpacing="8">
+            <TextBlock Grid.Column="1" Text="{Binding Strings[BatchSourceProduct]}" Classes="columnHeader" />
+            <TextBlock Grid.Column="2" Text="{Binding Strings[BatchErpProduct]}" Classes="columnHeader" />
+            <TextBlock Grid.Column="3" Text="{Binding Strings[BatchSourceQuantity]}" Classes="columnHeader" />
+            <c:HelpLabel Name="BatchFactorHeader" Grid.Column="4" Label="{Binding Strings[BatchConversionFactor]}" Help="{Binding Strings[BatchConversionHelp]}" FontSize="10" />
+            <TextBlock Name="BatchQuantityHeader" Grid.Column="5" Text="{Binding Strings[BatchSystemQuantity]}" Classes="columnHeader" />
+            <c:HelpLabel Grid.Column="6" Label="{Binding Strings[BatchSystemPrice]}" Help="{Binding Strings[BatchPriceHelp]}" FontSize="10" />
+            <TextBlock Name="DesiredQuantityHeader" Grid.Column="7" Text="{Binding Strings[DesiredQuantity]}" Classes="columnHeader" Width="140" IsVisible="{Binding ShowDesiredQuantity}" />
+          </Grid>
+        </Border>
+        <ListBox Name="ProductReviewRows" Grid.Row="1" ItemsSource="{Binding VisibleRows}" Classes="denseList" Padding="0" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+          <ListBox.ItemTemplate><DataTemplate x:DataType="vm:ProductReviewRow">
+            <Grid ColumnDefinitions="30,205,215,115,115,130,*,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="8" RowSpacing="5" Margin="8,10">
+              <CheckBox Name="IncludeProductReview" IsChecked="{Binding IsSelected}" AutomationProperties.Name="{Binding OriginalProduct}" VerticalAlignment="Center" />
+              <StackPanel Grid.Column="1" Spacing="4" VerticalAlignment="Top">
+                <TextBlock Text="{Binding OriginalProduct}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding OriginalProduct}" FontWeight="SemiBold" />
+                <TextBlock Text="{Binding Variant}" IsVisible="{Binding HasVariant}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Variant}" FontSize="11" />
+                <TextBlock Text="{Binding Source}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Source}" Classes="muted" FontSize="11" />
+              </StackPanel>
+              <Grid Grid.Column="2" ColumnDefinitions="*,Auto" ColumnSpacing="5" VerticalAlignment="Top">
+                <ComboBox Name="ReviewProductSelector" ItemsSource="{Binding Candidates}" SelectedItem="{Binding SelectedCandidate}" Height="46" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" PlaceholderText="{Binding Strings[IdentificationRowAmbiguous]}" AutomationProperties.Name="{Binding Strings[BatchErpProduct]}">
+                  <ComboBox.ItemTemplate><DataTemplate x:DataType="vm:ErpCandidateRow"><StackPanel><TextBlock Text="{Binding Code}" FontWeight="SemiBold" /><TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Name}" FontSize="11" /></StackPanel></DataTemplate></ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button Grid.Column="1" Content="…" Click="SearchProduct" ToolTip.Tip="{Binding Strings[BrowseProducts]}" AutomationProperties.Name="{Binding Strings[BrowseProducts]}" Padding="6" />
+              </Grid>
+              <StackPanel Grid.Column="3" Spacing="4" VerticalAlignment="Top"><TextBlock Text="{Binding OriginalQuantity}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding OriginalQuantity}" /><TextBlock Text="{Binding OriginalPrice}" FontSize="11" Classes="muted" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding OriginalPrice}" /></StackPanel>
+              <NumericUpDown Name="ReviewConversionFactor" Grid.Column="4" Value="{Binding ConversionFactor}" NumberFormat="{Binding Strings.Culture.NumberFormat}" Minimum="0" FormatString="0.############################" VerticalAlignment="Top" AutomationProperties.Name="{Binding Strings[BatchConversionFactor]}" />
+              <StackPanel Grid.Column="5" Spacing="2" VerticalAlignment="Top"><NumericUpDown Name="ReviewSystemQuantity" Value="{Binding SystemQuantity}" NumberFormat="{Binding Strings.Culture.NumberFormat}" Minimum="0" FormatString="0.############################" AutomationProperties.Name="{Binding Strings[BatchSystemQuantity]}" /><TextBlock Text="{Binding BaseUnit}" FontSize="11" Classes="muted" /></StackPanel>
+              <StackPanel Grid.Column="6" Spacing="4" VerticalAlignment="Top"><TextBlock Text="{Binding SystemPrice}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding SystemPrice}" /><TextBlock Text="{Binding LastPurchase}" FontSize="11" TextWrapping="Wrap" Classes="muted" /></StackPanel>
+              <StackPanel Grid.Column="7" Width="140" Spacing="2" IsVisible="{Binding ShowDesiredQuantity}" VerticalAlignment="Top"><NumericUpDown Name="ReviewDesiredQuantity" Value="{Binding RequestedQuantity}" NumberFormat="{Binding Strings.Culture.NumberFormat}" Minimum="0" FormatString="0.############################" AutomationProperties.Name="{Binding Strings[DesiredQuantity]}" /><TextBlock Text="{Binding DesiredUnit}" FontSize="11" Classes="muted" /><TextBlock Text="{Binding DemandSourceLabel}" FontSize="11" Classes="muted" /></StackPanel>
+              <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="7" Text="{Binding Validation}" IsVisible="{Binding HasValidation}" Foreground="{DynamicResource WarningBrush}" FontSize="12" />
+            </Grid>
+          </DataTemplate></ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Grid.Row="1" Text="{Binding Strings[NoPendingProducts]}" IsVisible="{Binding !HasVisibleRows}" Margin="16" Classes="muted" VerticalAlignment="Top" />
+      </Grid>
+    </ScrollViewer>
+      </TabItem>
+      <TabItem Header="{Binding Strings[ReviewReferences]}" IsVisible="{Binding HasReferenceTools}"><ScrollViewer IsEnabled="{Binding CanEditRows}"><views:QuotationOrderInputsView DataContext="{Binding OrderInputs}" Margin="0,12,12,0" /></ScrollViewer></TabItem>
+      <TabItem Header="{Binding Strings[AdvancedOrderTools]}" IsVisible="{Binding HasHistoryTools}"><views:PurchaseOrdersView DataContext="{Binding OrderHistory}" Margin="0,12,0,0" /></TabItem>
+    </TabControl>
+    <StackPanel Grid.Row="3" Spacing="8">
+      <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="10" IsEnabled="{Binding !IsBusy}">
+        <CheckBox Name="RememberBatchMappings" Content="{Binding Strings[BatchRememberMappings]}" IsChecked="{Binding RememberMappings}" IsVisible="{Binding CanRememberMappings}" />
+        <Button Name="ConfirmProductReview" Grid.Column="1" Content="{Binding Strings[SaveReview]}" Click="ConfirmSelected" Classes="primary" IsEnabled="{Binding CanSave}" />
+        <Button Grid.Column="2" Content="{Binding Strings[CloseWindow]}" Click="CloseReview" />
+      </Grid>
+      <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8"><StackPanel Spacing="4"><ProgressBar IsVisible="{Binding IsBusy}" Height="3" IsIndeterminate="True" /><TextBlock Text="{Binding Status}" TextWrapping="Wrap" /></StackPanel><Button Grid.Column="1" Content="{Binding Strings[CancelImport]}" Command="{Binding CancelCommand}" IsVisible="{Binding IsBusy}" /></Grid>
+    </StackPanel>
+  </Grid>
+</Window>

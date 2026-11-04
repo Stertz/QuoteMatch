@@ -1,0 +1,129 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="using:QuoteMatch.Desktop.ViewModels" xmlns:c="using:QuoteMatch.Desktop.Controls" x:Class="QuoteMatch.Desktop.Views.PurchasePreparationView" x:DataType="vm:PurchasePreparationViewModel">
+  <Grid RowDefinitions="Auto,Auto,Auto,*,Auto" RowSpacing="10">
+    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+      <StackPanel Spacing="4">
+        <c:HelpLabel Label="{Binding Summary}" Help="{Binding PreparationHelp}" FontWeight="SemiBold" />
+        <Button Name="SynchronizePurchase" Content="{Binding Strings[SynchronizeWithErp]}" Click="OpenSynchronization" IsEnabled="{Binding CanSynchronize}" ToolTip.Tip="{Binding Strings[SynchronizeWithErpHelp]}" ToolTip.ShowOnDisabled="True" />
+      </StackPanel>
+      <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+        <TextBlock Text="{Binding Strings[PurchaseItemSubtotal]}" FontSize="11" Classes="muted" />
+        <TextBlock Name="PurchaseSubtotal" Text="{Binding ItemSubtotal}" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource PrimaryBrush}" />
+      </StackPanel>
+    </Grid>
+    <StackPanel Grid.Row="1" Spacing="6">
+      <Border IsVisible="{Binding IsOutdated}" Background="{DynamicResource WarningSurfaceBrush}" Padding="10" CornerRadius="6">
+        <TextBlock Text="{Binding Strings[PurchaseOutdatedHelp]}" TextWrapping="Wrap" FontSize="12" />
+      </Border>
+    </StackPanel>
+    <Grid Grid.Row="2" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8" IsEnabled="{Binding !IsBusy}">
+      <TextBox Text="{Binding SearchText}" PlaceholderText="{Binding Strings[AnalysisSearch]}" IsVisible="{Binding !IsShowingSummary}" />
+      <Button Grid.Column="1" Content="{Binding Strings[PurchaseUseSuggested]}" Command="{Binding UseSuggestedCommand}" IsEnabled="{Binding CanSuggest}" ToolTip.Tip="{Binding Strings[PurchaseSuggestedHelp]}" />
+      <Button Grid.Column="2" Content="{Binding Strings[PurchaseShowSummary]}" Command="{Binding ShowSummaryCommand}" IsVisible="{Binding !IsShowingSummary}" />
+      <Button Grid.Column="2" Name="ShowPurchaseOffers" Content="{Binding Strings[PurchaseShowOffers]}" Command="{Binding ShowOffersCommand}" IsVisible="{Binding IsShowingSummary}" />
+    </Grid>
+    <Grid Grid.Row="3" ColumnDefinitions="*,*" ColumnSpacing="16" IsEnabled="{Binding !IsBusy}">
+      <ListBox Name="PurchaseGroupList" IsVisible="{Binding !IsShowingSummary}" ItemsSource="{Binding Groups}" SelectedItem="{Binding SelectedGroup}">
+        <ListBox.ItemTemplate>
+          <DataTemplate x:DataType="vm:PurchaseGroupRow">
+            <StackPanel Spacing="5" Margin="12,10">
+              <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextWrapping="Wrap" />
+              <TextBlock Text="{Binding Choice}" Foreground="{DynamicResource AccentBrush}" />
+              <TextBlock Text="{Binding Demand}" Classes="muted" FontSize="11" />
+            </StackPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+      <Grid Grid.Column="1" IsVisible="{Binding !IsShowingSummary}">
+        <ScrollViewer IsVisible="{Binding !IsShowingSummary}">
+          <StackPanel Spacing="10" Margin="0,0,10,0" IsVisible="{Binding HasSelection}">
+            <TextBlock Text="{Binding SelectedGroup.Name}" FontSize="18" FontWeight="SemiBold" TextWrapping="Wrap" />
+            <c:HelpLabel Label="{Binding Strings[PurchaseSelectLabel]}" Help="{Binding Strings[PurchaseSelectHelp]}" />
+            <WrapPanel>
+              <Button Name="ChoosePurchaseOffer" Content="{Binding ChooseLabel}" Command="{Binding ChooseOfferCommand}" IsEnabled="{Binding CanChoose}" ToolTip.Tip="{Binding ChooseUnavailableReason}" ToolTip.ShowOnDisabled="True" Classes="primary" Margin="0,0,8,6" />
+              <Button Content="{Binding Strings[PurchaseRemoveChoice]}" Command="{Binding RemoveChoiceCommand}" IsEnabled="{Binding CanRemove}" Margin="0,0,0,6" />
+            </WrapPanel>
+            <TextBlock Text="{Binding ChooseUnavailableReason}" IsVisible="{Binding !CanChoose}" FontSize="11" TextWrapping="Wrap" />
+            <ListBox Name="PurchaseOfferList" ItemsSource="{Binding Offers}" SelectedItem="{Binding SelectedOffer}" AutoScrollToSelectedItem="False">
+              <ListBox.ItemTemplate>
+                <DataTemplate x:DataType="vm:PurchaseOfferRow">
+                  <StackPanel Spacing="5" Margin="10">
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                      <TextBlock Text="{Binding Supplier}" FontWeight="SemiBold" TextWrapping="Wrap" />
+                      <TextBlock Grid.Column="1" Text="{Binding Total}" FontWeight="SemiBold" />
+                    </Grid>
+                    <TextBlock Text="{Binding ChoiceLabel}" IsVisible="{Binding IsChosen}" Foreground="{DynamicResource PositiveBrush}" FontSize="11" />
+                    <TextBlock Text="{Binding Description}" FontSize="12" TextWrapping="Wrap" />
+                    <TextBlock Text="{Binding Code}" FontSize="11" Classes="muted" />
+                    <TextBlock Text="{Binding Quantity}" FontSize="12" />
+                    <TextBlock Text="{Binding Normalized}" FontSize="12" TextWrapping="Wrap" />
+                    <TextBlock Text="{Binding Detail}" Foreground="{DynamicResource AccentBrush}" FontSize="12" TextWrapping="Wrap" />
+                  </StackPanel>
+                </DataTemplate>
+              </ListBox.ItemTemplate>
+            </ListBox>
+          </StackPanel>
+        </ScrollViewer>
+      </Grid>
+        <ScrollViewer Grid.ColumnSpan="2" IsVisible="{Binding IsShowingSummary}">
+          <StackPanel Spacing="10" Margin="0,0,10,0">
+            <TextBlock Text="{Binding Strings[PurchaseSelectedSummary]}" IsVisible="{Binding HasSavedChoices}" FontWeight="SemiBold" />
+            <ItemsControl Name="SelectedSupplierSummary" ItemsSource="{Binding Suppliers}">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate x:DataType="vm:PurchaseSupplierRow">
+                  <Border Classes="card" Padding="12" Margin="0,0,0,8">
+                    <StackPanel Spacing="5">
+                      <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                        <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextWrapping="Wrap" />
+                        <TextBlock Grid.Column="1" Text="{Binding Subtotal}" FontWeight="SemiBold" Foreground="{DynamicResource PrimaryBrush}" />
+                      </Grid>
+                      <TextBlock Text="{Binding Detail}" Classes="muted" FontSize="11" />
+                      <ItemsControl ItemsSource="{Binding Lines}">
+                        <ItemsControl.ItemTemplate>
+                          <DataTemplate x:DataType="vm:PurchaseSavedLineRow">
+                            <Grid ColumnDefinitions="*,110,120,100" ColumnSpacing="10" Margin="0,4">
+                              <TextBlock Text="{Binding Name}" TextWrapping="Wrap" FontSize="12" />
+                              <TextBlock Grid.Column="1" Text="{Binding Code}" Classes="muted" FontSize="11" />
+                              <TextBlock Grid.Column="2" Text="{Binding Quantity}" Classes="muted" FontSize="11" />
+                              <TextBlock Grid.Column="3" Text="{Binding Total}" FontSize="12" TextAlignment="Right" />
+                            </Grid>
+                          </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                      </ItemsControl>
+                    </StackPanel>
+                  </Border>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <c:HelpLabel Label="{Binding Strings[SupplierPackagesTitle]}" Help="{Binding Strings[SupplierPackageChoiceHelp]}" FontWeight="SemiBold" />
+            <TextBlock Text="{Binding Strings[NoSupplierPackages]}" IsVisible="{Binding !HasPackages}" TextWrapping="Wrap" Classes="muted" />
+            <ItemsControl Name="SupplierPackageList" ItemsSource="{Binding Packages}">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate x:DataType="vm:PurchasePackageRow">
+                  <Border BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,0,0,1" Padding="0,8">
+                    <Grid ColumnDefinitions="170,130,*,Auto" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="16" RowSpacing="4">
+                        <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
+                        <TextBlock Grid.Column="1" Text="{Binding Total}" FontWeight="SemiBold" />
+                      <TextBlock Grid.Column="2" Text="{Binding Comparison}" TextWrapping="Wrap" FontSize="12" />
+                      <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding PriceCounts}" Classes="muted" FontSize="11" TextWrapping="Wrap" />
+                      <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Availability}" TextWrapping="Wrap" FontSize="11" />
+                      <TextBlock Grid.Row="2" Grid.ColumnSpan="3" Text="{Binding UnavailableReason}" IsVisible="{Binding !CanSelect}" TextWrapping="Wrap" FontSize="11" />
+                      <Button Grid.Column="3" Grid.RowSpan="2" Classes="compact" Content="{Binding $parent[UserControl].((vm:PurchasePreparationViewModel)DataContext).Strings[ChooseSupplierPackage]}"
+                              IsEnabled="{Binding CanSelect}" ToolTip.Tip="{Binding UnavailableReason}" ToolTip.ShowOnDisabled="True" Click="ChooseSupplierPackage" HorizontalAlignment="Left" />
+                    </Grid>
+                  </Border>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+          </StackPanel>
+        </ScrollViewer>
+    </Grid>
+    <Grid Grid.Row="4" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+      <StackPanel Spacing="4">
+        <ProgressBar IsVisible="{Binding IsBusy}" IsIndeterminate="True" Height="3" />
+        <TextBlock Text="{Binding Status}" TextWrapping="Wrap" FontSize="12" />
+      </StackPanel>
+      <Button Grid.Column="1" Content="{Binding Strings[PurchaseRefresh]}" Command="{Binding RefreshCommand}" IsEnabled="{Binding !IsBusy}" />
+      <Button Grid.Column="1" Content="{Binding Strings[CancelImport]}" Command="{Binding CancelCommand}" IsVisible="{Binding IsBusy}" />
+    </Grid>
+  </Grid>
+</UserControl>

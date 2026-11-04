@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:QuoteMatch.Desktop.ViewModels" x:Class="QuoteMatch.Desktop.Views.ApplicationUpdatesWindow"
+        x:DataType="vm:ApplicationUpdatesViewModel" Title="{Binding Strings[ApplicationUpdates]}"
+        Width="660" Height="540" MinWidth="540" MinHeight="420" WindowStartupLocation="CenterOwner">
+  <Grid Margin="26" RowDefinitions="Auto,Auto,*,Auto" RowSpacing="18">
+    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="16">
+      <Border Background="{DynamicResource PrimaryBrush}" CornerRadius="12" Width="54" Height="54">
+        <TextBlock Text="Q" FontSize="32" FontWeight="Bold" Foreground="{DynamicResource OnPrimaryBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+      </Border>
+      <StackPanel Grid.Column="1" Spacing="5" VerticalAlignment="Center">
+        <TextBlock Text="QuoteMatch" FontSize="24" FontWeight="SemiBold" />
+        <TextBlock Text="{Binding VersionLabel}" Classes="muted" />
+      </StackPanel>
+    </Grid>
+    <Border Grid.Row="1" Classes="card">
+      <StackPanel Spacing="10">
+        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+          <TextBlock Name="UpdateStateLabel" Text="{Binding StateLabel}" FontWeight="SemiBold" TextWrapping="Wrap" />
+          <TextBlock Grid.Column="1" Text="{Binding AvailableVersion}" Classes="muted" />
+        </Grid>
+        <ProgressBar Name="UpdateDownloadProgress" IsVisible="{Binding IsDownloading}" Minimum="0" Maximum="100" Value="{Binding Progress}" Height="5" />
+        <TextBlock Name="UpdateFeedback" Text="{Binding Status}" TextWrapping="Wrap" />
+        <TextBlock Text="{Binding Strings[ApplicationUpdateRestartHelp]}" IsVisible="{Binding IsReady}" TextWrapping="Wrap" Classes="muted" FontSize="12" />
+      </StackPanel>
+    </Border>
+    <Grid Grid.Row="2" RowDefinitions="Auto,*" RowSpacing="10">
+      <TextBlock Text="{Binding Strings[ApplicationUpdateWhatsNew]}" FontSize="16" FontWeight="SemiBold" />
+      <Border Grid.Row="1" BorderBrush="{DynamicResource LineBrush}" BorderThickness="1" CornerRadius="8" Padding="16">
+        <ScrollViewer><TextBlock Name="UpdateReleaseNotes" Text="{Binding NotesText}" TextWrapping="Wrap" /></ScrollViewer>
+      </Border>
+    </Grid>
+    <StackPanel Grid.Row="3" Orientation="Horizontal" Spacing="10" HorizontalAlignment="Right">
+      <Button Content="{Binding Strings[ApplicationUpdateCancelDownload]}" Command="{Binding CancelCommand}" IsVisible="{Binding IsBusy}" />
+      <Button Name="CheckApplicationUpdates" Content="{Binding Strings[ApplicationUpdateCheck]}" Command="{Binding CheckCommand}" />
+      <Button Name="InstallApplicationUpdate" Classes="primary" Content="{Binding Strings[ApplicationUpdateInstall]}" Command="{Binding InstallCommand}" IsVisible="{Binding IsReady}" />
+    </StackPanel>
+  </Grid>
+</Window>

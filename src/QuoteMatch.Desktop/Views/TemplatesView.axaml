@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="using:QuoteMatch.Desktop.ViewModels" xmlns:d="using:QuoteMatch.Domain.Importing" xmlns:c="using:QuoteMatch.Desktop.Controls" x:Class="QuoteMatch.Desktop.Views.TemplatesView" x:DataType="vm:ImportWorkspaceViewModel">
+  <Grid ColumnDefinitions="300,*" ColumnSpacing="16">
+    <Grid RowDefinitions="Auto,Auto,Auto,*" RowSpacing="8" IsEnabled="{Binding !IsBusy}">
+      <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+        <TextBlock Text="{Binding Strings[TemplatesTab]}" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" />
+        <Button Grid.Column="1" Classes="compact" Content="{Binding Strings[NewTemplate]}" Command="{Binding NewTemplateCommand}" />
+      </Grid>
+      <TextBox Grid.Row="1" Name="TemplateSearch" Text="{Binding TemplateSearchText}" PlaceholderText="{Binding Strings[SearchTemplates]}" />
+      <TextBlock Grid.Row="2" Text="{Binding TemplateSearchSummary}" FontSize="11" Classes="muted" />
+      <Border Grid.Row="3" Classes="card" Padding="2" ClipToBounds="True">
+        <Grid>
+          <TextBlock Text="{Binding Strings[NoMatchingTemplates]}" IsVisible="{Binding HasNoMatchingTemplates}" TextWrapping="Wrap" Margin="10" Classes="muted" />
+      <ListBox Name="TemplateList" Classes="roundedList denseList" ItemsSource="{Binding VisibleTemplates}" SelectedItem="{Binding SelectedTemplate}">
+        <ListBox.ItemTemplate>
+          <DataTemplate x:DataType="d:PdfTemplate">
+            <Grid ColumnDefinitions="*,35" Margin="8,5">
+              <StackPanel Spacing="2">
+                <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Name}" FontSize="12" />
+                <TextBlock Text="{Binding SupplierName}" Classes="muted" FontSize="11" TextTrimming="CharacterEllipsis" />
+              </StackPanel>
+              <TextBlock Grid.Column="1" Text="{Binding Version, StringFormat='v{0}'}" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Right" Classes="muted" />
+            </Grid>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+        </Grid>
+      </Border>
+    </Grid>
+    <Grid Grid.Column="1" RowDefinitions="*,Auto" RowSpacing="12">
+      <ScrollViewer IsEnabled="{Binding !IsBusy}">
+        <StackPanel Spacing="12" Margin="0,0,12,8">
+          <Border Classes="card">
+            <StackPanel Spacing="10">
+              <TextBlock Text="{Binding Strings[ImportSourceFormat]}" />
+              <ComboBox Name="TemplateFormatSelector" SelectedIndex="{Binding Editor.SourceFormatIndex}" HorizontalAlignment="Stretch">
+                <ComboBoxItem Content="{Binding Strings[FormatPdf]}" /><ComboBoxItem Content="{Binding Strings[FormatExcel]}" />
+              </ComboBox>
+              <c:HelpLabel Label="{Binding Strings[ProductCodeKind]}" Help="{Binding Strings[ProductCodeKindHelp]}" />
+              <ComboBox Name="ProductCodeKindSelector" SelectedIndex="{Binding Editor.CodeKindIndex}" HorizontalAlignment="Stretch">
+                <ComboBoxItem Content="{Binding Strings[SupplierCodeKind]}" /><ComboBoxItem Content="{Binding Strings[InternalCodeKind]}" />
+              </ComboBox>
+              <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+                <StackPanel Spacing="6">
+                  <TextBlock Text="{Binding Strings[TemplateName]}" />
+                  <TextBox Text="{Binding Editor.Name}" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Spacing="6">
+                  <TextBlock Text="{Binding Strings[ImportSupplierName]}" />
+                  <TextBox Text="{Binding Editor.SupplierName}" />
+                </StackPanel>
+              </Grid>
+              <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+                <StackPanel Spacing="6">
+                  <c:HelpLabel Label="{Binding Strings[DocumentNumbers]}" Help="{Binding Strings[DocumentNumbersHelp]}" />
+                  <ComboBox HorizontalAlignment="Stretch" SelectedIndex="{Binding Editor.CultureIndex}">
+                    <ComboBoxItem Content="{Binding Strings[NumberFormatBrazil]}" />
+                    <ComboBoxItem Content="{Binding Strings[NumberFormatUs]}" />
+                  </ComboBox>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Spacing="6">
+                  <c:HelpLabel Label="{Binding Strings[DefaultUnit]}" Help="{Binding Strings[DefaultUnitHelp]}" />
+                  <TextBox Text="{Binding Editor.DefaultUnit}" />
+                </StackPanel>
+              </Grid>
+            </StackPanel>
+          </Border>
+          <Border Classes="card">
+            <StackPanel Spacing="8">
+              <c:HelpLabel Label="{Binding Strings[TemplateSampleFile]}" Help="{Binding Strings[TemplateTestHelp]}" />
+              <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                <Button Name="InspectSpreadsheetButton" Content="{Binding Strings[ChooseTemplateSample]}" Click="ChooseSample" />
+                <TextBlock Grid.Column="1" Text="{Binding FilePath}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding FilePath}" VerticalAlignment="Center" Classes="muted" />
+              </Grid>
+            </StackPanel>
+          </Border>
+          <Border Classes="card" IsVisible="{Binding Editor.IsExcel}">
+            <StackPanel Spacing="10">
+              <c:HelpLabel Label="{Binding Strings[SpreadsheetMapping]}" Help="{Binding Strings[SpreadsheetMappingHelp]}" />
+              <Expander Header="{Binding Strings[DelimitedTextSettings]}" HorizontalAlignment="Stretch">
+                <StackPanel Spacing="8" Margin="8">
+                  <c:HelpLabel Label="{Binding Strings[DelimitedSeparator]}" Help="{Binding Strings[DelimitedTextHelp]}" />
+                  <ComboBox Name="DelimitedSeparatorSelector" SelectedIndex="{Binding Editor.SeparatorIndex}" HorizontalAlignment="Stretch">
+                    <ComboBoxItem Content="{Binding Strings[DelimitedAutomatic]}" /><ComboBoxItem Content="{Binding Strings[DelimitedSemicolon]}" /><ComboBoxItem Content="{Binding Strings[DelimitedComma]}" /><ComboBoxItem Content="{Binding Strings[DelimitedTab]}" /><ComboBoxItem Content="{Binding Strings[DelimitedPipe]}" />
+                  </ComboBox>
+                  <TextBlock Text="{Binding Strings[DelimitedEncoding]}" />
+                  <ComboBox Name="DelimitedEncodingSelector" SelectedIndex="{Binding Editor.EncodingIndex}" HorizontalAlignment="Stretch">
+                    <ComboBoxItem Content="{Binding Strings[DelimitedAutomatic]}" /><ComboBoxItem Content="{Binding Strings[DelimitedUtf8]}" /><ComboBoxItem Content="{Binding Strings[DelimitedWindows1252]}" /><ComboBoxItem Content="{Binding Strings[DelimitedUtf16Le]}" /><ComboBoxItem Content="{Binding Strings[DelimitedUtf16Be]}" />
+                  </ComboBox>
+                </StackPanel>
+              </Expander>
+              <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+                <StackPanel Spacing="6"><TextBlock Text="{Binding Strings[SpreadsheetSheet]}" /><TextBox Name="SpreadsheetSheetInput" Text="{Binding Editor.SheetName}" IsVisible="{Binding !Editor.HasWorkbookSample}" /><ComboBox ItemsSource="{Binding Editor.SheetNames}" SelectedItem="{Binding Editor.SheetName}" HorizontalAlignment="Stretch" IsVisible="{Binding Editor.HasWorkbookSample}" /></StackPanel>
+                <StackPanel Grid.Column="1" Spacing="6"><TextBlock Text="{Binding Strings[SpreadsheetHeaderRow]}" /><NumericUpDown Name="SpreadsheetHeaderRowInput" Value="{Binding Editor.HeaderRow}" Minimum="1" Maximum="10000" Increment="1" FormatString="0" /></StackPanel>
+              </Grid>
+              <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+                <StackPanel Spacing="6"><TextBlock Text="{Binding Strings[SpreadsheetFirstDataRow]}" /><NumericUpDown Name="SpreadsheetFirstRowInput" Value="{Binding Editor.FirstDataRow}" Minimum="2" Maximum="10000" Increment="1" FormatString="0" /></StackPanel>
+                <StackPanel Grid.Column="1" Spacing="6"><TextBlock Text="{Binding Strings[SpreadsheetLastDataRow]}" /><NumericUpDown Name="SpreadsheetLastRowInput" Value="{Binding Editor.LastDataRow}" Minimum="2" Maximum="10000" Increment="1" FormatString="0" /></StackPanel>
+              </Grid>
+              <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="16" RowSpacing="10">
+                <StackPanel Spacing="6"><TextBlock Text="{Binding Strings[SpreadsheetCodeColumn]}" /><TextBox Name="SpreadsheetCodeColumnInput" Text="{Binding Editor.CodeColumn}" /></StackPanel>
+                <StackPanel Grid.Column="1" Spacing="6"><TextBlock Text="{Binding Strings[SpreadsheetDescriptionColumn]}" /><TextBox Text="{Binding Editor.DescriptionColumn}" /></StackPanel>
+                <StackPanel Grid.Row="1" Spacing="6"><TextBlock Text="{Binding Strings[SpreadsheetQuantityColumn]}" /><TextBox Name="SpreadsheetQuantityColumnInput" Text="{Binding Editor.QuantityColumn}" /></StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="1" Spacing="6"><TextBlock Text="{Binding Strings[SpreadsheetUnitPriceColumn]}" /><TextBox Name="SpreadsheetPriceColumnInput" Text="{Binding Editor.UnitPriceColumn}" /></StackPanel>
+                <StackPanel Grid.Row="2" Spacing="6"><c:HelpLabel Label="{Binding Strings[SpreadsheetTotalColumn]}" Help="{Binding Strings[SpreadsheetTotalHelp]}" /><TextBox Text="{Binding Editor.TotalColumn}" /></StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="1" Spacing="6"><TextBlock Text="{Binding Strings[SpreadsheetUnitColumn]}" /><TextBox Text="{Binding Editor.UnitColumn}" /></StackPanel>
+              </Grid>
+              <Expander Header="{Binding Strings[SpreadsheetColumns]}" HorizontalAlignment="Stretch" IsExpanded="True">
+                <ScrollViewer MaxHeight="240">
+                <ItemsControl Name="SpreadsheetColumnsPreview" ItemsSource="{Binding Editor.Columns}">
+                  <ItemsControl.ItemTemplate><DataTemplate x:DataType="vm:SpreadsheetColumnPreview"><Grid ColumnDefinitions="45,*,*" ColumnSpacing="8" Margin="0,4"><TextBlock Text="{Binding Column}" FontWeight="SemiBold" /><TextBlock Grid.Column="1" Text="{Binding Header}" TextWrapping="Wrap" /><TextBlock Grid.Column="2" Text="{Binding Sample}" TextWrapping="Wrap" /></Grid></DataTemplate></ItemsControl.ItemTemplate>
+                </ItemsControl>
+                </ScrollViewer>
+              </Expander>
+            </StackPanel>
+          </Border>
+          <Border Classes="card" IsVisible="{Binding Editor.IsPdf}">
+            <StackPanel Spacing="10">
+              <TextBlock Text="{Binding Strings[TemplateCaptureTitle]}" FontWeight="SemiBold" FontSize="17" />
+              <c:HelpLabel Label="{Binding Strings[RecordStartPattern]}" Help="{Binding Strings[RecordStartHelp]}" />
+              <TextBox Text="{Binding Editor.RecordStartPattern}" FontFamily="Consolas, monospace" />
+              <c:HelpLabel Label="{Binding Strings[RecordPattern]}" Help="{Binding Strings[RecordCaptureHelp]}" />
+              <TextBox Text="{Binding Editor.RecordPattern}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="90" FontFamily="Consolas, monospace" />
+            </StackPanel>
+          </Border>
+            <Expander IsVisible="{Binding Editor.IsPdf}" Header="{Binding Strings[FinancialMapping]}" HorizontalAlignment="Stretch"><StackPanel Spacing="10" Margin="12"><c:HelpLabel Label="{Binding Strings[FinancialDocumentPattern]}" Help="{Binding Strings[FinancialCaptureHelp]}" /><TextBox Name="DocumentFinancialPatternInput" Text="{Binding Editor.DocumentFinancialPattern}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="70" FontFamily="Consolas, monospace" /><TextBlock Text="{Binding Strings[FinancialCaptureScope]}" TextWrapping="Wrap" /></StackPanel></Expander>
+            <Expander IsVisible="{Binding Editor.IsPdf}" Header="{Binding Strings[TemplateChecks]}" HorizontalAlignment="Stretch">
+            <StackPanel Spacing="10" Margin="12">
+              <c:HelpLabel Label="{Binding Strings[IdentificationPattern]}" Help="{Binding Strings[IdentificationHelp]}" />
+              <TextBox Text="{Binding Editor.IdentificationPattern}" />
+              <c:HelpLabel Label="{Binding Strings[TableEndPattern]}" Help="{Binding Strings[TableEndHelp]}" />
+              <TextBox Text="{Binding Editor.TableEndPattern}" />
+              <c:HelpLabel Label="{Binding Strings[ExpectedCountPattern]}" Help="{Binding Strings[ExpectedCountHelp]}" />
+              <TextBox Text="{Binding Editor.ExpectedCountPattern}" />
+              <c:HelpLabel Label="{Binding Strings[DocumentTotalPattern]}" Help="{Binding Strings[DocumentTotalPatternHelp]}" />
+              <TextBox Text="{Binding Editor.DocumentTotalPattern}" />
+            </StackPanel>
+          </Expander>
+          <Expander Name="AdvancedTemplateOptions" Header="{Binding Strings[TemplateAdvanced]}" HorizontalAlignment="Stretch">
+            <StackPanel Spacing="10" Margin="12">
+              <c:HelpLabel IsVisible="{Binding Editor.IsPdf}" Label="{Binding Strings[TextStrategy]}" Help="{Binding Strings[TextStrategyHelp]}" />
+              <ComboBox IsVisible="{Binding Editor.IsPdf}" SelectedIndex="{Binding Editor.StrategyIndex}" HorizontalAlignment="Stretch">
+                <ComboBoxItem Content="{Binding Strings[StrategyStream]}" />
+                <ComboBoxItem Content="{Binding Strings[StrategyOrder]}" />
+                <ComboBoxItem Content="{Binding Strings[StrategyPosition]}" />
+              </ComboBox>
+              <c:HelpLabel Label="{Binding Strings[AbsoluteTolerance]}" Help="{Binding Strings[AbsoluteToleranceHelp]}" />
+              <NumericUpDown NumberFormat="{Binding Strings.Culture.NumberFormat}" Value="{Binding Editor.AbsoluteTolerance}" Minimum="0" Increment="0.01" FormatString="0.00" />
+              <c:HelpLabel Label="{Binding Strings[RelativeTolerancePercent]}" Help="{Binding Strings[RelativeToleranceHelp]}" />
+              <NumericUpDown Name="RelativeToleranceInput" NumberFormat="{Binding Strings.Culture.NumberFormat}" Value="{Binding Editor.RelativeTolerancePercent}" Minimum="0" Maximum="10" Increment="0.1" FormatString="0.###" />
+            </StackPanel>
+          </Expander>
+        </StackPanel>
+      </ScrollViewer>
+      <Grid Grid.Row="1" RowDefinitions="Auto,Auto,Auto" RowSpacing="8">
+        <Grid ColumnDefinitions="Auto,Auto,*" ColumnSpacing="8">
+          <Button Classes="primary" Content="{Binding Strings[SaveTemplate]}" Command="{Binding SaveTemplateCommand}" IsEnabled="{Binding !IsBusy}" />
+          <Button Name="TestTemplateButton" Grid.Column="1" Content="{Binding Strings[TestTemplate]}" Click="TestSample" IsEnabled="{Binding CanTestTemplate}" />
+          <Expander Grid.Column="2" Header="{Binding Strings[TemplateMoreActions]}" HorizontalAlignment="Right" IsEnabled="{Binding !IsBusy}">
+            <StackPanel Spacing="6" Margin="8">
+              <Button Content="{Binding Strings[ValidateTemplate]}" Command="{Binding ValidateTemplateCommand}" HorizontalAlignment="Stretch" />
+              <Button Content="{Binding Strings[ImportTemplate]}" Click="ImportTemplate" HorizontalAlignment="Stretch" />
+              <Button Content="{Binding Strings[ExportTemplate]}" Click="ExportTemplate" HorizontalAlignment="Stretch" />
+            </StackPanel>
+          </Expander>
+        </Grid>
+        <TextBlock Grid.Row="1" Text="{Binding Status}" TextWrapping="Wrap" />
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="12" IsVisible="{Binding IsBusy}">
+          <ProgressBar Width="160" Height="3" IsIndeterminate="True" VerticalAlignment="Center" />
+          <Button Content="{Binding Strings[CancelImport]}" Command="{Binding CancelCommand}" />
+        </StackPanel>
+      </Grid>
+    </Grid>
+  </Grid>
+</UserControl>

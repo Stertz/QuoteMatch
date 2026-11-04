@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/QuoteMatch.Application/QuoteMatch.Application.csproj" />
+    <Project Path="src/QuoteMatch.Infrastructure/QuoteMatch.Infrastructure.csproj" />
+    <Project Path="src/QuoteMatch.Desktop/QuoteMatch.Desktop.csproj" />
+    <Project Path="src/QuoteMatch.Diagnostics/QuoteMatch.Diagnostics.csproj" />
+    <Project Path="src/QuoteMatch.Domain/QuoteMatch.Domain.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/QuoteMatch.Tests/QuoteMatch.Tests.csproj" />
+    <Project Path="tests/QuoteMatch.Desktop.Tests/QuoteMatch.Desktop.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,23 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="using:QuoteMatch.Desktop.ViewModels"
+        x:Class="QuoteMatch.Desktop.Views.PurchaseReferenceSearchWindow" x:DataType="vm:PurchaseReferenceSearchViewModel"
+        Title="{Binding Strings[OrdersFindReference]}" Width="840" Height="560" MinWidth="640" MinHeight="400" WindowStartupLocation="CenterOwner">
+  <Grid Margin="24" RowDefinitions="Auto,Auto,*,Auto" RowSpacing="14">
+    <TextBlock Text="{Binding Strings[OrdersFindReference]}" FontSize="22" FontWeight="SemiBold" />
+    <TextBox Name="PurchaseReferenceSearchText" Grid.Row="1" Text="{Binding SearchText}" PlaceholderText="{Binding Strings[OrdersReferenceSearchPlaceholder]}" />
+    <ListBox Name="PurchaseReferenceSearchResults" Grid.Row="2" ItemsSource="{Binding Results}" SelectedItem="{Binding Selected}" Classes="selectableCards">
+      <ListBox.ItemTemplate>
+        <DataTemplate x:DataType="vm:PurchaseReferenceCandidate">
+          <Border Classes="card selectableCard" Padding="12" Margin="0,0,0,5">
+            <StackPanel Spacing="5"><TextBlock Text="{Binding Label}" FontWeight="SemiBold" TextWrapping="Wrap" /><TextBlock Text="{Binding Detail}" TextWrapping="Wrap" Classes="muted" FontSize="12" /></StackPanel>
+          </Border>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+    <Grid Grid.Row="3" ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="8">
+      <TextBlock Text="{Binding Status}" VerticalAlignment="Center" />
+      <Button Grid.Column="1" Content="{Binding Strings[CloseWindow]}" Click="CloseSearch" />
+      <Button Grid.Column="2" Name="PrepareReferencePurchase" Content="{Binding Strings[OrdersPreparePurchase]}" IsEnabled="{Binding CanPrepare}" Click="PreparePurchase" />
+      <Button Grid.Column="3" Name="CompareReferencePurchase" Classes="primary" Content="{Binding Strings[OrdersLoadReference]}" IsEnabled="{Binding CanSelect}" IsDefault="True" Click="SelectReference" />
+    </Grid>
+  </Grid>
+</Window>

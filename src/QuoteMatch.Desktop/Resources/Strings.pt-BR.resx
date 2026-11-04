@@ -1,0 +1,1592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="QuantityError" xml:space="preserve">
+    <value>Informe uma quantidade maior que zero.</value>
+  </data>
+  <data name="ApplyQuantity" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <data name="ToolTagline" xml:space="preserve">
+    <value>Compare ofertas. Decida item a item.</value>
+  </data>
+  <data name="QuotationTitle" xml:space="preserve">
+    <value>Comparação de cotações</value>
+  </data>
+  <data name="DemoBadge" xml:space="preserve">
+    <value>EXEMPLO</value>
+  </data>
+  <data name="QuotationDemoNotice" xml:space="preserve">
+    <value>50 itens fictícios para explorar a lista e o detalhamento. Nenhuma cotação privada foi importada.</value>
+  </data>
+  <data name="QuotationOverviewFormat" xml:space="preserve">
+    <value>{0} itens · {1} fornecedores · valores em BRL</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Aparência</value>
+  </data>
+  <data name="PortugueseLanguage" xml:space="preserve">
+    <value>Português (Brasil)</value>
+  </data>
+  <data name="EnglishLanguage" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="SystemTheme" xml:space="preserve">
+    <value>Sistema</value>
+  </data>
+  <data name="LightTheme" xml:space="preserve">
+    <value>Claro</value>
+  </data>
+  <data name="DarkTheme" xml:space="preserve">
+    <value>Escuro</value>
+  </data>
+  <data name="PreferenceError" xml:space="preserve">
+    <value>Não foi possível ler ou salvar as preferências. As alterações podem valer apenas nesta sessão.</value>
+  </data>
+  <data name="OrderTotal" xml:space="preserve">
+    <value>Total dos pedidos sugeridos</value>
+  </data>
+  <data name="SelectionSubtotal" xml:space="preserve">
+    <value>Subtotal selecionado · incompleto</value>
+  </data>
+  <data name="OrderTotalHelp" xml:space="preserve">
+    <value>Soma do custo do lote inteiro do vencedor único de cada item. Empates e ofertas insuficientes ficam pendentes e não entram na soma. O total considera todos os itens da cotação, inclusive os ocultos pelos filtros.</value>
+  </data>
+  <data name="OrderTotalConditions" xml:space="preserve"><value>Soma dos lotes vencedores por item.</value></data>
+  <data name="ItemCountFormat" xml:space="preserve">
+    <value>{0} itens</value>
+  </data>
+  <data name="VisibleItemCountFormat" xml:space="preserve">
+    <value>{0} de {1} itens</value>
+  </data>
+  <data name="PendingCountFormat" xml:space="preserve">
+    <value>{0} itens para revisar · fora do total</value>
+  </data>
+  <data name="ItemPositionFormat" xml:space="preserve">
+    <value>Item {0} de {1} nos resultados</value>
+  </data>
+  <data name="SearchItems" xml:space="preserve">
+    <value>Buscar nome ou código do item…</value>
+  </data>
+  <data name="FilterItems" xml:space="preserve">
+    <value>Filtrar itens</value>
+  </data>
+  <data name="SortItems" xml:space="preserve">
+    <value>Ordenar itens</value>
+  </data>
+  <data name="AllItems" xml:space="preserve">
+    <value>Todos os itens</value>
+  </data>
+  <data name="PendingOnly" xml:space="preserve">
+    <value>Pendentes</value>
+  </data>
+  <data name="SupplierAFilter" xml:space="preserve">
+    <value>Vencedor: fornecedor A</value>
+  </data>
+  <data name="SupplierBFilter" xml:space="preserve">
+    <value>Vencedor: fornecedor B</value>
+  </data>
+  <data name="SupplierCFilter" xml:space="preserve">
+    <value>Vencedor: fornecedor C</value>
+  </data>
+  <data name="OriginalOrder" xml:space="preserve">
+    <value>Ordem original</value>
+  </data>
+  <data name="HighestTotal" xml:space="preserve">
+    <value>Maior total primeiro</value>
+  </data>
+  <data name="ByWinningSupplier" xml:space="preserve">
+    <value>Por vencedor</value>
+  </data>
+  <data name="ItemColumn" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="RequestedColumn" xml:space="preserve">
+    <value>Quantidade</value>
+  </data>
+  <data name="WinningSupplier" xml:space="preserve">
+    <value>Fornecedor vencedor</value>
+  </data>
+  <data name="ItemTotal" xml:space="preserve">
+    <value>Total do item</value>
+  </data>
+  <data name="QuotationItems" xml:space="preserve">
+    <value>Lista de itens da cotação</value>
+  </data>
+  <data name="OpenItemHint" xml:space="preserve">
+    <value>Selecione um item para comparar as ofertas</value>
+  </data>
+  <data name="NoMatchingItems" xml:space="preserve">
+    <value>Nenhum item encontrado</value>
+  </data>
+  <data name="TryOtherSearch" xml:space="preserve">
+    <value>Tente outra busca ou exiba todos os itens.</value>
+  </data>
+  <data name="ClearFilters" xml:space="preserve">
+    <value>Limpar filtros</value>
+  </data>
+  <data name="PreviousItem" xml:space="preserve">
+    <value>Item anterior</value>
+  </data>
+  <data name="NextItem" xml:space="preserve">
+    <value>Próximo item</value>
+  </data>
+  <data name="CloseItem" xml:space="preserve">
+    <value>Fechar detalhe do item</value>
+  </data>
+  <data name="RequestedQuantityLabel" xml:space="preserve">
+    <value>Quantidade solicitada</value>
+  </data>
+  <data name="WinnerCriterion" xml:space="preserve">
+    <value>Menor desembolso do lote inteiro entre as ofertas que atendem à demanda deste item. Empates exigem revisão.</value>
+  </data>
+  <data name="SupplierOffers" xml:space="preserve">
+    <value>Comparar fornecedores</value>
+  </data>
+  <data name="ImportSupplierName" xml:space="preserve">
+    <value>Fornecedor</value>
+  </data>
+  <data name="Recommended" xml:space="preserve">
+    <value>Menor custo de atendimento</value>
+  </data>
+  <data name="LowestUnitPrice" xml:space="preserve">
+    <value>Menor preço unitário</value>
+  </data>
+  <data name="InsufficientQuantity" xml:space="preserve">
+    <value>Quantidade insuficiente</value>
+  </data>
+  <data name="ComparableOffer" xml:space="preserve">
+    <value>Oferta comparável</value>
+  </data>
+  <data name="ExactQuantity" xml:space="preserve">
+    <value>Atende sem excedente</value>
+  </data>
+  <data name="ExcessFormat" xml:space="preserve">
+    <value>+{0} excedentes</value>
+  </data>
+  <data name="ShortfallFormat" xml:space="preserve">
+    <value>Faltam {0}</value>
+  </data>
+  <data name="OfferDetailsLabel" xml:space="preserve">
+    <value>Explicar cálculos de {0}</value>
+  </data>
+  <data name="DetailsHelp" xml:space="preserve">
+    <value>Ver fórmulas, valores e premissas da compra.</value>
+  </data>
+  <data name="FixedLotNotice" xml:space="preserve">
+    <value>Cada oferta é um lote fixo. A compra considera o lote inteiro, incluindo eventual excedente. O preço unitário corresponde à unidade exibida.</value>
+  </data>
+  <data name="CalculationDetails" xml:space="preserve">
+    <value>Como este item foi comparado</value>
+  </data>
+  <data name="CloseDetails" xml:space="preserve">
+    <value>Fechar explicação</value>
+  </data>
+  <data name="ItemCalculationOverviewFormat" xml:space="preserve">
+    <value>DEMANDA
+{0}
+
+MENOR PREÇO UNITÁRIO
+{1} / {2}
+
+OFERTA VENCEDORA
+{4}
+Total do lote: {3}
+
+Vence o menor total de lote entre as ofertas que atendem à demanda inteira. O menor preço unitário sozinho não basta. Um empate ou quantidade insuficiente deixa o item pendente.
+
+O lote vencedor único entra uma vez no total da cotação e no pedido do respectivo fornecedor.</value>
+  </data>
+  <data name="ItemOfferCalculationFormat" xml:space="preserve"><value>TOTAL DO LOTE
+{0} × {1} / {7} = {2}
+
+QUANTIDADE SOLICITADA
+{3}
+
+EXCEDENTE
+{4}
+
+FALTA
+{5}
+
+AVALIAÇÃO
+{6}</value></data>
+  <data name="CanFulfill" xml:space="preserve">
+    <value>Este lote atende à demanda. Só vence se seu total elegível for o menor, sem empate.</value>
+  </data>
+  <data name="CannotFulfill" xml:space="preserve">
+    <value>Este lote não atende à demanda e não pode ser selecionado como atendimento integral.</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>—</value>
+  </data>
+  <data name="TiedOffers" xml:space="preserve">
+    <value>Empate · revisar</value>
+  </data>
+  <data name="PendingItem" xml:space="preserve">
+    <value>Pendente</value>
+  </data>
+  <data name="OrderSplit" xml:space="preserve">
+    <value>Pedidos sugeridos por fornecedor</value>
+  </data>
+  <data name="TotalsIgnoreFilters" xml:space="preserve">
+    <value>Totais da cotação inteira · filtros alteram apenas a lista</value>
+  </data>
+  <data name="SampleVariant" xml:space="preserve">
+    <value>Variante fictícia {0:00}</value>
+  </data>
+  <data name="SampleCable" xml:space="preserve">
+    <value>Cabo flexível</value>
+  </data>
+  <data name="SampleAdapter" xml:space="preserve">
+    <value>Adaptador de energia</value>
+  </data>
+  <data name="SamplePaper" xml:space="preserve">
+    <value>Resma de papel</value>
+  </data>
+  <data name="SampleConnector" xml:space="preserve">
+    <value>Conector</value>
+  </data>
+  <data name="SampleLamp" xml:space="preserve">
+    <value>Lâmpada LED</value>
+  </data>
+  <data name="SampleGloves" xml:space="preserve">
+    <value>Luvas de proteção</value>
+  </data>
+  <data name="SampleScrew" xml:space="preserve">
+    <value>Kit de parafusos</value>
+  </data>
+  <data name="SampleCleaner" xml:space="preserve">
+    <value>Solução de limpeza</value>
+  </data>
+  <data name="SampleTape" xml:space="preserve">
+    <value>Fita adesiva</value>
+  </data>
+  <data name="SampleStorage" xml:space="preserve">
+    <value>Caixa organizadora</value>
+  </data>
+  <data name="MetreUnit" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="PieceUnit" xml:space="preserve">
+    <value>un</value>
+  </data>
+  <data name="BoxUnit" xml:space="preserve">
+    <value>cx</value>
+  </data>
+  <data name="PairUnit" xml:space="preserve">
+    <value>par</value>
+  </data>
+  <data name="LitreUnit" xml:space="preserve">
+    <value>L</value>
+  </data>
+  <data name="ImportWorkspace" xml:space="preserve">
+    <value>Importação de PDFs e templates</value>
+  </data>
+  <data name="OpenImports" xml:space="preserve">
+    <value>Importar PDFs</value>
+  </data>
+  <data name="ImportTab" xml:space="preserve">
+    <value>Importar e revisar</value>
+  </data>
+  <data name="TemplatesTab" xml:space="preserve">
+    <value>Templates</value>
+  </data>
+  <data name="SavedTab" xml:space="preserve">
+    <value>Propostas salvas</value>
+  </data>
+  <data name="ChoosePdf" xml:space="preserve">
+    <value>Escolher PDF…</value>
+  </data>
+  <data name="PreviewPdf" xml:space="preserve">
+    <value>Extrair itens</value>
+  </data>
+  <data name="CancelImport" xml:space="preserve">
+    <value>Cancelar operação</value>
+  </data>
+  <data name="TemplateName" xml:space="preserve">
+    <value>Nome do template</value>
+  </data>
+  <data name="TemplateCulture" xml:space="preserve">
+    <value>Cultura do documento (pt-BR ou en-US)</value>
+  </data>
+  <data name="DefaultUnit" xml:space="preserve">
+    <value>Unidade comercial padrão</value>
+  </data>
+  <data name="TextStrategy" xml:space="preserve">
+    <value>Reconstrução do texto</value>
+  </data>
+  <data name="StrategyStream" xml:space="preserve">
+    <value>Ordem do conteúdo original</value>
+  </data>
+  <data name="StrategyOrder" xml:space="preserve">
+    <value>Ordem de leitura</value>
+  </data>
+  <data name="StrategyPosition" xml:space="preserve">
+    <value>Linhas por posição</value>
+  </data>
+  <data name="IdentificationPattern" xml:space="preserve">
+    <value>Regex de identificação do documento (opcional)</value>
+  </data>
+  <data name="RecordStartPattern" xml:space="preserve">
+    <value>Regex de início de item</value>
+  </data>
+  <data name="RecordPattern" xml:space="preserve">
+    <value>Regex do item completo</value>
+  </data>
+  <data name="TableEndPattern" xml:space="preserve">
+    <value>Regex de fim da tabela (opcional)</value>
+  </data>
+  <data name="ExpectedCountPattern" xml:space="preserve">
+    <value>Regex de quantidade de itens (grupo count, opcional)</value>
+  </data>
+  <data name="DocumentTotalPattern" xml:space="preserve">
+    <value>Regex do total do documento (grupo total, opcional)</value>
+  </data>
+  <data name="AbsoluteTolerance" xml:space="preserve">
+    <value>Tolerância absoluta</value>
+  </data>
+  <data name="RelativeTolerance" xml:space="preserve">
+    <value>Tolerância relativa (0,001 = 0,1%)</value>
+  </data>
+  <data name="RemoveGroupingSpaces" xml:space="preserve">
+    <value>Remover espaços dos números</value>
+  </data>
+  <data name="NewTemplate" xml:space="preserve">
+    <value>Novo template</value>
+  </data>
+  <data name="SaveTemplate" xml:space="preserve">
+    <value>Salvar template</value>
+  </data>
+  <data name="ValidateTemplate" xml:space="preserve">
+    <value>Validar template</value>
+  </data>
+  <data name="TestTemplate" xml:space="preserve">
+    <value>Testar arquivo</value>
+  </data>
+  <data name="ImportTemplate" xml:space="preserve">
+    <value>Importar JSON…</value>
+  </data>
+  <data name="ExportTemplate" xml:space="preserve">
+    <value>Exportar JSON…</value>
+  </data>
+  <data name="TemplateInstructions" xml:space="preserve">
+    <value>Grupos nomeados obrigatórios: code, description, quantity, unitPrice, total. Opcionais: unit, color. Expressões usam multiline; o item completo também usa singleline. Cada item precisa corresponder por inteiro. Sem OCR: PDFs digitalizados precisam de camada de texto. Limites: 32 MB, 200 páginas, 5.000 itens. Continuações entre páginas exigem um template específico. Teste no PDF selecionado antes de confirmar. Templates exportados podem conter dados do fornecedor; mantenha os privados localmente.</value>
+  </data>
+  <data name="ReviewFields" xml:space="preserve">
+    <value>Campos revisados</value>
+  </data>
+  <data name="ReviewInstructions" xml:space="preserve"><value>Revise os campos capturados. Use o formato numérico selecionado e informe o motivo ao excluir um item.</value></data>
+  <data name="ImportCode" xml:space="preserve">
+    <value>Código do fornecedor</value>
+  </data>
+  <data name="ImportDescription" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="ImportQuantity" xml:space="preserve">
+    <value>Quantidade</value>
+  </data>
+  <data name="ImportUnitPrice" xml:space="preserve">
+    <value>Preço unitário</value>
+  </data>
+  <data name="ImportTotal" xml:space="preserve">
+    <value>Total informado</value>
+  </data>
+  <data name="ImportUnit" xml:space="preserve">
+    <value>Unidade comercial</value>
+  </data>
+  <data name="ExcludeRecord" xml:space="preserve">
+    <value>Excluir este registro</value>
+  </data>
+  <data name="ExclusionReason" xml:space="preserve">
+    <value>Justificativa da exclusão</value>
+  </data>
+  <data name="Evidence" xml:space="preserve">
+    <value>Captura original</value>
+  </data>
+  <data name="ExtractedText" xml:space="preserve">
+    <value>Conteúdo original da origem</value>
+  </data>
+  <data name="ConfirmImport" xml:space="preserve">
+    <value>Salvar proposta revisada</value>
+  </data>
+  <data name="OpenProposal" xml:space="preserve">
+    <value>Abrir proposta</value>
+  </data>
+  <data name="ExportOriginal" xml:space="preserve">
+    <value>Exportar arquivo original…</value>
+  </data>
+  <data name="ImportScopeNotice" xml:space="preserve">
+    <value>As propostas salvas permanecem locais. O vínculo entre produtos e a comparação de propostas reais serão implementados na próxima etapa.</value>
+  </data>
+  <data name="ImportWorking" xml:space="preserve">
+    <value>Processando…</value>
+  </data>
+  <data name="ImportCanceled" xml:space="preserve">
+    <value>Operação cancelada.</value>
+  </data>
+  <data name="ReviewBeforeSaving" xml:space="preserve">
+    <value>Extração concluída. Revise antes de salvar.</value>
+  </data>
+  <data name="TemplateSaved" xml:space="preserve">
+    <value>Versão {0} do template salva.</value>
+  </data>
+  <data name="TemplateValid" xml:space="preserve">
+    <value>Template válido. Teste com um arquivo de exemplo.</value>
+  </data>
+  <data name="TemplateLoaded" xml:space="preserve">
+    <value>Template carregado no editor. Salve para cadastrá-lo.</value>
+  </data>
+  <data name="TemplateExported" xml:space="preserve">
+    <value>Template exportado.</value>
+  </data>
+  <data name="ProposalSaved" xml:space="preserve">
+    <value>Proposta salva localmente com {0} itens incluídos.</value>
+  </data>
+  <data name="OriginalExported" xml:space="preserve">
+    <value>Arquivo original exportado.</value>
+  </data>
+  <data name="ImportStorageError" xml:space="preserve">
+    <value>Não foi possível acessar o arquivo ou banco local. Verifique o acesso e o espaço disponível.</value>
+  </data>
+  <data name="ImportPosition" xml:space="preserve">
+    <value>Item {0} · página {1}</value>
+  </data>
+  <data name="PageNumber" xml:space="preserve">
+    <value>Página {0}</value>
+  </data>
+  <data name="ImportSummary" xml:space="preserve">
+    <value>{0} páginas · {1} candidatos · {2} itens com avisos · total capturado: {3}</value>
+  </data>
+  <data name="DocumentTotal" xml:space="preserve">
+    <value>Total do documento: {0}</value>
+  </data>
+  <data name="IssueNoText" xml:space="preserve">
+    <value>Sem texto selecionável. OCR indisponível.</value>
+  </data>
+  <data name="IssueNoRecords" xml:space="preserve">
+    <value>Nenhum item encontrado. Verifique o template.</value>
+  </data>
+  <data name="IssueWrongTemplate" xml:space="preserve">
+    <value>A identificação do documento não corresponde ao template.</value>
+  </data>
+  <data name="IssueCaptureFailed" xml:space="preserve">
+    <value>Captura incompleta do item. Corrija o template ou revise todos os campos.</value>
+  </data>
+  <data name="IssueInvalidNumber" xml:space="preserve">
+    <value>Um campo numérico não pôde ser convertido.</value>
+  </data>
+  <data name="IssueMissingField" xml:space="preserve">
+    <value>Um campo obrigatório está ausente.</value>
+  </data>
+  <data name="IssueNonPositiveValue" xml:space="preserve">
+    <value>Quantidade e preço unitário devem ser positivos; o total não pode ser negativo.</value>
+  </data>
+  <data name="IssueItemTotalMismatch" xml:space="preserve"><value>Quantidade × preço difere do total informado. Confira valores e arredondamentos.</value></data>
+  <data name="IssueItemCountMismatch" xml:space="preserve">
+    <value>Quantidade de itens capturados difere da esperada. Confirmação bloqueada.</value>
+  </data>
+  <data name="IssueDocumentTotalMismatch" xml:space="preserve">
+    <value>A soma dos itens difere do total do documento. Confira encargos e itens ausentes.</value>
+  </data>
+  <data name="IssueConflictingDocumentTotals" xml:space="preserve">
+    <value>Totais do documento conflitantes. Confirmação bloqueada.</value>
+  </data>
+  <data name="ErrorInvalidTemplate" xml:space="preserve">
+    <value>Template inválido. Confira os dados, a sintaxe das expressões e os grupos obrigatórios.</value>
+  </data>
+  <data name="ErrorInvalidPdf" xml:space="preserve">
+    <value>PDF incompatível, danificado ou protegido.</value>
+  </data>
+  <data name="ErrorFileTooLarge" xml:space="preserve">
+    <value>O arquivo excede o limite de 32 MB.</value>
+  </data>
+  <data name="ErrorExtractionLimit" xml:space="preserve">
+    <value>A extração excedeu o limite de processamento. Use um documento menor ou simplifique o template.</value>
+  </data>
+  <data name="ErrorRegexTimeout" xml:space="preserve">
+    <value>Uma expressão demorou demais. Simplifique o template e tente novamente.</value>
+  </data>
+  <data name="ErrorInvalidReview" xml:space="preserve">
+    <value>Preencha cada item incluído com código, descrição, unidade, quantidade/preço positivos e total não negativo. Exclusões exigem justificativa.</value>
+  </data>
+  <data name="ErrorSourceChanged" xml:space="preserve">
+    <value>A origem mudou após a extração. Extraia o documento novamente.</value>
+  </data>
+  <data name="ErrorStorageConflict" xml:space="preserve">
+    <value>Esta versão ou proposta já foi salva. Recarregue antes de tentar novamente.</value>
+  </data>
+  <data name="ImportTotalHelp" xml:space="preserve"><value>Total capturado = soma dos totais dos itens. Diferença = |quantidade × preço − total informado|. O limite aceito é o maior entre tolerância absoluta e total informado × tolerância relativa.</value></data>
+  <data name="SupplierName" xml:space="preserve">
+    <value>Fornecedor {0}</value>
+  </data>
+  <data name="ReviewedSummary" xml:space="preserve">
+    <value>Revisão: {0} itens incluídos · soma dos totais revisados: {1}</value>
+  </data>
+  <data name="NavHome">
+    <value>Início</value>
+  </data>
+  <data name="NavQuotations">
+    <value>Orçamentos</value>
+  </data>
+  <data name="NavChecking">
+    <value>Conferência</value>
+  </data>
+  <data name="NavSettings">
+    <value>Configurações</value>
+  </data>
+  <data name="LocalWorkspace">
+    <value>Salvo neste computador</value>
+  </data>
+  <data name="HomeHeading">
+    <value>O que você quer fazer?</value>
+  </data>
+  <data name="HomeQuotationTitle">
+    <value>Análise e conferência de cotações</value>
+  </data>
+  <data name="HomeCheckingTitle">
+    <value>Conferir um pedido de compra</value>
+  </data>
+  <data name="NewQuotation">
+    <value>Novo orçamento</value>
+  </data>
+  <data name="ViewQuotations">
+    <value>Ver orçamentos</value>
+  </data>
+  <data name="OpenChecking">
+    <value>Acessar conferência</value>
+  </data>
+  <data name="RecentQuotations">
+    <value>Orçamentos recentes</value>
+  </data>
+  <data name="OpenQuotation">
+    <value>Abrir orçamento</value>
+  </data>
+  <data name="NoQuotationsHelp">
+    <value>Nenhum orçamento para mostrar. Crie um para começar a reunir propostas de fornecedores.</value>
+  </data>
+  <data name="SearchQuotations">
+    <value>Buscar pelo nome do orçamento…</value>
+  </data>
+  <data name="QuotationDraft">
+    <value>Em andamento</value>
+  </data>
+  <data name="QuotationFinalized">
+    <value>Finalizado</value>
+  </data>
+  <data name="QuotationListDetail">
+    <value>{0} propostas · {1}</value>
+  </data>
+  <data name="ProposalDetail">
+    <value>{0} itens · {1}</value>
+  </data>
+  <data name="QuotationName">
+    <value>Nome do orçamento</value>
+  </data>
+  <data name="QuotationNameExample">
+    <value>Ex.: Reposição de estoque de novembro</value>
+  </data>
+  <data name="QuotationNotes">
+    <value>Observações (opcional)</value>
+  </data>
+  <data name="SaveQuotationFirst">
+    <value>Salve o nome primeiro. Depois, você poderá adicionar as propostas dos fornecedores a este orçamento.</value>
+  </data>
+  <data name="SaveQuotation">
+    <value>Salvar orçamento</value>
+  </data>
+  <data name="QuotationSaved">
+    <value>Orçamento salvo neste computador.</value>
+  </data>
+  <data name="CancelEdit">
+    <value>Cancelar</value>
+  </data>
+  <data name="BackToQuotations">
+    <value>← Orçamentos</value>
+  </data>
+  <data name="EditQuotation">
+    <value>Editar dados</value>
+  </data>
+  <data name="FinalizeQuotation">
+    <value>Finalizar orçamento</value>
+  </data>
+  <data name="ReopenQuotation">
+    <value>Reabrir orçamento</value>
+  </data>
+  <data name="DeleteQuotation">
+    <value>Excluir orçamento</value>
+  </data>
+  <data name="DeleteQuotationHelp">
+    <value>Excluir “{0}” e suas {1} propostas? Os PDFs armazenados e as revisões serão removidos. Essa ação não pode ser desfeita.</value>
+  </data>
+  <data name="FinalizeQuotationHelp" xml:space="preserve"><value>Finalizar este orçamento? Reabra-o para fazer novas alterações.</value></data>
+  <data name="ConfirmAction">
+    <value>Confirmar</value>
+  </data>
+  <data name="SupplierProposals">
+    <value>Propostas dos fornecedores</value>
+  </data>
+  <data name="NoProposalsHelp" xml:space="preserve"><value>Importe um PDF ou planilha do fornecedor para adicionar a primeira proposta.</value></data>
+  <data name="FinalizedReadOnlyHelp" xml:space="preserve"><value>Orçamento finalizado. Reabra para editar.</value></data>
+  <data name="QuotationErrorInvalidName">
+    <value>Informe o nome do orçamento (até 160 caracteres). As observações podem ter até 4.000 caracteres.</value>
+  </data>
+  <data name="QuotationErrorConflict">
+    <value>Este orçamento foi alterado. Volte à lista e abra novamente antes de editar.</value>
+  </data>
+  <data name="QuotationErrorReadOnly">
+    <value>Este orçamento está finalizado ou não existe mais. Volte à lista e abra um orçamento em andamento.</value>
+  </data>
+  <data name="QuotationErrorEmpty">
+    <value>Adicione ao menos uma proposta revisada antes de finalizar.</value>
+  </data>
+  <data name="ImportProposal">
+    <value>Importar documento do fornecedor</value>
+  </data>
+  <data name="ImportStepFile">
+    <value>1. Escolha o arquivo e o template</value>
+  </data>
+  <data name="NoPdfSelected">
+    <value>Nenhum arquivo selecionado</value>
+  </data>
+  <data name="SelectTemplate">
+    <value>Selecione um template</value>
+  </data>
+  <data name="ImportStepReview">
+    <value>2. Confira os itens capturados</value>
+  </data>
+  <data name="ImportStepSave">
+    <value>3. Adicione esta proposta ao orçamento</value>
+  </data>
+  <data name="AttachProposal">
+    <value>Adicionar proposta</value>
+  </data>
+  <data name="CloseWindow">
+    <value>Fechar</value>
+  </data>
+  <data name="TemplateEditorTitle" xml:space="preserve"><value>Template de importação</value></data>
+  <data name="TemplateBasics">
+    <value>Fornecedor e formato do arquivo</value>
+  </data>
+  <data name="DocumentNumbers">
+    <value>Formato dos números no documento</value>
+  </data>
+  <data name="DocumentNumbersHelp">
+    <value>Usado para números em texto no documento. Células numéricas do Excel mantêm o valor de origem, independentemente do formato de exibição.</value>
+  </data>
+  <data name="NumberFormatBrazil">
+    <value>Brasileiro · 1.234,56</value>
+  </data>
+  <data name="NumberFormatUs">
+    <value>Americano · 1,234.56</value>
+  </data>
+  <data name="DefaultUnitHelp">
+    <value>Unidade comercial usada quando o PDF não captura uma unidade. Exemplos: m, un, caixa. Ela identifica a quantidade e o preço; não converte embalagens em metros. O grupo opcional unit pode informar uma unidade diferente por item.</value>
+  </data>
+  <data name="TemplateCaptureTitle">
+    <value>2. Identifique e leia cada item</value>
+  </data>
+  <data name="RecordStartHelp">
+    <value>Encontra onde começa cada item, para não misturar os valores com os do próximo. Exemplo: ^\d{3}\s encontra uma linha que começa com um código de três dígitos, como 001. A regra deve encontrar todos os itens, inclusive os que estiverem com dados incompletos.</value>
+  </data>
+  <data name="RecordCaptureHelp">
+    <value>Lê o item inteiro usando grupos nomeados: (?&lt;code&gt;...) código, (?&lt;description&gt;...) descrição, (?&lt;quantity&gt;...) quantidade, (?&lt;unitPrice&gt;...) preço unitário, (?&lt;total&gt;...) total informado. Opcionais: (?&lt;unit&gt;...), (?&lt;color&gt;...). Cada item deve corresponder por inteiro. As regras usam multiline; esta também usa singleline para descrições em várias linhas.</value>
+  </data>
+  <data name="TemplateChecks">
+    <value>Opcional · conferências do documento e limites da tabela</value>
+  </data>
+  <data name="IdentificationHelp">
+    <value>Confere se o arquivo pertence a este layout antes da confirmação. Exemplo: Fornecedor Exemplo procura esse nome no documento. Deixe vazio se não houver um texto confiável para identificar o layout.</value>
+  </data>
+  <data name="TableEndHelp">
+    <value>Marca o fim da tabela para não incluir o rodapé no último item. Exemplo: ^Total encontra uma linha que começa com Total. Deixe vazio se a tabela terminar junto com a página.</value>
+  </data>
+  <data name="ExpectedCountHelp">
+    <value>Confere se todos os itens foram encontrados. Exemplo: Itens:\s*(?&lt;count&gt;\d+) captura a quantidade impressa no documento. Se ela não for encontrada ou for diferente, a confirmação é bloqueada. Deixe vazio se o documento não informar a quantidade de itens.</value>
+  </data>
+  <data name="DocumentTotalPatternHelp" xml:space="preserve"><value>Capture o subtotal dos itens com o grupo total. Exemplo: Total:\s*(?&lt;total&gt;[\d.,]+). Deixe vazio quando não houver subtotal comparável.</value></data>
+  <data name="TemplateAdvanced">
+    <value>Avançado · ordem do texto e avisos de arredondamento</value>
+  </data>
+  <data name="TextStrategyHelp">
+    <value>Controla como o texto do PDF é reconstruído. Comece pela ordem do conteúdo original. Se códigos, descrições ou preços aparecerem fora de ordem no texto de exemplo, teste a ordem de leitura ou linhas por posição. A mudança pode exigir ajustes nas regras de captura.</value>
+  </data>
+  <data name="AbsoluteToleranceHelp">
+    <value>Pequena diferença aceita na conferência de quantidade × preço unitário com o total informado. Com R$ 0,01, uma diferença de um centavo não gera aviso. Esse limite nunca altera o valor capturado. A conferência usa o maior valor entre esta quantia e o percentual relativo do total informado.</value>
+  </data>
+  <data name="RelativeTolerancePercent">
+    <value>Tolerância relativa (%)</value>
+  </data>
+  <data name="RelativeToleranceHelp" xml:space="preserve"><value>Percentual de diferença aceito. Exemplo: 0,1% de R$ 1.000 = R$ 1. Use 0% para aplicar apenas a tolerância absoluta.</value></data>
+  <data name="TemplateTestTitle">
+    <value>Teste com um arquivo de exemplo</value>
+  </data>
+  <data name="TemplateTestHelp">
+    <value>Escolha um PDF ou Excel compatível com o template. Confira os itens e avisos antes de salvar. O teste não adiciona uma proposta.</value>
+  </data>
+  <data name="ChooseAndTestPdf">
+    <value>Escolher arquivo e testar…</value>
+  </data>
+  <data name="CheckingIntro">
+    <value>Compare um pedido de compra com uma referência de compra finalizada, usando os mesmos serviços de importação e identificação de produtos.</value>
+  </data>
+  <data name="PlannedFeature">
+    <value>Funcionalidade planejada</value>
+  </data>
+  <data name="CheckingSteps">
+    <value>Fluxo previsto: selecionar orçamento → carregar pedido de compra → revisar a correspondência dos produtos → conferir divergências de quantidade, unidade, preço e total.</value>
+  </data>
+  <data name="CheckingNotReady">
+    <value>A conferência ainda não foi implementada. Esta área terá seu próprio fluxo; o cadastro de orçamentos e a importação das propostas já estão disponíveis.</value>
+  </data>
+  <data name="DatabaseConnection">
+    <value>Conexão</value>
+  </data>
+  <data name="QuerySettings">
+    <value>Consultas SQL</value>
+  </data>
+  <data name="ServerName">
+    <value>Endereço do SQL Server</value>
+  </data>
+  <data name="ServerNameHelp">
+    <value>Nome ou endereço do servidor, opcionalmente com instância ou porta. Exemplos: servidor\instancia ou 10.0.0.5,1433. Não é necessário digitar uma connection string.</value>
+  </data>
+  <data name="DatabaseName">
+    <value>Nome do banco</value>
+  </data>
+  <data name="DatabaseNameHelp">
+    <value>Nome do banco do ERP nesse servidor. Esta opção não altera o banco local SQLite do QuoteMatch.</value>
+  </data>
+  <data name="Authentication">
+    <value>Autenticação</value>
+  </data>
+  <data name="WindowsAuthentication">
+    <value>Conta do Windows</value>
+  </data>
+  <data name="SqlAuthentication">
+    <value>Login do SQL Server</value>
+  </data>
+  <data name="LoginUser">
+    <value>Usuário</value>
+  </data>
+  <data name="SessionPassword">
+    <value>Senha (deixe em branco para manter a salva)</value>
+  </data>
+  <data name="SessionPasswordHelp" xml:space="preserve"><value>Deixe em branco para manter a senha salva.</value></data>
+  <data name="SaveSettings">
+    <value>Salvar configuração</value>
+  </data>
+  <data name="SettingsSaved" xml:space="preserve"><value>Configuração salva.</value></data>
+  <data name="TestConnection" xml:space="preserve"><value>Testar conexão</value></data>
+  <data name="TestingConnection">
+    <value>Testando conexão…</value>
+  </data>
+  <data name="ConnectionSucceeded" xml:space="preserve"><value>Conexão estabelecida.</value></data>
+  <data name="ConnectionFailed">
+    <value>O teste de conexão falhou. Confira servidor, banco, credenciais, VPN e certificado do servidor.</value>
+  </data>
+  <data name="QueriesIntro" xml:space="preserve"><value>Salve um script por operação. Consultas usam login somente leitura; gravações de pedidos usam outro login e confirmação explícita. Scripts de pedidos aceitam procedures, WHILE e cursores.</value></data>
+  <data name="QueryOperation">
+    <value>Operação</value>
+  </data>
+  <data name="QueryPlaceholder">
+    <value>Escreva o SQL desta operação…</value>
+  </data>
+  <data name="QueryContractFindProduct">
+    <value>Parâmetro: @SupplierProductCode. Busque o código exato do fornecedor no catálogo. Aliases: Codigo, Nome, Semelhante, Inativo, FornecedorID, Fornecedor, CodigoFornecedor, Quantidade, UnForcli, Data, VlrUnit. Retorne a unidade base como UnidadeBase. Mapeie seu esquema para esses aliases. Preserve zeros e pontuação; grupos de comparação não identificam códigos.</value>
+  </data>
+  <data name="QueryContractGetEquivalentProducts">
+    <value>Parâmetro: @SimilarityCode. Aliases: Codigo, Nome, Semelhante, Inativo, FornecedorID, Fornecedor, CodigoFornecedor, Quantidade, UnForcli, Data, VlrUnit; unidade base como UnidadeBase. Mapeie o esquema para esse contrato. Data/VlrUnit nulos indicam ausência de histórico. Quantidade é o fator da embalagem; VlrUnit já está na base. Preserve alternativas comerciais distintas.</value>
+  </data>
+  <data name="NoMatchingQuotationsHelp">
+    <value>Nenhum orçamento corresponde à busca. Tente outro nome ou limpe a pesquisa.</value>
+  </data>
+  <data name="TemplatePreviewTitle">
+    <value>Teste do template</value>
+  </data>
+  <data name="SupplierProposalTitle">
+    <value>Proposta do fornecedor</value>
+  </data>
+  <data name="AnalysisTab">
+    <value>Análise e conferência</value>
+  </data>
+  <data name="AnalysisSummary">
+    <value>{0} grupos de itens · {1} com sugestão · {2} pendentes</value>
+  </data>
+  <data name="AnalysisSimulation">
+    <value>Comparação dos lotes cotados</value>
+  </data>
+  <data name="AnalysisSimulationHelp" xml:space="preserve"><value>Escolhe o lote de menor total que atende à demanda. O menor preço unitário pode ser de outro fornecedor.</value></data>
+  <data name="AnalysisSubtotal">
+    <value>Subtotal dos grupos definidos</value>
+  </data>
+  <data name="AnalysisSearch">
+    <value>Buscar descrição ou código…</value>
+  </data>
+  <data name="AnalysisAll">
+    <value>Todos os itens</value>
+  </data>
+  <data name="AnalysisWithWinner">
+    <value>Com sugestão</value>
+  </data>
+  <data name="AnalysisUnlinked">
+    <value>Identificação pendente</value>
+  </data>
+  <data name="AnalysisTied">
+    <value>Lotes empatados</value>
+  </data>
+  <data name="AnalysisUnitConflict">
+    <value>Confira as unidades-base</value>
+  </data>
+  <data name="NotComparable">
+    <value>Sem preço normalizado</value>
+  </data>
+  <data name="DemandPending">
+    <value>Defina a quantidade / confira o atendimento</value>
+  </data>
+  <data name="GroupRowDetail">
+    <value>{0} ofertas · base: {1}</value>
+  </data>
+  <data name="AnalysisDemand">
+    <value>Quantidade solicitada na unidade-base</value>
+  </data>
+  <data name="ApplyAnalysisDemand">
+    <value>Recalcular</value>
+  </data>
+  <data name="IdentifyAndGroup">
+    <value>Produto no ERP</value>
+  </data>
+  <data name="ErpIdentifyHelp">
+    <value>Pesquise o código do fornecedor capturado no documento. Escolha o produto e a embalagem quando houver mais de um resultado. Produtos vinculados podem compartilhar um grupo de comparação do catálogo. Confira a conversão numérica; a sigla não determina o fator. A busca avançada por grupo apresenta candidatos para revisão manual.</value>
+  </data>
+  <data name="SimilarityPlaceholder">
+    <value>Grupo de semelhantes exato no ERP</value>
+  </data>
+  <data name="SearchErp">
+    <value>Consultar ERP</value>
+  </data>
+  <data name="ErpCandidateDetail">
+    <value>{0} · código fornecedor: {1} · fator: {2} · unidade comercial: {3} · {4}</value>
+  </data>
+  <data name="ErpHistory">
+    <value>Última compra: {0} · {1}/{2} · consulta de {3}</value>
+  </data>
+  <data name="NoPurchaseHistory">
+    <value>Sem informação de última compra</value>
+  </data>
+  <data name="HistoryUnitUnknown">
+    <value>unidade-base não retornada</value>
+  </data>
+  <data name="InactiveProduct">
+    <value>Inativo</value>
+  </data>
+  <data name="ActiveProduct">
+    <value>Ativo</value>
+  </data>
+  <data name="CandidateConversion">
+    <value>Alternativa no ERP: {1} corresponde a {0} {2}. Confira se o PDF já informa a quantidade-base.</value>
+  </data>
+  <data name="UseErpFactor">
+    <value>Usar fator desta alternativa</value>
+  </data>
+  <data name="PdfAlreadyBaseUnit">
+    <value>PDF já está na unidade-base (fator 1)</value>
+  </data>
+  <data name="AnalysisBaseUnit">
+    <value>Unidade-base para comparar</value>
+  </data>
+  <data name="AnalysisConversionFactor">
+    <value>Unidades-base por unidade do PDF</value>
+  </data>
+  <data name="AnalysisConversionHelp">
+    <value>Use o fator numérico, nunca uma suposição por RL, BOB ou KM. Para um PDF com 3 rolos de 100 metros, informe base MT e fator 100: quantidade normalizada = 300 e preço normalizado = preço cotado ÷ 100. Se o PDF já informa 300 metros, o fator é 1. O preço de última compra deste ERP já é por unidade-base.</value>
+  </data>
+  <data name="LinkErpGroup">
+    <value>Vincular produto, conversão e grupo</value>
+  </data>
+  <data name="ManualGrouping">
+    <value>Agrupar manualmente, sem ERP</value>
+  </data>
+  <data name="ManualGroupingHelp">
+    <value>Use o mesmo nome de grupo para ofertas que você conferiu como equivalentes. Informe uma unidade-base comum e o fator correto de cada oferta. Essa é uma decisão explícita de equivalência; semelhança de texto não autoriza substituição.</value>
+  </data>
+  <data name="ManualGroupName">
+    <value>Nome do grupo de comparação</value>
+  </data>
+  <data name="LinkManualGroup">
+    <value>Salvar agrupamento manual</value>
+  </data>
+  <data name="UnlinkItem">
+    <value>Remover vínculo deste item</value>
+  </data>
+  <data name="AnalysisLinkSaved">
+    <value>Identificação salva localmente. Os outros itens permanecem pendentes até serem identificados.</value>
+  </data>
+  <data name="AnalysisDemandSaved">
+    <value>Quantidade salva e comparação recalculada.</value>
+  </data>
+  <data name="ErpCandidatesLoaded">
+    <value>{0} alternativas do ERP carregadas. Escolha explicitamente; nenhum item foi vinculado automaticamente.</value>
+  </data>
+  <data name="AnalysisErrorInvalidLink">
+    <value>Confira produto selecionado, grupo, unidade-base e fator positivo de conversão. Produtos inativos não podem ser vinculados.</value>
+  </data>
+  <data name="AnalysisErrorInvalidDemand">
+    <value>Identifique as ofertas, use uma unidade-base comum e informe uma quantidade solicitada positiva.</value>
+  </data>
+  <data name="AnalysisErrorConflict">
+    <value>O orçamento ou a análise foi alterado. Reabra o orçamento antes de editar a análise.</value>
+  </data>
+  <data name="AnalysisErrorReadOnly">
+    <value>Reabra o orçamento finalizado para alterar vínculos ou quantidades.</value>
+  </data>
+  <data name="QuantitiesByItem">
+    <value>Consulte as quantidades na lista de itens</value>
+  </data>
+  <data name="ErpErrorNotConfigured">
+    <value>Configure e salve a conexão do ERP em Configurações.</value>
+  </data>
+  <data name="ErpErrorCredentialsUnavailable">
+    <value>Não há senha salva utilizável para esta conexão. Informe e salve localmente em Configurações.</value>
+  </data>
+  <data name="ErpErrorConnectionFailed">
+    <value>Falha ao consultar o ERP. Confira localmente a conexão, a VPN e as permissões; os dados locais continuam disponíveis.</value>
+  </data>
+  <data name="ErpErrorQueryMissing">
+    <value>Salve FindProduct com @SupplierProductCode em Configurações → Consultas do ERP. A busca avançada por grupo usa GetEquivalentProducts com @SimilarityCode.</value>
+  </data>
+  <data name="ErpErrorInvalidQuery">
+    <value>Use um SELECT ou CTE de leitura com o parâmetro da operação (@SupplierProductCode ou @SimilarityCode). Sem escritas, vários lotes ou SELECT INTO. Utilize um login de leitura no banco.</value>
+  </data>
+  <data name="ErpErrorInvalidResult">
+    <value>O retorno do ERP não corresponde às colunas e tipos esperados. Confira a consulta em Configurações.</value>
+  </data>
+  <data name="ErpErrorTooManyResults">
+    <value>O ERP retornou mais de 1.000 alternativas. Restrinja o grupo de semelhantes.</value>
+  </data>
+  <data name="TrustServerCertificate">
+    <value>Confiar no certificado do servidor nesta conexão</value>
+  </data>
+  <data name="TrustServerCertificateHelp" xml:space="preserve"><value>Aceita o certificado sem validar a identidade do servidor. Use apenas em servidor confiável.</value></data>
+  <data name="EncryptConnection"><value>Exigir criptografia da conexão</value></data>
+  <data name="EncryptConnectionHelp" xml:space="preserve"><value>Criptografa o tráfego entre o aplicativo e o SQL Server.</value></data>
+  <data name="ConnectionTimeout"><value>Tempo limite da conexão (segundos)</value></data>
+  <data name="ConnectionTimeoutHelp" xml:space="preserve"><value>Tempo máximo de conexão, em segundos. Padrão: 30.</value></data>
+  <data name="ImportSqlFile">
+    <value>Carregar SQL…</value>
+  </data>
+  <data name="NormalizedOffer"><value>Na unidade-base: {0} · {1}/{2}</value></data>
+  <data name="DemandCovered"><value>Atende à quantidade solicitada</value></data>
+  <data name="OfferExcess"><value>Excedente pago: {0}</value></data>
+  <data name="OfferShortage"><value>Faltam: {0}</value></data>
+  <data name="SelectedLot"><value>Lote de menor custo para atender</value></data>
+  <data name="ManualGroupLink"><value>Grupo manual: {0}</value></data>
+
+  <data name="IdentifyPendingCodes"><value>Identificar códigos pendentes</value></data>
+  <data name="AdvancedSimilaritySearch"><value>Avançado: investigar um grupo conhecido no ERP</value></data>
+  <data name="AdvancedSimilarityHelp" xml:space="preserve"><value>Consulte produtos de um grupo conhecido no ERP. Confirme o produto antes de vincular.</value></data>
+  <data name="SupplierProductCodeSearch"><value>Código do fornecedor no documento</value></data>
+  <data name="ErpBatchLoaded" xml:space="preserve"><value>{0} códigos consultados · {1} com candidatos. Revise e confirme os vínculos.</value></data>
+  <data name="AnalysisTotalUnavailable"><value>Subtotal excede o limite numérico</value></data>
+  <data name="ConnectionDiagnostic" xml:space="preserve"><value>Etapa: {0} · Erro SQL: {1} · Erro nativo: {2}</value></data>
+  <data name="ErpErrorQueryFailed" xml:space="preserve"><value>A conexão com o ERP abriu, mas a consulta falhou. Confira a consulta salva e as permissões de leitura.</value></data>
+  <data name="ErpStageConfiguration" xml:space="preserve"><value>Configuração</value></data>
+  <data name="ErpStageConnection" xml:space="preserve"><value>Conexão</value></data>
+  <data name="ErpStageQuery" xml:space="preserve"><value>Execução da consulta</value></data>
+  <data name="ErpStageResult" xml:space="preserve"><value>Validação do resultado</value></data>
+  <data name="SavedConnectionSucceeded" xml:space="preserve"><value>Conexão salva estabelecida.</value></data>
+  <data name="TestSavedConnection" xml:space="preserve"><value>Testar conexão salva</value></data>
+  <data name="PurchaseChooseOffer" xml:space="preserve"><value>Escolher esta oferta</value></data>
+  <data name="PurchaseErrorConflict" xml:space="preserve"><value>O orçamento, a análise ou a preparação mudou. Atualize a análise antes de escolher novamente.</value></data>
+  <data name="PurchaseErrorInvalidSelection" xml:space="preserve"><value>Escolha uma oferta válida por grupo. A identificação, as unidades e a quantidade solicitada precisam estar confirmadas.</value></data>
+  <data name="PurchaseErrorNumericLimit" xml:space="preserve"><value>O subtotal dos itens ultrapassa o limite numérico suportado.</value></data>
+  <data name="PurchaseErrorReadOnly" xml:space="preserve"><value>Este orçamento está finalizado. Reabra-o antes de alterar a preparação.</value></data>
+  <data name="PurchaseInsufficientLot" xml:space="preserve"><value>Este lote não atende à quantidade solicitada.</value></data>
+  <data name="PurchaseItemSubtotal" xml:space="preserve"><value>Subtotal dos itens escolhidos</value></data>
+  <data name="PurchaseNeedsDemand" xml:space="preserve"><value>Defina a quantidade solicitada na Análise.</value></data>
+  <data name="PurchaseNeedsIdentity" xml:space="preserve"><value>Identifique e confirme a equivalência na Análise primeiro.</value></data>
+  <data name="PurchaseNotSaved" xml:space="preserve"><value>Nenhuma preparação salva. Escolha ofertas para começar.</value></data>
+  <data name="PurchaseOutdatedHelp" xml:space="preserve"><value>Resumo desatualizado. Faça novas escolhas.</value></data>
+  <data name="PurchaseRefresh" xml:space="preserve"><value>Atualizar análise</value></data>
+  <data name="PurchaseRemoveChoice" xml:space="preserve"><value>Remover escolha deste item</value></data>
+  <data name="PurchaseRulesHelp" xml:space="preserve"><value>Escolha um lote completo por produto que atenda à quantidade solicitada.</value></data>
+  <data name="PurchaseSaved" xml:space="preserve"><value>Escolha salva.</value></data>
+  <data name="PurchaseSavedReference" xml:space="preserve"><value>Versão salva {0} · análise {1} · {2}</value></data>
+  <data name="PurchaseSelectHelp" xml:space="preserve"><value>Escolha uma oferta. A compra considera o lote inteiro, incluindo o excedente.</value></data>
+  <data name="PurchaseShowSummary" xml:space="preserve"><value>Por fornecedor</value></data>
+  <data name="PurchaseStartNewWithOffer" xml:space="preserve"><value>Iniciar nova versão com esta oferta</value></data>
+  <data name="PurchaseSuggestedHelp" xml:space="preserve"><value>Substitui as escolhas pelos lotes de menor custo que atendem à demanda.</value></data>
+  <data name="PurchaseSummary" xml:space="preserve"><value>{0} itens escolhidos · {1} grupos pendentes</value></data>
+  <data name="PurchaseSupplierDetail" xml:space="preserve"><value>{0} itens escolhidos · {1}</value></data>
+  <data name="PurchaseTab" xml:space="preserve"><value>Compra e pedido</value></data>
+  <data name="PurchaseUnselected" xml:space="preserve"><value>Nenhuma oferta escolhida</value></data>
+  <data name="PurchaseUseSuggested" xml:space="preserve"><value>Substituir pelas sugestões</value></data>
+  <data name="PurchaseShowOffers" xml:space="preserve"><value>Escolher por item</value></data>
+  <data name="PurchaseSelectLabel" xml:space="preserve"><value>Selecione um lote completo</value></data>
+  <data name="PurchaseChosenOffer" xml:space="preserve"><value>Escolha salva para este item</value></data>
+  <data name="AdvancedIdentification" xml:space="preserve"><value>Outras opções de identificação</value></data>
+  <data name="BrowseProducts" xml:space="preserve"><value>Pesquisar produto…</value></data>
+  <data name="ConfirmProduct" xml:space="preserve"><value>Confirmar produto e conversão</value></data>
+  <data name="ErpProductCode" xml:space="preserve"><value>Código do produto no ERP</value></data>
+  <data name="IdentificationAlternativeCode" xml:space="preserve"><value>Confirmar produto e conversão</value></data>
+  <data name="IdentificationManual" xml:space="preserve"><value>Produto selecionado manualmente. Informe quantas unidades-base existem em uma unidade da cotação.</value></data>
+  <data name="IdentificationNotFound" xml:space="preserve"><value>Produto não encontrado</value></data>
+  <data name="IdentificationOffline" xml:space="preserve"><value>ERP indisponível. Exibindo o de/para e a referência histórica do produto.</value></data>
+  <data name="IdentificationPending" xml:space="preserve"><value>Identificar produto</value></data>
+  <data name="IdentificationSavedMapping" xml:space="preserve"><value>De/para encontrado. A conversão gravada foi recuperada.</value></data>
+  <data name="IdentifyThisItem" xml:space="preserve"><value>Identificar produto</value></data>
+  <data name="MappingAndLinkSaved" xml:space="preserve"><value>Produto vinculado. De/para salvo para próximas cotações.</value></data>
+  <data name="MappingErrorConflict" xml:space="preserve"><value>Este de/para foi alterado. Identifique o item novamente antes de salvar.</value></data>
+  <data name="MappingErrorInvalid" xml:space="preserve"><value>Confira a referência do fornecedor, o produto, a unidade-base e o fator de conversão positivo.</value></data>
+  <data name="MappingReferenceHelp" xml:space="preserve"><value>Relaciona código, descrição, cor e unidade deste fornecedor.</value></data>
+  <data name="MappingSavePending" xml:space="preserve"><value>O item foi vinculado, mas o de/para não foi salvo. Selecione novamente o produto e tente gravar a referência.</value></data>
+  <data name="ProductColor" xml:space="preserve"><value>Cor / variante</value></data>
+  <data name="ProductColorHelp" xml:space="preserve"><value>Opcional; preserve o valor do documento</value></data>
+  <data name="ProductName" xml:space="preserve"><value>Nome do produto</value></data>
+  <data name="ProductSearchCount" xml:space="preserve"><value>{0} produtos encontrados.</value></data>
+  <data name="ProductSearchPlaceholder" xml:space="preserve"><value>Digite o código ou parte do nome…</value></data>
+  <data name="ProductSearchTitle" xml:space="preserve"><value>Pesquisa de produtos</value></data>
+  <data name="IncludeInactiveProducts" xml:space="preserve"><value>Incluir inativos</value></data>
+  <data name="ProductCode" xml:space="preserve"><value>Código do produto</value></data>
+  <data name="Search" xml:space="preserve"><value>Pesquisar</value></data>
+  <data name="QueryContractFindProductById" xml:space="preserve"><value>Parâmetro: @ProductCode. Busque o código interno exato no catálogo. Retorne os aliases de FindProduct, incluindo UnidadeBase. Os campos do código alternativo podem ficar vazios; Quantidade pode ser nula. O usuário confirma a conversão da cotação.</value></data>
+  <data name="QueryContractSearchProducts" xml:space="preserve"><value>Parâmetro: @SearchText. Pesquise nomes de produtos com LIKE e ESCAPE &apos;\&apos;, mantendo % ao redor do parâmetro. O parâmetro usa % entre palavras e escapa %, _ e [ literais. Retorne os aliases de FindProduct. Limite os resultados e ordene por nome e código do produto.</value></data>
+  <data name="RememberProductMapping" xml:space="preserve"><value>Guardar este de/para para próximas cotações</value></data>
+  <data name="SelectProduct" xml:space="preserve"><value>Selecionar produto</value></data>
+  <data name="ProductSelectionUnavailable"><value>O produto não está mais disponível para seleção. Pesquise novamente.</value></data>
+  <data name="ProductSearchLimited"><value>Exibindo {0} produtos. A consulta pode ter mais resultados; refine a pesquisa.</value></data>
+  <data name="IdentificationConfirmed"><value>Produto e conversão confirmados para este item.</value></data>
+  <data name="EditIdentification"><value>Editar vínculo / de/para</value></data>
+  <data name="ErpDirectCandidateDetail"><value>{0} · unidade-base: {1} · {2}</value></data>
+  <data name="ManualCandidateConversion" xml:space="preserve"><value>Informe quantas unidades-base há em uma unidade cotada.</value></data>
+  <data name="MappingConversionPreview"><value>1 {0} cotado = {1} {2} na base</value></data>
+  <data name="SourceGroupDetail"><value>{0} ofertas · cotado em {1}</value></data>
+  <data name="AnalysisFiltersReset"><value>Os filtros foram limpos para exibir o item editado no novo grupo.</value></data>
+  <data name="IdentificationReplacement" xml:space="preserve"><value>Produto alterado; mesma unidade-base, conversão mantida. Confirme a troca.</value></data>
+  <data name="CandidateTargetGroup"><value>Grupo no ERP após confirmar: {0}</value></data>
+  <data name="LowestUnitPriceBadge"><value>Menor preço unitário</value></data>
+  <data name="LowestUnitPriceMetric"><value>Menor preço unitário</value></data>
+  <data name="LowestUnitPriceTied"><value>Empate no menor preço unitário</value></data>
+  <data name="OfferSourceDetails"><value>Oferta original, produto no ERP e última compra</value></data>
+  <data name="PriceComparisonNeedsOffers"><value>Identifique pelo menos duas ofertas na mesma unidade-base para comparar os preços.</value></data>
+  <data name="PriceSpreadHelp" xml:space="preserve"><value>Economia = (maior − menor) / maior × 100. Menor: {0}/{2}; maior: {1}/{2}; resultado: {3}%.</value></data>
+  <data name="PriceSpreadShortHelp"><value>Diferença entre o maior e o menor preço unitário. Abra para ver valores e fórmula.</value></data>
+  <data name="UnitPricePremiumHelp" xml:space="preserve"><value>Δ = (oferta − menor) / menor × 100. Oferta: {0}/{2}; menor: {1}/{2}; resultado: {3}%.</value></data>
+  <data name="UnitPricePremiumShortHelp"><value>Diferença unitária em relação à menor oferta. Abra para ver o cálculo.</value></data>
+  <data name="WholeLotTotalLabel"><value>Total do lote inteiro</value></data>
+  <data name="ProductSearchMinimum" xml:space="preserve"><value>Digite pelo menos 3 caracteres para pesquisar por nome.</value></data>
+  <data name="EditQuotationItem" xml:space="preserve"><value>Editar item da cotação</value></data>
+  <data name="ComparisonInteractionHelp" xml:space="preserve"><value>Clique no produto para abrir as ofertas. Duplo clique ou F2 para configurar o produto.</value></data>
+  <data name="ComparisonProduct" xml:space="preserve"><value>Produto</value></data>
+  <data name="LowestQuoteSupplier" xml:space="preserve"><value>Fornecedor · menor preço</value></data>
+  <data name="LastPurchaseColumn" xml:space="preserve"><value>Última compra</value></data>
+  <data name="LastPurchaseShortHelp" xml:space="preserve"><value>Histórico do produto com o menor preço unitário cotado.</value></data>
+  <data name="SupplierColumn" xml:space="preserve"><value>Fornecedor / quantidade</value></data>
+  <data name="UnitPriceColumn" xml:space="preserve"><value>Preço / un.</value></data>
+  <data name="LowestDifferenceColumn" xml:space="preserve"><value>Δ menor preço</value></data>
+  <data name="PurchaseDifferenceColumn" xml:space="preserve"><value>Δ compra</value></data>
+  <data name="SupplierTotalsTitle" xml:space="preserve"><value>Totais por fornecedor</value></data>
+  <data name="QuotedTotalColumn" xml:space="preserve"><value>Total cotado</value></data>
+  <data name="CommonTotalColumn" xml:space="preserve"><value>Cesta em comum</value></data>
+  <data name="SupplierItemCount" xml:space="preserve"><value>{0} itens</value></data>
+  <data name="SupplierTotalsShortHelp" xml:space="preserve"><value>Compara os mesmos produtos que atendem à demanda em todas as propostas.</value></data>
+  <data name="SupplierTotalsHelp" xml:space="preserve"><value>Pacote comparável: {0} produtos com quantidades cotadas iguais, ou lotes que atendem à demanda definida, em todas as propostas. Subtotal de referência: {1}. Δ = (subtotal − referência) / referência × 100. Produtos pendentes ficam fora. A contagem de menores preços usa a unidade-base confirmada; empates são separados.</value></data>
+  <data name="PurchaseVariationUnavailable" xml:space="preserve"><value>É necessário um último preço de compra positivo na mesma unidade base. Valores ausentes ou percentuais fora do limite ficam indisponíveis.</value></data>
+  <data name="PurchaseVariationHelp" xml:space="preserve"><value>Δ = (preço cotado − última compra) / última compra × 100. Cotação: {0}/{2}; compra: {1}/{2}; resultado: {3}. {4}</value></data>
+  <data name="PurchaseVariationShortHelp" xml:space="preserve"><value>Variação com sinal em relação ao último preço base de compra deste produto.</value></data>
+  <data name="SupplierTotalsCaption" xml:space="preserve"><value>Produtos comparados: {0} · pendentes: {1}</value></data>
+  <data name="BestLotShort" xml:space="preserve"><value>✓ Melhor lote</value></data>
+  <data name="DevelopedBy" xml:space="preserve"><value>Desenvolvido por</value></data>
+  <data name="SearchTemplates" xml:space="preserve"><value>Pesquisar nome ou fornecedor…</value></data>
+  <data name="NoMatchingTemplates" xml:space="preserve"><value>Nenhum template corresponde à pesquisa.</value></data>
+  <data name="TemplateSearchSummary" xml:space="preserve"><value>{0} de {1} templates</value></data>
+  <data name="PackagePending" xml:space="preserve"><value>Sem comparação</value></data>
+  <data name="PackageReference" xml:space="preserve"><value>0,00% · menor pacote</value></data>
+  <data name="PackagePremium" xml:space="preserve"><value>{0} mais caro</value></data>
+  <data name="SupplierPriceCounts" xml:space="preserve"><value>{0} itens · menores preços: {1} · empates: {2}</value></data>
+  <data name="PackageComparisonNone" xml:space="preserve"><value>Percentual do pacote indisponível.</value></data>
+  <data name="PackageComparisonTooFewProposals" xml:space="preserve"><value>Adicione outra proposta para comparar fornecedores.</value></data>
+  <data name="PackageComparisonMissingIdentity" xml:space="preserve"><value>Identifique os produtos para comparar os pacotes dos fornecedores.</value></data>
+  <data name="PackageComparisonIncompatibleUnits" xml:space="preserve"><value>Confirme unidades-base compatíveis para comparar os pacotes.</value></data>
+  <data name="PackageComparisonMissingProducts" xml:space="preserve"><value>Sem pacote comum: faltam produtos em uma das propostas.</value></data>
+  <data name="PackageComparisonAmbiguousOffers" xml:space="preserve"><value>Há mais de uma oferta para o mesmo produto na proposta; revise os vínculos.</value></data>
+  <data name="PackageComparisonMissingDemand" xml:space="preserve"><value>As quantidades diferem. Defina a demanda na Análise para comparar os lotes.</value></data>
+  <data name="PackageComparisonInsufficientQuantity" xml:space="preserve"><value>Uma proposta não tem lote ativo que atenda à demanda dos produtos em comum.</value></data>
+  <data name="PackageComparisonUnavailableTotal" xml:space="preserve"><value>Sem subtotal ou percentual válido para comparação.</value></data>
+  <data name="SupplierPackagesTitle" xml:space="preserve"><value>Pacotes por fornecedor</value></data>
+  <data name="SupplierPackageChoiceHelp" xml:space="preserve"><value>Substitui as escolhas por item pelo pacote deste fornecedor.</value></data>
+  <data name="ChooseSupplierPackage" xml:space="preserve"><value>Usar pacote completo</value></data>
+  <data name="PackageCoversDemand" xml:space="preserve"><value>Atende à demanda dos {0} produtos.</value></data>
+  <data name="PackageIncomplete" xml:space="preserve"><value>Atende a {0} de {1} produtos.</value></data>
+  <data name="PurchaseSelectedSummary" xml:space="preserve"><value>Escolhas salvas</value></data>
+  <data name="NoSupplierPackages" xml:space="preserve"><value>Importe propostas de fornecedores para escolher um pacote.</value></data>
+  <data name="PackagePartialComparison" xml:space="preserve"><value>Produtos comparados: {0} · {1} · {2}</value></data>
+  <data name="SupplierPurchaseVariation" xml:space="preserve"><value>Última compra: {0}</value></data>
+  <data name="SupplierPurchaseMissing" xml:space="preserve"><value>indisponível</value></data>
+  <data name="SupplierPurchaseUnavailable" xml:space="preserve"><value>Requer último preço de compra positivo na unidade base de todos os itens da proposta, com quantidades e totais válidos.</value></data>
+  <data name="SupplierPurchaseShortHelp" xml:space="preserve"><value>Compara o total cotado com o custo das mesmas quantidades aos últimos preços de compra.</value></data>
+  <data name="SupplierPurchaseHelp" xml:space="preserve"><value>Referência = soma das quantidades cotadas na unidade base × último preço de compra de cada produto. Usa o histórico salvo de todos os itens da proposta. Cotação: {0}; referência: {1}. Δ = (cotação − referência) / referência × 100 = {2}.</value></data>
+  <data name="SupplierPurchaseInput" xml:space="preserve"><value>{0}: {1} × {2} · compra: {3}</value></data>
+  <data name="OrderWriteUser" xml:space="preserve"><value>Usuário SQL para gravar pedidos</value></data>
+  <data name="OrderWriteUserHelp" xml:space="preserve"><value>Login SQL opcional para as gravações de compra aprovadas. Vazio desabilita gravações, salvo quando você escolhe usar a conexão atual.</value></data>
+  <data name="OrderWritePassword" xml:space="preserve"><value>Senha de gravação de pedidos</value></data>
+  <data name="OrdersRefreshReferences" xml:space="preserve"><value>Atualizar compras</value></data>
+  <data name="OrdersLoadReference" xml:space="preserve"><value>Abrir conferência</value></data>
+  <data name="OrdersSelectReference" xml:space="preserve"><value>Selecione uma compra salva com produtos e fornecedor identificados no ERP.</value></data>
+  <data name="OrdersReference" xml:space="preserve"><value>{0} · Referência de compra v{1}</value></data>
+  <data name="OrdersUseLatestReference" xml:space="preserve"><value>Usar versão de compra selecionada</value></data>
+  <data name="OrdersSave" xml:space="preserve"><value>Salvar conferência local</value></data>
+  <data name="OrdersAcceptShortages" xml:space="preserve"><value>Aceitar quantidades restantes nesta conferência</value></data>
+  <data name="OrdersSearch" xml:space="preserve"><value>Buscar pedidos</value></data>
+  <data name="OrdersSearchHelp" xml:space="preserve"><value>Busque por número, fornecedor, filial, situação e período. O vínculo usa a identificação interna; números de pedido podem se repetir. Configure SearchPurchaseOrders e ReadPurchaseOrder em Configurações.</value></data>
+  <data name="OrdersNumber" xml:space="preserve"><value>Número do pedido</value></data>
+  <data name="OrdersSupplier" xml:space="preserve"><value>Fornecedor</value></data>
+  <data name="OrdersBranch" xml:space="preserve"><value>Filial</value></data>
+  <data name="OrdersStatus" xml:space="preserve"><value>Situação</value></data>
+  <data name="OrdersFromDate" xml:space="preserve"><value>Data inicial</value></data>
+  <data name="OrdersToDate" xml:space="preserve"><value>Data final</value></data>
+  <data name="OrdersLink" xml:space="preserve"><value>Vincular pedido selecionado</value></data>
+  <data name="OrdersMoveUp" xml:space="preserve"><value>Aumentar prioridade</value></data>
+  <data name="OrdersUnlink" xml:space="preserve"><value>Desvincular</value></data>
+  <data name="OrdersRefresh" xml:space="preserve"><value>Atualizar pedidos do ERP</value></data>
+  <data name="OrdersComparison" xml:space="preserve"><value>Cobertura da compra</value></data>
+  <data name="OrdersComparisonHelp" xml:space="preserve"><value>Quantidade cotada = quantidade do lote escolhido × fator de embalagem confirmado. A cobertura usa códigos exatos de produto e unidades-base compatíveis, na prioridade dos pedidos vinculados. Cada quantidade é alocada uma vez. Restante = cotado − coberto. Preço normalizado = preço unitário ÷ fator de embalagem. Diferença de preço = (preço ERP − preço cotado) ÷ preço cotado × 100; indisponível quando a referência é zero. Aceitar uma falta preserva a demanda original e o histórico da compra.</value></data>
+  <data name="OrdersProduct" xml:space="preserve"><value>Produto</value></data>
+  <data name="OrdersQuoted" xml:space="preserve"><value>Cotado</value></data>
+  <data name="OrdersCovered" xml:space="preserve"><value>Coberto</value></data>
+  <data name="OrdersRemaining" xml:space="preserve"><value>Restante</value></data>
+  <data name="OrdersExcess" xml:space="preserve"><value>Itens de pedido com sobra ou sem correspondência: {0}</value></data>
+  <data name="OrdersIncludeMissing" xml:space="preserve"><value>Incluir item restante selecionado</value></data>
+  <data name="OrdersEditLine" xml:space="preserve"><value>Editar item do pedido selecionado</value></data>
+  <data name="OrdersEditHelp" xml:space="preserve"><value>Selecione cada campo a alterar. Quantidades e preços usam a unidade original do item no pedido. Alterar só o preço preserva a quantidade. Itens recebidos ou cancelados não podem ser editados. O cancelamento é explícito e exige uma segunda confirmação.</value></data>
+  <data name="OrdersChangeQuantity" xml:space="preserve"><value>Alterar quantidade</value></data>
+  <data name="OrdersChangePrice" xml:space="preserve"><value>Alterar preço unitário</value></data>
+  <data name="OrdersCancelLine" xml:space="preserve"><value>Cancelar item</value></data>
+  <data name="OrdersAddChange" xml:space="preserve"><value>Adicionar à prévia</value></data>
+  <data name="OrdersDate" xml:space="preserve"><value>Data do novo pedido</value></data>
+  <data name="OrdersPreviewCreate" xml:space="preserve"><value>Prévia de novo pedido para os itens restantes</value></data>
+  <data name="OrdersPreviewUpdate" xml:space="preserve"><value>Prévia das alterações no pedido selecionado</value></data>
+  <data name="OrdersRemoveChange" xml:space="preserve"><value>Remover alteração selecionada</value></data>
+  <data name="OrdersConfirmHelp" xml:space="preserve"><value>Confirme para executar o script salvo do ERP com estas alterações. O pedido será conferido novamente antes de gravar. Resultados incertos exigem reconciliação antes de outro envio.</value></data>
+  <data name="OrdersConfirmCancellation" xml:space="preserve"><value>Confirmo também o cancelamento dos itens selecionados</value></data>
+  <data name="OrdersConfirm" xml:space="preserve"><value>Confirmar gravação no ERP</value></data>
+  <data name="OrdersOperations" xml:space="preserve"><value>Comprovantes de operação no ERP</value></data>
+  <data name="OrdersOperationsHelp" xml:space="preserve"><value>Operações pendentes ou incertas impedem outro envio nesta cotação. Reconcilie com o registro externo de operações para determinar se a operação anterior foi concluída. A reconciliação nunca reenvia alterações.</value></data>
+  <data name="OrdersReconcile" xml:space="preserve"><value>Conferir operação selecionada no ERP</value></data>
+  <data name="OrdersSaved" xml:space="preserve"><value>Conferência salva localmente.</value></data>
+  <data name="OrdersPreviewSummary" xml:space="preserve"><value>{0} · {1} · Pedido {2} · Filial {3} · Situação {4} · {5} · {6} alterações</value></data>
+  <data name="OrdersCreate" xml:space="preserve"><value>Criar pedido de compra</value></data>
+  <data name="OrdersUpdate" xml:space="preserve"><value>Alterar pedido de compra</value></data>
+  <data name="OrdersContribution" xml:space="preserve"><value>Pedido {0}, item {1}: alocado {2} de {6} · {3}/unidade-base · diferença de preço {4} · total do item inteiro {5}</value></data>
+  <data name="OrdersChange" xml:space="preserve"><value>{0} · {1}</value></data>
+  <data name="OrderStatePending" xml:space="preserve"><value>Reconciliação pendente</value></data>
+  <data name="OrderStateCommitted" xml:space="preserve"><value>Gravado no ERP</value></data>
+  <data name="OrderStateNotApplied" xml:space="preserve"><value>Não aplicado, confirmado</value></data>
+  <data name="OrderStateUnknown" xml:space="preserve"><value>Resultado incerto; reconcilie antes de enviar novamente</value></data>
+  <data name="OrderErrorInvalidReference" xml:space="preserve"><value>Use produtos e fornecedor do mesmo catálogo ERP e uma versão de compra salva.</value></data>
+  <data name="OrderErrorInvalidResult" xml:space="preserve"><value>A integração retornou um resultado de pedido inválido.</value></data>
+  <data name="OrderErrorDuplicateOrder" xml:space="preserve"><value>Este pedido já está vinculado.</value></data>
+  <data name="OrderErrorInvalidChange" xml:space="preserve"><value>Revise as alterações selecionadas, a filial, a situação e a data.</value></data>
+  <data name="OrderErrorConflict" xml:space="preserve"><value>A conferência salva, o pedido ou o script mudou. Atualize e revise uma nova prévia.</value></data>
+  <data name="OrderErrorNotEditable" xml:space="preserve"><value>Este pedido ou item não pode ser alterado. Confira situação, recebimentos e cancelamentos.</value></data>
+  <data name="OrderErrorConfirmationRequired" xml:space="preserve"><value>Confirme a gravação e os cancelamentos selecionados.</value></data>
+  <data name="OrderErrorPendingOperation" xml:space="preserve"><value>Reconcilie a operação pendente antes de enviar outra gravação.</value></data>
+  <data name="OrderErrorWritesNotConfigured" xml:space="preserve"><value>Escolha a conexão de gravação, confira o operador e configure os scripts antes de criar ou editar pedidos.</value></data>
+  <data name="QueryContractSearchPurchaseOrders" xml:space="preserve"><value>Script SQL salvo; aceita EXEC, WHILE e cursores. Entrada: @RequestJson (Number, Supplier, Branch, Status, From, To). Saída: uma linha e uma coluna ResultJson nvarchar(max), contendo array JSON de cabeçalhos: Id, Number, SupplierId, SupplierName, Branch, Status, Date (yyyy-MM-dd), CanEdit. Limite de 1.000 pedidos. Use credenciais somente leitura. Consulte docs/purchase-order-scripts.md.</value></data>
+  <data name="QueryContractReadPurchaseOrder" xml:space="preserve"><value>Script SQL salvo; entrada @RequestJson (OrderId). Saída: ResultJson com Header, Revision e Lines. Cada item: Id, ProductCode, Description, Unit, BaseUnit, Quantity, BaseUnitsPerUnit, UnitPrice, Total, ReceivedQuantity, IsCancelled. Revision deve cobrir todo o estado relevante do ERP. Leia na transação recebida, sem NOLOCK nem controle de transações. Consulte docs/purchase-order-scripts.md.</value></data>
+  <data name="QueryContractCreatePurchaseOrder" xml:space="preserve"><value>Script de gravação confirmada com EXEC, WHILE ou cursores. Entrada: @RequestJson contendo OrderWritePlan versionado, OperationId e Changes selecionadas. Use a transação recebida e as regras do ERP para IDs, numeração, campos obrigatórios e arredondamento. Salve um comprovante externo idempotente na mesma transação. Saída ResultJson: OperationId, State (Committed), OrderId. Não desmembre pedidos. Consulte docs/purchase-order-scripts.md.</value></data>
+  <data name="QueryContractUpdatePurchaseOrder" xml:space="preserve"><value>Script de gravação confirmada. Entrada: @RequestJson contendo ExpectedOrder e Changes explícitas por item. Campos nulos preservam o valor existente. Revalide restrições de edição e recebimento; mantenha campos dependentes e totais pelas regras do ERP. Cancelamento explícito. Preserve os demais itens. Salve um comprovante externo na transação recebida. Saída ResultJson: OperationId, State (Committed), OrderId. Consulte docs/purchase-order-scripts.md.</value></data>
+  <data name="QueryContractReconcilePurchaseOperation" xml:space="preserve"><value>Script salvo somente leitura; entrada @RequestJson com plano original e OperationId. Consulte o registro externo durável de operações. Saída ResultJson: OperationId, State (Committed, NotApplied ou Unknown), OrderId (obrigatório para Committed). NotApplied exige prova de que nenhuma operação em andamento ainda poderá concluir. Nunca repita a gravação original aqui. Consulte docs/purchase-order-scripts.md.</value></data>
+  <data name="OrdersManualPair" xml:space="preserve"><value>Aprovar item selecionado para a referência selecionada</value></data>
+  <data name="OrdersManualPairHelp" xml:space="preserve"><value>Selecione um item da conferência e um item do pedido ERP e aprove explicitamente a correspondência. As unidades-base devem coincidir e os fatores de embalagem já devem estar validados. A aprovação vale apenas para a cobertura desta conferência e não altera os códigos de produto no ERP.</value></data>
+  <data name="OrdersClearPairs" xml:space="preserve"><value>Limpar correspondências aprovadas</value></data>
+  <data name="OrdersReferencePrice" xml:space="preserve"><value>Preço cotado: {0}/unidade-base · total do lote {1}</value></data>
+  <data name="OrderErrorRefreshRequired" xml:space="preserve"><value>Vincule e atualize o pedido gravado antes de preparar outra gravação.</value></data>
+  <data name="OrdersLineDetail" xml:space="preserve"><value>Unidade {0} · Base {1} · Fator {2} · Recebido {3} · {4}</value></data>
+  <data name="OrdersLineEditable" xml:space="preserve"><value>Editável</value></data>
+  <data name="OrdersLineReadOnly" xml:space="preserve"><value>Edição restrita</value></data>
+  <data name="OrdersLineCancelled" xml:space="preserve"><value>Cancelado</value></data>
+  <data name="QuotationErrorOrderHistory" xml:space="preserve"><value>Esta cotação possui conferências de pedidos ou comprovantes de operação e deve ser preservada.</value></data>
+  <data name="OrdersComparisonInputs" xml:space="preserve"><value>Produto selecionado: {0}; quantidade de origem: {1}; fator: {2}; preço unitário de origem: {3}; total informado do lote: {4}; demanda original: {5}. Os totais ERP exibidos na grade correspondem aos itens originais inteiros dos pedidos.</value></data>
+  <data name="PurchaseBlockedDemandRequired" xml:space="preserve"><value>Informe a quantidade desejada em Análise de itens.</value></data>
+  <data name="PurchaseBlockedIdentityRequired" xml:space="preserve"><value>Identifique o produto e confirme a conversão em Análise de itens.</value></data>
+  <data name="PurchaseBlockedUnitConflict" xml:space="preserve"><value>Corrija as unidades-base diferentes em Análise de itens.</value></data>
+  <data name="PurchaseBlockedInactiveProduct" xml:space="preserve"><value>Escolha um produto ativo do ERP.</value></data>
+  <data name="PurchaseBlockedInsufficientQuantity" xml:space="preserve"><value>Este lote não cobre a quantidade desejada.</value></data>
+  <data name="PurchaseBlockedInvalidOffer" xml:space="preserve"><value>Revise a quantidade, o preço e o vínculo desta oferta.</value></data>
+  <data name="PurchaseBlockedFinalized" xml:space="preserve"><value>Reabra a cotação para alterar as escolhas de compra.</value></data>
+  <data name="PurchaseBlockedBusy" xml:space="preserve"><value>Aguarde a operação em andamento.</value></data>
+  <data name="PurchaseBlockedNoSelection" xml:space="preserve"><value>Selecione uma oferta.</value></data>
+  <data name="PurchaseBlockedIncompletePackage" xml:space="preserve"><value>Este fornecedor não cobre todos os itens desejados.</value></data>
+  <data name="PurchaseBlockedAmbiguousPackage" xml:space="preserve"><value>Há mais de uma oferta do fornecedor para um item. Escolha individualmente.</value></data>
+  <data name="OrdersNoPreparedPurchases" xml:space="preserve"><value>Nenhuma compra pronta para conferir. Pesquise uma cotação e prepare as escolhas de compra.</value></data>
+  <data name="OrdersSearchCount" xml:space="preserve"><value>{0} pedidos encontrados.</value></data>
+  <data name="OrdersFindReference" xml:space="preserve"><value>Pesquisar cotação ou compra</value></data>
+  <data name="OrdersReferenceSearchPlaceholder" xml:space="preserve"><value>Nome da cotação ou do fornecedor</value></data>
+  <data name="OrdersPreparePurchase" xml:space="preserve"><value>Preparar compra selecionada</value></data>
+  <data name="OrdersReferenceNeedsPreparation" xml:space="preserve"><value>Sem escolhas de compra salvas. Abra Preparar compra.</value></data>
+  <data name="OrdersReferenceNeedsErp" xml:space="preserve"><value>Identifique os produtos e o fornecedor desta compra no ERP.</value></data>
+  <data name="OrdersReferenceReady" xml:space="preserve"><value>Pronta para conferir · compra v{0}</value></data>
+  <data name="OrdersReferenceSearchCount" xml:space="preserve"><value>{0} cotações ou compras encontradas.</value></data>
+  <data name="OrdersLinkNeedsReference" xml:space="preserve"><value>Selecione uma compra preparada para comparar este pedido.</value></data>
+  <data name="OrdersStartHelp" xml:space="preserve"><value>Busque os pedidos do ERP abaixo. Para comparar, selecione uma compra preparada em Pesquisar cotação ou compra.</value></data>
+  <data name="OrdersSearchLimited" xml:space="preserve"><value>Exibindo {0} pedidos. Refine os filtros para encontrar outros.</value></data>
+  <data name="AllowProductReadScripts" xml:space="preserve"><value>Permitir scripts de leitura de produtos (procedures e lotes)</value></data>
+  <data name="ProductReadScriptsHelp" xml:space="preserve"><value>Exige um usuário do banco restrito à leitura. Todos os modos validam parâmetros, tipos, limites e cancelamento.</value></data>
+  <data name="QueryContractFindBuyingSupplier" xml:space="preserve"><value>@BrandId, @Branch e @RequestJson. Retorne uma linha ResultJson com [] sem histórico ou um BuyingSupplierSnapshot. Selecione o pedido elegível mais recente por data e controle na filial; inclua marca, fornecedor do cabeçalho, controle/revisão de origem e consulta em UTC.</value></data>
+  <data name="PriceReference" xml:space="preserve"><value>Referência de preço</value></data>
+  <data name="ReferenceLastPurchase" xml:space="preserve"><value>Última compra</value></data>
+  <data name="ReferenceLinkedOrder" xml:space="preserve"><value>Pedido vinculado</value></data>
+  <data name="LinkedOrdersOptional" xml:space="preserve"><value>Pedidos de compra vinculados (opcional)</value></data>
+  <data name="OrderNumberSearch" xml:space="preserve"><value>Número do pedido</value></data>
+  <data name="LinkOrder" xml:space="preserve"><value>Vincular pedido selecionado</value></data>
+  <data name="RefreshLinkedOrder" xml:space="preserve"><value>Atualizar pedido selecionado</value></data>
+  <data name="RemoveLinkedOrder" xml:space="preserve"><value>Remover vínculo</value></data>
+  <data name="ReplaceManualDemand" xml:space="preserve"><value>Substituir quantidades informadas</value></data>
+  <data name="KeepManualDemandHelp" xml:space="preserve"><value>Desmarcado: mantém as quantidades manuais e preenche apenas as pendentes. Marcado: substitui as correspondentes pelas quantidades completas dos itens ativos do pedido.</value></data>
+  <data name="LinkedOrderLabel" xml:space="preserve"><value>Pedido {0} · {1} · Controle {2} · consulta {3}</value></data>
+  <data name="OrderResultLabel" xml:space="preserve"><value>Pedido {0} · {1} · Controle {2} · Filial {3}</value></data>
+  <data name="OrderSearchCount" xml:space="preserve"><value>{0} pedidos encontrados.</value></data>
+  <data name="QuotationErrorInvalidInputs" xml:space="preserve"><value>Revise os pedidos vinculados e a referência. O preço do pedido exige um pedido vinculado.</value></data>
+  <data name="AnalysisErrorDemandReviewRequired" xml:space="preserve"><value>As quantidades manuais divergem após o agrupamento. Revise-as ou escolha usar as quantidades do pedido.</value></data>
+  <data name="OrderPriceUnavailable" xml:space="preserve"><value>Sem preço compatível no pedido vinculado. A última compra é mantida separadamente.</value></data>
+  <data name="OrderPriceFormula" xml:space="preserve"><value>Referência ponderada = Σ(preço convertido × quantidade comparável) / Σ(quantidade) = {0}; quantidade considerada: {1}. Os preços individuais estão abaixo.</value></data>
+  <data name="OrderPriceContribution" xml:space="preserve"><value>Pedido {0} · controle {1} · item {2}: {3} × fator {4}; preço unitário {5}; consulta {6}.</value></data>
+  <data name="DemandOriginManual" xml:space="preserve"><value>Quantidade desejada informada manualmente</value></data>
+  <data name="DemandOriginOrder" xml:space="preserve"><value>Quantidade desejada de {0} itens de pedido · consulta {1}</value></data>
+  <data name="ApplyPriceReference" xml:space="preserve"><value>Aplicar referência</value></data>
+  <data name="AdvancedOrderTools" xml:space="preserve"><value>Histórico e cobertura de pedidos</value></data>
+  <data name="SharedCheckingWorkspace" xml:space="preserve"><value>Voltar à análise e conferência</value></data>
+  <data name="ProductSection" xml:space="preserve"><value>Produto</value></data>
+  <data name="PackagingSection" xml:space="preserve"><value>Quantidade e embalagem da cotação</value></data>
+  <data name="PdfQuantity" xml:space="preserve"><value>Quantidade no documento</value></data>
+  <data name="ComparisonUnit" xml:space="preserve"><value>Comparar em</value></data>
+  <data name="PackageContains" xml:space="preserve"><value>Cada {0} contém ({1})</value></data>
+  <data name="DesiredQuantityInUnit" xml:space="preserve"><value>Quantidade desejada ({0})</value></data>
+  <data name="QuantityConversionEquation" xml:space="preserve"><value>{0} × {1} = {2} · Preço: {3}/{4}</value></data>
+  <data name="ConversionPending" xml:space="preserve"><value>Confirme um fator de embalagem positivo.</value></data>
+  <data name="ChangeProduct" xml:space="preserve"><value>Alterar produto</value></data>
+  <data name="RefreshErpData" xml:space="preserve"><value>Atualizar dados do ERP</value></data>
+  <data name="ErpRefreshPreview" xml:space="preserve"><value>Dados atuais do ERP carregados para revisão. Confirme para substituir o vínculo salvo.</value></data>
+  <data name="SynchronizeWithErp" xml:space="preserve"><value>Preparar pedido no ERP</value></data>
+  <data name="SyncOneBrandHelp" xml:space="preserve"><value>Cada proposta contém uma marca. Confira o fornecedor de compra e o controle exato do pedido antes de selecionar alterações.</value></data>
+  <data name="SyncPrepareFirst" xml:space="preserve"><value>Escolha os lotes em Preparar compra antes de sincronizar.</value></data>
+  <data name="SyncBrandUnknown" xml:space="preserve"><value>Revisar marca do produto</value></data>
+  <data name="SyncBranch" xml:space="preserve"><value>Filial</value></data>
+  <data name="SyncCreate" xml:space="preserve"><value>Criar um pedido</value></data>
+  <data name="SyncUpdate" xml:space="preserve"><value>Atualizar pedido selecionado</value></data>
+  <data name="SyncPreview" xml:space="preserve"><value>Conferir diferenças</value></data>
+  <data name="SyncNewOrder" xml:space="preserve"><value>Novo pedido</value></data>
+  <data name="SyncStatusPending" xml:space="preserve"><value>Padrões dependem de validação no ERP</value></data>
+  <data name="SyncPreviewSummary" xml:space="preserve"><value>Controle de destino: {0} · Filial: {1} · Status: {2}
+Fornecedor: {3} → {4} ({5}) · pedido de origem: {6}</value></data>
+  <data name="SyncNoDifferences" xml:space="preserve"><value>Sem diferenças. A sincronização é desnecessária.</value></data>
+  <data name="SyncChooseChanges" xml:space="preserve"><value>Selecione apenas as alterações a aplicar. Itens extras desmarcados serão mantidos.</value></data>
+  <data name="SyncSupplierChange" xml:space="preserve"><value>Alterar fornecedor de compra: {0} → {1}</value></data>
+  <data name="SyncRemoveLine" xml:space="preserve"><value>Remover item de controle {0}: {1} · {2} (desmarcado = manter)</value></data>
+  <data name="SyncLineChange" xml:space="preserve"><value>{0} · controle do item {1} · produto {2} → {3}
+Quantidade: {4} → {5} · preço unitário: {6} → {7} · desejado: {8}</value></data>
+  <data name="SyncKindProductAndPackage" xml:space="preserve"><value>Substituir produto e embalagem juntos</value></data>
+  <data name="SyncKindQuantity" xml:space="preserve"><value>Atualizar quantidade</value></data>
+  <data name="SyncKindPrice" xml:space="preserve"><value>Atualizar preço</value></data>
+  <data name="SyncKindInclude" xml:space="preserve"><value>Incluir lote completo cotado</value></data>
+  <data name="SyncRemovalConfirmation" xml:space="preserve"><value>Confirmo a remoção dos controles de item selecionados.</value></data>
+  <data name="SyncIrreversibleHelp" xml:space="preserve"><value>As versões locais não desfazem uma atualização no ERP. A troca de produto e embalagem inclui quantidade e preço coerentes. Remoção é diferente de cancelamento.</value></data>
+  <data name="SyncReviewSelection" xml:space="preserve"><value>Revisar pedido</value></data>
+  <data name="SyncResultSummary" xml:space="preserve"><value>Fornecedor: {0} · Marca: {1} · Subtotal dos itens: {2} · Remoções: {3}</value></data>
+  <data name="SyncSafeValidationRequired" xml:space="preserve"><value>Somente prévia. A gravação no ERP depende de validar scripts, numeração, totais, remoção e recuperação em um ambiente de teste seguro.</value></data>
+  <data name="SyncConfirmAndExecute" xml:space="preserve"><value>Gravar pedido no ERP</value></data>
+  <data name="SyncErrorMissingBrand" xml:space="preserve"><value>Atualize ou corrija a marca do produto identificado no ERP.</value></data>
+  <data name="SyncErrorMissingSupplier" xml:space="preserve"><value>Resolva o fornecedor de compra desta marca e filial e confirme a troca quando necessária.</value></data>
+  <data name="SyncErrorInvalidPairing" xml:space="preserve"><value>O pedido contém itens com correspondência ambígua. Revise o pareamento pelo controle do item.</value></data>
+  <data name="SyncErrorInvalidSelection" xml:space="preserve"><value>Selecione alterações válidas e confirme explicitamente as remoções.</value></data>
+  <data name="SyncErrorMixedBrands" xml:space="preserve"><value>O pedido resultante teria marcas diferentes. Revise as substituições e os itens extras ou crie um pedido separado.</value></data>
+  <data name="SyncErrorReadOnly" xml:space="preserve"><value>O pedido ou item selecionado não permite edição. Itens com recebimento são protegidos.</value></data>
+  <data name="SyncErrorConflict" xml:space="preserve"><value>Os dados ou o pedido de destino mudaram. Recarregue a compra e calcule uma nova prévia.</value></data>
+  <data name="SyncErrorNumericLimit" xml:space="preserve"><value>Os valores propostos excedem os limites numéricos.</value></data>
+  <data name="SupplierOrderVariation" xml:space="preserve"><value>Pedido vinculado: {0}</value></data>
+  <data name="SupplierOrderHelp" xml:space="preserve"><value>Referência = quantidades cotadas convertidas × preços de referência salvos dos pedidos. Cotação: {0}; referência: {1}. Δ = (cotação − referência) / referência × 100 = {2}.</value></data>
+  <data name="OrderVariationHelp" xml:space="preserve"><value>Δ = (preço cotado − referência do pedido) / referência do pedido × 100. Cotação: {0}/{2}; referência: {1}/{2}; resultado: {3}. {4}</value></data>
+  <data name="AnalysisVariantConflict" xml:space="preserve"><value>Os nomes coincidem, mas as variantes revisadas diferem. Revise o agrupamento.</value></data>
+  <data name="PurchaseBlockedVariantConflict" xml:space="preserve"><value>Revise as variantes conflitantes antes de escolher o lote.</value></data>
+  <data name="PackageComparisonAmbiguousVariants" xml:space="preserve"><value>Revise as variantes conflitantes</value></data>
+  <data name="SyncPairing" xml:space="preserve"><value>Revisar pareamentos de itens (opcional)</value></data>
+  <data name="SyncLoadPairingLines" xml:space="preserve"><value>Carregar itens do pedido de destino</value></data>
+  <data name="SyncPairTarget" xml:space="preserve"><value>Item {0} · produto {1} · {2}</value></data>
+  <data name="SyncAddPair" xml:space="preserve"><value>Associar itens selecionados</value></data>
+  <data name="SyncRemovePair" xml:space="preserve"><value>Remover associação dos itens</value></data>
+  <data name="OrderQuantityState" xml:space="preserve"><value>Pedido: {0}; recebido: {1}; pendente: {2}.</value></data>
+  <data name="OrderDemandFormula" xml:space="preserve"><value>Quantidade desejada = soma(quantidade ativa no pedido × fator de embalagem). Os recebimentos aparecem separadamente e não reduzem a demanda original.</value></data>
+  <data name="OrderDemandShortHelp" xml:space="preserve"><value>Quantidades de origem e fórmula da demanda.</value></data>
+  <data name="ManualDemandHelp" xml:space="preserve"><value>Esta quantidade desejada foi informada manualmente. Vincular um pedido a preserva, salvo quando a substituição é escolhida explicitamente.</value></data>
+  <data name="OrderVariationUnavailable" xml:space="preserve"><value>Sem referência compatível no pedido vinculado ou com preço zero. O percentual fica indisponível; a última compra não é usada em seu lugar.</value></data>
+  <data name="SyncBranchRequired" xml:space="preserve"><value>Informe a filial usada no histórico do fornecedor de compra.</value></data>
+  <data name="SyncTargetRequired" xml:space="preserve"><value>Selecione o pedido de destino, conferindo seu controle.</value></data>
+  <data name="SupplierOrderUnavailable" xml:space="preserve"><value>Exige um preço compatível no pedido para cada item cotado e quantidades convertidas válidas. Preços ausentes e denominadores zero deixam o percentual indisponível.</value></data>
+  <data name="SynchronizeWithErpHelp" xml:space="preserve"><value>Abre a prévia de sincronização da compra. Compare fornecedor e itens e escolha as alterações antes de confirmar qualquer gravação no ERP.</value></data>
+  <data name="ApplyPriceReferenceHelp" xml:space="preserve"><value>Salva a referência de preço escolhida sem alterar valores do PDF nem o histórico de compras.</value></data>
+  <data name="SyncPreviewHelp" xml:space="preserve"><value>Consulta os dados atuais do ERP e lista apenas diferenças reais. Esta ação não grava alterações.</value></data>
+  <data name="SyncReviewSelectionHelp" xml:space="preserve"><value>Confere novamente os dados e mostra o pedido resultante das alterações selecionadas.</value></data>
+  <data name="RefreshErpDataHelp" xml:space="preserve"><value>Carrega os dados atuais deste produto no ERP. Revise e confirme antes de substituir o vínculo salvo.</value></data>
+  <data name="OrderUseCurrentConnection" xml:space="preserve"><value>Usar a conexão atual para gravar pedidos</value></data>
+  <data name="OrderUseCurrentConnectionHelp" xml:space="preserve"><value>Usa a conexão e as credenciais protegidas acima. A conta do banco precisa permitir as gravações aprovadas. Cada alteração de pedido continua exigindo confirmação.</value></data>
+  <data name="OrderWriteOperator" xml:space="preserve"><value>Código do operador da integração</value></data>
+  <data name="OrderWriteOperatorHelp" xml:space="preserve"><value>Operador do ERP usado na auditoria pelo script de gravação configurado. Esse código não substitui a autenticação no banco.</value></data>
+  <data name="SyncReadyToConfirm" xml:space="preserve"><value>Revise o resultado e confirme a gravação no ERP.</value></data>
+  <data name="SyncWriteDetails" xml:space="preserve"><value>Operador ERP: {0}. Controle de destino: {1}.</value></data>
+  <data name="SyncNewOrderNumber" xml:space="preserve"><value>Um novo número e os controles serão reservados uma única vez após a confirmação</value></data>
+  <data name="SyncReconcile" xml:space="preserve"><value>Conferir resultado no ERP</value></data>
+  <data name="SyncReconcileHelp" xml:space="preserve"><value>Confere o identificador da operação salva e seu resultado. Esta ação nunca reenvia as alterações.</value></data>
+  <data name="QueryContractUpdatePurchaseSynchronization" xml:space="preserve"><value>SynchronizationWritePlan confirmado em @RequestJson; @OperationId e @OperatorCode são parâmetros tipados. Aplique somente a seleção revisada na transação fornecida. Preserve os demais campos e acrescente um identificador durável da operação em armazenamento existente. Retorne ResultJson com OperationId, State=Committed e OrderId. Não altere estrutura ou triggers.</value></data>
+  <data name="QueryContractReconcilePurchaseSynchronization" xml:space="preserve"><value>Consulta somente leitura com SynchronizationWritePlan em @RequestJson. Confira o destino ou Allocation salvo, o identificador durável da operação e os valores resultantes. Retorne ResultJson com OperationId, State=Committed ou Unknown, OrderId. Identificador ausente significa Unknown. Nunca reenvie a gravação.</value></data>
+  <data name="QueryContractReservePurchaseSynchronization" xml:space="preserve"><value>Reserva para criação com SynchronizationWritePlan confirmado. Reserve atomicamente o número pelo contador validado do ERP e controles de uma sequência existente. Não insira pedidos aqui. Retorne ResultJson: OrderId, Number, LineControls (um por item selecionado). A reserva é salva localmente antes do envio e nunca reutilizada.</value></data>
+  <data name="QueryContractCreatePurchaseSynchronization" xml:space="preserve"><value>SynchronizationWritePlan confirmado em @RequestJson inclui Allocation salvo, Date e Selection revisada. Defina a situação inicial no script; Status pode ser nulo. Insira somente os controles reservados, aplique valores iniciais e totais validados do ERP e salve um identificador durável da operação na mesma transação. Retorne ResultJson: OperationId, State=Committed, OrderId. Não altere estrutura ou triggers.</value></data>
+  <data name="OrderHistoryHelp" xml:space="preserve"><value>Consulte comparações salvas, a cobertura entre pedidos e operações pendentes.</value></data>
+  <data name="FinancialFieldFreight" xml:space="preserve"><value>Valor do frete</value></data>
+  <data name="FinancialFieldDiscount" xml:space="preserve"><value>Valor do desconto</value></data>
+  <data name="FinancialFieldOtherCharges" xml:space="preserve"><value>Outras despesas</value></data>
+  <data name="FinancialFieldIpiAmount" xml:space="preserve"><value>Valor do IPI</value></data>
+  <data name="FinancialFieldIpiRate" xml:space="preserve"><value>Alíquota de IPI (%)</value></data>
+  <data name="FinancialFieldIcmsAmount" xml:space="preserve"><value>Valor do ICMS</value></data>
+  <data name="FinancialFieldIcmsRate" xml:space="preserve"><value>Alíquota de ICMS (%)</value></data>
+  <data name="FinancialFieldSubstitutionTaxAmount" xml:space="preserve"><value>Valor da substituição tributária</value></data>
+  <data name="FinancialFieldSubstitutionTaxRate" xml:space="preserve"><value>Alíquota de substituição tributária (%)</value></data>
+  <data name="FinancialInvalidValues" xml:space="preserve"><value>Informe valores financeiros válidos e não negativos. Alíquotas devem ficar entre 0 e 100. Vazio significa indisponível.</value></data>
+  <data name="FinancialEvidenceLine" xml:space="preserve"><value>{0} · página {1}: {2}</value></data>
+  <data name="FinancialItemFields" xml:space="preserve"><value>Frete, descontos e impostos do item</value></data>
+  <data name="FinancialDocumentFields" xml:space="preserve"><value>Despesas e impostos capturados do documento</value></data>
+  <data name="FinancialMapping" xml:space="preserve"><value>Campos financeiros opcionais</value></data>
+  <data name="FinancialDocumentPattern" xml:space="preserve"><value>Expressão financeira do documento</value></data>
+  <data name="FinancialCaptureHelp" xml:space="preserve"><value>Grupos opcionais: freight, discount, otherCharges, ipiAmount, ipiRate, icmsAmount, icmsRate, substitutionTaxAmount, substitutionTaxRate. Use a expressão do item para campos por item e esta expressão para campos do documento. Os valores seguem a cultura do modelo; alíquotas são percentuais. Campos ausentes ficam indisponíveis.</value></data>
+  <data name="FinancialCaptureScope" xml:space="preserve"><value>Despesas do documento ficam separadas dos valores por item. A consulta salva do ERP define rateio, cálculos e arredondamento.</value></data>
+  <data name="IssueConflictingFinancialValues" xml:space="preserve"><value>As capturas financeiras divergem. Revise a expressão do documento e extraia novamente.</value></data>
+  <data name="FinancialPolicies" xml:space="preserve"><value>Preços, frete e impostos</value></data>
+  <data name="FinancialPoliciesHelp" xml:space="preserve"><value>Escolha quais valores atualizar e de onde eles devem vir.</value></data>
+  <data name="FinancialUpdatePrices" xml:space="preserve"><value>Atualizar preços</value></data>
+  <data name="FinancialPrices" xml:space="preserve"><value>Preços</value></data>
+  <data name="FinancialPriceSelected" xml:space="preserve"><value>Preços do documento selecionados</value></data>
+  <data name="FinancialSourceScriptDefault" xml:space="preserve"><value>Padrão da integração</value></data>
+  <data name="FinancialSourceDocument" xml:space="preserve"><value>Valores do documento</value></data>
+  <data name="FinancialSourceLastPurchaseOrder" xml:space="preserve"><value>Último pedido de compra</value></data>
+  <data name="FinancialSourceZero" xml:space="preserve"><value>Zerar</value></data>
+  <data name="FinancialSourceKeepExisting" xml:space="preserve"><value>Não atualizar (manter)</value></data>
+  <data name="FinancialPolicyFreight" xml:space="preserve"><value>Frete</value></data>
+  <data name="FinancialPolicyDiscount" xml:space="preserve"><value>Desconto</value></data>
+  <data name="FinancialPolicyOtherCharges" xml:space="preserve"><value>Outras despesas</value></data>
+  <data name="FinancialPolicyTaxes" xml:space="preserve"><value>Impostos</value></data>
+  <data name="FinancialReviewPolicy" xml:space="preserve"><value>Revise a política financeira para conferir os valores resultantes.</value></data>
+  <data name="FinancialConfirmedTotal" xml:space="preserve"><value>Total do pedido: {0}</value></data>
+  <data name="FinancialHistorySource" xml:space="preserve"><value>Pedido de referência {0} · {1}</value></data>
+  <data name="FinancialResolvedDetails" xml:space="preserve"><value>Valores financeiros e referências</value></data>
+  <data name="OrderErrorFinancialPolicyUnsupported" xml:space="preserve"><value>Esta política exige consultas compatíveis de prévia financeira, gravação e reconciliação. Manter valores só está disponível na edição.</value></data>
+  <data name="OrderErrorFinancialDataMissing" xml:space="preserve"><value>Faltam valores financeiros na origem escolhida. Revise o mapeamento do PDF ou escolha outra origem. Um item novo não possui preço anterior para manter.</value></data>
+  <data name="OrderErrorFinancialHistoryMissing" xml:space="preserve"><value>A consulta não identificou um pedido histórico válido para esta política.</value></data>
+  <data name="OrderErrorNoChanges" xml:space="preserve"><value>A consulta não encontrou alterações a aplicar.</value></data>
+  <data name="QueryContractPreviewPurchaseFinancials" xml:space="preserve"><value>Consulta somente leitura com SynchronizationWritePlan em @RequestJson, FinancialPolicy e capturas congeladas do PDF. Retorne ResultJson: Status (Ready, MissingDocumentValues, MissingHistory, UnsupportedPolicy), Revision, HasChanges, Header (FinancialAmounts), OrderTotal, Lines (Position, Control, ProductCode, Unit, BaseUnit, Quantity, Factor, UnitPrice, ItemTotal, Values) e Sources (CatalogIdentity, OrderId, Revision, Date). Defina totais, impostos, rateio e arredondamento nesta consulta. Mantenha Revision determinístico. O resultado é aprovado e relido na transação de gravação. Os scripts de gravação/reconciliação devem respeitar FinancialPolicy/FinancialPreview. Consulte docs/purchase-order-scripts.md.</value></data>
+  <data name="FinancialResolvedLine" xml:space="preserve"><value>{0} · preço unitário exato: {1} · total do item: {2}</value></data>
+  <data name="IssueInvalidFinancialValue" xml:space="preserve"><value>Um valor financeiro é negativo ou uma alíquota está fora do intervalo de 0 a 100%.</value></data>
+  <data name="ChooseDocument" xml:space="preserve"><value>Escolher PDF ou planilha…</value></data>
+  <data name="ImportSourceFormat" xml:space="preserve"><value>Formato do arquivo</value></data>
+  <data name="FormatPdf" xml:space="preserve"><value>PDF</value></data>
+  <data name="FormatExcel" xml:space="preserve"><value>Planilha (Excel, LibreOffice, CSV/TSV)</value></data>
+  <data name="SpreadsheetMapping" xml:space="preserve"><value>Mapeamento da planilha</value></data>
+  <data name="SpreadsheetMappingHelp" xml:space="preserve"><value>Escolha amostra, aba, cabeçalho e linhas de itens. Informe as letras das colunas (A, B, …, AA). O tipo de código define a identificação interna ou pelo fornecedor. Linhas preenchidas ficam disponíveis para revisão; os cabeçalhos mapeados protegem contra mudanças de layout.</value></data>
+  <data name="ChooseSpreadsheetSample" xml:space="preserve"><value>Escolher planilha de exemplo…</value></data>
+  <data name="SpreadsheetSheet" xml:space="preserve"><value>Aba</value></data>
+  <data name="SpreadsheetHeaderRow" xml:space="preserve"><value>Linha do cabeçalho</value></data>
+  <data name="SpreadsheetFirstDataRow" xml:space="preserve"><value>Primeira linha de itens</value></data>
+  <data name="SpreadsheetLastDataRow" xml:space="preserve"><value>Última linha de itens (vazio: até o fim)</value></data>
+  <data name="SpreadsheetCodeColumn" xml:space="preserve"><value>Coluna do código do produto</value></data>
+  <data name="SpreadsheetDescriptionColumn" xml:space="preserve"><value>Coluna da descrição</value></data>
+  <data name="SpreadsheetQuantityColumn" xml:space="preserve"><value>Coluna da quantidade</value></data>
+  <data name="SpreadsheetUnitPriceColumn" xml:space="preserve"><value>Coluna do valor unitário</value></data>
+  <data name="SpreadsheetTotalColumn" xml:space="preserve"><value>Coluna do total (opcional)</value></data>
+  <data name="SpreadsheetUnitColumn" xml:space="preserve"><value>Coluna da unidade (opcional)</value></data>
+  <data name="SpreadsheetTotalHelp" xml:space="preserve"><value>Sem coluna de total, o total é quantidade × valor unitário, sem arredondamento, e aparece como calculado. Com coluna mapeada, totais ausentes exigem correção ou exclusão. Sem coluna de unidade, vale a unidade padrão explícita do template.</value></data>
+  <data name="SpreadsheetColumns" xml:space="preserve"><value>Colunas: letra · cabeçalho · exemplo</value></data>
+  <data name="SpreadsheetSampleLoaded" xml:space="preserve"><value>Amostra carregada. Mapeie as colunas e teste a extração.</value></data>
+  <data name="SpreadsheetPosition" xml:space="preserve"><value>Aba {0} · linha {1}</value></data>
+  <data name="SpreadsheetCalculatedTotal" xml:space="preserve"><value>Total calculado: quantidade × valor unitário</value></data>
+  <data name="IssueSpreadsheetHeaderMismatch" xml:space="preserve"><value>Os cabeçalhos mapeados mudaram ou estão ausentes. Revise o mapeamento.</value></data>
+  <data name="ErrorInvalidSpreadsheet" xml:space="preserve"><value>Planilha incompatível, danificada, protegida ou sem a aba mapeada. Em CSV/TSV, confira também separador e codificação.</value></data>
+  <data name="ErrorSourceFormatMismatch" xml:space="preserve"><value>Escolha um template do mesmo formato do arquivo (PDF ou planilha).</value></data>
+  <data name="ImportPreviewChanged" xml:space="preserve"><value>O arquivo ou template mudou. Extraia os itens novamente antes de salvar.</value></data>
+  <data name="ProductCodeKind" xml:space="preserve"><value>Tipo de código do produto</value></data>
+  <data name="SupplierCodeKind" xml:space="preserve"><value>Código do fornecedor · agrupar por semelhante</value></data>
+  <data name="InternalCodeKind" xml:space="preserve"><value>Código interno do ERP · agrupar por produto</value></data>
+  <data name="ProductCodeKindHelp" xml:space="preserve"><value>Código do fornecedor usa o código alternativo exato e o agrupamento normal da cotação. Código interno consulta diretamente o código do produto no ERP e mantém produtos distintos separados, mesmo com o mesmo semelhante. A escolha fica salva em cada importação. Conversão e escolhas de compra continuam exigindo revisão.</value></data>
+  <data name="IdentificationInternalCode" xml:space="preserve"><value>Confirmar conversão</value></data>
+  <data name="CandidateExactProduct" xml:space="preserve"><value>Produto exato: {0}. Esta importação não agrupa por semelhante.</value></data>
+  <data name="SpreadsheetSummary" xml:space="preserve"><value>{0} itens · {1} com avisos · {2}</value></data>
+  <data name="InternalCodeLabel" xml:space="preserve"><value>Código interno do produto no ERP</value></data>
+  <data name="ProductCodeShort" xml:space="preserve"><value>Código</value></data>
+  <data name="DelimitedTextSettings" xml:space="preserve"><value>Opções de CSV / TSV</value></data>
+  <data name="DelimitedSeparator" xml:space="preserve"><value>Separador de colunas</value></data>
+  <data name="DelimitedEncoding" xml:space="preserve"><value>Codificação do texto</value></data>
+  <data name="DelimitedTextHelp" xml:space="preserve"><value>Usado apenas para CSV/TSV. Automático detecta separadores comuns; TSV usa tabulação. A codificação detecta a marca UTF e, sem ela, tenta UTF-8 e depois Windows-1252. Se as colunas ou os acentos estiverem incorretos, escolha uma opção explícita e carregue a amostra novamente. As escolhas ficam salvas no template. CSV/TSV usam a aba Data.</value></data>
+  <data name="DelimitedAutomatic" xml:space="preserve"><value>Automático</value></data>
+  <data name="DelimitedSemicolon" xml:space="preserve"><value>Ponto e vírgula (;)</value></data>
+  <data name="DelimitedComma" xml:space="preserve"><value>Vírgula (,)</value></data>
+  <data name="DelimitedTab" xml:space="preserve"><value>Tabulação</value></data>
+  <data name="DelimitedPipe" xml:space="preserve"><value>Barra vertical (|)</value></data>
+  <data name="DelimitedUtf8" xml:space="preserve"><value>UTF-8</value></data>
+  <data name="DelimitedWindows1252" xml:space="preserve"><value>Windows-1252</value></data>
+  <data name="DelimitedUtf16Le" xml:space="preserve"><value>UTF-16 LE</value></data>
+  <data name="DelimitedUtf16Be" xml:space="preserve"><value>UTF-16 BE</value></data>
+  <data name="SyncCombineDocumentsQuestion" xml:space="preserve"><value>{0}: {1} documentos. Somar as quantidades dos produtos selecionados?</value></data>
+  <data name="SyncDocumentChoicesRequired" xml:space="preserve"><value>Escolha se deseja somar os documentos e resolva os preços diferentes.</value></data>
+  <data name="SyncDocumentChoicePlaceholder" xml:space="preserve"><value>Escolha como usar os documentos</value></data>
+  <data name="SyncDocumentKeepSelected" xml:space="preserve"><value>Não, manter apenas as ofertas selecionadas</value></data>
+  <data name="SyncDocumentCombine" xml:space="preserve"><value>Sim, somar as quantidades deste fornecedor</value></data>
+  <data name="SyncDocumentPriceQuestion" xml:space="preserve"><value>O mesmo produto tem preços unitários diferentes. Qual preço usar?</value></data>
+  <data name="SyncDocumentPricePlaceholder" xml:space="preserve"><value>Escolha como tratar os preços</value></data>
+  <data name="SyncDocumentPriceHighest" xml:space="preserve"><value>Usar o maior preço</value></data>
+  <data name="SyncDocumentPriceWeighted" xml:space="preserve"><value>Usar o preço médio ponderado pela quantidade</value></data>
+  <data name="SyncDocumentPriceSeparate" xml:space="preserve"><value>Manter preços diferentes em linhas separadas</value></data>
+  <data name="SyncDocumentSources" xml:space="preserve"><value>Documentos de origem</value></data>
+  <data name="SyncDocumentCombinationScope" xml:space="preserve"><value>Somente os produtos selecionados. Unidades ou embalagens diferentes ficam separadas.</value></data>
+  <data name="SyncCombinedLine" xml:space="preserve"><value>{0} · {1} · {2} · valor unitário {3} · total {4}</value></data>
+  <data name="SyncCombinedDocumentsSummary" xml:space="preserve"><value>Documentos de origem: {0}.</value></data>
+  <data name="SyncErrorDocumentChoiceRequired" xml:space="preserve"><value>Escolha se deseja somar os documentos do mesmo fornecedor antes de preparar um novo pedido.</value></data>
+  <data name="SyncErrorDocumentPriceChoiceRequired" xml:space="preserve"><value>Escolha maior preço, média ponderada ou linhas separadas para os preços diferentes.</value></data>
+  <data name="ChooseTemplateSample" xml:space="preserve"><value>Escolher arquivo…</value></data>
+  <data name="ConnectionAdvanced" xml:space="preserve"><value>Segurança e tempo limite</value></data>
+  <data name="ConnectionDiagnosticDetails" xml:space="preserve"><value>Detalhes do diagnóstico</value></data>
+  <data name="OrderWriteConnectionOptions" xml:space="preserve"><value>Conexão para pedidos de compra</value></data>
+  <data name="QueryCategoryFinancials" xml:space="preserve"><value>Prévia financeira</value></data>
+  <data name="QueryCategoryLegacy" xml:space="preserve"><value>Fluxo anterior de pedidos</value></data>
+  <data name="QueryCategoryOrderReads" xml:space="preserve"><value>Leitura de pedidos</value></data>
+  <data name="QueryCategoryOrderWrites" xml:space="preserve"><value>Sincronização de pedidos</value></data>
+  <data name="QueryCategoryProducts" xml:space="preserve"><value>Produtos</value></data>
+  <data name="QueryContractSummary" xml:space="preserve"><value>Parâmetros, colunas de retorno e regras de execução.</value></data>
+  <data name="QueryEditorLabel" xml:space="preserve"><value>Consulta SQL</value></data>
+  <data name="QueryNameCreatePurchaseOrder" xml:space="preserve"><value>Criar pedido pelo fluxo anterior</value></data>
+  <data name="QueryNameCreatePurchaseSynchronization" xml:space="preserve"><value>Criar pedido de compra revisado</value></data>
+  <data name="QueryNameFindBuyingSupplier" xml:space="preserve"><value>Consultar fornecedor de compra</value></data>
+  <data name="QueryNameFindProduct" xml:space="preserve"><value>Identificar pelo código do fornecedor</value></data>
+  <data name="QueryNameFindProductById" xml:space="preserve"><value>Identificar pelo código interno</value></data>
+  <data name="QueryNameGetEquivalentProducts" xml:space="preserve"><value>Consultar produtos semelhantes</value></data>
+  <data name="QueryNamePreviewPurchaseFinancials" xml:space="preserve"><value>Calcular prévia financeira do pedido</value></data>
+  <data name="QueryNameReadPurchaseOrder" xml:space="preserve"><value>Ler pedido de compra</value></data>
+  <data name="QueryNameReconcilePurchaseOperation" xml:space="preserve"><value>Conferir operação do fluxo anterior</value></data>
+  <data name="QueryNameReconcilePurchaseSynchronization" xml:space="preserve"><value>Conferir resultado da sincronização</value></data>
+  <data name="QueryNameReservePurchaseSynchronization" xml:space="preserve"><value>Reservar número do pedido</value></data>
+  <data name="QueryNameSearchProducts" xml:space="preserve"><value>Buscar produtos pela descrição</value></data>
+  <data name="QueryNameSearchPurchaseOrders" xml:space="preserve"><value>Buscar pedidos de compra</value></data>
+  <data name="QueryNameUpdatePurchaseOrder" xml:space="preserve"><value>Atualizar pedido pelo fluxo anterior</value></data>
+  <data name="QueryNameUpdatePurchaseSynchronization" xml:space="preserve"><value>Aplicar alterações revisadas no pedido</value></data>
+  <data name="QueryReadOptions" xml:space="preserve"><value>Opções de leitura de produtos</value></data>
+  <data name="TemplateMoreActions" xml:space="preserve"><value>Mais ações</value></data>
+  <data name="TemplateSampleFile" xml:space="preserve"><value>Arquivo de exemplo</value></data>
+  <data name="TestConnectionDraftHelp" xml:space="preserve"><value>Testa os campos exibidos sem salvar.</value></data>
+  <data name="Theme" xml:space="preserve"><value>Tema</value></data>
+  <data name="BrandLabel" xml:space="preserve"><value>Marca</value></data>
+  <data name="IdentificationRowFound" xml:space="preserve"><value>Confirmar conversão</value></data>
+  <data name="IdentificationRowAmbiguous" xml:space="preserve"><value>Selecionar produto</value></data>
+  <data name="IdentificationRowNotFound" xml:space="preserve"><value>Identificar produto</value></data>
+  <data name="ProductConfigurationHint" xml:space="preserve"><value>Duplo clique ou F2 para configurar</value></data>
+  <data name="ConfirmConversion" xml:space="preserve"><value>Confirmar conversão</value></data>
+  <data name="BatchBaseUnitMissing" xml:space="preserve"><value>Produto sem unidade-base.</value></data>
+  <data name="BatchSelectAll" xml:space="preserve"><value>Selecionar encontrados</value></data>
+  <data name="BatchExactCodeRequired" xml:space="preserve"><value>Selecione o código do documento.</value></data>
+  <data name="BatchClearSelection" xml:space="preserve"><value>Desmarcar todos</value></data>
+  <data name="BatchSystemQuantity" xml:space="preserve"><value>Qtd. sistema</value></data>
+  <data name="BatchConfirmSelected" xml:space="preserve"><value>Confirmar selecionados</value></data>
+  <data name="BatchConversionHelp" xml:space="preserve"><value>Qtd. sistema = qtd. documento × fator. Edite o fator ou a quantidade no sistema.</value></data>
+  <data name="ProductReviewTitle" xml:space="preserve"><value>Conferir cotação</value></data>
+  <data name="BatchErpProduct" xml:space="preserve"><value>Produto no ERP</value></data>
+  <data name="MappingErrorConflictingConversion" xml:space="preserve"><value>O mesmo de/para tem conversões diferentes.</value></data>
+  <data name="BatchPriceHelp" xml:space="preserve"><value>Valor unit. sistema = valor unit. documento ÷ fator. A última compra usa a mesma unidade-base.</value></data>
+  <data name="BatchSourceQuantity" xml:space="preserve"><value>Qtd. documento</value></data>
+  <data name="BatchFactorRequired" xml:space="preserve"><value>Informe o fator da conversão.</value></data>
+  <data name="BatchSystemPrice" xml:space="preserve"><value>Valor unit. sistema</value></data>
+  <data name="BatchQuantityPrecision" xml:space="preserve"><value>Ajuste o fator para essa quantidade.</value></data>
+  <data name="BatchConversionFactor" xml:space="preserve"><value>Fator</value></data>
+  <data name="ProductReviewSummary" xml:space="preserve"><value>{0} de {1} selecionados</value></data>
+  <data name="BatchSourceProduct" xml:space="preserve"><value>Documento</value></data>
+  <data name="BatchLastPurchase" xml:space="preserve"><value>Última compra: {0}</value></data>
+  <data name="ProductReviewSaved" xml:space="preserve"><value>{0} conversões confirmadas.</value></data>
+  <data name="BatchRememberMappings" xml:space="preserve"><value>Guardar de/para</value></data>
+  <data name="BatchNumericLimit" xml:space="preserve"><value>Conversão fora do limite.</value></data>
+  <data name="BatchSourceColor" xml:space="preserve"><value>Cor: {0}</value></data>
+  <data name="BatchSourceQuantityMissing" xml:space="preserve"><value>Revisar quantidade do documento.</value></data>
+  <data name="UseOrderQuantities" xml:space="preserve"><value>Usar qtd. do pedido</value></data>
+  <data name="ReviewDesiredQuantity" xml:space="preserve"><value>Revisar quantidade desejada.</value></data>
+  <data name="ReviewReferences" xml:space="preserve"><value>Referências</value></data>
+  <data name="DemandQuantitiesApplied" xml:space="preserve"><value>{0} quantidades preenchidas.</value></data>
+  <data name="ReviewSelectionSummary" xml:space="preserve"><value>{0} selecionados · {1} pendentes · {2} itens</value></data>
+  <data name="ReviewQuotationProducts" xml:space="preserve"><value>Conferir itens</value></data>
+  <data name="NoPendingProducts" xml:space="preserve"><value>Nenhum item pendente.</value></data>
+  <data name="DemandOriginDocument" xml:space="preserve"><value>Documento: {0}</value></data>
+  <data name="DemandSourceManual" xml:space="preserve"><value>Manual</value></data>
+  <data name="ReviewItems" xml:space="preserve"><value>Itens</value></data>
+  <data name="DocumentDemandHelp" xml:space="preserve"><value>{0} × {1} = {2}</value></data>
+  <data name="MissingDemandWarning" xml:space="preserve"><value>{0} itens sem quantidade desejada.</value></data>
+  <data name="ReviewQuantities" xml:space="preserve"><value>Conferir quantidades</value></data>
+  <data name="DesiredQuantity" xml:space="preserve"><value>Quantidade desejada</value></data>
+  <data name="ReviewReference" xml:space="preserve"><value>Vincular pedido de referência</value></data>
+  <data name="ContinueWithoutDemand" xml:space="preserve"><value>Continuar sem informar</value></data>
+  <data name="ReviewSaved" xml:space="preserve"><value>Conferência salva.</value></data>
+  <data name="DemandSourceDocument" xml:space="preserve"><value>Documento</value></data>
+  <data name="DemandDocumentAmbiguous" xml:space="preserve"><value>Documento com mais de uma oferta para o produto.</value></data>
+  <data name="ShowDesiredQuantity" xml:space="preserve"><value>Quantidade desejada</value></data>
+  <data name="UseDocumentQuantities" xml:space="preserve"><value>Usar qtd. do documento</value></data>
+  <data name="OnlyPendingProducts" xml:space="preserve"><value>Somente pendentes</value></data>
+  <data name="AutoMappingReviewPending" xml:space="preserve"><value>Revisar vínculos pendentes.</value></data>
+  <data name="DemandOriginSelectedOrder" xml:space="preserve"><value>Pedido de referência selecionado</value></data>
+  <data name="DemandSourceOrder" xml:space="preserve"><value>Pedido</value></data>
+  <data name="SaveReview" xml:space="preserve"><value>Salvar conferência</value></data>
+  <data name="DemandNotInformed" xml:space="preserve"><value>Não informada</value></data>
+  <data name="ImportedMappingsApplied" xml:space="preserve"><value>{0} de/para aplicados.</value></data>
+  <data name="PurchaseDemandOptional" xml:space="preserve"><value>Quantidade desejada opcional.</value></data>
+  <data name="MissingDemandWarningSingle" xml:space="preserve"><value>1 item sem quantidade desejada.</value></data>
+  <data name="FinancialSourceScriptDefaultHelp" xml:space="preserve"><value>Usa a regra configurada na integração com o ERP. Esta opção não define um valor fixo.</value></data>
+  <data name="FinancialSourceDocumentHelp" xml:space="preserve"><value>Usa os valores conferidos no documento.</value></data>
+  <data name="FinancialSourceLastPurchaseOrderHelp" xml:space="preserve"><value>Usa os valores do último pedido de compra elegível.</value></data>
+  <data name="FinancialSourceZeroHelp" xml:space="preserve"><value>Envia zero para este valor.</value></data>
+  <data name="FinancialSourceKeepExistingHelp" xml:space="preserve"><value>Mantém o valor atual do pedido em edição.</value></data>
+  <data name="SyncCreatePreview" xml:space="preserve"><value>Gerar prévia do pedido</value></data>
+  <data name="SyncCreateOrder" xml:space="preserve"><value>Criar pedido de compra</value></data>
+  <data name="SyncUpdateOrder" xml:space="preserve"><value>Salvar alterações no ERP</value></data>
+  <data name="SyncMissingQuery" xml:space="preserve"><value>Configure a consulta “{0}” ({1}) em Configurações → Consultas do ERP.</value></data>
+  <data name="SyncOrderDateRequired" xml:space="preserve"><value>Informe a data do pedido.</value></data>
+  <data name="SyncOrderDate" xml:space="preserve"><value>Data do pedido</value></data>
+  <data name="SyncSelectedItems" xml:space="preserve"><value>Itens incluídos na prévia</value></data>
+  <data name="SyncCreatePreviewSummary" xml:space="preserve"><value>Fornecedor: {0} · Filial: {1}</value></data>
+  <data name="SyncCreateResultSummary" xml:space="preserve"><value>Itens: {0} · Subtotal: {1}</value></data>
+  <data name="SyncCreatedOrders" xml:space="preserve"><value>Pedidos criados no ERP</value></data>
+  <data name="SyncCreatedOrderDetails" xml:space="preserve"><value>Pedido {0} · Código {1} · Filial {2}</value></data>
+  <data name="PurchaseChoicesNeedReview" xml:space="preserve"><value>{0} escolha(s) precisam de revisão. As demais foram mantidas.</value></data>
+  <data name="ImportDropHint" xml:space="preserve"><value>Arraste um PDF ou planilha para cá, ou escolha o arquivo.</value></data>
+  <data name="ImportDropSingleFile" xml:space="preserve"><value>Selecione ou solte um arquivo por vez.</value></data>
+  <data name="ImportDropUnsupported" xml:space="preserve"><value>Use um arquivo PDF ou uma planilha compatível.</value></data>
+  <data name="ImportSpreadsheetSelectTemplate" xml:space="preserve"><value>Selecione o modelo da planilha e extraia os itens.</value></data>
+  <data name="ImportTemplateDetected" xml:space="preserve"><value>Modelo identificado: {0}</value></data>
+  <data name="ImportTemplateNotDetected" xml:space="preserve"><value>Nenhum modelo identificado. Selecione um modelo e extraia os itens.</value></data>
+  <data name="ImportTemplateDetectionLimit" xml:space="preserve"><value>A identificação atingiu o limite de tempo. Selecione um modelo e extraia os itens.</value></data>
+  <data name="ImportTemplatesSkipped" xml:space="preserve"><value>{0} modelo(s) não puderam ser testados.</value></data>
+  <data name="ApplicationUpdates"><value>Atualizações</value></data>
+  <data name="ApplicationVersion"><value>Versão {0}</value></data>
+  <data name="ApplicationUpdateUnavailable"><value>As atualizações estão disponíveis em uma versão instalada.</value></data>
+  <data name="ApplicationUpdateIdle"><value>Nenhuma atualização pronta para instalar</value></data>
+  <data name="ApplicationUpdateChecking"><value>Verificando atualizações…</value></data>
+  <data name="ApplicationUpdateDownloading"><value>Baixando atualização…</value></data>
+  <data name="ApplicationUpdateReady"><value>Atualização pronta para instalar</value></data>
+  <data name="ApplicationUpdateFailed"><value>Não foi possível atualizar. Confira a conexão e tente novamente.</value></data>
+  <data name="ApplicationUpdateRestarting"><value>Preparando para reiniciar…</value></data>
+  <data name="ApplicationUpdateNoNotes"><value>Nenhuma novidade para mostrar.</value></data>
+  <data name="ApplicationUpdateRestartBlocked"><value>Salve as edições, feche outras janelas e conclua ou reconcilie pedidos pendentes antes de reiniciar.</value></data>
+  <data name="ApplicationUpdateRestartHelp"><value>Salve seu trabalho antes de instalar. O QuoteMatch será fechado e reaberto na nova versão.</value></data>
+  <data name="ApplicationUpdateWhatsNew"><value>Novidades desta versão</value></data>
+  <data name="ApplicationUpdateCheck"><value>Verificar atualizações</value></data>
+  <data name="ApplicationUpdateInstall"><value>Instalar e reiniciar</value></data>
+  <data name="ApplicationUpdateCancelDownload"><value>Cancelar</value></data>
+</root>

@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:QuoteMatch.Desktop.ViewModels" x:Class="QuoteMatch.Desktop.Views.ProductSearchWindow"
+        x:DataType="vm:ProductSearchViewModel" Width="840" Height="620" MinWidth="640" MinHeight="420"
+        WindowStartupLocation="CenterOwner" Title="{Binding Strings[ProductSearchTitle]}">
+  <Grid Margin="24" RowDefinitions="Auto,Auto,*,Auto" RowSpacing="16">
+    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+      <TextBlock Text="{Binding Strings[ProductSearchTitle]}" FontSize="22" FontWeight="SemiBold" />
+      <ToggleSwitch Name="IncludeInactiveProducts" Grid.Column="1" OnContent="{Binding Strings[IncludeInactiveProducts]}" OffContent="{Binding Strings[IncludeInactiveProducts]}" AutomationProperties.Name="{Binding Strings[IncludeInactiveProducts]}" IsChecked="{Binding IncludeInactive}" IsEnabled="{Binding CanEditQuery}" VerticalAlignment="Center" />
+    </Grid>
+    <Grid Grid.Row="1" ColumnDefinitions="190,*,Auto" ColumnSpacing="10" IsEnabled="{Binding CanEditQuery}">
+      <ComboBox Name="ProductSearchMode" SelectedIndex="{Binding ModeIndex}" HorizontalAlignment="Stretch">
+        <ComboBoxItem Content="{Binding Strings[ProductCode]}" />
+        <ComboBoxItem Content="{Binding Strings[ProductName]}" />
+      </ComboBox>
+      <TextBox Name="ProductSearchText" Grid.Column="1" Text="{Binding SearchText}" PlaceholderText="{Binding Strings[ProductSearchPlaceholder]}">
+        <TextBox.KeyBindings><KeyBinding Gesture="Enter" Command="{Binding SearchCommand}" /></TextBox.KeyBindings>
+      </TextBox>
+      <Button Grid.Column="2" Content="{Binding Strings[Search]}" Command="{Binding SearchCommand}" />
+    </Grid>
+    <ListBox Name="ProductSearchResults" Classes="selectableCards" Grid.Row="2" ItemsSource="{Binding Results}" SelectedItem="{Binding SelectedProduct}" IsEnabled="{Binding !IsBusy}">
+      <ListBox.ItemTemplate>
+        <DataTemplate x:DataType="vm:ProductSearchRow">
+          <Border Classes="card selectableCard" Padding="10,7" Margin="0,0,0,4">
+            <Grid ColumnDefinitions="90,*,50,24" ColumnSpacing="12">
+              <TextBlock Text="{Binding Code}" FontWeight="SemiBold" />
+              <StackPanel Grid.Column="1" Spacing="2">
+                <TextBlock Text="{Binding Name}" TextWrapping="Wrap" FontWeight="SemiBold" />
+                <TextBlock Text="{Binding State}" Classes="muted" FontSize="12" />
+              </StackPanel>
+              <TextBlock Grid.Column="2" Text="{Binding BaseUnit}" />
+              <TextBlock Grid.Column="3" Classes="selectedMarker" Text="✓" FontSize="18" FontWeight="SemiBold" />
+            </Grid>
+          </Border>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+    <Grid Grid.Row="3" ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="10">
+      <StackPanel Spacing="6">
+        <ProgressBar IsVisible="{Binding IsBusy}" IsIndeterminate="True" Height="3" />
+        <TextBlock Text="{Binding Status}" TextWrapping="Wrap" />
+      </StackPanel>
+      <Button Grid.Column="1" Content="{Binding Strings[CancelImport]}" Command="{Binding CancelSearchCommand}" IsVisible="{Binding IsBusy}" />
+      <Button Grid.Column="2" Content="{Binding Strings[CloseWindow]}" Click="CloseSearch" />
+      <Button Name="SelectProductButton" Grid.Column="3" Classes="primary" Content="{Binding Strings[SelectProduct]}" IsEnabled="{Binding CanSelect}" Click="SelectProduct" />
+    </Grid>
+  </Grid>
+</Window>

@@ -1,0 +1,1594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="QuantityError" xml:space="preserve">
+    <value>Enter a quantity greater than zero.</value>
+  </data>
+  <data name="ApplyQuantity" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <data name="ToolTagline" xml:space="preserve">
+    <value>Compare offers. Decide item by item.</value>
+  </data>
+  <data name="QuotationTitle" xml:space="preserve">
+    <value>Quotation comparison</value>
+  </data>
+  <data name="DemoBadge" xml:space="preserve">
+    <value>SAMPLE</value>
+  </data>
+  <data name="QuotationDemoNotice" xml:space="preserve">
+    <value>50 synthetic items to explore the list and item details. No private quotation has been imported.</value>
+  </data>
+  <data name="QuotationOverviewFormat" xml:space="preserve">
+    <value>{0} items · {1} suppliers · amounts in BRL</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="PortugueseLanguage" xml:space="preserve">
+    <value>Português (Brasil)</value>
+  </data>
+  <data name="EnglishLanguage" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="SystemTheme" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="LightTheme" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="DarkTheme" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="PreferenceError" xml:space="preserve">
+    <value>Preferences could not be read or saved. Changes may only last for this session.</value>
+  </data>
+  <data name="OrderTotal" xml:space="preserve">
+    <value>Total of suggested orders</value>
+  </data>
+  <data name="SelectionSubtotal" xml:space="preserve">
+    <value>Selected subtotal · incomplete</value>
+  </data>
+  <data name="OrderTotalHelp" xml:space="preserve">
+    <value>Sum of the full lot cost of each item's unique winner. Ties and insufficient offers remain pending and are excluded. This total covers all quotation items, including those hidden by filters.</value>
+  </data>
+  <data name="OrderTotalConditions" xml:space="preserve"><value>Sum of the winning whole lots for each item.</value></data>
+  <data name="ItemCountFormat" xml:space="preserve">
+    <value>{0} items</value>
+  </data>
+  <data name="VisibleItemCountFormat" xml:space="preserve">
+    <value>{0} of {1} items</value>
+  </data>
+  <data name="PendingCountFormat" xml:space="preserve">
+    <value>{0} items awaiting review · not included in total</value>
+  </data>
+  <data name="ItemPositionFormat" xml:space="preserve">
+    <value>Item {0} of {1} in results</value>
+  </data>
+  <data name="SearchItems" xml:space="preserve">
+    <value>Search item name or code…</value>
+  </data>
+  <data name="FilterItems" xml:space="preserve">
+    <value>Filter items</value>
+  </data>
+  <data name="SortItems" xml:space="preserve">
+    <value>Sort items</value>
+  </data>
+  <data name="AllItems" xml:space="preserve">
+    <value>All items</value>
+  </data>
+  <data name="PendingOnly" xml:space="preserve">
+    <value>Pending items</value>
+  </data>
+  <data name="SupplierAFilter" xml:space="preserve">
+    <value>Winner: supplier A</value>
+  </data>
+  <data name="SupplierBFilter" xml:space="preserve">
+    <value>Winner: supplier B</value>
+  </data>
+  <data name="SupplierCFilter" xml:space="preserve">
+    <value>Winner: supplier C</value>
+  </data>
+  <data name="OriginalOrder" xml:space="preserve">
+    <value>Original order</value>
+  </data>
+  <data name="HighestTotal" xml:space="preserve">
+    <value>Highest total first</value>
+  </data>
+  <data name="ByWinningSupplier" xml:space="preserve">
+    <value>By winning supplier</value>
+  </data>
+  <data name="ItemColumn" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="RequestedColumn" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="WinningSupplier" xml:space="preserve">
+    <value>Winning supplier</value>
+  </data>
+  <data name="ItemTotal" xml:space="preserve">
+    <value>Item total</value>
+  </data>
+  <data name="QuotationItems" xml:space="preserve">
+    <value>Quotation item list</value>
+  </data>
+  <data name="OpenItemHint" xml:space="preserve">
+    <value>Select an item to compare its offers</value>
+  </data>
+  <data name="NoMatchingItems" xml:space="preserve">
+    <value>No items match this filter</value>
+  </data>
+  <data name="TryOtherSearch" xml:space="preserve">
+    <value>Try a different search or show all items.</value>
+  </data>
+  <data name="ClearFilters" xml:space="preserve">
+    <value>Clear filters</value>
+  </data>
+  <data name="PreviousItem" xml:space="preserve">
+    <value>Previous item</value>
+  </data>
+  <data name="NextItem" xml:space="preserve">
+    <value>Next item</value>
+  </data>
+  <data name="CloseItem" xml:space="preserve">
+    <value>Close item details</value>
+  </data>
+  <data name="RequestedQuantityLabel" xml:space="preserve">
+    <value>Requested quantity</value>
+  </data>
+  <data name="WinnerCriterion" xml:space="preserve">
+    <value>Lowest full-lot outlay among offers that fulfill this item's request. A tie requires review.</value>
+  </data>
+  <data name="SupplierOffers" xml:space="preserve">
+    <value>Compare suppliers</value>
+  </data>
+  <data name="ImportSupplierName" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="Recommended" xml:space="preserve">
+    <value>Lowest fulfillment cost</value>
+  </data>
+  <data name="LowestUnitPrice" xml:space="preserve">
+    <value>Lowest unit price</value>
+  </data>
+  <data name="InsufficientQuantity" xml:space="preserve">
+    <value>Insufficient quantity</value>
+  </data>
+  <data name="ComparableOffer" xml:space="preserve">
+    <value>Comparable offer</value>
+  </data>
+  <data name="ExactQuantity" xml:space="preserve">
+    <value>Matches the request</value>
+  </data>
+  <data name="ExcessFormat" xml:space="preserve">
+    <value>+{0} excess</value>
+  </data>
+  <data name="ShortfallFormat" xml:space="preserve">
+    <value>{0} short</value>
+  </data>
+  <data name="OfferDetailsLabel" xml:space="preserve">
+    <value>Explain calculations for {0}</value>
+  </data>
+  <data name="DetailsHelp" xml:space="preserve">
+    <value>View formulas, values, and purchase assumptions.</value>
+  </data>
+  <data name="FixedLotNotice" xml:space="preserve">
+    <value>Each offer is a fixed lot. The full lot is purchased, including any excess. Unit prices apply to the unit shown.</value>
+  </data>
+  <data name="CalculationDetails" xml:space="preserve">
+    <value>How this item was compared</value>
+  </data>
+  <data name="CloseDetails" xml:space="preserve">
+    <value>Close explanation</value>
+  </data>
+  <data name="ItemCalculationOverviewFormat" xml:space="preserve">
+    <value>REQUEST
+{0}
+
+LOWEST UNIT PRICE
+{1} / {2}
+
+WINNING OFFER
+{4}
+Full lot total: {3}
+
+The winner has the lowest lot total among offers that cover the full request. A lower unit price alone is not enough. A tie or insufficient quantity leaves the item pending.
+
+The item's unique winning lot contributes once to the quotation total and to its supplier's order.</value>
+  </data>
+  <data name="ItemOfferCalculationFormat" xml:space="preserve"><value>LOT TOTAL
+{0} × {1} / {7} = {2}
+
+REQUESTED QUANTITY
+{3}
+
+EXCESS
+{4}
+
+SHORTFALL
+{5}
+
+ASSESSMENT
+{6}
+
+Full lot quantities are included in the total. Freight, taxes, discounts, and supplier-wide conditions still need confirmation.</value></data>
+  <data name="CanFulfill" xml:space="preserve">
+    <value>This lot covers the request. It wins only if its eligible total is uniquely the lowest.</value>
+  </data>
+  <data name="CannotFulfill" xml:space="preserve">
+    <value>This lot does not cover the request and cannot be selected as its full fulfillment.</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>—</value>
+  </data>
+  <data name="TiedOffers" xml:space="preserve">
+    <value>Tie · review</value>
+  </data>
+  <data name="PendingItem" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="OrderSplit" xml:space="preserve">
+    <value>Suggested orders by supplier</value>
+  </data>
+  <data name="TotalsIgnoreFilters" xml:space="preserve">
+    <value>Quotation-wide totals · filters change only the list</value>
+  </data>
+  <data name="SampleVariant" xml:space="preserve">
+    <value>Synthetic variant {0:00}</value>
+  </data>
+  <data name="SampleCable" xml:space="preserve">
+    <value>Flexible cable</value>
+  </data>
+  <data name="SampleAdapter" xml:space="preserve">
+    <value>Power adapter</value>
+  </data>
+  <data name="SamplePaper" xml:space="preserve">
+    <value>Paper ream</value>
+  </data>
+  <data name="SampleConnector" xml:space="preserve">
+    <value>Connector</value>
+  </data>
+  <data name="SampleLamp" xml:space="preserve">
+    <value>LED lamp</value>
+  </data>
+  <data name="SampleGloves" xml:space="preserve">
+    <value>Protective gloves</value>
+  </data>
+  <data name="SampleScrew" xml:space="preserve">
+    <value>Screw assortment</value>
+  </data>
+  <data name="SampleCleaner" xml:space="preserve">
+    <value>Cleaning solution</value>
+  </data>
+  <data name="SampleTape" xml:space="preserve">
+    <value>Adhesive tape</value>
+  </data>
+  <data name="SampleStorage" xml:space="preserve">
+    <value>Storage box</value>
+  </data>
+  <data name="MetreUnit" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="PieceUnit" xml:space="preserve">
+    <value>pc</value>
+  </data>
+  <data name="BoxUnit" xml:space="preserve">
+    <value>box</value>
+  </data>
+  <data name="PairUnit" xml:space="preserve">
+    <value>pair</value>
+  </data>
+  <data name="LitreUnit" xml:space="preserve">
+    <value>L</value>
+  </data>
+  <data name="ImportWorkspace" xml:space="preserve">
+    <value>PDF import and templates</value>
+  </data>
+  <data name="OpenImports" xml:space="preserve">
+    <value>Import PDFs</value>
+  </data>
+  <data name="ImportTab" xml:space="preserve">
+    <value>Import and review</value>
+  </data>
+  <data name="TemplatesTab" xml:space="preserve">
+    <value>Templates</value>
+  </data>
+  <data name="SavedTab" xml:space="preserve">
+    <value>Saved proposals</value>
+  </data>
+  <data name="ChoosePdf" xml:space="preserve">
+    <value>Choose PDF…</value>
+  </data>
+  <data name="PreviewPdf" xml:space="preserve">
+    <value>Extract items</value>
+  </data>
+  <data name="CancelImport" xml:space="preserve">
+    <value>Cancel operation</value>
+  </data>
+  <data name="TemplateName" xml:space="preserve">
+    <value>Template name</value>
+  </data>
+  <data name="TemplateCulture" xml:space="preserve">
+    <value>Document culture (pt-BR or en-US)</value>
+  </data>
+  <data name="DefaultUnit" xml:space="preserve">
+    <value>Default commercial unit</value>
+  </data>
+  <data name="TextStrategy" xml:space="preserve">
+    <value>Text reconstruction</value>
+  </data>
+  <data name="StrategyStream" xml:space="preserve">
+    <value>Content stream order</value>
+  </data>
+  <data name="StrategyOrder" xml:space="preserve">
+    <value>Reading order</value>
+  </data>
+  <data name="StrategyPosition" xml:space="preserve">
+    <value>Positioned lines</value>
+  </data>
+  <data name="IdentificationPattern" xml:space="preserve">
+    <value>Document identification regex (optional)</value>
+  </data>
+  <data name="RecordStartPattern" xml:space="preserve">
+    <value>Record start regex</value>
+  </data>
+  <data name="RecordPattern" xml:space="preserve">
+    <value>Complete record regex</value>
+  </data>
+  <data name="TableEndPattern" xml:space="preserve">
+    <value>Table end regex (optional)</value>
+  </data>
+  <data name="ExpectedCountPattern" xml:space="preserve">
+    <value>Expected item count regex (count group, optional)</value>
+  </data>
+  <data name="DocumentTotalPattern" xml:space="preserve">
+    <value>Document total regex (total group, optional)</value>
+  </data>
+  <data name="AbsoluteTolerance" xml:space="preserve">
+    <value>Absolute tolerance</value>
+  </data>
+  <data name="RelativeTolerance" xml:space="preserve">
+    <value>Relative tolerance (0.001 = 0.1%)</value>
+  </data>
+  <data name="RemoveGroupingSpaces" xml:space="preserve">
+    <value>Remove spaces from numbers</value>
+  </data>
+  <data name="NewTemplate" xml:space="preserve">
+    <value>New template</value>
+  </data>
+  <data name="SaveTemplate" xml:space="preserve">
+    <value>Save template</value>
+  </data>
+  <data name="ValidateTemplate" xml:space="preserve">
+    <value>Validate template</value>
+  </data>
+  <data name="TestTemplate" xml:space="preserve">
+    <value>Test file</value>
+  </data>
+  <data name="ImportTemplate" xml:space="preserve">
+    <value>Import JSON…</value>
+  </data>
+  <data name="ExportTemplate" xml:space="preserve">
+    <value>Export JSON…</value>
+  </data>
+  <data name="TemplateInstructions" xml:space="preserve">
+    <value>Required named groups: code, description, quantity, unitPrice, total. Optional: unit, color. Patterns use multiline; the complete record also uses singleline. Each record must match completely. No OCR: scanned PDFs need a text layer. Limits: 32 MB, 200 pages, 5,000 records. Page continuations require a dedicated template. Test the selected PDF before confirming. Exported templates may contain supplier details; keep private templates local.</value>
+  </data>
+  <data name="ReviewFields" xml:space="preserve">
+    <value>Reviewed fields</value>
+  </data>
+  <data name="ReviewInstructions" xml:space="preserve"><value>Review the captured fields. Use the selected number format and give a reason when excluding an item.</value></data>
+  <data name="ImportCode" xml:space="preserve">
+    <value>Supplier code</value>
+  </data>
+  <data name="ImportDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ImportQuantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="ImportUnitPrice" xml:space="preserve">
+    <value>Unit price</value>
+  </data>
+  <data name="ImportTotal" xml:space="preserve">
+    <value>Reported total</value>
+  </data>
+  <data name="ImportUnit" xml:space="preserve">
+    <value>Commercial unit</value>
+  </data>
+  <data name="ExcludeRecord" xml:space="preserve">
+    <value>Exclude this record</value>
+  </data>
+  <data name="ExclusionReason" xml:space="preserve">
+    <value>Exclusion reason</value>
+  </data>
+  <data name="Evidence" xml:space="preserve">
+    <value>Original capture</value>
+  </data>
+  <data name="ExtractedText" xml:space="preserve">
+    <value>Original source content</value>
+  </data>
+  <data name="ConfirmImport" xml:space="preserve">
+    <value>Save reviewed proposal</value>
+  </data>
+  <data name="OpenProposal" xml:space="preserve">
+    <value>Open proposal</value>
+  </data>
+  <data name="ExportOriginal" xml:space="preserve">
+    <value>Export original file…</value>
+  </data>
+  <data name="ImportScopeNotice" xml:space="preserve">
+    <value>Saved proposals remain local. Product matching and comparison of real proposals will be implemented in the next stage.</value>
+  </data>
+  <data name="ImportWorking" xml:space="preserve">
+    <value>Processing…</value>
+  </data>
+  <data name="ImportCanceled" xml:space="preserve">
+    <value>Operation canceled.</value>
+  </data>
+  <data name="ReviewBeforeSaving" xml:space="preserve">
+    <value>Extraction complete. Review before saving.</value>
+  </data>
+  <data name="TemplateSaved" xml:space="preserve">
+    <value>Template version {0} saved.</value>
+  </data>
+  <data name="TemplateValid" xml:space="preserve">
+    <value>Template is valid. Test with a sample file.</value>
+  </data>
+  <data name="TemplateLoaded" xml:space="preserve">
+    <value>Template loaded into the editor. Save to register it.</value>
+  </data>
+  <data name="TemplateExported" xml:space="preserve">
+    <value>Template exported.</value>
+  </data>
+  <data name="ProposalSaved" xml:space="preserve">
+    <value>Proposal saved locally with {0} included items.</value>
+  </data>
+  <data name="OriginalExported" xml:space="preserve">
+    <value>Original file exported.</value>
+  </data>
+  <data name="ImportStorageError" xml:space="preserve">
+    <value>Could not access the file or local database. Check access and available disk space.</value>
+  </data>
+  <data name="ImportPosition" xml:space="preserve">
+    <value>Item {0} · page {1}</value>
+  </data>
+  <data name="PageNumber" xml:space="preserve">
+    <value>Page {0}</value>
+  </data>
+  <data name="ImportSummary" xml:space="preserve">
+    <value>{0} pages · {1} candidates · {2} items with warnings · captured total: {3}</value>
+  </data>
+  <data name="DocumentTotal" xml:space="preserve">
+    <value>Document total: {0}</value>
+  </data>
+  <data name="IssueNoText" xml:space="preserve">
+    <value>No selectable text. OCR is not available.</value>
+  </data>
+  <data name="IssueNoRecords" xml:space="preserve">
+    <value>No records found. Check the template.</value>
+  </data>
+  <data name="IssueWrongTemplate" xml:space="preserve">
+    <value>Document identification does not match this template.</value>
+  </data>
+  <data name="IssueCaptureFailed" xml:space="preserve">
+    <value>Incomplete record capture. Correct the template or review all fields.</value>
+  </data>
+  <data name="IssueInvalidNumber" xml:space="preserve">
+    <value>A numeric field could not be parsed.</value>
+  </data>
+  <data name="IssueMissingField" xml:space="preserve">
+    <value>A required field is missing.</value>
+  </data>
+  <data name="IssueNonPositiveValue" xml:space="preserve">
+    <value>Quantity or unit price must be positive; total cannot be negative.</value>
+  </data>
+  <data name="IssueItemTotalMismatch" xml:space="preserve"><value>Quantity × price differs from the reported total. Check values and rounding.</value></data>
+  <data name="IssueItemCountMismatch" xml:space="preserve">
+    <value>Captured item count differs from the expected count. Confirmation blocked.</value>
+  </data>
+  <data name="IssueDocumentTotalMismatch" xml:space="preserve">
+    <value>Captured item totals differ from the document total. Review charges and missing items.</value>
+  </data>
+  <data name="IssueConflictingDocumentTotals" xml:space="preserve">
+    <value>Conflicting document totals. Confirmation blocked.</value>
+  </data>
+  <data name="ErrorInvalidTemplate" xml:space="preserve">
+    <value>Invalid template. Check metadata, regex syntax and required groups.</value>
+  </data>
+  <data name="ErrorInvalidPdf" xml:space="preserve">
+    <value>Unsupported, damaged or protected PDF.</value>
+  </data>
+  <data name="ErrorFileTooLarge" xml:space="preserve">
+    <value>The file exceeds the 32 MB limit.</value>
+  </data>
+  <data name="ErrorExtractionLimit" xml:space="preserve">
+    <value>Extraction exceeded its processing limit. Use a smaller document or simpler template.</value>
+  </data>
+  <data name="ErrorRegexTimeout" xml:space="preserve">
+    <value>A regex took too long. Simplify the template and try again.</value>
+  </data>
+  <data name="ErrorInvalidReview" xml:space="preserve">
+    <value>Fill each included item with code, description, unit, positive quantity/price and nonnegative total. Exclusions require a reason.</value>
+  </data>
+  <data name="ErrorSourceChanged" xml:space="preserve">
+    <value>Source changed after extraction. Extract the document again.</value>
+  </data>
+  <data name="ErrorStorageConflict" xml:space="preserve">
+    <value>This version or proposal was already saved. Reload before trying again.</value>
+  </data>
+  <data name="ImportTotalHelp" xml:space="preserve"><value>Captured total = sum of item totals. Difference = |quantity × price − reported total|. The accepted difference is the greater of absolute tolerance and reported total × relative tolerance.</value></data>
+  <data name="SupplierName" xml:space="preserve">
+    <value>Supplier {0}</value>
+  </data>
+  <data name="ReviewedSummary" xml:space="preserve">
+    <value>Review: {0} included items · sum of reviewed totals: {1}</value>
+  </data>
+  <data name="NavHome">
+    <value>Home</value>
+  </data>
+  <data name="NavQuotations">
+    <value>Quotations</value>
+  </data>
+  <data name="NavChecking">
+    <value>Order checking</value>
+  </data>
+  <data name="NavSettings">
+    <value>Settings</value>
+  </data>
+  <data name="LocalWorkspace">
+    <value>Saved on this computer</value>
+  </data>
+  <data name="HomeHeading">
+    <value>What would you like to work on?</value>
+  </data>
+  <data name="HomeQuotationTitle">
+    <value>Quotation analysis and checking</value>
+  </data>
+  <data name="HomeCheckingTitle">
+    <value>Check a purchase order</value>
+  </data>
+  <data name="NewQuotation">
+    <value>New quotation</value>
+  </data>
+  <data name="ViewQuotations">
+    <value>View quotations</value>
+  </data>
+  <data name="OpenChecking">
+    <value>About order checking</value>
+  </data>
+  <data name="RecentQuotations">
+    <value>Recent quotations</value>
+  </data>
+  <data name="OpenQuotation">
+    <value>Open quotation</value>
+  </data>
+  <data name="NoQuotationsHelp">
+    <value>No quotations to show. Create one to start collecting supplier proposals.</value>
+  </data>
+  <data name="SearchQuotations">
+    <value>Search by quotation name…</value>
+  </data>
+  <data name="QuotationDraft">
+    <value>In progress</value>
+  </data>
+  <data name="QuotationFinalized">
+    <value>Finalized</value>
+  </data>
+  <data name="QuotationListDetail">
+    <value>{0} proposals · {1}</value>
+  </data>
+  <data name="ProposalDetail">
+    <value>{0} items · {1}</value>
+  </data>
+  <data name="QuotationName">
+    <value>Quotation name</value>
+  </data>
+  <data name="QuotationNameExample">
+    <value>Example: November stock replenishment</value>
+  </data>
+  <data name="QuotationNotes">
+    <value>Notes (optional)</value>
+  </data>
+  <data name="SaveQuotationFirst">
+    <value>Save the name first. Then you can add supplier proposals to this quotation.</value>
+  </data>
+  <data name="SaveQuotation">
+    <value>Save quotation</value>
+  </data>
+  <data name="QuotationSaved">
+    <value>Quotation saved on this computer.</value>
+  </data>
+  <data name="CancelEdit">
+    <value>Cancel</value>
+  </data>
+  <data name="BackToQuotations">
+    <value>← Quotations</value>
+  </data>
+  <data name="EditQuotation">
+    <value>Edit details</value>
+  </data>
+  <data name="FinalizeQuotation">
+    <value>Finalize quotation</value>
+  </data>
+  <data name="ReopenQuotation">
+    <value>Reopen quotation</value>
+  </data>
+  <data name="DeleteQuotation">
+    <value>Delete quotation</value>
+  </data>
+  <data name="DeleteQuotationHelp">
+    <value>Delete “{0}” and its {1} supplier proposals? This removes the stored PDFs and reviews. This action cannot be undone.</value>
+  </data>
+  <data name="FinalizeQuotationHelp" xml:space="preserve"><value>Finalize this quotation? Reopen it to make further changes.</value></data>
+  <data name="ConfirmAction">
+    <value>Confirm</value>
+  </data>
+  <data name="SupplierProposals">
+    <value>Supplier proposals</value>
+  </data>
+  <data name="NoProposalsHelp" xml:space="preserve"><value>Import a supplier PDF or spreadsheet to add the first proposal.</value></data>
+  <data name="FinalizedReadOnlyHelp" xml:space="preserve"><value>Quotation finalized. Reopen to edit.</value></data>
+  <data name="QuotationErrorInvalidName">
+    <value>Enter a quotation name (up to 160 characters). Notes may contain up to 4,000 characters.</value>
+  </data>
+  <data name="QuotationErrorConflict">
+    <value>This quotation has changed. Return to the list and reopen it before making changes.</value>
+  </data>
+  <data name="QuotationErrorReadOnly">
+    <value>This quotation is finalized or no longer exists. Return to the list and reopen an active quotation.</value>
+  </data>
+  <data name="QuotationErrorEmpty">
+    <value>Add at least one reviewed supplier proposal before finalizing.</value>
+  </data>
+  <data name="ImportProposal">
+    <value>Import supplier document</value>
+  </data>
+  <data name="ImportStepFile">
+    <value>1. Choose the file and template</value>
+  </data>
+  <data name="NoPdfSelected">
+    <value>No file selected</value>
+  </data>
+  <data name="SelectTemplate">
+    <value>Choose a template</value>
+  </data>
+  <data name="ImportStepReview">
+    <value>2. Review the captured items</value>
+  </data>
+  <data name="ImportStepSave">
+    <value>3. Add this proposal to the quotation</value>
+  </data>
+  <data name="AttachProposal">
+    <value>Add proposal</value>
+  </data>
+  <data name="CloseWindow">
+    <value>Close</value>
+  </data>
+  <data name="TemplateEditorTitle" xml:space="preserve"><value>Import template</value></data>
+  <data name="TemplateBasics">
+    <value>Supplier and file format</value>
+  </data>
+  <data name="DocumentNumbers">
+    <value>Number format in the document</value>
+  </data>
+  <data name="DocumentNumbersHelp">
+    <value>Used for text numbers in the document. Excel numeric cells retain their underlying value regardless of display format.</value>
+  </data>
+  <data name="NumberFormatBrazil">
+    <value>Brazilian · 1.234,56</value>
+  </data>
+  <data name="NumberFormatUs">
+    <value>US · 1,234.56</value>
+  </data>
+  <data name="DefaultUnitHelp">
+    <value>Commercial unit to use when the PDF does not capture a unit. Examples: m, unit, box. It labels the quantity and price; it does not convert packages into meters. The optional unit group overrides it for each item.</value>
+  </data>
+  <data name="TemplateCaptureTitle">
+    <value>2. Identify and read each item</value>
+  </data>
+  <data name="RecordStartHelp">
+    <value>Finds where each item begins, so one item's values are not mixed with the next. Example: ^\d{3}\s finds a line starting with a three-digit code, such as 001. This rule must find every item, including items with missing fields.</value>
+  </data>
+  <data name="RecordCaptureHelp">
+    <value>Reads a complete item using named groups: (?&lt;code&gt;...) code, (?&lt;description&gt;...) description, (?&lt;quantity&gt;...) quantity, (?&lt;unitPrice&gt;...) unit price, (?&lt;total&gt;...) reported total. Optional: (?&lt;unit&gt;...), (?&lt;color&gt;...). Every item must match completely. Rules use multiline; this rule also uses singleline so descriptions can span lines.</value>
+  </data>
+  <data name="TemplateChecks">
+    <value>Optional · document checks and table boundaries</value>
+  </data>
+  <data name="IdentificationHelp">
+    <value>Checks that the file belongs to this layout before confirmation. Example: Supplier Example matches that name anywhere in the document. Leave blank if no reliable identifying text exists.</value>
+  </data>
+  <data name="TableEndHelp">
+    <value>Marks the end of the item table so footers are not included in the last item. Example: ^Total matches a line beginning with Total. Leave blank if the table reaches the end of each page.</value>
+  </data>
+  <data name="ExpectedCountHelp">
+    <value>Checks whether every item was found. Example: Itens:\s*(?&lt;count&gt;\d+) captures the printed item count. If the count is missing or different, confirmation is blocked. Leave blank if the document has no item count.</value>
+  </data>
+  <data name="DocumentTotalPatternHelp" xml:space="preserve"><value>Capture the item subtotal with the total group. Example: Total:\s*(?&lt;total&gt;[\d.,]+). Leave blank if no comparable subtotal exists.</value></data>
+  <data name="TemplateAdvanced">
+    <value>Advanced · text order and rounding warnings</value>
+  </data>
+  <data name="TextStrategyHelp">
+    <value>Controls how PDF text is reconstructed. Start with content stream order. If codes, descriptions or prices appear out of order in the sample text, test reading order or positioned lines. Changing the strategy may require adjusting capture rules.</value>
+  </data>
+  <data name="AbsoluteToleranceHelp">
+    <value>Small difference allowed when checking quantity × unit price against the reported total. With R$ 0.01, a difference of one cent does not create a warning. This threshold never changes the captured value. The check uses the larger of this amount and the relative percentage of the reported total.</value>
+  </data>
+  <data name="RelativeTolerancePercent">
+    <value>Relative tolerance (%)</value>
+  </data>
+  <data name="RelativeToleranceHelp" xml:space="preserve"><value>Accepted percentage difference. Example: 0.1% of R$ 1,000 = R$ 1. Use 0% to apply only absolute tolerance.</value></data>
+  <data name="TemplateTestTitle">
+    <value>Test with a sample file</value>
+  </data>
+  <data name="TemplateTestHelp">
+    <value>Choose a PDF or Excel matching the template. Review captured items and warnings before saving. The test does not add a supplier proposal.</value>
+  </data>
+  <data name="ChooseAndTestPdf">
+    <value>Choose file and test…</value>
+  </data>
+  <data name="CheckingIntro">
+    <value>Compare a purchase order against a finalized purchasing reference, using the same import and product identification services.</value>
+  </data>
+  <data name="PlannedFeature">
+    <value>Planned feature</value>
+  </data>
+  <data name="CheckingSteps">
+    <value>Planned flow: select quotation → load purchase order → review product correspondence → check quantity, unit, price and total differences.</value>
+  </data>
+  <data name="CheckingNotReady">
+    <value>Order checking is not implemented yet. This area is reserved for its own workflow; local quotations and supplier imports are already available.</value>
+  </data>
+  <data name="DatabaseConnection">
+    <value>Connection</value>
+  </data>
+  <data name="QuerySettings">
+    <value>SQL queries</value>
+  </data>
+  <data name="ServerName">
+    <value>SQL Server address</value>
+  </data>
+  <data name="ServerNameHelp">
+    <value>Server hostname or address, optionally with an instance or port. Examples: server\instance or 10.0.0.5,1433. No connection string is required.</value>
+  </data>
+  <data name="DatabaseName">
+    <value>Database name</value>
+  </data>
+  <data name="DatabaseNameHelp">
+    <value>Name of the ERP database on that server. This does not change QuoteMatch's local SQLite database.</value>
+  </data>
+  <data name="Authentication">
+    <value>Authentication</value>
+  </data>
+  <data name="WindowsAuthentication">
+    <value>Windows account</value>
+  </data>
+  <data name="SqlAuthentication">
+    <value>SQL Server login</value>
+  </data>
+  <data name="LoginUser">
+    <value>User name</value>
+  </data>
+  <data name="SessionPassword">
+    <value>Password (leave blank to keep the saved one)</value>
+  </data>
+  <data name="SessionPasswordHelp" xml:space="preserve"><value>Leave blank to keep the saved password.</value></data>
+  <data name="SaveSettings">
+    <value>Save configuration</value>
+  </data>
+  <data name="SettingsSaved" xml:space="preserve"><value>Configuration saved.</value></data>
+  <data name="TestConnection" xml:space="preserve"><value>Test connection</value></data>
+  <data name="TestingConnection">
+    <value>Testing connection…</value>
+  </data>
+  <data name="ConnectionSucceeded" xml:space="preserve"><value>Connection successful.</value></data>
+  <data name="ConnectionFailed">
+    <value>Connection test failed. Check the server, database, credentials, VPN and server certificate.</value>
+  </data>
+  <data name="QueriesIntro" xml:space="preserve"><value>Save one script per operation. Queries use a read-only login; order writes use a separate login and explicit confirmation. Order scripts support procedures, WHILE and cursors.</value></data>
+  <data name="QueryOperation">
+    <value>Operation</value>
+  </data>
+  <data name="QueryPlaceholder">
+    <value>Write the SQL for this operation…</value>
+  </data>
+  <data name="QueryContractFindProduct">
+    <value>Parameter: @SupplierProductCode. Match the exact supplier code in the target catalog. Result aliases: Codigo, Nome, Semelhante, Inativo, FornecedorID, Fornecedor, CodigoFornecedor, Quantidade, UnForcli, Data, VlrUnit. Return the base unit as UnidadeBase. Map your schema into these aliases. Preserve zeros and punctuation; comparison families do not identify codes.</value>
+  </data>
+  <data name="QueryContractGetEquivalentProducts">
+    <value>Parameter: @SimilarityCode. Result aliases: Codigo, Nome, Semelhante, Inativo, FornecedorID, Fornecedor, CodigoFornecedor, Quantidade, UnForcli, Data, VlrUnit; base unit as UnidadeBase. Map the target schema into this contract. Null Data/VlrUnit means no history. Quantidade is the packaging factor; VlrUnit is already per base unit. Retain distinct commercial alternatives.</value>
+  </data>
+  <data name="NoMatchingQuotationsHelp">
+    <value>No quotations match this search. Try another name or clear the search.</value>
+  </data>
+  <data name="TemplatePreviewTitle">
+    <value>Template preview</value>
+  </data>
+  <data name="SupplierProposalTitle">
+    <value>Supplier proposal</value>
+  </data>
+  <data name="AnalysisTab">
+    <value>Analysis and checking</value>
+  </data>
+  <data name="AnalysisSummary">
+    <value>{0} item groups · {1} with a suggestion · {2} pending</value>
+  </data>
+  <data name="AnalysisSimulation">
+    <value>Compare the quoted lots</value>
+  </data>
+  <data name="AnalysisSimulationHelp" xml:space="preserve"><value>Chooses the lowest-total whole lot that meets demand. The lowest unit price may belong to another supplier.</value></data>
+  <data name="AnalysisSubtotal">
+    <value>Subtotal of defined groups</value>
+  </data>
+  <data name="AnalysisSearch">
+    <value>Search description or code…</value>
+  </data>
+  <data name="AnalysisAll">
+    <value>All items</value>
+  </data>
+  <data name="AnalysisWithWinner">
+    <value>With a suggestion</value>
+  </data>
+  <data name="AnalysisUnlinked">
+    <value>Identification pending</value>
+  </data>
+  <data name="AnalysisTied">
+    <value>Tied lots</value>
+  </data>
+  <data name="AnalysisUnitConflict">
+    <value>Check base units</value>
+  </data>
+  <data name="NotComparable">
+    <value>No normalized price</value>
+  </data>
+  <data name="DemandPending">
+    <value>Set quantity / check availability</value>
+  </data>
+  <data name="GroupRowDetail">
+    <value>{0} offers · base: {1}</value>
+  </data>
+  <data name="AnalysisDemand">
+    <value>Requested base quantity</value>
+  </data>
+  <data name="ApplyAnalysisDemand">
+    <value>Recalculate</value>
+  </data>
+  <data name="IdentifyAndGroup">
+    <value>ERP product</value>
+  </data>
+  <data name="ErpIdentifyHelp">
+    <value>Search the supplier code captured from the document. Choose the matching product and packaging when several are returned. Linked products can share a catalog comparison family. Confirm the numeric conversion; unit names do not imply a factor. Advanced family search supplies candidates for manual review.</value>
+  </data>
+  <data name="SimilarityPlaceholder">
+    <value>Exact similarity group in the ERP</value>
+  </data>
+  <data name="SearchErp">
+    <value>Search ERP</value>
+  </data>
+  <data name="ErpCandidateDetail">
+    <value>{0} · supplier code: {1} · factor: {2} · commercial unit: {3} · {4}</value>
+  </data>
+  <data name="ErpHistory">
+    <value>Last purchase: {0} · {1}/{2} · snapshot {3}</value>
+  </data>
+  <data name="NoPurchaseHistory">
+    <value>No last-purchase information</value>
+  </data>
+  <data name="HistoryUnitUnknown">
+    <value>base unit not returned</value>
+  </data>
+  <data name="InactiveProduct">
+    <value>Inactive</value>
+  </data>
+  <data name="ActiveProduct">
+    <value>Active</value>
+  </data>
+  <data name="CandidateConversion">
+    <value>ERP alternative: {1} corresponds to {0} {2}. Confirm whether the PDF already uses the base quantity.</value>
+  </data>
+  <data name="UseErpFactor">
+    <value>Apply this alternative's factor</value>
+  </data>
+  <data name="PdfAlreadyBaseUnit">
+    <value>PDF already uses the base unit (factor 1)</value>
+  </data>
+  <data name="AnalysisBaseUnit">
+    <value>Base unit for comparison</value>
+  </data>
+  <data name="AnalysisConversionFactor">
+    <value>Base units per PDF unit</value>
+  </data>
+  <data name="AnalysisConversionHelp">
+    <value>Use the numeric conversion factor, never an assumption from RL, BOB or KM. For a PDF quantity of 3 rolls with 100 meters each, enter base MT and factor 100: normalized quantity = 300, normalized unit price = quoted unit price ÷ 100. If the PDF already states 300 meters, factor is 1. The last-purchase price returned by this ERP is already per base unit.</value>
+  </data>
+  <data name="LinkErpGroup">
+    <value>Confirm product, conversion and similarity group</value>
+  </data>
+  <data name="ManualGrouping">
+    <value>Group manually, offline</value>
+  </data>
+  <data name="ManualGroupingHelp">
+    <value>Use the same group name for offers you have checked as equivalent. Enter a common base unit and the correct factor for each offer. This is an explicit equivalence decision; text similarity alone does not authorize substitution.</value>
+  </data>
+  <data name="ManualGroupName">
+    <value>Comparison group name</value>
+  </data>
+  <data name="LinkManualGroup">
+    <value>Save manual grouping</value>
+  </data>
+  <data name="UnlinkItem">
+    <value>Remove this item link</value>
+  </data>
+  <data name="AnalysisLinkSaved">
+    <value>Identification saved locally. Other items remain pending until identified.</value>
+  </data>
+  <data name="AnalysisDemandSaved">
+    <value>Quantity saved and comparison recalculated.</value>
+  </data>
+  <data name="ErpCandidatesLoaded">
+    <value>{0} ERP alternatives loaded. Choose explicitly; no item was linked automatically.</value>
+  </data>
+  <data name="AnalysisErrorInvalidLink">
+    <value>Check the selected product, group, base unit and positive conversion factor. Inactive products cannot be linked.</value>
+  </data>
+  <data name="AnalysisErrorInvalidDemand">
+    <value>Identify the offers, use a common base unit and enter a positive requested quantity.</value>
+  </data>
+  <data name="AnalysisErrorConflict">
+    <value>The quotation or analysis changed. Reopen the quotation before editing the analysis.</value>
+  </data>
+  <data name="AnalysisErrorReadOnly">
+    <value>Reopen the finalized quotation to change links or quantities.</value>
+  </data>
+  <data name="QuantitiesByItem">
+    <value>See quantities in the item list</value>
+  </data>
+  <data name="ErpErrorNotConfigured">
+    <value>Configure and save the ERP connection in Settings.</value>
+  </data>
+  <data name="ErpErrorCredentialsUnavailable">
+    <value>No usable saved password for this connection. Enter it locally and save in Settings.</value>
+  </data>
+  <data name="ErpErrorConnectionFailed">
+    <value>ERP connection failed. Check the connection locally, VPN and database permissions; local data is still available.</value>
+  </data>
+  <data name="ErpErrorQueryMissing">
+    <value>Save FindProduct with @SupplierProductCode in Settings → ERP queries. Advanced group lookup uses GetEquivalentProducts with @SimilarityCode.</value>
+  </data>
+  <data name="ErpErrorInvalidQuery">
+    <value>Use a single read SELECT or CTE with the operation parameter (@SupplierProductCode or @SimilarityCode). No writes, multiple batches or SELECT INTO. Use a read-only database account.</value>
+  </data>
+  <data name="ErpErrorInvalidResult">
+    <value>The ERP result does not match the configured column/type contract. Check the query in Settings.</value>
+  </data>
+  <data name="ErpErrorTooManyResults">
+    <value>The ERP returned more than 1,000 alternatives. Narrow the similarity group.</value>
+  </data>
+  <data name="TrustServerCertificate">
+    <value>Trust the server certificate on this connection</value>
+  </data>
+  <data name="TrustServerCertificateHelp" xml:space="preserve"><value>Accepts the server certificate without validating its identity. Use only for a trusted server.</value></data>
+  <data name="EncryptConnection"><value>Require connection encryption</value></data>
+  <data name="EncryptConnectionHelp" xml:space="preserve"><value>Encrypts traffic between the application and SQL Server.</value></data>
+  <data name="ConnectionTimeout"><value>Connection timeout (seconds)</value></data>
+  <data name="ConnectionTimeoutHelp" xml:space="preserve"><value>Maximum connection time in seconds. Default: 30.</value></data>
+  <data name="ImportSqlFile">
+    <value>Load SQL…</value>
+  </data>
+  <data name="NormalizedOffer"><value>In base units: {0} · {1}/{2}</value></data>
+  <data name="DemandCovered"><value>Covers the requested quantity</value></data>
+  <data name="OfferExcess"><value>Paid excess: {0}</value></data>
+  <data name="OfferShortage"><value>Shortage: {0}</value></data>
+  <data name="SelectedLot"><value>Lowest-cost lot covering demand</value></data>
+  <data name="ManualGroupLink"><value>Manual group: {0}</value></data>
+
+  <data name="IdentifyPendingCodes"><value>Identify pending codes</value></data>
+  <data name="AdvancedSimilaritySearch"><value>Advanced: investigate a known ERP group</value></data>
+  <data name="AdvancedSimilarityHelp" xml:space="preserve"><value>Find products in a known ERP group. Confirm the product before linking.</value></data>
+  <data name="SupplierProductCodeSearch"><value>Supplier code from the document</value></data>
+  <data name="ErpBatchLoaded" xml:space="preserve"><value>{0} codes searched · {1} with candidates. Review and confirm the links.</value></data>
+  <data name="AnalysisTotalUnavailable"><value>Subtotal exceeds numeric limits</value></data>
+  <data name="ConnectionDiagnostic" xml:space="preserve"><value>Stage: {0} · SQL error: {1} · Native error: {2}</value></data>
+  <data name="ErpErrorQueryFailed" xml:space="preserve"><value>Connected to the ERP, but the query failed. Check the saved query and read permissions.</value></data>
+  <data name="ErpStageConfiguration" xml:space="preserve"><value>Configuration</value></data>
+  <data name="ErpStageConnection" xml:space="preserve"><value>Connection</value></data>
+  <data name="ErpStageQuery" xml:space="preserve"><value>Query execution</value></data>
+  <data name="ErpStageResult" xml:space="preserve"><value>Result validation</value></data>
+  <data name="SavedConnectionSucceeded" xml:space="preserve"><value>Saved connection successful.</value></data>
+  <data name="TestSavedConnection" xml:space="preserve"><value>Test saved connection</value></data>
+  <data name="PurchaseChooseOffer" xml:space="preserve"><value>Choose this offer</value></data>
+  <data name="PurchaseErrorConflict" xml:space="preserve"><value>The quotation, analysis or preparation has changed. Refresh the analysis before choosing again.</value></data>
+  <data name="PurchaseErrorInvalidSelection" xml:space="preserve"><value>Choose one eligible offer per group. Identity, units and requested quantity must be confirmed.</value></data>
+  <data name="PurchaseErrorNumericLimit" xml:space="preserve"><value>The item subtotal exceeds the supported numeric range.</value></data>
+  <data name="PurchaseErrorReadOnly" xml:space="preserve"><value>This quotation is finalized. Reopen it before changing the preparation.</value></data>
+  <data name="PurchaseInsufficientLot" xml:space="preserve"><value>This lot cannot cover the requested quantity.</value></data>
+  <data name="PurchaseItemSubtotal" xml:space="preserve"><value>Selected item subtotal</value></data>
+  <data name="PurchaseNeedsDemand" xml:space="preserve"><value>Set the requested quantity in Analysis.</value></data>
+  <data name="PurchaseNeedsIdentity" xml:space="preserve"><value>Identify and confirm the equivalence in Analysis first.</value></data>
+  <data name="PurchaseNotSaved" xml:space="preserve"><value>No preparation saved. Choose offers to start.</value></data>
+  <data name="PurchaseOutdatedHelp" xml:space="preserve"><value>Summary outdated. Make new choices.</value></data>
+  <data name="PurchaseRefresh" xml:space="preserve"><value>Refresh analysis</value></data>
+  <data name="PurchaseRemoveChoice" xml:space="preserve"><value>Remove choice for this item</value></data>
+  <data name="PurchaseRulesHelp" xml:space="preserve"><value>Choose one complete lot per product, covering the requested quantity.</value></data>
+  <data name="PurchaseSaved" xml:space="preserve"><value>Choice saved.</value></data>
+  <data name="PurchaseSavedReference" xml:space="preserve"><value>Saved version {0} · analysis {1} · {2}</value></data>
+  <data name="PurchaseSelectHelp" xml:space="preserve"><value>Choose an offer. The entire lot, including excess, is purchased.</value></data>
+  <data name="PurchaseShowSummary" xml:space="preserve"><value>By supplier</value></data>
+  <data name="PurchaseStartNewWithOffer" xml:space="preserve"><value>Start a new version with this offer</value></data>
+  <data name="PurchaseSuggestedHelp" xml:space="preserve"><value>Replaces item choices with the lowest-cost lots that meet demand.</value></data>
+  <data name="PurchaseSummary" xml:space="preserve"><value>{0} items selected · {1} pending groups</value></data>
+  <data name="PurchaseSupplierDetail" xml:space="preserve"><value>{0} selected items · {1}</value></data>
+  <data name="PurchaseTab" xml:space="preserve"><value>Purchase and order</value></data>
+  <data name="PurchaseUnselected" xml:space="preserve"><value>No offer chosen</value></data>
+  <data name="PurchaseUseSuggested" xml:space="preserve"><value>Replace with suggestions</value></data>
+  <data name="PurchaseShowOffers" xml:space="preserve"><value>Choose by item</value></data>
+  <data name="PurchaseSelectLabel" xml:space="preserve"><value>Select one complete lot</value></data>
+  <data name="PurchaseChosenOffer" xml:space="preserve"><value>Saved choice for this item</value></data>
+  <data name="AdvancedIdentification" xml:space="preserve"><value>Other identification options</value></data>
+  <data name="BrowseProducts" xml:space="preserve"><value>Find product…</value></data>
+  <data name="ConfirmProduct" xml:space="preserve"><value>Confirm product and conversion</value></data>
+  <data name="ErpProductCode" xml:space="preserve"><value>ERP product code</value></data>
+  <data name="IdentificationAlternativeCode" xml:space="preserve"><value>Confirm product and conversion</value></data>
+  <data name="IdentificationManual" xml:space="preserve"><value>Product selected manually. Enter the number of base units in one quoted unit.</value></data>
+  <data name="IdentificationNotFound" xml:space="preserve"><value>Product not found</value></data>
+  <data name="IdentificationOffline" xml:space="preserve"><value>ERP unavailable. Showing the saved reference and its historical product snapshot.</value></data>
+  <data name="IdentificationPending" xml:space="preserve"><value>Identify product</value></data>
+  <data name="IdentificationSavedMapping" xml:space="preserve"><value>Saved reference found. The confirmed conversion has been restored.</value></data>
+  <data name="IdentifyThisItem" xml:space="preserve"><value>Identify product</value></data>
+  <data name="MappingAndLinkSaved" xml:space="preserve"><value>Product linked. Reference saved for future quotations.</value></data>
+  <data name="MappingErrorConflict" xml:space="preserve"><value>This reference changed. Identify the item again before saving.</value></data>
+  <data name="MappingErrorInvalid" xml:space="preserve"><value>Check the supplier reference, product, base unit and positive conversion factor.</value></data>
+  <data name="MappingReferenceHelp" xml:space="preserve"><value>Matches this supplier&apos;s code, description, color and quoted unit.</value></data>
+  <data name="MappingSavePending" xml:space="preserve"><value>The item was linked, but the reference could not be saved. Select the product again and retry saving the reference.</value></data>
+  <data name="ProductColor" xml:space="preserve"><value>Color / variant</value></data>
+  <data name="ProductColorHelp" xml:space="preserve"><value>Optional; preserve the document value</value></data>
+  <data name="ProductName" xml:space="preserve"><value>Product name</value></data>
+  <data name="ProductSearchCount" xml:space="preserve"><value>{0} products found.</value></data>
+  <data name="ProductSearchPlaceholder" xml:space="preserve"><value>Type the code or part of the name…</value></data>
+  <data name="ProductSearchTitle" xml:space="preserve"><value>Product search</value></data>
+  <data name="IncludeInactiveProducts" xml:space="preserve"><value>Include inactive</value></data>
+  <data name="ProductCode" xml:space="preserve"><value>Product code</value></data>
+  <data name="Search" xml:space="preserve"><value>Search</value></data>
+  <data name="QueryContractFindProductById" xml:space="preserve"><value>Parameter: @ProductCode. Match the exact internal product code in the target catalog. Return the FindProduct aliases, including UnidadeBase. Alternative-code fields may be empty; Quantidade may be null. The user confirms the quoted conversion.</value></data>
+  <data name="QueryContractSearchProducts" xml:space="preserve"><value>Parameter: @SearchText. Search catalog product names using LIKE with ESCAPE &apos;\&apos;, retaining % around the parameter. The parameter uses % between words and escapes literal %, _ and [. Return the FindProduct aliases. Limit results and order by name and product code.</value></data>
+  <data name="RememberProductMapping" xml:space="preserve"><value>Save this reference for future quotations</value></data>
+  <data name="SelectProduct" xml:space="preserve"><value>Select product</value></data>
+  <data name="ProductSelectionUnavailable"><value>The product is no longer available for selection. Search again.</value></data>
+  <data name="ProductSearchLimited"><value>Showing {0} products. The query may have more results; refine the search.</value></data>
+  <data name="IdentificationConfirmed"><value>Product and conversion confirmed for this item.</value></data>
+  <data name="EditIdentification"><value>Edit link / reference</value></data>
+  <data name="ErpDirectCandidateDetail"><value>{0} · base unit: {1} · {2}</value></data>
+  <data name="ManualCandidateConversion" xml:space="preserve"><value>Enter the base units per quoted unit.</value></data>
+  <data name="MappingConversionPreview"><value>1 {0} quoted = {1} {2} base</value></data>
+  <data name="SourceGroupDetail"><value>{0} offers · quoted in {1}</value></data>
+  <data name="AnalysisFiltersReset"><value>Filters were cleared to show the edited item in its new group.</value></data>
+  <data name="IdentificationReplacement" xml:space="preserve"><value>Product changed; same base unit, conversion retained. Confirm the replacement.</value></data>
+  <data name="CandidateTargetGroup"><value>ERP group after confirmation: {0}</value></data>
+  <data name="LowestUnitPriceBadge"><value>Lowest unit price</value></data>
+  <data name="LowestUnitPriceMetric"><value>Lowest unit price</value></data>
+  <data name="LowestUnitPriceTied"><value>Tied lowest unit price</value></data>
+  <data name="OfferSourceDetails"><value>Original offer, ERP product and purchase history</value></data>
+  <data name="PriceComparisonNeedsOffers"><value>Identify at least two offers in the same base unit to compare their prices.</value></data>
+  <data name="PriceSpreadHelp" xml:space="preserve"><value>Savings = (highest − lowest) / highest × 100. Lowest: {0}/{2}; highest: {1}/{2}; result: {3}%.</value></data>
+  <data name="PriceSpreadShortHelp"><value>Difference between the highest and lowest unit prices. Open for values and formula.</value></data>
+  <data name="UnitPricePremiumHelp" xml:space="preserve"><value>Δ = (offer − lowest) / lowest × 100. Offer: {0}/{2}; lowest: {1}/{2}; result: {3}%.</value></data>
+  <data name="UnitPricePremiumShortHelp"><value>Unit-price difference from the lowest offer. Open for the calculation.</value></data>
+  <data name="WholeLotTotalLabel"><value>Complete lot total</value></data>
+  <data name="ProductSearchMinimum" xml:space="preserve"><value>Type at least 3 characters to search by name.</value></data>
+  <data name="EditQuotationItem" xml:space="preserve"><value>Edit quotation item</value></data>
+  <data name="ComparisonInteractionHelp" xml:space="preserve"><value>Click a product to expand its offers. Double-click or press F2 to configure the product.</value></data>
+  <data name="ComparisonProduct" xml:space="preserve"><value>Product</value></data>
+  <data name="LowestQuoteSupplier" xml:space="preserve"><value>Lowest unit-price supplier</value></data>
+  <data name="LastPurchaseColumn" xml:space="preserve"><value>Last purchase</value></data>
+  <data name="LastPurchaseShortHelp" xml:space="preserve"><value>History of the product with the lowest quoted unit price.</value></data>
+  <data name="SupplierColumn" xml:space="preserve"><value>Supplier / quantity</value></data>
+  <data name="UnitPriceColumn" xml:space="preserve"><value>Price / unit</value></data>
+  <data name="LowestDifferenceColumn" xml:space="preserve"><value>Δ vs lowest</value></data>
+  <data name="PurchaseDifferenceColumn" xml:space="preserve"><value>Δ vs purchase</value></data>
+  <data name="SupplierTotalsTitle" xml:space="preserve"><value>Supplier totals</value></data>
+  <data name="QuotedTotalColumn" xml:space="preserve"><value>Quoted total</value></data>
+  <data name="CommonTotalColumn" xml:space="preserve"><value>Common basket</value></data>
+  <data name="SupplierItemCount" xml:space="preserve"><value>{0} items</value></data>
+  <data name="SupplierTotalsShortHelp" xml:space="preserve"><value>Compare the same products meeting demand across all proposals.</value></data>
+  <data name="SupplierTotalsHelp" xml:space="preserve"><value>Comparable package: {0} products with matching quoted quantities, or whole lots meeting the defined demand, in every proposal. Reference subtotal: {1}. Δ = (subtotal − reference) / reference × 100. Pending products are excluded. Lowest-price counts use confirmed base-unit prices; ties are separate.</value></data>
+  <data name="PurchaseVariationUnavailable" xml:space="preserve"><value>A positive last-purchase price in the same base unit is required. Missing or overflowing values remain unavailable.</value></data>
+  <data name="PurchaseVariationHelp" xml:space="preserve"><value>Δ = (quoted price − last purchase) / last purchase × 100. Quote: {0}/{2}; purchase: {1}/{2}; result: {3}. {4}</value></data>
+  <data name="PurchaseVariationShortHelp" xml:space="preserve"><value>Signed change from the last-purchase base price of this product.</value></data>
+  <data name="SupplierTotalsCaption" xml:space="preserve"><value>Compared products: {0} · pending: {1}</value></data>
+  <data name="BestLotShort" xml:space="preserve"><value>✓ Best lot</value></data>
+  <data name="DevelopedBy" xml:space="preserve"><value>Developed by</value></data>
+  <data name="SearchTemplates" xml:space="preserve"><value>Search name or supplier…</value></data>
+  <data name="NoMatchingTemplates" xml:space="preserve"><value>No templates match this search.</value></data>
+  <data name="TemplateSearchSummary" xml:space="preserve"><value>{0} of {1} templates</value></data>
+  <data name="PackagePending" xml:space="preserve"><value>Not comparable yet</value></data>
+  <data name="PackageReference" xml:space="preserve"><value>0.00% · lowest package</value></data>
+  <data name="PackagePremium" xml:space="preserve"><value>{0} more expensive</value></data>
+  <data name="SupplierPriceCounts" xml:space="preserve"><value>{0} items · lowest prices: {1} · ties: {2}</value></data>
+  <data name="PackageComparisonNone" xml:space="preserve"><value>Package percentage unavailable.</value></data>
+  <data name="PackageComparisonTooFewProposals" xml:space="preserve"><value>Add another proposal to compare suppliers.</value></data>
+  <data name="PackageComparisonMissingIdentity" xml:space="preserve"><value>Identify the products to compare supplier packages.</value></data>
+  <data name="PackageComparisonIncompatibleUnits" xml:space="preserve"><value>Confirm matching base units to compare packages.</value></data>
+  <data name="PackageComparisonMissingProducts" xml:space="preserve"><value>No common package: some products are missing from a proposal.</value></data>
+  <data name="PackageComparisonAmbiguousOffers" xml:space="preserve"><value>More than one offer for the same product in a proposal; review the links.</value></data>
+  <data name="PackageComparisonMissingDemand" xml:space="preserve"><value>Quantities differ. Set demand in Analysis to compare complete lots.</value></data>
+  <data name="PackageComparisonInsufficientQuantity" xml:space="preserve"><value>A proposal has no active lot that meets demand for the common products.</value></data>
+  <data name="PackageComparisonUnavailableTotal" xml:space="preserve"><value>No valid subtotal or percentage is available for comparison.</value></data>
+  <data name="SupplierPackagesTitle" xml:space="preserve"><value>Supplier packages</value></data>
+  <data name="SupplierPackageChoiceHelp" xml:space="preserve"><value>Replaces all item choices with this supplier&apos;s package.</value></data>
+  <data name="ChooseSupplierPackage" xml:space="preserve"><value>Use complete package</value></data>
+  <data name="PackageCoversDemand" xml:space="preserve"><value>Covers demand for all {0} products.</value></data>
+  <data name="PackageIncomplete" xml:space="preserve"><value>Covers {0} of {1} products.</value></data>
+  <data name="PurchaseSelectedSummary" xml:space="preserve"><value>Saved choices</value></data>
+  <data name="NoSupplierPackages" xml:space="preserve"><value>Import supplier proposals to choose a package.</value></data>
+  <data name="PackagePartialComparison" xml:space="preserve"><value>Compared products: {0} · {1} · {2}</value></data>
+  <data name="SupplierPurchaseVariation" xml:space="preserve"><value>Last purchase: {0}</value></data>
+  <data name="SupplierPurchaseMissing" xml:space="preserve"><value>unavailable</value></data>
+  <data name="SupplierPurchaseUnavailable" xml:space="preserve"><value>Requires a positive last purchase price in the base unit for every proposal item, with valid quantities and totals.</value></data>
+  <data name="SupplierPurchaseShortHelp" xml:space="preserve"><value>Compares the quoted total with the cost of the same quantities at their last purchase prices.</value></data>
+  <data name="SupplierPurchaseHelp" xml:space="preserve"><value>Reference = sum of quoted base quantities × each product's last purchase price. Uses saved history for every proposal item. Quotation: {0}; reference: {1}. Δ = (quotation − reference) / reference × 100 = {2}.</value></data>
+  <data name="SupplierPurchaseInput" xml:space="preserve"><value>{0}: {1} × {2} · purchase: {3}</value></data>
+  <data name="OrderWriteUser" xml:space="preserve"><value>SQL user for order writes</value></data>
+  <data name="OrderWriteUserHelp" xml:space="preserve"><value>Optional SQL login for approved purchase writes. Leave blank to disable writes unless you explicitly choose to use the current connection.</value></data>
+  <data name="OrderWritePassword" xml:space="preserve"><value>Order write password</value></data>
+  <data name="OrdersRefreshReferences" xml:space="preserve"><value>Refresh purchases</value></data>
+  <data name="OrdersLoadReference" xml:space="preserve"><value>Open comparison</value></data>
+  <data name="OrdersSelectReference" xml:space="preserve"><value>Select a saved purchase with ERP product and supplier identities.</value></data>
+  <data name="OrdersReference" xml:space="preserve"><value>{0} · Purchase reference v{1}</value></data>
+  <data name="OrdersUseLatestReference" xml:space="preserve"><value>Use selected purchase version</value></data>
+  <data name="OrdersSave" xml:space="preserve"><value>Save comparison locally</value></data>
+  <data name="OrdersAcceptShortages" xml:space="preserve"><value>Accept remaining quantities in this comparison</value></data>
+  <data name="OrdersSearch" xml:space="preserve"><value>Search orders</value></data>
+  <data name="OrdersSearchHelp" xml:space="preserve"><value>Search by number, supplier, branch, status and date range. Orders are linked by internal identity; displayed numbers may repeat. Configure SearchPurchaseOrders and ReadPurchaseOrder in Settings.</value></data>
+  <data name="OrdersNumber" xml:space="preserve"><value>Order number</value></data>
+  <data name="OrdersSupplier" xml:space="preserve"><value>Supplier</value></data>
+  <data name="OrdersBranch" xml:space="preserve"><value>Branch</value></data>
+  <data name="OrdersStatus" xml:space="preserve"><value>Status</value></data>
+  <data name="OrdersFromDate" xml:space="preserve"><value>From date</value></data>
+  <data name="OrdersToDate" xml:space="preserve"><value>To date</value></data>
+  <data name="OrdersLink" xml:space="preserve"><value>Link selected order</value></data>
+  <data name="OrdersMoveUp" xml:space="preserve"><value>Increase priority</value></data>
+  <data name="OrdersUnlink" xml:space="preserve"><value>Unlink</value></data>
+  <data name="OrdersRefresh" xml:space="preserve"><value>Refresh ERP orders</value></data>
+  <data name="OrdersComparison" xml:space="preserve"><value>Purchase coverage</value></data>
+  <data name="OrdersComparisonHelp" xml:space="preserve"><value>Quoted quantity = selected lot quantity × confirmed package factor. Coverage uses exact product codes and compatible base units, in linked order priority. Each order line is allocated once. Remaining = quoted − covered. Normalized price = unit price ÷ package factor. Price difference = (ERP price − quoted price) ÷ quoted price × 100; unavailable when the reference price is zero. Accepting a shortage preserves original demand and purchase history.</value></data>
+  <data name="OrdersProduct" xml:space="preserve"><value>Product</value></data>
+  <data name="OrdersQuoted" xml:space="preserve"><value>Quoted</value></data>
+  <data name="OrdersCovered" xml:space="preserve"><value>Covered</value></data>
+  <data name="OrdersRemaining" xml:space="preserve"><value>Remaining</value></data>
+  <data name="OrdersExcess" xml:space="preserve"><value>Order lines with excess or unmatched quantities: {0}</value></data>
+  <data name="OrdersIncludeMissing" xml:space="preserve"><value>Include selected remaining item</value></data>
+  <data name="OrdersEditLine" xml:space="preserve"><value>Edit selected order line</value></data>
+  <data name="OrdersEditHelp" xml:space="preserve"><value>Choose each field to change. Quantities and prices use the order line's original unit. Price-only edits preserve quantity. Received or cancelled lines cannot be edited. Cancellation is explicit and requires a second confirmation.</value></data>
+  <data name="OrdersChangeQuantity" xml:space="preserve"><value>Change quantity</value></data>
+  <data name="OrdersChangePrice" xml:space="preserve"><value>Change unit price</value></data>
+  <data name="OrdersCancelLine" xml:space="preserve"><value>Cancel line</value></data>
+  <data name="OrdersAddChange" xml:space="preserve"><value>Add to preview</value></data>
+  <data name="OrdersDate" xml:space="preserve"><value>New order date</value></data>
+  <data name="OrdersPreviewCreate" xml:space="preserve"><value>Preview new order for remaining items</value></data>
+  <data name="OrdersPreviewUpdate" xml:space="preserve"><value>Preview selected order changes</value></data>
+  <data name="OrdersRemoveChange" xml:space="preserve"><value>Remove selected change</value></data>
+  <data name="OrdersConfirmHelp" xml:space="preserve"><value>Confirm to execute the saved ERP script with these changes. The order is checked again before writing. Uncertain outcomes require reconciliation before another submission.</value></data>
+  <data name="OrdersConfirmCancellation" xml:space="preserve"><value>I also confirm cancellation of the selected lines</value></data>
+  <data name="OrdersConfirm" xml:space="preserve"><value>Confirm ERP write</value></data>
+  <data name="OrdersOperations" xml:space="preserve"><value>ERP operation receipts</value></data>
+  <data name="OrdersOperationsHelp" xml:space="preserve"><value>Pending or uncertain operations block another submission for this quotation. Reconcile with the external operation journal to determine whether the previous operation committed. Reconciliation never resends changes.</value></data>
+  <data name="OrdersReconcile" xml:space="preserve"><value>Check selected operation in ERP</value></data>
+  <data name="OrdersSaved" xml:space="preserve"><value>Comparison saved locally.</value></data>
+  <data name="OrdersPreviewSummary" xml:space="preserve"><value>{0} · {1} · Order {2} · Branch {3} · Status {4} · {5} · {6} changes</value></data>
+  <data name="OrdersCreate" xml:space="preserve"><value>Create purchase order</value></data>
+  <data name="OrdersUpdate" xml:space="preserve"><value>Update purchase order</value></data>
+  <data name="OrdersContribution" xml:space="preserve"><value>Order {0}, line {1}: allocated {2} of {6} · {3}/base unit · price difference {4} · full line total {5}</value></data>
+  <data name="OrdersChange" xml:space="preserve"><value>{0} · {1}</value></data>
+  <data name="OrderStatePending" xml:space="preserve"><value>Pending reconciliation</value></data>
+  <data name="OrderStateCommitted" xml:space="preserve"><value>Committed in ERP</value></data>
+  <data name="OrderStateNotApplied" xml:space="preserve"><value>Confirmed not applied</value></data>
+  <data name="OrderStateUnknown" xml:space="preserve"><value>Uncertain result; reconcile before sending again</value></data>
+  <data name="OrderErrorInvalidReference" xml:space="preserve"><value>Use products and a supplier from the same ERP catalog and a saved purchase version.</value></data>
+  <data name="OrderErrorInvalidResult" xml:space="preserve"><value>The integration returned an invalid purchase order result.</value></data>
+  <data name="OrderErrorDuplicateOrder" xml:space="preserve"><value>This order is already linked.</value></data>
+  <data name="OrderErrorInvalidChange" xml:space="preserve"><value>Review the selected changes, branch, status and date.</value></data>
+  <data name="OrderErrorConflict" xml:space="preserve"><value>The saved comparison, order or script changed. Refresh and review a new preview.</value></data>
+  <data name="OrderErrorNotEditable" xml:space="preserve"><value>This order or line cannot be edited. Check status, receipts and cancellations.</value></data>
+  <data name="OrderErrorConfirmationRequired" xml:space="preserve"><value>Confirm the write and any selected cancellations.</value></data>
+  <data name="OrderErrorPendingOperation" xml:space="preserve"><value>Reconcile the pending operation before submitting another write.</value></data>
+  <data name="OrderErrorWritesNotConfigured" xml:space="preserve"><value>Choose a write connection, check the operator code and configure the scripts before creating or editing orders.</value></data>
+  <data name="QueryContractSearchPurchaseOrders" xml:space="preserve"><value>Saved SQL batch; EXEC, WHILE and cursors are supported. Input: @RequestJson (Number, Supplier, Branch, Status, From, To). Output: one row and one ResultJson nvarchar(max) column containing a JSON array of headers: Id, Number, SupplierId, SupplierName, Branch, Status, Date (yyyy-MM-dd), CanEdit. Maximum 1,000 orders. Use read-only credentials. See docs/purchase-order-scripts.md.</value></data>
+  <data name="QueryContractReadPurchaseOrder" xml:space="preserve"><value>Saved SQL batch; input @RequestJson (OrderId). Output: ResultJson containing Header, Revision and Lines. Each line: Id, ProductCode, Description, Unit, BaseUnit, Quantity, BaseUnitsPerUnit, UnitPrice, Total, ReceivedQuantity, IsCancelled. Revision must cover all relevant ERP state. Read within the supplied transaction without NOLOCK or transaction controls. See docs/purchase-order-scripts.md.</value></data>
+  <data name="QueryContractCreatePurchaseOrder" xml:space="preserve"><value>Confirmed write batch with EXEC, WHILE or cursors. Input: @RequestJson containing the versioned OrderWritePlan, OperationId and selected Changes. Use the supplied transaction, ERP allocation, numbering, defaults and rounding rules. Save an idempotent external operation receipt in that transaction. Output ResultJson: OperationId, State (Committed), OrderId. Do not split orders. See docs/purchase-order-scripts.md.</value></data>
+  <data name="QueryContractUpdatePurchaseOrder" xml:space="preserve"><value>Confirmed write batch. Input: @RequestJson containing ExpectedOrder and explicit per-line Changes. Null fields mean preserve the existing value. Recheck edit/receipt restrictions; maintain dependent fields and totals using ERP rules. Cancellation is explicit. Preserve unrelated lines. Save an external receipt in the supplied transaction. Output ResultJson: OperationId, State (Committed), OrderId. See docs/purchase-order-scripts.md.</value></data>
+  <data name="QueryContractReconcilePurchaseOperation" xml:space="preserve"><value>Read-only saved batch; input @RequestJson with the original plan and OperationId. Check the durable external operation journal. Output ResultJson: OperationId, State (Committed, NotApplied or Unknown), OrderId (required for Committed). NotApplied requires proof that no in-flight operation can still commit. Never repeat the original write here. See docs/purchase-order-scripts.md.</value></data>
+  <data name="OrdersManualPair" xml:space="preserve"><value>Approve selected line for selected reference item</value></data>
+  <data name="OrdersManualPairHelp" xml:space="preserve"><value>Select a comparison item and an ERP order line, then explicitly approve their pairing. Base units must match and package factors must already be validated. This authorizes coverage in this comparison only and does not change ERP product identities.</value></data>
+  <data name="OrdersClearPairs" xml:space="preserve"><value>Clear approved pairings</value></data>
+  <data name="OrdersReferencePrice" xml:space="preserve"><value>Quoted price: {0}/base unit · lot total {1}</value></data>
+  <data name="OrderErrorRefreshRequired" xml:space="preserve"><value>Link and refresh the committed order before preparing another write.</value></data>
+  <data name="OrdersLineDetail" xml:space="preserve"><value>Unit {0} · Base {1} · Factor {2} · Received {3} · {4}</value></data>
+  <data name="OrdersLineEditable" xml:space="preserve"><value>Editable</value></data>
+  <data name="OrdersLineReadOnly" xml:space="preserve"><value>Editing restricted</value></data>
+  <data name="OrdersLineCancelled" xml:space="preserve"><value>Cancelled</value></data>
+  <data name="QuotationErrorOrderHistory" xml:space="preserve"><value>This quotation has saved order comparisons or operation receipts and must be retained.</value></data>
+  <data name="OrdersComparisonInputs" xml:space="preserve"><value>Selected product: {0}; source quantity: {1}; factor: {2}; source unit price: {3}; reported lot total: {4}; original demand: {5}. ERP totals shown in the grid refer to complete original order lines.</value></data>
+  <data name="PurchaseBlockedDemandRequired" xml:space="preserve"><value>Enter the requested quantity in Item analysis.</value></data>
+  <data name="PurchaseBlockedIdentityRequired" xml:space="preserve"><value>Identify the product and confirm its conversion in Item analysis.</value></data>
+  <data name="PurchaseBlockedUnitConflict" xml:space="preserve"><value>Resolve the conflicting base units in Item analysis.</value></data>
+  <data name="PurchaseBlockedInactiveProduct" xml:space="preserve"><value>Choose an active ERP product.</value></data>
+  <data name="PurchaseBlockedInsufficientQuantity" xml:space="preserve"><value>This lot does not cover the requested quantity.</value></data>
+  <data name="PurchaseBlockedInvalidOffer" xml:space="preserve"><value>Review this offer's quantity, price and product link.</value></data>
+  <data name="PurchaseBlockedFinalized" xml:space="preserve"><value>Reopen the quotation to change purchase choices.</value></data>
+  <data name="PurchaseBlockedBusy" xml:space="preserve"><value>Wait for the current operation to finish.</value></data>
+  <data name="PurchaseBlockedNoSelection" xml:space="preserve"><value>Select an offer.</value></data>
+  <data name="PurchaseBlockedIncompletePackage" xml:space="preserve"><value>This supplier does not cover all requested items.</value></data>
+  <data name="PurchaseBlockedAmbiguousPackage" xml:space="preserve"><value>This supplier has multiple offers for an item. Choose individually.</value></data>
+  <data name="OrdersNoPreparedPurchases" xml:space="preserve"><value>No purchase is ready for comparison. Find a quotation and prepare its purchase choices.</value></data>
+  <data name="OrdersSearchCount" xml:space="preserve"><value>{0} orders found.</value></data>
+  <data name="OrdersFindReference" xml:space="preserve"><value>Find quotation or purchase</value></data>
+  <data name="OrdersReferenceSearchPlaceholder" xml:space="preserve"><value>Quotation or supplier name</value></data>
+  <data name="OrdersPreparePurchase" xml:space="preserve"><value>Prepare selected purchase</value></data>
+  <data name="OrdersReferenceNeedsPreparation" xml:space="preserve"><value>No purchase choices saved. Open Prepare purchase.</value></data>
+  <data name="OrdersReferenceNeedsErp" xml:space="preserve"><value>Identify this purchase's products and supplier in the ERP.</value></data>
+  <data name="OrdersReferenceReady" xml:space="preserve"><value>Ready to compare · purchase v{0}</value></data>
+  <data name="OrdersReferenceSearchCount" xml:space="preserve"><value>{0} quotations or purchases found.</value></data>
+  <data name="OrdersLinkNeedsReference" xml:space="preserve"><value>Select a prepared purchase to compare this order.</value></data>
+  <data name="OrdersStartHelp" xml:space="preserve"><value>Search ERP orders below. To compare, select a prepared purchase using Find quotation or purchase.</value></data>
+  <data name="OrdersSearchLimited" xml:space="preserve"><value>Showing {0} orders. Refine the filters to find others.</value></data>
+  <data name="AllowProductReadScripts" xml:space="preserve"><value>Allow product read scripts (procedures and batches)</value></data>
+  <data name="ProductReadScriptsHelp" xml:space="preserve"><value>Requires a database login restricted to reading. All modes validate parameters, result types, limits and cancellation.</value></data>
+  <data name="QueryContractFindBuyingSupplier" xml:space="preserve"><value>@BrandId, @Branch and @RequestJson. Return one ResultJson row containing [] for no history or one BuyingSupplierSnapshot. Select the latest eligible order by business date and control within the requested branch; include brand, actual header supplier, source control/revision and UTC retrieval time.</value></data>
+  <data name="PriceReference" xml:space="preserve"><value>Price reference</value></data>
+  <data name="ReferenceLastPurchase" xml:space="preserve"><value>Last purchase</value></data>
+  <data name="ReferenceLinkedOrder" xml:space="preserve"><value>Linked order</value></data>
+  <data name="LinkedOrdersOptional" xml:space="preserve"><value>Linked purchase orders (optional)</value></data>
+  <data name="OrderNumberSearch" xml:space="preserve"><value>Order number</value></data>
+  <data name="LinkOrder" xml:space="preserve"><value>Link selected order</value></data>
+  <data name="RefreshLinkedOrder" xml:space="preserve"><value>Refresh selected order</value></data>
+  <data name="RemoveLinkedOrder" xml:space="preserve"><value>Remove link</value></data>
+  <data name="ReplaceManualDemand" xml:space="preserve"><value>Replace entered quantities</value></data>
+  <data name="KeepManualDemandHelp" xml:space="preserve"><value>Unchecked: keep manual quantities and fill only missing demand. Checked: replace matching quantities with the complete active order quantities.</value></data>
+  <data name="LinkedOrderLabel" xml:space="preserve"><value>Order {0} · {1} · Control {2} · snapshot {3}</value></data>
+  <data name="OrderResultLabel" xml:space="preserve"><value>Order {0} · {1} · Control {2} · Branch {3}</value></data>
+  <data name="OrderSearchCount" xml:space="preserve"><value>{0} orders found.</value></data>
+  <data name="QuotationErrorInvalidInputs" xml:space="preserve"><value>Review the linked orders and price reference. Order price requires a linked order.</value></data>
+  <data name="AnalysisErrorDemandReviewRequired" xml:space="preserve"><value>Manual quantities conflict after grouping. Review them or explicitly use the order quantities.</value></data>
+  <data name="OrderPriceUnavailable" xml:space="preserve"><value>No compatible linked-order price. Last purchase is kept separately.</value></data>
+  <data name="OrderPriceFormula" xml:space="preserve"><value>Weighted reference = Σ(normalized price × comparable quantity) / Σ(quantity) = {0}; contributing quantity: {1}. Individual source prices follow.</value></data>
+  <data name="OrderPriceContribution" xml:space="preserve"><value>Order {0} · control {1} · line {2}: {3} × factor {4}; unit price {5}; snapshot {6}.</value></data>
+  <data name="DemandOriginManual" xml:space="preserve"><value>Desired quantity entered manually</value></data>
+  <data name="DemandOriginOrder" xml:space="preserve"><value>Desired quantity from {0} order lines · snapshot {1}</value></data>
+  <data name="ApplyPriceReference" xml:space="preserve"><value>Apply reference</value></data>
+  <data name="AdvancedOrderTools" xml:space="preserve"><value>Order history and coverage</value></data>
+  <data name="SharedCheckingWorkspace" xml:space="preserve"><value>Back to analysis and checking</value></data>
+  <data name="ProductSection" xml:space="preserve"><value>Product</value></data>
+  <data name="PackagingSection" xml:space="preserve"><value>Quotation quantity and packaging</value></data>
+  <data name="PdfQuantity" xml:space="preserve"><value>Quantity in the document</value></data>
+  <data name="ComparisonUnit" xml:space="preserve"><value>Compare in</value></data>
+  <data name="PackageContains" xml:space="preserve"><value>Each {0} contains ({1})</value></data>
+  <data name="DesiredQuantityInUnit" xml:space="preserve"><value>Desired quantity ({0})</value></data>
+  <data name="QuantityConversionEquation" xml:space="preserve"><value>{0} × {1} = {2} · Price: {3}/{4}</value></data>
+  <data name="ConversionPending" xml:space="preserve"><value>Confirm a positive packaging factor.</value></data>
+  <data name="ChangeProduct" xml:space="preserve"><value>Change product</value></data>
+  <data name="RefreshErpData" xml:space="preserve"><value>Refresh ERP data</value></data>
+  <data name="ErpRefreshPreview" xml:space="preserve"><value>Updated ERP data loaded for review. Confirm to replace the saved link.</value></data>
+  <data name="SynchronizeWithErp" xml:space="preserve"><value>Prepare ERP order</value></data>
+  <data name="SyncOneBrandHelp" xml:space="preserve"><value>Each proposal contains one brand. Confirm the buying supplier and exact target order control before selecting changes.</value></data>
+  <data name="SyncPrepareFirst" xml:space="preserve"><value>Choose the purchase lots in Prepare purchase before synchronizing.</value></data>
+  <data name="SyncBrandUnknown" xml:space="preserve"><value>Review product brand</value></data>
+  <data name="SyncBranch" xml:space="preserve"><value>Branch</value></data>
+  <data name="SyncCreate" xml:space="preserve"><value>Create a new order</value></data>
+  <data name="SyncUpdate" xml:space="preserve"><value>Update selected order</value></data>
+  <data name="SyncPreview" xml:space="preserve"><value>Check differences</value></data>
+  <data name="SyncNewOrder" xml:space="preserve"><value>New order</value></data>
+  <data name="SyncStatusPending" xml:space="preserve"><value>Defaults require ERP validation</value></data>
+  <data name="SyncPreviewSummary" xml:space="preserve"><value>Target control: {0} · Branch: {1} · Status: {2}
+Supplier: {3} → {4} ({5}) · history order: {6}</value></data>
+  <data name="SyncNoDifferences" xml:space="preserve"><value>No differences. Synchronization is unnecessary.</value></data>
+  <data name="SyncChooseChanges" xml:space="preserve"><value>Select only the changes to apply. Unchecked extra lines are kept.</value></data>
+  <data name="SyncSupplierChange" xml:space="preserve"><value>Change buying supplier: {0} → {1}</value></data>
+  <data name="SyncRemoveLine" xml:space="preserve"><value>Remove line control {0}: {1} · {2} (unchecked = keep)</value></data>
+  <data name="SyncLineChange" xml:space="preserve"><value>{0} · line control {1} · product {2} → {3}
+Quantity: {4} → {5} · unit price: {6} → {7} · desired: {8}</value></data>
+  <data name="SyncKindProductAndPackage" xml:space="preserve"><value>Replace product and packaging together</value></data>
+  <data name="SyncKindQuantity" xml:space="preserve"><value>Update quantity</value></data>
+  <data name="SyncKindPrice" xml:space="preserve"><value>Update price</value></data>
+  <data name="SyncKindInclude" xml:space="preserve"><value>Include complete quoted lot</value></data>
+  <data name="SyncRemovalConfirmation" xml:space="preserve"><value>I confirm removal of the selected line controls.</value></data>
+  <data name="SyncIrreversibleHelp" xml:space="preserve"><value>Saved local versions do not undo an ERP update. Product and packaging changes include their coherent quantity and price. Removal is separate from cancellation.</value></data>
+  <data name="SyncReviewSelection" xml:space="preserve"><value>Review order</value></data>
+  <data name="SyncResultSummary" xml:space="preserve"><value>Supplier: {0} · Brand: {1} · Item subtotal: {2} · Removals: {3}</value></data>
+  <data name="SyncSafeValidationRequired" xml:space="preserve"><value>Preview only. ERP writes remain unavailable until the integration scripts, numbering, totals, removal and recovery are validated in a safe test environment.</value></data>
+  <data name="SyncConfirmAndExecute" xml:space="preserve"><value>Save order in ERP</value></data>
+  <data name="SyncErrorMissingBrand" xml:space="preserve"><value>Refresh or correct the selected product's ERP brand metadata.</value></data>
+  <data name="SyncErrorMissingSupplier" xml:space="preserve"><value>Resolve the buying supplier for this brand and branch, and confirm its change when needed.</value></data>
+  <data name="SyncErrorInvalidPairing" xml:space="preserve"><value>The order contains ambiguous matching lines. Review the pairing by line control.</value></data>
+  <data name="SyncErrorInvalidSelection" xml:space="preserve"><value>Select valid changes and explicitly confirm any removals.</value></data>
+  <data name="SyncErrorMixedBrands" xml:space="preserve"><value>The resulting order would contain multiple brands. Review replacements and extra lines, or create a separate order.</value></data>
+  <data name="SyncErrorReadOnly" xml:space="preserve"><value>The order or selected line cannot be edited. Received lines are protected.</value></data>
+  <data name="SyncErrorConflict" xml:space="preserve"><value>Inputs or the target order changed. Reload the purchase and calculate a new preview.</value></data>
+  <data name="SyncErrorNumericLimit" xml:space="preserve"><value>The proposed values exceed the supported numeric limits.</value></data>
+  <data name="SupplierOrderVariation" xml:space="preserve"><value>Linked order: {0}</value></data>
+  <data name="SupplierOrderHelp" xml:space="preserve"><value>Reference = quoted comparable quantities × saved linked-order reference prices. Quotation: {0}; reference: {1}. Δ = (quotation − reference) / reference × 100 = {2}.</value></data>
+  <data name="OrderVariationHelp" xml:space="preserve"><value>Δ = (quoted price − order reference) / order reference × 100. Quotation: {0}/{2}; reference: {1}/{2}; result: {3}. {4}</value></data>
+  <data name="AnalysisVariantConflict" xml:space="preserve"><value>Product names match but reviewed variants differ. Review the grouping.</value></data>
+  <data name="PurchaseBlockedVariantConflict" xml:space="preserve"><value>Review the conflicting product variants before choosing a purchase lot.</value></data>
+  <data name="PackageComparisonAmbiguousVariants" xml:space="preserve"><value>Review conflicting variants</value></data>
+  <data name="SyncPairing" xml:space="preserve"><value>Review item pairings (optional)</value></data>
+  <data name="SyncLoadPairingLines" xml:space="preserve"><value>Load target order items</value></data>
+  <data name="SyncPairTarget" xml:space="preserve"><value>Line {0} · product {1} · {2}</value></data>
+  <data name="SyncAddPair" xml:space="preserve"><value>Link selected items</value></data>
+  <data name="SyncRemovePair" xml:space="preserve"><value>Remove item link</value></data>
+  <data name="OrderQuantityState" xml:space="preserve"><value>Ordered: {0}; received: {1}; outstanding: {2}.</value></data>
+  <data name="OrderDemandFormula" xml:space="preserve"><value>Desired quantity = sum(active ordered quantity × packaging factor). Received quantities are shown separately and do not reduce original demand.</value></data>
+  <data name="OrderDemandShortHelp" xml:space="preserve"><value>Source quantities and the demand formula.</value></data>
+  <data name="ManualDemandHelp" xml:space="preserve"><value>This desired quantity was entered manually. Linking an order preserves it unless replacement is explicitly selected.</value></data>
+  <data name="OrderVariationUnavailable" xml:space="preserve"><value>No compatible linked-order reference, or its price is zero. The percentage is unavailable; last purchase is not substituted.</value></data>
+  <data name="SyncBranchRequired" xml:space="preserve"><value>Enter the branch used for the buying-supplier history.</value></data>
+  <data name="SyncTargetRequired" xml:space="preserve"><value>Select the target order, checking its control.</value></data>
+  <data name="SupplierOrderUnavailable" xml:space="preserve"><value>Requires a compatible linked-order price for every quoted item and valid comparable quantities. Missing prices and zero denominators leave the percentage unavailable.</value></data>
+  <data name="SynchronizeWithErpHelp" xml:space="preserve"><value>Open the purchase synchronization preview. Compare the supplier and items, then choose changes before any confirmed ERP write.</value></data>
+  <data name="ApplyPriceReferenceHelp" xml:space="preserve"><value>Save the selected price baseline without changing supplier PDF values or purchase history.</value></data>
+  <data name="SyncPreviewHelp" xml:space="preserve"><value>Read current ERP data and list only real differences. No changes are written by this action.</value></data>
+  <data name="SyncReviewSelectionHelp" xml:space="preserve"><value>Recheck current inputs and show the order resulting from the selected changes.</value></data>
+  <data name="RefreshErpDataHelp" xml:space="preserve"><value>Load current ERP data for this product. Review and confirm before replacing the saved link.</value></data>
+  <data name="OrderUseCurrentConnection" xml:space="preserve"><value>Use the current connection for order writes</value></data>
+  <data name="OrderUseCurrentConnectionHelp" xml:space="preserve"><value>Uses the connection and protected credentials above. The database account needs permission for the approved writes. Each order change still requires confirmation.</value></data>
+  <data name="OrderWriteOperator" xml:space="preserve"><value>Integration operator code</value></data>
+  <data name="OrderWriteOperatorHelp" xml:space="preserve"><value>ERP operator used for the audit trail by the configured write script. This code does not replace database authentication.</value></data>
+  <data name="SyncReadyToConfirm" xml:space="preserve"><value>Review the result and confirm the ERP write.</value></data>
+  <data name="SyncWriteDetails" xml:space="preserve"><value>ERP operator: {0}. Target control: {1}.</value></data>
+  <data name="SyncNewOrderNumber" xml:space="preserve"><value>New number and controls will be reserved once after confirmation</value></data>
+  <data name="SyncReconcile" xml:space="preserve"><value>Check ERP result</value></data>
+  <data name="SyncReconcileHelp" xml:space="preserve"><value>Checks the saved operation identifier and its result. This action never resends the changes.</value></data>
+  <data name="QueryContractUpdatePurchaseSynchronization" xml:space="preserve"><value>Confirmed SynchronizationWritePlan in @RequestJson; @OperationId and @OperatorCode are typed parameters. Apply only the reviewed selection in the supplied transaction. Preserve unrelated fields and append a durable operation marker in existing storage. Return ResultJson with OperationId, State=Committed and OrderId. No schema or trigger changes.</value></data>
+  <data name="QueryContractReconcilePurchaseSynchronization" xml:space="preserve"><value>Read-only SynchronizationWritePlan in @RequestJson. Check the recorded target/allocation, durable operation marker and resulting values. Return ResultJson with OperationId, State=Committed or Unknown, OrderId. An absent marker means Unknown. Never resend a write.</value></data>
+  <data name="QueryContractReservePurchaseSynchronization" xml:space="preserve"><value>Create-only allocation for the confirmed SynchronizationWritePlan. Atomically reserve the displayed number through the validated ERP counter and controls from an existing sequence. No order inserts here. Return ResultJson: OrderId, Number, LineControls (one per selected line). Allocations are saved locally before dispatch and never reused.</value></data>
+  <data name="QueryContractCreatePurchaseSynchronization" xml:space="preserve"><value>Confirmed SynchronizationWritePlan in @RequestJson includes the saved Allocation, Date and reviewed Selection. Set the initial status in the script; Status may be null. Insert only those reserved controls, apply validated ERP defaults and totals, and save a durable operation marker in the same transaction. Return ResultJson: OperationId, State=Committed, OrderId. No schema or trigger changes.</value></data>
+  <data name="OrderHistoryHelp" xml:space="preserve"><value>Review saved comparisons, coverage across orders and pending operations.</value></data>
+  <data name="FinancialFieldFreight" xml:space="preserve"><value>Freight amount</value></data>
+  <data name="FinancialFieldDiscount" xml:space="preserve"><value>Discount amount</value></data>
+  <data name="FinancialFieldOtherCharges" xml:space="preserve"><value>Other charges</value></data>
+  <data name="FinancialFieldIpiAmount" xml:space="preserve"><value>IPI amount</value></data>
+  <data name="FinancialFieldIpiRate" xml:space="preserve"><value>IPI rate (%)</value></data>
+  <data name="FinancialFieldIcmsAmount" xml:space="preserve"><value>ICMS amount</value></data>
+  <data name="FinancialFieldIcmsRate" xml:space="preserve"><value>ICMS rate (%)</value></data>
+  <data name="FinancialFieldSubstitutionTaxAmount" xml:space="preserve"><value>Substitution tax amount</value></data>
+  <data name="FinancialFieldSubstitutionTaxRate" xml:space="preserve"><value>Substitution tax rate (%)</value></data>
+  <data name="FinancialInvalidValues" xml:space="preserve"><value>Enter valid nonnegative financial values. Rates must be between 0 and 100. Blank means unavailable.</value></data>
+  <data name="FinancialEvidenceLine" xml:space="preserve"><value>{0} · page {1}: {2}</value></data>
+  <data name="FinancialItemFields" xml:space="preserve"><value>Item freight, discounts and taxes</value></data>
+  <data name="FinancialDocumentFields" xml:space="preserve"><value>Captured document charges and taxes</value></data>
+  <data name="FinancialMapping" xml:space="preserve"><value>Optional financial fields</value></data>
+  <data name="FinancialDocumentPattern" xml:space="preserve"><value>Document financial expression</value></data>
+  <data name="FinancialCaptureHelp" xml:space="preserve"><value>Optional named groups: freight, discount, otherCharges, ipiAmount, ipiRate, icmsAmount, icmsRate, substitutionTaxAmount, substitutionTaxRate. Use the item expression for item fields and this expression for document fields. Values use the template culture; rates are percentages. Missing fields stay unavailable.</value></data>
+  <data name="FinancialCaptureScope" xml:space="preserve"><value>Document charges remain separate from item amounts. The saved ERP query defines allocation, calculations and rounding.</value></data>
+  <data name="IssueConflictingFinancialValues" xml:space="preserve"><value>Financial captures disagree. Review the document expression and extract again.</value></data>
+  <data name="FinancialPolicies" xml:space="preserve"><value>Prices, freight and taxes</value></data>
+  <data name="FinancialPoliciesHelp" xml:space="preserve"><value>Choose which values to update and where they should come from.</value></data>
+  <data name="FinancialUpdatePrices" xml:space="preserve"><value>Update prices</value></data>
+  <data name="FinancialPrices" xml:space="preserve"><value>Prices</value></data>
+  <data name="FinancialPriceSelected" xml:space="preserve"><value>Selected document prices</value></data>
+  <data name="FinancialSourceScriptDefault" xml:space="preserve"><value>Integration default</value></data>
+  <data name="FinancialSourceDocument" xml:space="preserve"><value>Document values</value></data>
+  <data name="FinancialSourceLastPurchaseOrder" xml:space="preserve"><value>Last purchase order</value></data>
+  <data name="FinancialSourceZero" xml:space="preserve"><value>Set to zero</value></data>
+  <data name="FinancialSourceKeepExisting" xml:space="preserve"><value>Keep existing values</value></data>
+  <data name="FinancialPolicyFreight" xml:space="preserve"><value>Freight</value></data>
+  <data name="FinancialPolicyDiscount" xml:space="preserve"><value>Discount</value></data>
+  <data name="FinancialPolicyOtherCharges" xml:space="preserve"><value>Other charges</value></data>
+  <data name="FinancialPolicyTaxes" xml:space="preserve"><value>Taxes</value></data>
+  <data name="FinancialReviewPolicy" xml:space="preserve"><value>Review the financial policy to see its resulting values.</value></data>
+  <data name="FinancialConfirmedTotal" xml:space="preserve"><value>Order total: {0}</value></data>
+  <data name="FinancialHistorySource" xml:space="preserve"><value>Reference order {0} · {1}</value></data>
+  <data name="FinancialResolvedDetails" xml:space="preserve"><value>Financial values and references</value></data>
+  <data name="OrderErrorFinancialPolicyUnsupported" xml:space="preserve"><value>This policy requires compatible financial preview, write and reconciliation queries. Keeping values is available for updates only.</value></data>
+  <data name="OrderErrorFinancialDataMissing" xml:space="preserve"><value>The selected source has missing financial values. Review the PDF mapping or choose another source. A new item has no existing price to keep.</value></data>
+  <data name="OrderErrorFinancialHistoryMissing" xml:space="preserve"><value>The query did not identify a valid historical purchase order for this policy.</value></data>
+  <data name="OrderErrorNoChanges" xml:space="preserve"><value>The query found no changes to apply.</value></data>
+  <data name="QueryContractPreviewPurchaseFinancials" xml:space="preserve"><value>Read-only SynchronizationWritePlan in @RequestJson with FinancialPolicy and frozen PDF captures. Return ResultJson: Status (Ready, MissingDocumentValues, MissingHistory, UnsupportedPolicy), Revision, HasChanges, Header (FinancialAmounts), OrderTotal, Lines (Position, Control, ProductCode, Unit, BaseUnit, Quantity, Factor, UnitPrice, ItemTotal, Values) and Sources (CatalogIdentity, OrderId, Revision, Date). Define totals, taxes, allocation and rounding in this query. Keep Revision deterministic. The result is approved and reread under the write transaction. Updated write/reconciliation scripts must honor FinancialPolicy/FinancialPreview. See docs/purchase-order-scripts.md.</value></data>
+  <data name="FinancialResolvedLine" xml:space="preserve"><value>{0} · exact unit price: {1} · item total: {2}</value></data>
+  <data name="IssueInvalidFinancialValue" xml:space="preserve"><value>A financial value is negative or a tax rate is outside 0–100%.</value></data>
+  <data name="ChooseDocument" xml:space="preserve"><value>Choose PDF or spreadsheet…</value></data>
+  <data name="ImportSourceFormat" xml:space="preserve"><value>File format</value></data>
+  <data name="FormatPdf" xml:space="preserve"><value>PDF</value></data>
+  <data name="FormatExcel" xml:space="preserve"><value>Spreadsheet (Excel, LibreOffice, CSV/TSV)</value></data>
+  <data name="SpreadsheetMapping" xml:space="preserve"><value>Spreadsheet mapping</value></data>
+  <data name="SpreadsheetMappingHelp" xml:space="preserve"><value>Choose a sample, worksheet, header and item rows. Enter column letters (A, B, …, AA). The code type selects internal ERP or supplier identification. Nonempty rows remain available for review; saved mapped headers protect against layout changes.</value></data>
+  <data name="ChooseSpreadsheetSample" xml:space="preserve"><value>Choose sample spreadsheet…</value></data>
+  <data name="SpreadsheetSheet" xml:space="preserve"><value>Worksheet</value></data>
+  <data name="SpreadsheetHeaderRow" xml:space="preserve"><value>Header row</value></data>
+  <data name="SpreadsheetFirstDataRow" xml:space="preserve"><value>First item row</value></data>
+  <data name="SpreadsheetLastDataRow" xml:space="preserve"><value>Last item row (empty: end of sheet)</value></data>
+  <data name="SpreadsheetCodeColumn" xml:space="preserve"><value>Product code column</value></data>
+  <data name="SpreadsheetDescriptionColumn" xml:space="preserve"><value>Description column</value></data>
+  <data name="SpreadsheetQuantityColumn" xml:space="preserve"><value>Quantity column</value></data>
+  <data name="SpreadsheetUnitPriceColumn" xml:space="preserve"><value>Unit price column</value></data>
+  <data name="SpreadsheetTotalColumn" xml:space="preserve"><value>Total column (optional)</value></data>
+  <data name="SpreadsheetUnitColumn" xml:space="preserve"><value>Unit column (optional)</value></data>
+  <data name="SpreadsheetTotalHelp" xml:space="preserve"><value>Without a total column, the total is quantity × unit price, with no rounding, and is marked as calculated. With a mapped column, missing totals require correction or exclusion. An empty unit column uses the template's explicit default unit.</value></data>
+  <data name="SpreadsheetColumns" xml:space="preserve"><value>Columns: letter · header · sample</value></data>
+  <data name="SpreadsheetSampleLoaded" xml:space="preserve"><value>Sample loaded. Map the columns and test the extraction.</value></data>
+  <data name="SpreadsheetPosition" xml:space="preserve"><value>Sheet {0} · row {1}</value></data>
+  <data name="SpreadsheetCalculatedTotal" xml:space="preserve"><value>Calculated total: quantity × unit price</value></data>
+  <data name="IssueSpreadsheetHeaderMismatch" xml:space="preserve"><value>Mapped worksheet headers changed or are missing. Review the mapping.</value></data>
+  <data name="ErrorInvalidSpreadsheet" xml:space="preserve"><value>Spreadsheet is unsupported, damaged, encrypted or missing the mapped worksheet. For CSV/TSV, also check delimiter and encoding.</value></data>
+  <data name="ErrorSourceFormatMismatch" xml:space="preserve"><value>Choose a template matching the file format (PDF or spreadsheet).</value></data>
+  <data name="ImportPreviewChanged" xml:space="preserve"><value>File or template changed. Extract the items again before saving.</value></data>
+  <data name="ProductCodeKind" xml:space="preserve"><value>Product code type</value></data>
+  <data name="SupplierCodeKind" xml:space="preserve"><value>Supplier code · group by similarity</value></data>
+  <data name="InternalCodeKind" xml:space="preserve"><value>Internal ERP code · group by product</value></data>
+  <data name="ProductCodeKindHelp" xml:space="preserve"><value>Supplier code uses the exact alternative code and the quotation's normal similarity grouping. Internal code queries the ERP product code directly and keeps different products separate even when they share a similarity group. This setting is saved with each import. Conversion and purchase choices still require review.</value></data>
+  <data name="IdentificationInternalCode" xml:space="preserve"><value>Confirm conversion</value></data>
+  <data name="CandidateExactProduct" xml:space="preserve"><value>Exact product: {0}. Similarity grouping is disabled for this import.</value></data>
+  <data name="SpreadsheetSummary" xml:space="preserve"><value>{0} items · {1} with warnings · {2}</value></data>
+  <data name="InternalCodeLabel" xml:space="preserve"><value>Internal ERP product code</value></data>
+  <data name="ProductCodeShort" xml:space="preserve"><value>Code</value></data>
+  <data name="DelimitedTextSettings" xml:space="preserve"><value>CSV / TSV settings</value></data>
+  <data name="DelimitedSeparator" xml:space="preserve"><value>Column separator</value></data>
+  <data name="DelimitedEncoding" xml:space="preserve"><value>Text encoding</value></data>
+  <data name="DelimitedTextHelp" xml:space="preserve"><value>Used only for CSV/TSV. Automatic detects common delimiters; TSV defaults to tabs. Encoding detects UTF BOMs and otherwise tries UTF-8 followed by Windows-1252. Select an explicit option if the sample columns or accents are incorrect, then load the sample again. These choices are saved with the template. CSV/TSV use the worksheet name Data.</value></data>
+  <data name="DelimitedAutomatic" xml:space="preserve"><value>Automatic</value></data>
+  <data name="DelimitedSemicolon" xml:space="preserve"><value>Semicolon (;)</value></data>
+  <data name="DelimitedComma" xml:space="preserve"><value>Comma (,)</value></data>
+  <data name="DelimitedTab" xml:space="preserve"><value>Tab</value></data>
+  <data name="DelimitedPipe" xml:space="preserve"><value>Vertical bar (|)</value></data>
+  <data name="DelimitedUtf8" xml:space="preserve"><value>UTF-8</value></data>
+  <data name="DelimitedWindows1252" xml:space="preserve"><value>Windows-1252</value></data>
+  <data name="DelimitedUtf16Le" xml:space="preserve"><value>UTF-16 LE</value></data>
+  <data name="DelimitedUtf16Be" xml:space="preserve"><value>UTF-16 BE</value></data>
+  <data name="SyncCombineDocumentsQuestion" xml:space="preserve"><value>{0}: {1} documents. Add quantities for the selected products?</value></data>
+  <data name="SyncDocumentChoicesRequired" xml:space="preserve"><value>Choose whether to add the documents and resolve any different prices.</value></data>
+  <data name="SyncDocumentChoicePlaceholder" xml:space="preserve"><value>Choose how to use the documents</value></data>
+  <data name="SyncDocumentKeepSelected" xml:space="preserve"><value>No, keep only the selected offers</value></data>
+  <data name="SyncDocumentCombine" xml:space="preserve"><value>Yes, add quantities from this supplier</value></data>
+  <data name="SyncDocumentPriceQuestion" xml:space="preserve"><value>The same product has different unit prices. Which price should be used?</value></data>
+  <data name="SyncDocumentPricePlaceholder" xml:space="preserve"><value>Choose the price treatment</value></data>
+  <data name="SyncDocumentPriceHighest" xml:space="preserve"><value>Use the highest price</value></data>
+  <data name="SyncDocumentPriceWeighted" xml:space="preserve"><value>Use the quantity-weighted average price</value></data>
+  <data name="SyncDocumentPriceSeparate" xml:space="preserve"><value>Keep different prices on separate lines</value></data>
+  <data name="SyncDocumentSources" xml:space="preserve"><value>Source documents</value></data>
+  <data name="SyncDocumentCombinationScope" xml:space="preserve"><value>Only selected products. Different units or packages remain separate.</value></data>
+  <data name="SyncCombinedLine" xml:space="preserve"><value>{0} · {1} · {2} · unit price {3} · total {4}</value></data>
+  <data name="SyncCombinedDocumentsSummary" xml:space="preserve"><value>Source documents: {0}.</value></data>
+  <data name="SyncErrorDocumentChoiceRequired" xml:space="preserve"><value>Choose whether to add the same-supplier documents before preparing a new order.</value></data>
+  <data name="SyncErrorDocumentPriceChoiceRequired" xml:space="preserve"><value>Choose the highest price, weighted average or separate lines for different prices.</value></data>
+  <data name="ChooseTemplateSample" xml:space="preserve"><value>Choose file…</value></data>
+  <data name="ConnectionAdvanced" xml:space="preserve"><value>Security and timeout</value></data>
+  <data name="ConnectionDiagnosticDetails" xml:space="preserve"><value>Diagnostic details</value></data>
+  <data name="OrderWriteConnectionOptions" xml:space="preserve"><value>Purchase order connection</value></data>
+  <data name="QueryCategoryFinancials" xml:space="preserve"><value>Financial preview</value></data>
+  <data name="QueryCategoryLegacy" xml:space="preserve"><value>Previous order flow</value></data>
+  <data name="QueryCategoryOrderReads" xml:space="preserve"><value>Order reading</value></data>
+  <data name="QueryCategoryOrderWrites" xml:space="preserve"><value>Order synchronization</value></data>
+  <data name="QueryCategoryProducts" xml:space="preserve"><value>Products</value></data>
+  <data name="QueryContractSummary" xml:space="preserve"><value>Parameters, result columns and execution rules.</value></data>
+  <data name="QueryEditorLabel" xml:space="preserve"><value>SQL query</value></data>
+  <data name="QueryNameCreatePurchaseOrder" xml:space="preserve"><value>Create order with the previous flow</value></data>
+  <data name="QueryNameCreatePurchaseSynchronization" xml:space="preserve"><value>Create reviewed purchase order</value></data>
+  <data name="QueryNameFindBuyingSupplier" xml:space="preserve"><value>Find buying supplier</value></data>
+  <data name="QueryNameFindProduct" xml:space="preserve"><value>Identify by supplier code</value></data>
+  <data name="QueryNameFindProductById" xml:space="preserve"><value>Identify by internal code</value></data>
+  <data name="QueryNameGetEquivalentProducts" xml:space="preserve"><value>Find similar products</value></data>
+  <data name="QueryNamePreviewPurchaseFinancials" xml:space="preserve"><value>Calculate order financial preview</value></data>
+  <data name="QueryNameReadPurchaseOrder" xml:space="preserve"><value>Read purchase order</value></data>
+  <data name="QueryNameReconcilePurchaseOperation" xml:space="preserve"><value>Check previous operation</value></data>
+  <data name="QueryNameReconcilePurchaseSynchronization" xml:space="preserve"><value>Check synchronization result</value></data>
+  <data name="QueryNameReservePurchaseSynchronization" xml:space="preserve"><value>Reserve order number</value></data>
+  <data name="QueryNameSearchProducts" xml:space="preserve"><value>Search products by description</value></data>
+  <data name="QueryNameSearchPurchaseOrders" xml:space="preserve"><value>Search purchase orders</value></data>
+  <data name="QueryNameUpdatePurchaseOrder" xml:space="preserve"><value>Update order with the previous flow</value></data>
+  <data name="QueryNameUpdatePurchaseSynchronization" xml:space="preserve"><value>Apply reviewed order changes</value></data>
+  <data name="QueryReadOptions" xml:space="preserve"><value>Product reading options</value></data>
+  <data name="TemplateMoreActions" xml:space="preserve"><value>More actions</value></data>
+  <data name="TemplateSampleFile" xml:space="preserve"><value>Sample file</value></data>
+  <data name="TestConnectionDraftHelp" xml:space="preserve"><value>Tests the displayed fields without saving.</value></data>
+  <data name="Theme" xml:space="preserve"><value>Theme</value></data>
+  <data name="BrandLabel" xml:space="preserve"><value>Brand</value></data>
+  <data name="IdentificationRowFound" xml:space="preserve"><value>Confirm conversion</value></data>
+  <data name="IdentificationRowAmbiguous" xml:space="preserve"><value>Select product</value></data>
+  <data name="IdentificationRowNotFound" xml:space="preserve"><value>Identify product</value></data>
+  <data name="ProductConfigurationHint" xml:space="preserve"><value>Double-click or F2 to configure</value></data>
+  <data name="ConfirmConversion" xml:space="preserve"><value>Confirm conversion</value></data>
+  <data name="BatchBaseUnitMissing" xml:space="preserve"><value>Product has no base unit.</value></data>
+  <data name="BatchSelectAll" xml:space="preserve"><value>Select found products</value></data>
+  <data name="BatchExactCodeRequired" xml:space="preserve"><value>Select the document product code.</value></data>
+  <data name="BatchClearSelection" xml:space="preserve"><value>Clear selection</value></data>
+  <data name="BatchSystemQuantity" xml:space="preserve"><value>System qty.</value></data>
+  <data name="BatchConfirmSelected" xml:space="preserve"><value>Confirm selected</value></data>
+  <data name="BatchConversionHelp" xml:space="preserve"><value>System quantity = document quantity × factor. Edit the factor or the system quantity.</value></data>
+  <data name="ProductReviewTitle" xml:space="preserve"><value>Review quotation</value></data>
+  <data name="BatchErpProduct" xml:space="preserve"><value>ERP product</value></data>
+  <data name="MappingErrorConflictingConversion" xml:space="preserve"><value>The same mapping has different conversions.</value></data>
+  <data name="BatchPriceHelp" xml:space="preserve"><value>System unit price = document unit price ÷ factor. Last purchase is shown in the same base unit.</value></data>
+  <data name="BatchSourceQuantity" xml:space="preserve"><value>Document qty.</value></data>
+  <data name="BatchFactorRequired" xml:space="preserve"><value>Enter the conversion factor.</value></data>
+  <data name="BatchSystemPrice" xml:space="preserve"><value>System unit price</value></data>
+  <data name="BatchQuantityPrecision" xml:space="preserve"><value>Adjust the factor for this quantity.</value></data>
+  <data name="BatchConversionFactor" xml:space="preserve"><value>Factor</value></data>
+  <data name="ProductReviewSummary" xml:space="preserve"><value>{0} of {1} selected</value></data>
+  <data name="BatchSourceProduct" xml:space="preserve"><value>Document</value></data>
+  <data name="BatchLastPurchase" xml:space="preserve"><value>Last purchase: {0}</value></data>
+  <data name="ProductReviewSaved" xml:space="preserve"><value>{0} conversions confirmed.</value></data>
+  <data name="BatchRememberMappings" xml:space="preserve"><value>Remember mappings</value></data>
+  <data name="BatchNumericLimit" xml:space="preserve"><value>Conversion exceeds the numeric limit.</value></data>
+  <data name="BatchSourceColor" xml:space="preserve"><value>Color: {0}</value></data>
+  <data name="BatchSourceQuantityMissing" xml:space="preserve"><value>Review document quantity.</value></data>
+  <data name="UseOrderQuantities" xml:space="preserve"><value>Use order quantities</value></data>
+  <data name="ReviewDesiredQuantity" xml:space="preserve"><value>Review desired quantity.</value></data>
+  <data name="ReviewReferences" xml:space="preserve"><value>References</value></data>
+  <data name="DemandQuantitiesApplied" xml:space="preserve"><value>{0} quantities filled.</value></data>
+  <data name="ReviewSelectionSummary" xml:space="preserve"><value>{0} selected · {1} pending · {2} items</value></data>
+  <data name="ReviewQuotationProducts" xml:space="preserve"><value>Review items</value></data>
+  <data name="NoPendingProducts" xml:space="preserve"><value>No pending items.</value></data>
+  <data name="DemandOriginDocument" xml:space="preserve"><value>Document: {0}</value></data>
+  <data name="DemandSourceManual" xml:space="preserve"><value>Manual</value></data>
+  <data name="ReviewItems" xml:space="preserve"><value>Items</value></data>
+  <data name="DocumentDemandHelp" xml:space="preserve"><value>{0} × {1} = {2}</value></data>
+  <data name="MissingDemandWarning" xml:space="preserve"><value>{0} items have no desired quantity.</value></data>
+  <data name="ReviewQuantities" xml:space="preserve"><value>Review quantities</value></data>
+  <data name="DesiredQuantity" xml:space="preserve"><value>Desired quantity</value></data>
+  <data name="ReviewReference" xml:space="preserve"><value>Link reference order</value></data>
+  <data name="ContinueWithoutDemand" xml:space="preserve"><value>Continue without quantity</value></data>
+  <data name="ReviewSaved" xml:space="preserve"><value>Review saved.</value></data>
+  <data name="DemandSourceDocument" xml:space="preserve"><value>Document</value></data>
+  <data name="DemandDocumentAmbiguous" xml:space="preserve"><value>The document has multiple offers for this product.</value></data>
+  <data name="ShowDesiredQuantity" xml:space="preserve"><value>Desired quantity</value></data>
+  <data name="UseDocumentQuantities" xml:space="preserve"><value>Use document quantities</value></data>
+  <data name="OnlyPendingProducts" xml:space="preserve"><value>Pending only</value></data>
+  <data name="AutoMappingReviewPending" xml:space="preserve"><value>Review pending links.</value></data>
+  <data name="DemandOriginSelectedOrder" xml:space="preserve"><value>Selected reference order</value></data>
+  <data name="DemandSourceOrder" xml:space="preserve"><value>Order</value></data>
+  <data name="SaveReview" xml:space="preserve"><value>Save review</value></data>
+  <data name="DemandNotInformed" xml:space="preserve"><value>Not provided</value></data>
+  <data name="ImportedMappingsApplied" xml:space="preserve"><value>{0} saved mappings applied.</value></data>
+  <data name="PurchaseDemandOptional" xml:space="preserve"><value>Desired quantity is optional.</value></data>
+  <data name="MissingDemandWarningSingle" xml:space="preserve"><value>1 item has no desired quantity.</value></data>
+  <data name="FinancialSourceScriptDefaultHelp" xml:space="preserve"><value>Uses the rule configured in the ERP integration. This option does not define a fixed value.</value></data>
+  <data name="FinancialSourceDocumentHelp" xml:space="preserve"><value>Uses the reviewed document values.</value></data>
+  <data name="FinancialSourceLastPurchaseOrderHelp" xml:space="preserve"><value>Uses values from the latest eligible purchase order.</value></data>
+  <data name="FinancialSourceZeroHelp" xml:space="preserve"><value>Sends zero for this value.</value></data>
+  <data name="FinancialSourceKeepExistingHelp" xml:space="preserve"><value>Keeps the current value of the order being edited.</value></data>
+  <data name="SyncCreatePreview" xml:space="preserve"><value>Preview purchase order</value></data>
+  <data name="SyncCreateOrder" xml:space="preserve"><value>Create purchase order</value></data>
+  <data name="SyncUpdateOrder" xml:space="preserve"><value>Save changes to ERP</value></data>
+  <data name="SyncMissingQuery" xml:space="preserve"><value>Configure the “{0}” query ({1}) in Settings → ERP queries.</value></data>
+  <data name="SyncOrderDateRequired" xml:space="preserve"><value>Enter the purchase order date.</value></data>
+  <data name="SyncOrderDate" xml:space="preserve"><value>Order date</value></data>
+  <data name="SyncSelectedItems" xml:space="preserve"><value>Items included in the preview</value></data>
+  <data name="SyncCreatePreviewSummary" xml:space="preserve"><value>Supplier: {0} · Branch: {1}</value></data>
+  <data name="SyncCreateResultSummary" xml:space="preserve"><value>Items: {0} · Subtotal: {1}</value></data>
+  <data name="SyncCreatedOrders" xml:space="preserve"><value>Orders created in ERP</value></data>
+  <data name="SyncCreatedOrderDetails" xml:space="preserve"><value>Order {0} · Code {1} · Branch {2}</value></data>
+  <data name="PurchaseChoicesNeedReview" xml:space="preserve"><value>{0} purchase choice(s) need review. Other choices were retained.</value></data>
+  <data name="ImportDropHint" xml:space="preserve"><value>Drop a PDF or spreadsheet here, or choose the file.</value></data>
+  <data name="ImportDropSingleFile" xml:space="preserve"><value>Select or drop one file at a time.</value></data>
+  <data name="ImportDropUnsupported" xml:space="preserve"><value>Use a PDF file or a supported spreadsheet.</value></data>
+  <data name="ImportSpreadsheetSelectTemplate" xml:space="preserve"><value>Select the spreadsheet template and extract its items.</value></data>
+  <data name="ImportTemplateDetected" xml:space="preserve"><value>Detected template: {0}</value></data>
+  <data name="ImportTemplateNotDetected" xml:space="preserve"><value>No template identified. Select a template and extract its items.</value></data>
+  <data name="ImportTemplateDetectionLimit" xml:space="preserve"><value>Identification reached its time limit. Select a template and extract its items.</value></data>
+  <data name="ImportTemplatesSkipped" xml:space="preserve"><value>{0} template(s) could not be tested.</value></data>
+  <data name="ApplicationUpdates"><value>Updates</value></data>
+  <data name="ApplicationVersion"><value>Version {0}</value></data>
+  <data name="ApplicationUpdateUnavailable"><value>Updates are available in an installed release.</value></data>
+  <data name="ApplicationUpdateIdle"><value>No update ready to install</value></data>
+  <data name="ApplicationUpdateChecking"><value>Checking for updates…</value></data>
+  <data name="ApplicationUpdateDownloading"><value>Downloading update…</value></data>
+  <data name="ApplicationUpdateReady"><value>Update ready to install</value></data>
+  <data name="ApplicationUpdateFailed"><value>Could not update. Check your connection and try again.</value></data>
+  <data name="ApplicationUpdateRestarting"><value>Preparing to restart…</value></data>
+  <data name="ApplicationUpdateNoNotes"><value>No release notes to show.</value></data>
+  <data name="ApplicationUpdateRestartBlocked"><value>Save your edits, close other windows and finish or reconcile pending order operations before restarting.</value></data>
+  <data name="ApplicationUpdateRestartHelp"><value>Save your work before installing. QuoteMatch will close and reopen with the new version.</value></data>
+  <data name="ApplicationUpdateWhatsNew"><value>What's new</value></data>
+  <data name="ApplicationUpdateCheck"><value>Check for updates</value></data>
+  <data name="ApplicationUpdateInstall"><value>Install and restart</value></data>
+  <data name="ApplicationUpdateCancelDownload"><value>Cancel</value></data>
+</root>

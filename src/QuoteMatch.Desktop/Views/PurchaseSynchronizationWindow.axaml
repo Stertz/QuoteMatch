@@ -1,0 +1,69 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="using:QuoteMatch.Desktop.ViewModels" xmlns:c="using:QuoteMatch.Desktop.Controls" x:Class="QuoteMatch.Desktop.Views.PurchaseSynchronizationWindow" x:DataType="vm:PurchaseSynchronizationViewModel" Title="{Binding Strings[SynchronizeWithErp]}" Width="1000" Height="820" MinWidth="760" MinHeight="540" WindowStartupLocation="CenterOwner">
+  <Grid Margin="20" RowDefinitions="Auto,*,Auto" RowSpacing="12">
+    <StackPanel Spacing="8" IsEnabled="{Binding !IsBusy}">
+      <c:HelpLabel Label="{Binding Strings[BrandLabel]}" Help="{Binding Strings[SyncOneBrandHelp]}" />
+      <ComboBox Name="SyncBrands" ItemsSource="{Binding Brands}" SelectedItem="{Binding SelectedBrand}" HorizontalAlignment="Stretch"><ComboBox.ItemTemplate><DataTemplate x:DataType="vm:BrandPurchaseRow"><TextBlock Text="{Binding Label}" /></DataTemplate></ComboBox.ItemTemplate></ComboBox>
+      <Grid ColumnDefinitions="200,180,*" ColumnSpacing="8">
+        <ComboBox SelectedIndex="{Binding KindIndex}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"><ComboBoxItem Content="{Binding Strings[SyncCreate]}" /><ComboBoxItem Content="{Binding Strings[SyncUpdate]}" /></ComboBox>
+        <StackPanel Grid.Column="1" Spacing="4"><TextBlock Text="{Binding Strings[SyncBranch]}" /><TextBox Text="{Binding Branch}" /></StackPanel>
+        <Grid Grid.Column="2" ColumnDefinitions="*,Auto" ColumnSpacing="6" IsVisible="{Binding IsUpdate}" VerticalAlignment="Bottom"><TextBox Text="{Binding Number}" PlaceholderText="{Binding Strings[OrderNumberSearch]}" /><Button Grid.Column="1" Content="{Binding Strings[SearchErp]}" Command="{Binding SearchTargetsCommand}" /></Grid>
+      </Grid>
+      <StackPanel Spacing="4" IsVisible="{Binding !IsUpdate}" HorizontalAlignment="Left"><TextBlock Text="{Binding Strings[SyncOrderDate]}" /><DatePicker SelectedDate="{Binding NewOrderDate}" /></StackPanel>
+      <ComboBox Name="SyncTargets" ItemsSource="{Binding Targets}" SelectedItem="{Binding SelectedTarget}" IsVisible="{Binding IsUpdate}" HorizontalAlignment="Stretch"><ComboBox.ItemTemplate><DataTemplate x:DataType="vm:OrderSearchRow"><TextBlock Text="{Binding Label}" TextWrapping="Wrap" /></DataTemplate></ComboBox.ItemTemplate></ComboBox>
+      <Button Name="BuildSyncPreview" Content="{Binding PreviewActionLabel}" Click="BuildPreview" IsEnabled="{Binding CanPreview}" ToolTip.Tip="{Binding Strings[SyncPreviewHelp]}" ToolTip.ShowOnDisabled="True" />
+      <TextBlock Text="{Binding PreviewBlockedReason}" IsVisible="{Binding !CanPreview}" TextWrapping="Wrap" FontSize="12" />
+      <TextBlock Text="{Binding WriteConfigurationStatus}" TextWrapping="Wrap" Foreground="{DynamicResource WarningBrush}" FontSize="12" />
+    </StackPanel>
+    <ScrollViewer Grid.Row="1">
+      <StackPanel Spacing="12" IsEnabled="{Binding !IsBusy}">
+        <Border Name="CreateDocumentChoices" Classes="card" IsVisible="{Binding ShowDocumentChoices}">
+          <StackPanel Spacing="8">
+            <ItemsControl ItemsSource="{Binding DocumentChoices}"><ItemsControl.ItemTemplate><DataTemplate x:DataType="vm:SupplierDocumentChoiceRow">
+              <StackPanel Spacing="8" Margin="0,4">
+                <TextBlock Text="{Binding Question}" TextWrapping="Wrap" FontWeight="SemiBold" />
+                <ComboBox Name="DocumentQuantityChoice" SelectedIndex="{Binding QuantityChoiceIndex}" HorizontalAlignment="Stretch" PlaceholderText="{Binding Strings[SyncDocumentChoicePlaceholder]}">
+                  <ComboBoxItem Content="{Binding Strings[SyncDocumentKeepSelected]}" /><ComboBoxItem Content="{Binding Strings[SyncDocumentCombine]}" />
+                </ComboBox>
+                <StackPanel IsVisible="{Binding NeedsPriceChoice}" Spacing="6">
+                  <TextBlock Text="{Binding Strings[SyncDocumentPriceQuestion]}" TextWrapping="Wrap" />
+                  <ComboBox Name="DocumentPriceChoice" SelectedIndex="{Binding PriceChoiceIndex}" HorizontalAlignment="Stretch" PlaceholderText="{Binding Strings[SyncDocumentPricePlaceholder]}">
+                    <ComboBoxItem Content="{Binding Strings[SyncDocumentPriceHighest]}" /><ComboBoxItem Content="{Binding Strings[SyncDocumentPriceWeighted]}" /><ComboBoxItem Content="{Binding Strings[SyncDocumentPriceSeparate]}" />
+                  </ComboBox>
+                </StackPanel>
+                <Expander Header="{Binding Strings[SyncDocumentSources]}" HorizontalAlignment="Stretch"><TextBlock Text="{Binding Documents}" TextWrapping="Wrap" /></Expander>
+              </StackPanel>
+            </DataTemplate></ItemsControl.ItemTemplate></ItemsControl>
+            <TextBlock Text="{Binding Strings[SyncDocumentCombinationScope]}" TextWrapping="Wrap" FontSize="12" />
+          </StackPanel>
+        </Border>
+        <Expander Name="FinancialPolicies" Header="{Binding Strings[FinancialPolicies]}" HorizontalAlignment="Stretch">
+          <StackPanel Spacing="8" Margin="0,8">
+            <ToggleSwitch Name="UpdatePricesInput" Content="{Binding Strings[FinancialUpdatePrices]}" IsChecked="{Binding UpdatePrices}" IsVisible="{Binding IsUpdate}" />
+            <Grid ColumnDefinitions="180,*" ColumnSpacing="10"><TextBlock Text="{Binding Strings[FinancialPrices]}" VerticalAlignment="Center" /><ComboBox Name="PriceSourceInput" Grid.Column="1" SelectedIndex="{Binding PriceSourceIndex}" IsEnabled="{Binding CanChoosePriceSource}" HorizontalAlignment="Stretch"><ComboBoxItem Content="{Binding Strings[FinancialPriceSelected]}" /><ComboBoxItem Content="{Binding Strings[FinancialSourceKeepExisting]}" IsEnabled="{Binding IsUpdate}" /><ComboBoxItem Content="{Binding Strings[FinancialSourceLastPurchaseOrder]}" /><ComboBoxItem Content="{Binding Strings[FinancialSourceZero]}" /></ComboBox></Grid>
+            <ItemsControl ItemsSource="{Binding FinancialPolicies}"><ItemsControl.ItemTemplate><DataTemplate x:DataType="vm:SynchronizationFinancialPolicyRow"><Grid ColumnDefinitions="180,*" ColumnSpacing="10" Margin="0,3"><c:HelpLabel Label="{Binding Label}" Help="{Binding SourceHelp}" VerticalAlignment="Center" /><ComboBox Grid.Column="1" SelectedIndex="{Binding SourceIndex}" HorizontalAlignment="Stretch" AutomationProperties.Name="{Binding Label}"><ComboBoxItem Content="{Binding Strings[FinancialSourceScriptDefault]}" /><ComboBoxItem Content="{Binding Strings[FinancialSourceDocument]}" /><ComboBoxItem Content="{Binding Strings[FinancialSourceLastPurchaseOrder]}" /><ComboBoxItem Content="{Binding Strings[FinancialSourceZero]}" /><ComboBoxItem Content="{Binding Strings[FinancialSourceKeepExisting]}" IsEnabled="{Binding CanKeepExisting}" /></ComboBox></Grid></DataTemplate></ItemsControl.ItemTemplate></ItemsControl>
+          </StackPanel>
+        </Expander>
+        <Expander Header="{Binding Strings[SyncPairing]}" IsVisible="{Binding IsUpdate}" HorizontalAlignment="Stretch">
+          <StackPanel Spacing="6" Margin="0,8">
+            <Button Content="{Binding Strings[SyncLoadPairingLines]}" Command="{Binding LoadPairingLinesCommand}" />
+            <ComboBox ItemsSource="{Binding PairTargets}" SelectedItem="{Binding SelectedPairTarget}" HorizontalAlignment="Stretch"><ComboBox.ItemTemplate><DataTemplate x:DataType="vm:SynchronizationTargetRow"><TextBlock Text="{Binding Label}" TextWrapping="Wrap" /></DataTemplate></ComboBox.ItemTemplate></ComboBox>
+            <ComboBox ItemsSource="{Binding PairSources}" SelectedItem="{Binding SelectedPairSource}" HorizontalAlignment="Stretch"><ComboBox.ItemTemplate><DataTemplate x:DataType="vm:SynchronizationSourceRow"><TextBlock Text="{Binding Label}" TextWrapping="Wrap" /></DataTemplate></ComboBox.ItemTemplate></ComboBox>
+            <Button Content="{Binding Strings[SyncAddPair]}" Command="{Binding AddPairCommand}" />
+            <ListBox ItemsSource="{Binding Pairs}" SelectedItem="{Binding SelectedPair}" MaxHeight="120"><ListBox.ItemTemplate><DataTemplate x:DataType="vm:SynchronizationPairRow"><TextBlock Text="{Binding Label}" TextWrapping="Wrap" /></DataTemplate></ListBox.ItemTemplate></ListBox>
+            <Button Content="{Binding Strings[SyncRemovePair]}" Command="{Binding RemovePairCommand}" />
+          </StackPanel>
+        </Expander>
+        <TextBlock Text="{Binding PreviewSummary}" TextWrapping="Wrap" FontWeight="SemiBold" />
+        <Expander Header="{Binding Strings[SyncSelectedItems]}" IsExpanded="{Binding IsUpdate}" IsVisible="{Binding HasPreview}" HorizontalAlignment="Stretch"><ItemsControl Name="SyncDifferences" ItemsSource="{Binding Differences}"><ItemsControl.ItemTemplate><DataTemplate x:DataType="vm:SynchronizationDifferenceRow"><CheckBox IsChecked="{Binding IsSelected}" IsEnabled="{Binding CanSelect}" HorizontalContentAlignment="Stretch"><TextBlock Text="{Binding Label}" TextWrapping="Wrap" /></CheckBox></DataTemplate></ItemsControl.ItemTemplate></ItemsControl></Expander>
+        <CheckBox Content="{Binding Strings[SyncRemovalConfirmation]}" IsChecked="{Binding RemovalConfirmed}" IsVisible="{Binding RequiresRemovalConfirmation}" />
+        <Button Content="{Binding Strings[SyncReviewSelection]}" Command="{Binding ReviewSelectionCommand}" IsVisible="{Binding IsUpdate}" ToolTip.Tip="{Binding Strings[SyncReviewSelectionHelp]}" />
+        <Border Classes="card" IsVisible="{Binding HasSelection}"><StackPanel Spacing="8"><TextBlock Text="{Binding ResultSummary}" TextWrapping="Wrap" /><Grid ColumnDefinitions="*,130,130,130" ColumnSpacing="8"><TextBlock Text="{Binding Strings[OrdersProduct]}" /><TextBlock Grid.Column="1" Text="{Binding Strings[ImportQuantity]}" /><TextBlock Grid.Column="2" Text="{Binding Strings[ImportUnitPrice]}" /><TextBlock Grid.Column="3" Text="{Binding Strings[ImportTotal]}" TextAlignment="Right" /></Grid><ItemsControl ItemsSource="{Binding ResultLines}"><ItemsControl.ItemTemplate><DataTemplate x:DataType="vm:PurchaseSavedLineRow"><Grid ColumnDefinitions="*,130,130,130" ColumnSpacing="8"><TextBlock Text="{Binding Name}" TextWrapping="Wrap" /><TextBlock Grid.Column="1" Text="{Binding Quantity}" /><TextBlock Grid.Column="2" Text="{Binding Price}" /><TextBlock Grid.Column="3" Text="{Binding Total}" TextAlignment="Right" /></Grid></DataTemplate></ItemsControl.ItemTemplate></ItemsControl><TextBlock Text="{Binding FinancialSummary}" TextWrapping="Wrap" FontWeight="SemiBold" /><Expander Header="{Binding Strings[FinancialResolvedDetails]}" HorizontalAlignment="Stretch"><StackPanel Spacing="6"><TextBlock Text="{Binding FinancialDetails}" TextWrapping="Wrap" /><TextBlock Text="{Binding WriteDetails}" TextWrapping="Wrap" /></StackPanel></Expander></StackPanel></Border>
+        <StackPanel IsVisible="{Binding HasPendingOperation}" Spacing="8"><TextBlock Text="{Binding Strings[OrderErrorPendingOperation]}" TextWrapping="Wrap" /><Button Content="{Binding Strings[SyncReconcile]}" Command="{Binding ReconcileCommand}" IsEnabled="{Binding CanReconcile}" ToolTip.Tip="{Binding Strings[SyncReconcileHelp]}" /></StackPanel>
+      </StackPanel>
+    </ScrollViewer>
+    <StackPanel Grid.Row="2" Spacing="8">
+      <Border Name="CreatedPurchaseOrders" Classes="card" IsVisible="{Binding HasCreatedOrders}"><StackPanel Spacing="5"><TextBlock Text="{Binding Strings[SyncCreatedOrders]}" FontWeight="SemiBold" /><ItemsControl ItemsSource="{Binding CreatedOrders}"><ItemsControl.ItemTemplate><DataTemplate x:DataType="vm:CreatedPurchaseOrderRow"><SelectableTextBlock Text="{Binding Label}" TextWrapping="Wrap" /></DataTemplate></ItemsControl.ItemTemplate></ItemsControl></StackPanel></Border>
+      <Grid ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="8"><StackPanel Spacing="5"><ProgressBar IsVisible="{Binding IsBusy}" IsIndeterminate="True" Height="3" /><TextBlock Text="{Binding Status}" TextWrapping="Wrap" /></StackPanel><Button Grid.Column="1" Content="{Binding Strings[CancelImport]}" Command="{Binding CancelCommand}" IsVisible="{Binding IsBusy}" /><Button Name="ConfirmSynchronization" Grid.Column="2" Classes="primary" Content="{Binding WriteActionLabel}" Command="{Binding ConfirmWriteCommand}" IsEnabled="{Binding CanConfirm}" /><Button Grid.Column="3" Content="{Binding Strings[CloseWindow]}" Click="CloseWindow" IsEnabled="{Binding !IsBusy}" /></Grid>
+    </StackPanel>
+  </Grid>
+</Window>

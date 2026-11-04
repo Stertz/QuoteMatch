@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="using:QuoteMatch.Desktop.ViewModels" xmlns:c="using:QuoteMatch.Desktop.Controls" x:Class="QuoteMatch.Desktop.Views.QuerySettingsView" x:DataType="vm:IntegrationSettingsViewModel">
+  <Grid RowDefinitions="Auto,Auto,*,Auto" RowSpacing="10" Margin="0,16,0,0">
+    <ComboBox Name="QueryOperationSelector" ItemsSource="{Binding OperationOptions}" SelectedIndex="{Binding OperationIndex}" HorizontalAlignment="Stretch" AutomationProperties.Name="{Binding Strings[QueryOperation]}">
+      <ComboBox.ItemTemplate><DataTemplate x:DataType="vm:QueryOperationOption"><StackPanel Spacing="2"><TextBlock Text="{Binding Label}" FontWeight="SemiBold" /><TextBlock Text="{Binding Detail}" FontSize="11" Classes="muted" /></StackPanel></DataTemplate></ComboBox.ItemTemplate>
+    </ComboBox>
+    <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="12">
+      <c:HelpLabel Label="{Binding Strings[QueryEditorLabel]}" Help="{Binding QueryContract}" Summary="{Binding Strings[QueryContractSummary]}" />
+      <Expander Name="ProductReadOptions" Grid.Column="1" Header="{Binding Strings[QueryReadOptions]}" IsVisible="{Binding IsProductReadOperation}" HorizontalAlignment="Right">
+        <StackPanel Spacing="6" Margin="8"><CheckBox Content="{Binding Strings[AllowProductReadScripts]}" IsChecked="{Binding AllowProductReadScripts}" /><TextBlock Text="{Binding Strings[ProductReadScriptsHelp]}" IsVisible="{Binding AllowProductReadScripts}" TextWrapping="Wrap" MaxWidth="380" FontSize="12" /></StackPanel>
+      </Expander>
+    </Grid>
+    <TextBox Name="QuerySqlEditor" Grid.Row="2" Text="{Binding QueryText}" AcceptsReturn="True" TextWrapping="NoWrap" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" FontFamily="Consolas, monospace" MinHeight="180" PlaceholderText="{Binding Strings[QueryPlaceholder]}" IsEnabled="{Binding !IsBusy}" />
+    <StackPanel Grid.Row="3" Spacing="8">
+      <StackPanel Orientation="Horizontal" Spacing="10" IsEnabled="{Binding !IsBusy}"><Button Classes="primary" Content="{Binding Strings[SaveSettings]}" Command="{Binding SaveCommand}" /><Button Content="{Binding Strings[ImportSqlFile]}" Click="ImportSql" /></StackPanel>
+      <TextBlock Text="{Binding Status}" TextWrapping="Wrap" />
+    </StackPanel>
+  </Grid>
+</UserControl>

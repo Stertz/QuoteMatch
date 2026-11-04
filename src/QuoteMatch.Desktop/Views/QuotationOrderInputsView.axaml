@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="using:QuoteMatch.Desktop.ViewModels" x:Class="QuoteMatch.Desktop.Views.QuotationOrderInputsView" x:DataType="vm:QuotationOrderInputsViewModel">
+  <StackPanel Spacing="8">
+    <TextBlock Text="{Binding Strings[PriceReference]}" FontWeight="SemiBold" />
+    <ComboBox Name="QuotationPriceReference" SelectedIndex="{Binding PriceReferenceIndex}" HorizontalAlignment="Stretch">
+      <ComboBoxItem Content="{Binding Strings[ReferenceLastPurchase]}" />
+      <ComboBoxItem Content="{Binding Strings[ReferenceLinkedOrder]}" />
+    </ComboBox>
+    <Expander Header="{Binding Strings[LinkedOrdersOptional]}" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8" Margin="0,8,0,0">
+        <Grid ColumnDefinitions="*,*,Auto" ColumnSpacing="8" IsEnabled="{Binding !IsBusy}">
+          <TextBox Text="{Binding Number}" PlaceholderText="{Binding Strings[OrderNumberSearch]}" />
+          <TextBox Grid.Column="1" Text="{Binding Supplier}" PlaceholderText="{Binding Strings[SupplierColumn]}" />
+          <Button Grid.Column="2" Content="{Binding Strings[SearchErp]}" Command="{Binding SearchCommand}" />
+        </Grid>
+        <ComboBox Name="QuotationOrderResults" ItemsSource="{Binding Results}" SelectedItem="{Binding SelectedResult}" HorizontalAlignment="Stretch" IsEnabled="{Binding !IsBusy}">
+          <ComboBox.ItemTemplate><DataTemplate x:DataType="vm:OrderSearchRow"><TextBlock Text="{Binding Label}" TextWrapping="Wrap" /></DataTemplate></ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Content="{Binding Strings[LinkOrder]}" Command="{Binding LinkCommand}" IsEnabled="{Binding !IsBusy}" />
+        <ListBox Name="QuotationLinkedOrders" ItemsSource="{Binding Orders}" SelectedItem="{Binding SelectedOrder}" MaxHeight="140" IsEnabled="{Binding !IsBusy}">
+          <ListBox.ItemTemplate><DataTemplate x:DataType="vm:LinkedOrderRow"><TextBlock Text="{Binding Label}" TextWrapping="Wrap" Margin="6" /></DataTemplate></ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Orientation="Horizontal" Spacing="8" IsVisible="{Binding HasOrders}" IsEnabled="{Binding !IsBusy}">
+          <Button Content="{Binding Strings[RefreshLinkedOrder]}" Command="{Binding RefreshCommand}" />
+          <Button Content="{Binding Strings[RemoveLinkedOrder]}" Command="{Binding RemoveCommand}" />
+        </StackPanel>
+        <CheckBox Content="{Binding Strings[ReplaceManualDemand]}" IsChecked="{Binding ReplaceManualDemand}" IsVisible="{Binding HasManualDemand}" />
+        <TextBlock Text="{Binding Strings[KeepManualDemandHelp]}" IsVisible="{Binding HasManualDemand}" TextWrapping="Wrap" Classes="muted" FontSize="12" />
+      </StackPanel>
+    </Expander>
+    <ProgressBar IsVisible="{Binding IsBusy}" IsIndeterminate="True" Height="3" />
+    <Button Content="{Binding Strings[CancelImport]}" Command="{Binding CancelCommand}" IsVisible="{Binding IsBusy}" />
+    <TextBlock Text="{Binding Status}" TextWrapping="Wrap" FontSize="12" />
+  </StackPanel>
+</UserControl>
