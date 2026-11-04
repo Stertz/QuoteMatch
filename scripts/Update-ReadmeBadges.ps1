@@ -51,16 +51,9 @@ $lines = @(
     (Get-StackBadge '.NET' $target '512BD4' 'https://dotnet.microsoft.com/'),
     (Get-StackBadge 'SDK' $sdk '512BD4' 'https://dotnet.microsoft.com/download')
 )
-foreach ($stack in @(
-    @('Avalonia', 'Avalonia', 'FF6600', 'https://avaloniaui.net/'),
-    @('EF Core', 'Microsoft.EntityFrameworkCore.Sqlite', '512BD4', 'https://learn.microsoft.com/ef/core/'),
-    @('MVVM Toolkit', 'CommunityToolkit.Mvvm', '0078D4', 'https://learn.microsoft.com/dotnet/communitytoolkit/mvvm/'),
-    @('SqlClient', 'Microsoft.Data.SqlClient', 'CC2927', 'https://learn.microsoft.com/sql/connect/ado-net/')
-)) {
-    $nodes = $packages.SelectNodes("/Project/ItemGroup/PackageVersion[@Include='$($stack[1])']/@Version")
-    if ($nodes.Count -ne 1) { throw "Missing or ambiguous central package version: $($stack[1])." }
-    $lines += Get-StackBadge $stack[0] $nodes[0].Value $stack[2] $stack[3]
-}
+$avaloniaVersions = $packages.SelectNodes('/Project/ItemGroup/PackageVersion[@Include="Avalonia"]/@Version')
+if ($avaloniaVersions.Count -ne 1) { throw 'Missing or ambiguous central Avalonia version.' }
+$lines += Get-StackBadge 'Avalonia' $avaloniaVersions[0].Value 'FF6600' 'https://avaloniaui.net/'
 $readme = (Get-Content -LiteralPath $ReadmePath -Raw).Replace("`r`n", "`n")
 $pattern = '(?s)<!-- PROJECT-BADGES:START -->.*?<!-- PROJECT-BADGES:END -->'
 if ([regex]::Matches($readme, $pattern).Count -ne 1) { throw 'The README must contain exactly one PROJECT-BADGES marker block.' }

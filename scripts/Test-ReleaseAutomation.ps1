@@ -49,6 +49,9 @@ try {
     & (Join-Path $PSScriptRoot 'Update-ReadmeBadges.ps1') @arguments | Out-Null
     $generated = Get-Content $readme -Raw
     Assert-True (-not $generated.Contains('include_prereleases')) 'The release badge must show normal releases.'
+    foreach ($excluded in @('EF%20Core-', 'MVVM%20Toolkit-', 'SqlClient-')) {
+        Assert-True (-not $generated.Contains($excluded)) 'The README must retain only the selected stack badges.'
+    }
     foreach ($expected in @('.NET-99.2-', 'SDK-99.2.345-', 'Avalonia-91.2.3-', 'Core-50.00%25-red', 'Coverage-75.00%25-yellow', 'synthetic/quotation/actions/workflows/verify.yml')) {
         Assert-True $generated.Contains($expected) "Generated badges omitted $expected."
     }

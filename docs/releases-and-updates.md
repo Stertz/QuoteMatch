@@ -10,7 +10,7 @@ The [verification workflow](../.github/workflows/verify.yml) tests the applicati
 | --- | --- |
 | SDK | `global.json` |
 | .NET target | `Directory.Build.props` |
-| Avalonia, EF Core, MVVM Toolkit and SqlClient | `Directory.Packages.props` |
+| Avalonia | `Directory.Packages.props` |
 | Application coverage | Covered/valid source lines for all four measured assemblies in `summary.json` |
 | Core coverage | The same measurement excluding Desktop |
 | Build and latest release | GitHub Actions and Releases badges |
@@ -28,6 +28,8 @@ For a local refresh after coverage:
 ```
 
 These badges show the pinned versions actually used by this project. They do not claim that a package is the newest release available. Dependabot proposes dependency/action updates; the normal review and verification workflow applies before merging them.
+
+Dependabot groups the Avalonia packages into one pull request. Update the core, Desktop, Fluent theme and Headless packages together so the application and desktop tests use the same framework version.
 
 ## Release pipeline
 
