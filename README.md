@@ -10,7 +10,7 @@
   <a href="https://github.com/Stertz/QuoteMatch/actions/workflows/verify.yml"><img src="https://img.shields.io/badge/Core-87.62%25-brightgreen" alt="Core 87.62%" /></a>
   <a href="https://dotnet.microsoft.com/"><img src="https://img.shields.io/badge/.NET-10.0-512BD4" alt=".NET 10.0" /></a>
   <a href="https://dotnet.microsoft.com/download"><img src="https://img.shields.io/badge/SDK-10.0.402-512BD4" alt="SDK 10.0.402" /></a>
-  <a href="https://avaloniaui.net/"><img src="https://img.shields.io/badge/Avalonia-12.1.4-FF6600" alt="Avalonia 12.1.4" /></a>
+  <a href="https://avaloniaui.net/"><img src="https://img.shields.io/badge/Avalonia-12.1.5-FF6600" alt="Avalonia 12.1.5" /></a>
   <a href="https://learn.microsoft.com/ef/core/"><img src="https://img.shields.io/badge/EF%20Core-10.0.14-512BD4" alt="EF Core 10.0.14" /></a>
   <a href="https://learn.microsoft.com/dotnet/communitytoolkit/mvvm/"><img src="https://img.shields.io/badge/MVVM%20Toolkit-8.4.2-0078D4" alt="MVVM Toolkit 8.4.2" /></a>
   <a href="https://learn.microsoft.com/sql/connect/ado-net/"><img src="https://img.shields.io/badge/SqlClient-7.1.1-CC2927" alt="SqlClient 7.1.1" /></a>
